@@ -1,0 +1,10 @@
+{
+  "background_color": "#ffffff",
+  "description": "Leagueoflegends",
+  "display": "standalone",
+  "name": "Leagueoflegends",
+  "short_name": "Leagueoflegends",
+  "start_url": "/index.html",
+  "theme_color": "#ffffff",
+  "scope": "/"
+}
