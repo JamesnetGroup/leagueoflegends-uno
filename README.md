@@ -54,6 +54,9 @@ dotnet run --project YourProjectName.Desktop
 
 Make sure you have the necessary .NET SDK and Uno Platform tools installed on your system before running the application.
 
+## Color Table
+- [x] 785A28: 
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
