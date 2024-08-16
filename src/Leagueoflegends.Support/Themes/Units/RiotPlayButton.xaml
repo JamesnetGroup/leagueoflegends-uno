@@ -4,7 +4,6 @@
   xmlns:cnvts="using:Leagueoflegends.Support.Local.Converters"
   xmlns:units="using:Leagueoflegends.Support.UI.Units">
 
-
   <cnvts:BoolToPlayStopConverter x:Key="BoolToPlayStopConverter"/>
 
   <LinearGradientBrush x:Key="ArrowStroke" StartPoint="0.5,0" EndPoint="0.5,1">
@@ -42,24 +41,6 @@
     <Setter Property="HorizontalAlignment" Value="Left"/>
     <Setter Property="Source" Value="ms-appx:///Leagueoflegends.Support/Images/logo.png"/>
     <Setter Property="Height" Value="38"/>
-  </Style>
-
-  <Style x:Key="Play" TargetType="TextBlock">
-    <Setter Property="Text" Value="PLAY"/>
-    <Setter Property="HorizontalAlignment" Value="Center"/>
-    <Setter Property="VerticalAlignment" Value="Center"/>
-    <Setter Property="Margin" Value="30,0,0,0"/>
-    <Setter Property="FontSize" Value="15"/>
-    <Setter Property="FontWeight" Value="Bold"/>
-  </Style>
-
-  <Style x:Key="Stop" TargetType="TextBlock">
-    <Setter Property="Text" Value="STOP"/>
-    <Setter Property="HorizontalAlignment" Value="Center"/>
-    <Setter Property="VerticalAlignment" Value="Center"/>
-    <Setter Property="Margin" Value="30,0,0,100"/>
-    <Setter Property="FontSize" Value="15"/>
-    <Setter Property="FontWeight" Value="Bold"/>
   </Style>
 
   <Style x:Key="Arrow" TargetType="Path">
@@ -121,12 +102,12 @@
             <Border Style="{StaticResource GreenLine}"/>
             <Path x:Name="path" Style="{StaticResource Arrow}"/>
             <ContentPresenter x:Name="ContentPresenter"
-                                      Content="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BoolToPlayStopConverter}}"
-                                      HorizontalAlignment="Center"
-                                      VerticalAlignment="Center"
-                                      Margin="30,0,0,0"
-                                      FontSize="15"
-                                      FontWeight="Bold"/>
+                              Content="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BoolToPlayStopConverter}}"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center"
+                              Margin="30,0,0,0"
+                              FontSize="15"
+                              FontWeight="Bold"/>
           </Grid>
         </ControlTemplate>
       </Setter.Value>

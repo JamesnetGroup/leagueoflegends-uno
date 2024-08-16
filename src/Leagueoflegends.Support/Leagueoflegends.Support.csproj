@@ -35,6 +35,9 @@
   <ItemGroup>
     <None Remove="Themes\Generic.xaml" />
     <None Remove="Themes\RiotPlayButton.xaml" />
+    <None Remove="Themes\Units\RiotMainMenuListBox.xaml" />
+    <None Remove="Themes\Units\RiotMainMenuListBoxItem.xaml" />
+    <None Remove="Themes\Units\RiotNoticeButton.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -68,5 +71,33 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Images\logo.png" />
+    <EmbeddedResource Include="Images\menu-selection.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotMainMenuListBox.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="Themes\Units\RiotMainMenuListBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotMainMenuListBoxItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotNoticeButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotMainMenuListBoxItem.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotNoticeButton.xaml" />
   </ItemGroup>
 </Project>

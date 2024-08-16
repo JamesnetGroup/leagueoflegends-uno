@@ -3,17 +3,28 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:based="using:Leagueoflegends.Support.UI.Units"
       Background="#000000">
-  <Grid>
+  <Grid Width="1280" Height="720" HorizontalAlignment="Center" VerticalAlignment="Center">
     <Grid.RowDefinitions>
+      <RowDefinition Height="2"/>
       <RowDefinition Height="Auto"/>
       <RowDefinition/>
     </Grid.RowDefinitions>
-    <Grid>
+    <Border Background="#785A28" Height="2"/>
+    <Grid Grid.Row="1">
       <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="Auto"/>
         <ColumnDefinition Width="Auto"/>
         <ColumnDefinition/>
       </Grid.ColumnDefinitions>
-      <based:RiotPlayButton Content="Play"/>
+
+      <based:RiotPlayButton Content="Play" Margin="25 20 20 20"/>
+      <based:RiotNoticeButton Grid.Column="1"/>
+      <based:RiotMainMenuListBox Grid.Column="2">
+        <based:RiotMainMenuListBoxItem MenuName="HOME"/>
+        <based:RiotMainMenuListBoxItem MenuName="TFT"/>
+        <based:RiotMainMenuListBoxItem MenuName="CASH"/>
+      </based:RiotMainMenuListBox>
     </Grid>
   </Grid>
 </Page>
