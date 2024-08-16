@@ -7,6 +7,7 @@
     <Grid.RowDefinitions>
       <RowDefinition Height="2"/>
       <RowDefinition Height="Auto"/>
+      <RowDefinition Height="1"/>
       <RowDefinition/>
     </Grid.RowDefinitions>
     <Border Background="#785A28" Height="2"/>
@@ -16,15 +17,34 @@
         <ColumnDefinition Width="Auto"/>
         <ColumnDefinition Width="Auto"/>
         <ColumnDefinition/>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="Auto"/>
       </Grid.ColumnDefinitions>
 
       <based:RiotPlayButton Content="Play" Margin="25 20 20 20"/>
       <based:RiotNoticeButton Grid.Column="1"/>
       <based:RiotMainMenuListBox Grid.Column="2">
-        <based:RiotMainMenuListBoxItem MenuName="HOME"/>
-        <based:RiotMainMenuListBoxItem MenuName="TFT"/>
-        <based:RiotMainMenuListBoxItem MenuName="CASH"/>
+        <based:RiotMainMenuListBoxItem GroupName="MainMenu" MenuName="HOME"/>
+        <based:RiotMainMenuListBoxItem GroupName="MainMenu" MenuName="TFT"/>
+        <based:RiotMainMenuListBoxItem GroupName="MainMenu" MenuName="CASH"/>
       </based:RiotMainMenuListBox>
+      <based:RiotMainIconMenuListBox Grid.Column="4">
+        <based:RiotMainIconMenuListBoxItem GroupName="MainMenu" MenuIcon="Profile"/>
+        <based:RiotMainIconMenuListBoxItem GroupName="MainMenu" MenuIcon="Collection"/>
+        <based:RiotMainIconMenuListBoxItem GroupName="MainMenu" MenuIcon="Loot"/>
+        <based:RiotMainIconMenuListBoxItem GroupName="MainMenu" MenuIcon="Shop"/>
+        <based:RiotMainIconMenuListBoxItem GroupName="MainMenu" MenuIcon="Store"/>
+      </based:RiotMainIconMenuListBox>
+      <based:VerticalMainMenuSeparator Grid.Column="5"/>
+      <StackPanel Grid.Column="6"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Center"
+                  Margin="10 0 0 0">
+        <based:RiotStatusIndicator IconType="RP" Value="104"/>
+        <based:RiotStatusIndicator IconType="BlueEssence" Value="271"/>
+      </StackPanel>
     </Grid>
+    <Border Grid.Row="2" Background="#553D4143"/>
   </Grid>
 </Page>

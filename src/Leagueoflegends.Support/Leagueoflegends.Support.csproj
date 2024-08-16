@@ -33,11 +33,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Images\blue-essence.png" />
+    <None Remove="Images\rp.png" />
     <None Remove="Themes\Generic.xaml" />
     <None Remove="Themes\RiotPlayButton.xaml" />
+    <None Remove="Themes\Units\RiotMainIconMenuListBox.xaml" />
+    <None Remove="Themes\Units\RiotMainIconMenuListBoxItem.xaml" />
     <None Remove="Themes\Units\RiotMainMenuListBox.xaml" />
     <None Remove="Themes\Units\RiotMainMenuListBoxItem.xaml" />
     <None Remove="Themes\Units\RiotNoticeButton.xaml" />
+    <None Remove="Themes\Units\RiotStatusIndicator.xaml" />
+    <None Remove="Themes\Units\VerticalMainMenuSeparator.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -72,6 +78,8 @@
   <ItemGroup>
     <EmbeddedResource Include="Images\logo.png" />
     <EmbeddedResource Include="Images\menu-selection.png" />
+    <EmbeddedResource Include="Images\rp.png" />
+    <EmbeddedResource Include="Images\blue-essence.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -79,6 +87,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Include="Themes\Units\RiotMainIconMenuListBoxItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotMainIconMenuListBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Units\RiotMainMenuListBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -91,6 +107,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Units\RiotStatusIndicator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\VerticalMainMenuSeparator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
   <ItemGroup>
@@ -99,5 +123,26 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Units\RiotNoticeButton.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotMainIconMenuListBoxItem.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotMainIconMenuListBox.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\VerticalMainMenuSeparator.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotStatusIndicator.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\blue-essence.png" />
+    <Content Include="Images\rp.png" />
   </ItemGroup>
 </Project>

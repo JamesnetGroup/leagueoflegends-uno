@@ -3,9 +3,13 @@
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:units="using:Leagueoflegends.Support.UI.Units">
   <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/VerticalMainMenuSeparator.xaml"/>
+    <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotStatusIndicator.xaml"/>
     <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotNoticeButton.xaml"/>
     <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotPlayButton.xaml"/>
     <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotMainMenuListBoxItem.xaml"/>
     <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotMainMenuListBox.xaml"/>
+    <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotMainIconMenuListBoxItem.xaml"/>
+    <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotMainIconMenuListBox.xaml"/>
   </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

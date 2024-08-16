@@ -10,6 +10,6 @@ public class BoolToPlayStopConverter : IValueConverter
 
     public object ConvertBack(object value, Type targetType, object parameter, string language)
     {
-        return (string)value == "STOP";
+        throw new NotImplementedException();
     }
 }
