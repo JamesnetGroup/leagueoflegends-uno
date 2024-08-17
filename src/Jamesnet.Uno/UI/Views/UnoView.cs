@@ -13,6 +13,13 @@ public class UnoView : ContentControl, IView
     private void OnLoaded(object sender, RoutedEventArgs e)
     {
         InitializeViewModel();
+
+        // Check if DataContext implements IViewLoadable and call Loaded() if it does
+        if (DataContext is IViewLoadable loadable)
+        {
+            loadable.Loaded();
+        }
+
         Loaded -= OnLoaded;
     }
 

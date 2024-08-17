@@ -14,12 +14,36 @@ public class RiotMainMenuListBoxItem : RadioButton
         set { SetValue(MenuIconProperty, value); }
     }
 
+
+
+    public bool IsLoadedFocus
+    {
+        get { return (bool)GetValue(IsLoadedFocusProperty); }
+        set { SetValue(IsLoadedFocusProperty, value); }
+    }
+
+    // Using a DependencyProperty as the backing store for IsLoadedFocus.  This enables animation, styling, binding, etc...
+    public static readonly DependencyProperty IsLoadedFocusProperty =
+        DependencyProperty.Register("IsLoadedFocus", typeof(bool), typeof(RiotMainMenuListBoxItem), new PropertyMetadata(false));
+
+
+
     public static readonly DependencyProperty MenuNameProperty = DependencyProperty.Register("MenuName", typeof(string), typeof(RiotMainMenuListBoxItem), new PropertyMetadata(null));
     public static readonly DependencyProperty MenuIconProperty = DependencyProperty.Register("MenuIcon", typeof(string), typeof(RiotMainMenuListBoxItem), new PropertyMetadata(null));
 
     public RiotMainMenuListBoxItem()
     { 
         DefaultStyleKey = typeof(RiotMainMenuListBoxItem);
+
+        Loaded += RiotMainMenuListBoxItem_Loaded;
+    }
+
+    private void RiotMainMenuListBoxItem_Loaded(object sender, RoutedEventArgs e)
+    {
+        if (IsLoadedFocus)
+        {
+            IsChecked = true;
+        }
     }
 }
     

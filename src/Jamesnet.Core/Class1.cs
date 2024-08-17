@@ -1,3 +1,7 @@
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Windows.Input;
+
 namespace Jamesnet.Core;
 
 public interface IContainer
@@ -126,7 +130,6 @@ public class DefaultViewModelInitializer : IViewModelInitializer
     {
         try
         {
-            // 가장 매개변수가 많은 생성자 선택
             var constructor = viewModelType.GetConstructors()
                 .OrderByDescending(c => c.GetParameters().Length)
                 .First();
@@ -246,7 +249,6 @@ public class LayerManager : ILayerManager
             _layers[layerName] = layer;
             _layerViews[layerName] = new List<IView>();
 
-            // 레이어가 최초로 등록될 때, 미리 설정된 뷰가 있으면 추가하고 활성화합니다.
             if (_layerViewMappings.TryGetValue(layerName, out var view))
             {
                 AddView(layerName, view);
@@ -285,10 +287,62 @@ public class LayerManager : ILayerManager
         }
     }
 
-    // 레이어와 뷰의 관계를 미리 설정하는 메서드 추가
     public void SetLayerViewMapping(string layerName, IView view)
     {
         _layerViewMappings[layerName] = view;
     }
 }
 
+public class RelayCommand<T> : ICommand
+{
+    private readonly Action<T> _execute;
+    private readonly Func<T, bool> _canExecute;
+
+    public RelayCommand(Action<T> execute, Func<T, bool> canExecute = null)
+    {
+        _execute = execute ?? throw new ArgumentNullException(nameof(execute));
+        _canExecute = canExecute;
+    }
+
+    public event EventHandler CanExecuteChanged;
+
+    public bool CanExecute(object parameter)
+    {
+        return _canExecute == null || _canExecute((T)parameter);
+    }
+
+    public void Execute(object parameter)
+    {
+        _execute((T)parameter);
+    }
+
+    public void RaiseCanExecuteChanged()
+    {
+        CanExecuteChanged?.Invoke(this, EventArgs.Empty);
+    }
+}
+
+public class ViewModelBase : INotifyPropertyChanged
+{
+    public event PropertyChangedEventHandler? PropertyChanged;
+
+    protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
+
+    protected bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string propertyName = null)
+    {
+        if (EqualityComparer<T>.Default.Equals(storage, value))
+            return false;
+
+        storage = value;
+        OnPropertyChanged(propertyName);
+        return true;
+    }
+}
+
+public interface IViewLoadable
+{
+    void Loaded();
+}

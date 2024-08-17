@@ -36,6 +36,12 @@
     <None Remove="Images\blue-essence.png" />
     <None Remove="Images\profile-default.png" />
     <None Remove="Images\rp.png" />
+    <None Remove="Images\wallpaper-ezreal.jpg" />
+    <None Remove="Images\wallpaper-leona.jpg" />
+    <None Remove="Images\wallpaper-maokai.jpg" />
+    <None Remove="Images\wallpaper-rucian.png" />
+    <None Remove="Images\wallpaper-sena.png" />
+    <None Remove="Images\wallpaper-singed.png" />
     <None Remove="Themes\Generic.xaml" />
     <None Remove="Themes\RiotPlayButton.xaml" />
     <None Remove="Themes\Units\RiotMainIconMenuListBox.xaml" />
@@ -84,6 +90,8 @@
     <EmbeddedResource Include="Images\menu-selection.png" />
     <EmbeddedResource Include="Images\rp.png" />
     <EmbeddedResource Include="Images\blue-essence.png" />
+    <EmbeddedResource Include="Images\profile-default.png" />
+    <EmbeddedResource Include="Images\wallpaper-rucian.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -161,6 +169,12 @@
     <Content Include="Images\blue-essence.png" />
     <Content Include="Images\profile-default.png" />
     <Content Include="Images\rp.png" />
+    <Content Include="Images\wallpaper-ezreal.jpg" />
+    <Content Include="Images\wallpaper-leona.jpg" />
+    <Content Include="Images\wallpaper-maokai.jpg" />
+    <Content Include="Images\wallpaper-rucian.png" />
+    <Content Include="Images\wallpaper-sena.png" />
+    <Content Include="Images\wallpaper-singed.png" />
   </ItemGroup>
 
   <ItemGroup>
