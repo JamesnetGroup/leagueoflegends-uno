@@ -20,6 +20,7 @@
         <ColumnDefinition Width="Auto"/>
         <ColumnDefinition Width="Auto"/>
         <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="Auto"/>
       </Grid.ColumnDefinitions>
 
       <based:RiotPlayButton Content="Play" Margin="25 20 20 20"/>
@@ -44,6 +45,9 @@
         <based:RiotStatusIndicator IconType="RP" Value="104"/>
         <based:RiotStatusIndicator IconType="BlueEssence" Value="271"/>
       </StackPanel>
+      <Grid Grid.Column="7" Background="#010A13" Width="200" Margin="10 0 0 0">
+        <based:RiotUserAvatar Grid.Column="7" Margin="10 0 0 0" HorizontalAlignment="Left"/>
+      </Grid>
     </Grid>
     <Border Grid.Row="2" Background="#553D4143"/>
   </Grid>

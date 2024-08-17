@@ -21,9 +21,7 @@
     <Setter Property="Template">
       <Setter.Value>
         <ControlTemplate TargetType="units:VerticalMainMenuSeparator">
-          <Grid x:Name="RootGrid" Background="{TemplateBinding Background}">
-          
-          </Grid>
+          <Grid x:Name="RootGrid" Background="{TemplateBinding Background}"/>
         </ControlTemplate>
       </Setter.Value>
     </Setter>

@@ -34,6 +34,7 @@
 
   <ItemGroup>
     <None Remove="Images\blue-essence.png" />
+    <None Remove="Images\profile-default.png" />
     <None Remove="Images\rp.png" />
     <None Remove="Themes\Generic.xaml" />
     <None Remove="Themes\RiotPlayButton.xaml" />
@@ -43,6 +44,7 @@
     <None Remove="Themes\Units\RiotMainMenuListBoxItem.xaml" />
     <None Remove="Themes\Units\RiotNoticeButton.xaml" />
     <None Remove="Themes\Units\RiotStatusIndicator.xaml" />
+    <None Remove="Themes\Units\RiotUserAvatar.xaml" />
     <None Remove="Themes\Units\VerticalMainMenuSeparator.xaml" />
   </ItemGroup>
 
@@ -111,6 +113,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Units\RiotUserAvatar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Units\VerticalMainMenuSeparator.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -143,6 +149,11 @@
 
   <ItemGroup>
     <Content Include="Images\blue-essence.png" />
+    <Content Include="Images\profile-default.png" />
     <Content Include="Images\rp.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotUserAvatar.xaml" />
   </ItemGroup>
 </Project>
