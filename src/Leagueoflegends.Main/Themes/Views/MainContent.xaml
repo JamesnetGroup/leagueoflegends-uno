@@ -1,0 +1,89 @@
+﻿<ResourceDictionary
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:james="using:XamlFoundation.Uno.UI.Units"
+  xmlns:based="using:Leagueoflegends.Support.UI.Units"
+  xmlns:views="using:Leagueoflegends.Main.UI.Views">
+
+  <Style TargetType="views:MainContent">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="views:MainContent">
+          <Grid Width="1280" Height="720" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="2"/>
+              <RowDefinition Height="Auto"/>
+              <RowDefinition Height="1"/>
+              <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Border Background="#785A28" Height="2"/>
+            <Grid Grid.Row="1">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+              </Grid.ColumnDefinitions>
+
+              <based:RiotPlayButton Content="Play" Margin="25 20 20 20"/>
+              <based:RiotNoticeButton Grid.Column="1"/>
+              <based:RiotMainMenuListBox Grid.Column="2">
+                <based:RiotMainMenuListBoxItem GroupName="MainMenu" MenuName="HOME"/>
+                <based:RiotMainMenuListBoxItem GroupName="MainMenu" MenuName="TFT"/>
+                <based:RiotMainMenuListBoxItem GroupName="MainMenu" MenuName="CASH"/>
+              </based:RiotMainMenuListBox>
+              <based:RiotMainIconMenuListBox Grid.Column="4">
+                <based:RiotMainIconMenuListBoxItem GroupName="MainMenu" MenuIcon="Profile"/>
+                <based:RiotMainIconMenuListBoxItem GroupName="MainMenu" MenuIcon="Collection"/>
+                <based:RiotMainIconMenuListBoxItem GroupName="MainMenu" MenuIcon="Loot"/>
+                <based:RiotMainIconMenuListBoxItem GroupName="MainMenu" MenuIcon="Shop"/>
+                <based:RiotMainIconMenuListBoxItem GroupName="MainMenu" MenuIcon="Store"/>
+              </based:RiotMainIconMenuListBox>
+              <based:VerticalMainMenuSeparator Grid.Column="5"/>
+              <StackPanel Grid.Column="6"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Center"
+                  Margin="10 0 0 0">
+                <based:RiotStatusIndicator IconType="RP" Value="104"/>
+                <based:RiotStatusIndicator IconType="BlueEssence" Value="271"/>
+              </StackPanel>
+              <Grid Grid.Column="7" Background="#010A13" Margin="10 0 0 0">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="Auto"/>
+                  <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <based:RiotUserAvatar Margin="10 0 0 0" HorizontalAlignment="Left"/>
+                <based:RiotUserDisplayStatus Grid.Column="1"
+                                     Margin="10 10 0 0"
+                                     UserName="Hide on bush"
+                                     VerticalAlignment="Center"
+                                     IsOnline="True"/>
+                <StackPanel Grid.Column="1"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                    Margin="50 2 5 10">
+                  <based:RiotWindowControlButton Margin="10 5 5 5" ControlType="Help"/>
+                  <based:RiotWindowControlButton Margin="10 5 5 5" ControlType="Minimize"/>
+                  <based:RiotWindowControlButton Margin="10 5 5 5" ControlType="Settings"/>
+                  <based:RiotWindowControlButton Margin="10 5 5 5" ControlType="Close"/>
+                </StackPanel>
+                <based:RiotWindowControlButton Grid.Column="1"
+                                       Margin="10 10 8 10"
+                                       Width="14" Height="14"
+                                       ControlType="Alarm"
+                                       HorizontalAlignment="Right"
+                                       VerticalAlignment="Bottom"/>
+              </Grid>
+            </Grid>
+            <Border Grid.Row="2" Background="#553D4143"/>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+</ResourceDictionary>

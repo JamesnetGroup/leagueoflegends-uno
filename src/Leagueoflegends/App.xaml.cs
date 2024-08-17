@@ -19,6 +19,10 @@ public partial class App : Application
 
     protected override void OnLaunched(LaunchActivatedEventArgs args)
     {
+        var bootstrapper = new LeagueOfLegendsBootstrapper();
+        bootstrapper.Run();
+
+
         MainWindow = new Window();
 #if DEBUG
         MainWindow.EnableHotReload();

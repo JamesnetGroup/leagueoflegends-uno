@@ -1,7 +1,6 @@
 <Project Sdk="Uno.Sdk">
   <PropertyGroup>
     <TargetFrameworks>net8.0-desktop</TargetFrameworks>
-
     <OutputType>Exe</OutputType>
     <UnoSingleProject>true</UnoSingleProject>
 
@@ -36,7 +35,8 @@
     </UnoFeatures>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Leagueoflegends.Support\Leagueoflegends.Support.csproj" />
+    <ProjectReference Include="..\Jamesnet.Uno\Jamesnet.Uno.csproj" />
+    <ProjectReference Include="..\Leagueoflegends.Main\Leagueoflegends.Main.csproj" />
   </ItemGroup>
 
 </Project>

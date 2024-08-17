@@ -1,6 +1,6 @@
 <Project Sdk="Uno.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net8.0-browserwasm;net8.0-desktop</TargetFrameworks>
+    <TargetFrameworks>net8.0-desktop</TargetFrameworks>
     <UnoSingleProject>true</UnoSingleProject>
     <OutputType>Library</OutputType>
     <!-- Ensures the .xr.xml files are generated in a proper layout folder -->
@@ -173,5 +173,9 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Units\RiotWindowControlButton.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Jamesnet.Uno\Jamesnet.Uno.csproj" />
   </ItemGroup>
 </Project>
