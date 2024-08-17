@@ -1,0 +1,49 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:units="using:Leagueoflegends.Support.UI.Units">
+  <Style TargetType="units:RiotUserDisplayStatus">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="units:RiotUserDisplayStatus">
+          <Grid>
+            <VisualStateManager.VisualStateGroups>
+              <VisualStateGroup x:Name="CommonStates">
+                <VisualState x:Name="Online"/>
+                <VisualState x:Name="Offline">
+                  <VisualState.Setters>
+                    <Setter Target="PART_StatusIndicator.Fill" Value="Transparent"/>
+                    <Setter Target="PART_StatusIndicator.Stroke" Value="#9C3213"/>
+                    <Setter Target="PART_StatusText.Text" Value="자리 비움"/>
+                    <Setter Target="PART_StatusText.Foreground" Value="#A09B8C"/>
+                  </VisualState.Setters>
+                </VisualState>
+              </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <StackPanel>
+              <TextBlock x:Name="PART_UserName" 
+                         Text="{TemplateBinding UserName}"
+                         FontSize="14"
+                         FontWeight="Bold"
+                         Foreground="#F0E6D2"
+                         Margin="0,0,0,0"/>
+              <StackPanel Orientation="Horizontal">
+                <Ellipse x:Name="PART_StatusIndicator" 
+                         Width="11" Height="11" 
+                         Stroke="#66F8A0" 
+                         StrokeThickness="2"
+                         Fill="#09A646" 
+                         Margin="0,0,6,0"/>
+                <TextBlock x:Name="PART_StatusText" 
+                           Text="Online"
+                           FontSize="11"
+                           FontWeight="Bold"
+                           Foreground="#099441"/>
+              </StackPanel>
+            </StackPanel>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+</ResourceDictionary>
