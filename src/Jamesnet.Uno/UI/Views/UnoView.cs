@@ -14,7 +14,6 @@ public class UnoView : ContentControl, IView
     {
         InitializeViewModel();
 
-        // Check if DataContext implements IViewLoadable and call Loaded() if it does
         if (DataContext is IViewLoadable loadable)
         {
             loadable.Loaded();

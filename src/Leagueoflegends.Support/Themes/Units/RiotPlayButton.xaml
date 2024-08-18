@@ -101,13 +101,13 @@
             <Image Style="{StaticResource Emblem}"/>
             <Border Style="{StaticResource GreenLine}"/>
             <Path x:Name="path" Style="{StaticResource Arrow}"/>
-            <ContentPresenter x:Name="ContentPresenter"
-                              Content="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BoolToPlayStopConverter}}"
-                              HorizontalAlignment="Center"
-                              VerticalAlignment="Center"
-                              Margin="30,0,0,0"
-                              FontSize="15"
-                              FontWeight="Bold"/>
+            <TextBlock x:Name="ContentPresenter"
+                       Text="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BoolToPlayStopConverter}}"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Margin="30,0,0,0"
+                       FontSize="15"
+                       FontWeight="Bold"/>
           </Grid>
         </ControlTemplate>
       </Setter.Value>

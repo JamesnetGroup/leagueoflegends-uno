@@ -6,7 +6,7 @@
     <!-- Ensures the .xr.xml files are generated in a proper layout folder -->
     <GenerateLibraryLayout>true</GenerateLibraryLayout>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
 
     <!--
       UnoFeatures let's you quickly add and manage implicit package references based on the features you want to use.
@@ -52,6 +52,7 @@
     <None Remove="Themes\Units\RiotStatusIndicator.xaml" />
     <None Remove="Themes\Units\RiotUserAvatar.xaml" />
     <None Remove="Themes\Units\RIotUserDisplayStatus.xaml" />
+    <None Remove="Themes\Units\RiotWallpaper.xaml" />
     <None Remove="Themes\Units\RiotWindowControlButton.xaml" />
     <None Remove="Themes\Units\VerticalMainMenuSeparator.xaml" />
   </ItemGroup>
@@ -131,6 +132,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Units\RiotWallpaper.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Units\RiotWindowControlButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -191,5 +196,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Jamesnet.Uno\Jamesnet.Uno.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotWallpaper.xaml" />
   </ItemGroup>
 </Project>

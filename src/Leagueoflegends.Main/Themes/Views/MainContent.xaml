@@ -4,19 +4,7 @@
   xmlns:james="using:Jamesnet.Uno.UI.Units"
   xmlns:based="using:Leagueoflegends.Support.UI.Units"
   xmlns:views="using:Leagueoflegends.Main.UI.Views">
-  
-  <LinearGradientBrush x:Key="MAIN.TOP" EndPoint="0.5,1" StartPoint="0.5,0">
-    <GradientStop Color="#DD000000"/>
-    <GradientStop Color="#77000000" Offset="0.5"/>
-    <GradientStop Color="#00000000" Offset="1"/>
-  </LinearGradientBrush>
 
-  <LinearGradientBrush x:Key="MAIN.LEFT" EndPoint="1,0.5" StartPoint="0,0.5">
-    <GradientStop Color="#FF000000"/>
-    <GradientStop Color="#44000000" Offset="0.5"/>
-    <GradientStop Color="#00000000" Offset="1"/>
-  </LinearGradientBrush>
-  
   <Style TargetType="views:MainContent">
     <Setter Property="Template">
       <Setter.Value>
@@ -28,18 +16,7 @@
               <RowDefinition Height="1"/>
               <RowDefinition/>
             </Grid.RowDefinitions>
-            <Image Grid.RowSpan="4"
-                   Source="{Binding Wallpaper}"
-                   Stretch="UniformToFill"/>
-            <Rectangle Grid.RowSpan="4"
-                       Height="300"
-                       VerticalAlignment="Top"
-                       Fill="{StaticResource MAIN.TOP}"/>
-            <Rectangle Grid.RowSpan="4"
-                       x:Name="left"
-                       Width="500"
-                       HorizontalAlignment="Left"
-                       Fill="{StaticResource MAIN.LEFT}"/>
+            <based:RiotWallpaper Grid.RowSpan="4" MenuName="{Binding CurrentMenu}"/>
             <Border Background="#785A28" Height="2"/>
             <Grid Grid.Row="1">
               <Grid.ColumnDefinitions>
