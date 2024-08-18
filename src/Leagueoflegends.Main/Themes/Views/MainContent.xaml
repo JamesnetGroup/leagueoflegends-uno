@@ -52,7 +52,7 @@
                 <based:RiotStatusIndicator IconType="RP" Value="104"/>
                 <based:RiotStatusIndicator IconType="BlueEssence" Value="271"/>
               </StackPanel>
-              <Grid Grid.Column="7" Background="#010A13" Margin="20 0 0 0">
+              <Grid Grid.Column="7" Background="#010A13" Margin="20 0 0 0" Width="220">
                 <Grid.ColumnDefinitions>
                   <ColumnDefinition Width="Auto"/>
                   <ColumnDefinition Width="*"/>
@@ -67,21 +67,21 @@
                             Orientation="Horizontal"
                             HorizontalAlignment="Right"
                             VerticalAlignment="Top"
-                            Margin="50 2 5 10">
+                            Margin="40 2 5 10">
                   <based:RiotWindowControlButton Margin="10 5 5 5" ControlType="Help"/>
                   <based:RiotWindowControlButton Margin="10 5 5 5" ControlType="Minimize"/>
                   <based:RiotWindowControlButton Margin="10 5 5 5" ControlType="Settings"/>
                   <based:RiotWindowControlButton Margin="10 5 5 5" ControlType="Close"/>
                 </StackPanel>
-                <based:RiotWindowControlButton Grid.Column="1"
+                <based:RiotIconButton Grid.Column="1"
                                        Margin="10 10 8 10"
-                                       Width="14" Height="14"
                                        ControlType="Alarm"
                                        HorizontalAlignment="Right"
                                        VerticalAlignment="Bottom"/>
               </Grid>
             </Grid>
             <Border Grid.Row="2" Background="#553D4143"/>
+            <james:UnoLayer Grid.Row="3" LayerName="SocialLayer" HorizontalAlignment="Right"/>
           </Grid>
         </ControlTemplate>
       </Setter.Value>

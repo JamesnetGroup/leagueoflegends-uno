@@ -44,6 +44,7 @@
     <None Remove="Images\wallpaper-singed.png" />
     <None Remove="Themes\Generic.xaml" />
     <None Remove="Themes\RiotPlayButton.xaml" />
+    <None Remove="Themes\Units\RiotIconButton.xaml" />
     <None Remove="Themes\Units\RiotMainIconMenuListBox.xaml" />
     <None Remove="Themes\Units\RiotMainIconMenuListBoxItem.xaml" />
     <None Remove="Themes\Units\RiotMainMenuListBox.xaml" />
@@ -100,6 +101,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Include="Themes\Units\RiotIconButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Units\RiotMainIconMenuListBoxItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -200,5 +205,9 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Units\RiotWallpaper.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotIconButton.xaml" />
   </ItemGroup>
 </Project>

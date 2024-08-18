@@ -6,5 +6,9 @@ public enum WindowControlType
     Minimize,
     Close,
     Settings,
-    Alarm
+    Alarm,
+    AddFolder,
+    AddFriends,
+    Magnify,
+    Option
 }
