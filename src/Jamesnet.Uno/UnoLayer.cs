@@ -1,5 +1,6 @@
 using Jamesnet.Core;
-namespace Jamesnet.Uno.UI.Units;
+
+namespace Jamesnet.Uno;
 
 public class UnoLayer : ContentControl, ILayer
 {

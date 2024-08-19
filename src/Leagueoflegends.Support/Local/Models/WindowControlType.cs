@@ -1,4 +1,4 @@
-namespace Leagueoflegends.Support.Local.Enums;
+namespace Leagueoflegends.Support.Local.Models;
 
 public enum WindowControlType
 {

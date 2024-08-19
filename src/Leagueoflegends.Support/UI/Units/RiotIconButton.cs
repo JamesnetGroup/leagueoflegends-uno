@@ -1,4 +1,4 @@
-using Leagueoflegends.Support.Local.Enums;
+using Leagueoflegends.Support.Local.Models;
 
 namespace Leagueoflegends.Support.UI.Units;
 

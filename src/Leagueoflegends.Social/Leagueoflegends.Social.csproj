@@ -39,11 +39,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Local\ViewModels\" />
-    <Folder Include="Local\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Views\SocialContent.xaml" />
   </ItemGroup>
 

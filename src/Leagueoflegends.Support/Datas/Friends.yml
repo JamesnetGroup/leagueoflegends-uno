@@ -1,0 +1,36 @@
+- name: Drax
+  status: In Game
+  category: GENERAL
+- name: Scott Lang
+  status: In Game
+  category: GENERAL
+- name: Wanda Maximoff
+  status: In Game
+  category: GENERAL
+- name: Bruce Banner
+  status: Champ Select
+  category: GENERAL
+- name: Clint Barton
+  status: Champ Select
+  category: GENERAL
+- name: Gamora
+  status: Champ Select
+  category: GENERAL
+- name: Bucky Barnes
+  status: League+
+  category: GENERAL
+- name: Carol Danvers
+  status: League+
+  category: GENERAL
+- name: Nick Fury
+  status: League+
+  category: GENERAL
+- name: Groot
+  status: League+
+  category: GENERAL
+- name: Loki
+  status: League+
+  category: GENERAL
+- name: Jamesnet214
+  status: Offline
+  category: OFFLINE

@@ -1,19 +1,18 @@
 using Jamesnet.Core;
 
-namespace Jamesnet.Uno.UI.Views;
+namespace Jamesnet.Uno;
 
 public class UnoView : ContentControl, IView
 {
     public UnoView()
     {
         DefaultStyleKey = typeof(UnoView);
+        InitializeViewModel();
         Loaded += OnLoaded;
     }
 
     private void OnLoaded(object sender, RoutedEventArgs e)
     {
-        InitializeViewModel();
-
         if (DataContext is IViewLoadable loadable)
         {
             loadable.Loaded();

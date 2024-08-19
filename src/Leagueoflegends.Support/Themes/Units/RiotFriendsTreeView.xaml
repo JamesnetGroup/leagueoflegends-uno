@@ -4,23 +4,15 @@
   xmlns:cnvts="using:Leagueoflegends.Support.Local.Converters"
   xmlns:units="using:Leagueoflegends.Support.UI.Units">
 
-  <Style TargetType="units:RiotMainMenuListBox">
-    <Setter Property="Foreground" Value="#FFFFFF"/>
+  <Style TargetType="units:RiotFriendsTreeView">
     <Setter Property="Background" Value="Transparent"/>
     <Setter Property="Template">
       <Setter.Value>
-        <ControlTemplate TargetType="units:RiotMainMenuListBox">
+        <ControlTemplate TargetType="units:RiotFriendsTreeView">
           <Grid Background="{TemplateBinding Background}">
-            <ItemsPresenter/>
+            <StackPanel x:Name="PART_ItemsPanel"/>
           </Grid>
         </ControlTemplate>
-      </Setter.Value>
-    </Setter>
-    <Setter Property="ItemsPanel">
-      <Setter.Value>
-        <ItemsPanelTemplate>
-          <StackPanel Orientation="Horizontal"/>
-        </ItemsPanelTemplate>
       </Setter.Value>
     </Setter>
   </Style>

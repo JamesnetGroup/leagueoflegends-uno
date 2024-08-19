@@ -1,4 +1,5 @@
-using Jamesnet.Uno.UI.Views;
+using Jamesnet.Uno;
+
 namespace Leagueoflegends.Main.UI.Views;
 
 public class MainContent : UnoView

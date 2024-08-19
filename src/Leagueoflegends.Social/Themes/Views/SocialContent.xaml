@@ -30,6 +30,7 @@
             <Grid.RowDefinitions>
               <RowDefinition Height="Auto"/>
               <RowDefinition Height="*"/>
+              <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <TextBlock Text="SOCIAL"
                        VerticalAlignment="Center"
@@ -43,6 +44,8 @@
               <based:RiotIconButton Margin="5 10 5 10" ControlType="Option"/>
               <based:RiotIconButton Margin="5 10 5 10" ControlType="Magnify"/>
             </StackPanel>
+            <based:RiotFriendsTreeView Grid.Row="1" ItemsSource="{Binding Friends}" Foreground="Red"/>
+            <TextBlock Grid.Row="2" Text="{Binding Friends}" Foreground="Red"/>
           </Grid>
         </ControlTemplate>
       </Setter.Value>

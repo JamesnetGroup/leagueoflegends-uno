@@ -1,4 +1,4 @@
-﻿namespace Jamesnet.Core;
+namespace Jamesnet.Core;
 
 public class Container : IContainer
 {
@@ -23,6 +23,12 @@ public class Container : IContainer
     {
         var instance = CreateInstance(typeof(TImplementation));
         _registrations[(typeof(TInterface), name)] = () => instance;
+    }
+
+    public void RegisterSingleton<TImplementation>(string name)
+    {
+        var instance = CreateInstance(typeof(TImplementation));
+        _registrations[(typeof(TImplementation), name)] = () => instance;
     }
 
     public void RegisterInstance<TInterface>(TInterface instance)
@@ -56,12 +62,10 @@ public class Container : IContainer
         {
             return creator();
         }
-
         if (!type.IsAbstract && !type.IsInterface)
         {
             return CreateInstance(type);
         }
-
         throw new InvalidOperationException($"Type {type} has not been registered.");
     }
 
@@ -69,7 +73,6 @@ public class Container : IContainer
     {
         var constructors = type.GetConstructors();
         var constructor = constructors.FirstOrDefault(c => c.GetParameters().Length > 0) ?? constructors.First();
-
         var parameters = constructor.GetParameters().Select(p => Resolve(p.ParameterType)).ToArray();
         return constructor.Invoke(parameters);
     }

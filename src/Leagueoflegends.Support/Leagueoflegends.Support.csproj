@@ -44,10 +44,11 @@
     <None Remove="Images\wallpaper-singed.png" />
     <None Remove="Themes\Generic.xaml" />
     <None Remove="Themes\RiotPlayButton.xaml" />
+    <None Remove="Themes\Units\RiotFriendsTreeView.xaml" />
+    <None Remove="Themes\Units\RiotFriendsTreeViewItem.xaml" />
     <None Remove="Themes\Units\RiotIconButton.xaml" />
     <None Remove="Themes\Units\RiotMainIconMenuListBox.xaml" />
     <None Remove="Themes\Units\RiotMainIconMenuListBoxItem.xaml" />
-    <None Remove="Themes\Units\RiotMainMenuListBox.xaml" />
     <None Remove="Themes\Units\RiotMainMenuListBoxItem.xaml" />
     <None Remove="Themes\Units\RiotNoticeButton.xaml" />
     <None Remove="Themes\Units\RiotStatusIndicator.xaml" />
@@ -94,13 +95,14 @@
     <EmbeddedResource Include="Images\blue-essence.png" />
     <EmbeddedResource Include="Images\profile-default.png" />
     <EmbeddedResource Include="Images\wallpaper-rucian.png" />
+    <EmbeddedResource Include="Datas\Friends.yml" />
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Themes\Units\RiotMainMenuListBox.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <Page Include="Themes\Units\RiotFriendsTreeViewItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Units\RiotIconButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -113,7 +115,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\Units\RiotMainMenuListBox.xaml">
+    <Page Include="Themes\Units\RiotFriendsTreeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -209,5 +211,13 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Units\RiotIconButton.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotFriendsTreeView.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotFriendsTreeViewItem.xaml" />
   </ItemGroup>
 </Project>
