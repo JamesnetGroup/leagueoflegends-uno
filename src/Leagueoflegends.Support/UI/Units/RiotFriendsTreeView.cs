@@ -11,6 +11,14 @@ public class RiotFriendsTreeViewItem : RecursiveControlItem
 
     protected override RecursiveControlItem GetContainerForItem()
     {
-        return new RiotFriendsTreeViewItem();
+        return new RiotFriendsUserTreeViewItem();
+    }
+}
+
+public class RiotFriendsUserTreeViewItem : RecursiveControlItem
+{
+    public RiotFriendsUserTreeViewItem()
+    {
+        DefaultStyleKey = typeof(RiotFriendsUserTreeViewItem);
     }
 }

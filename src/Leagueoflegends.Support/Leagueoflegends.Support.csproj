@@ -36,6 +36,7 @@
     <None Remove="Images\blue-essence.png" />
     <None Remove="Images\profile-default.png" />
     <None Remove="Images\rp.png" />
+    <None Remove="Images\thumb-gankplank.png" />
     <None Remove="Images\wallpaper-ezreal.jpg" />
     <None Remove="Images\wallpaper-leona.jpg" />
     <None Remove="Images\wallpaper-maokai.jpg" />
@@ -181,12 +182,14 @@
     <Content Include="Images\blue-essence.png" />
     <Content Include="Images\profile-default.png" />
     <Content Include="Images\rp.png" />
+    <EmbeddedResource Include="Images\thumb-gankplank.png" />
     <Content Include="Images\wallpaper-ezreal.jpg" />
     <Content Include="Images\wallpaper-leona.jpg" />
     <Content Include="Images\wallpaper-maokai.jpg" />
     <Content Include="Images\wallpaper-rucian.png" />
     <Content Include="Images\wallpaper-sena.png" />
     <Content Include="Images\wallpaper-singed.png" />
+    <Content Include="Images\thumb-gankplank.png" />
   </ItemGroup>
 
   <ItemGroup>

@@ -21,4 +21,98 @@
       </Setter.Value>
     </Setter>
   </Style>
+
+  <LinearGradientBrush x:Key="DefaultAvatarBorderBrush" StartPoint="0.5,0" EndPoint="0.5,1">
+    <GradientStop Color="#B79349" Offset="0"/>
+    <GradientStop Color="#957230" Offset="0.5"/>
+    <GradientStop Color="#6C5228" Offset="1"/>
+  </LinearGradientBrush>
+
+  <LinearGradientBrush x:Key="HoverAvatarBorderBrush" StartPoint="0.5,0" EndPoint="0.5,1">
+    <GradientStop Color="#E9DFCB" Offset="0"/>
+    <GradientStop Color="#D9BD81" Offset="0.5"/>
+    <GradientStop Color="#C99D3F" Offset="1"/>
+  </LinearGradientBrush>
+
+  <Style x:Key="CircleFaceStyle" TargetType="Control">
+    <Setter Property="Width" Value="36"/>
+    <Setter Property="Height" Value="36"/>
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="Control">
+          <Grid>
+            <Ellipse Stroke="{TemplateBinding BorderBrush}"  
+                                 StrokeThickness="2"
+                                 Fill="Transparent"/>
+            <Ellipse Margin="3"
+                                 Stroke="#000000"
+                                 StrokeThickness="1">
+              <Ellipse.Fill>
+                <!--<ImageBrush ImageSource="{Binding Source, RelativeSource={RelativeSource Mode=TemplatedParent}}" 
+                                            Stretch="UniformToFill"/>-->
+                <ImageBrush ImageSource="ms-appx:///Leagueoflegends.Support/Images/thumb-gankplank.png" 
+                                            Stretch="UniformToFill"/>
+              </Ellipse.Fill>
+            </Ellipse>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style TargetType="units:RiotFriendsUserTreeViewItem">
+    <Setter Property="Background" Value="Transparent"/>
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="units:RiotFriendsUserTreeViewItem">
+          <Grid>
+            <VisualStateManager.VisualStateGroups>
+              <VisualStateGroup x:Name="CommonStates">
+                <VisualState x:Name="Normal" />
+                <VisualState x:Name="PointerOver">
+                  <VisualState.Setters>
+                    <Setter Target="NameText.Foreground" Value="#F0E6D2" />
+                    <Setter Target="StatusText.Foreground" Value="#FFA09B8C" />
+                    <Setter Target="RootBorder.Background" Value="#11FFFFFF" />
+                    <Setter Target="Avatar.BorderBrush" Value="{StaticResource HoverAvatarBorderBrush}" />
+                  </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Pressed">
+                  <VisualState.Setters>
+                    <Setter Target="NameText.Foreground" Value="#22F0E6D2" />
+                    <Setter Target="Avatar.Opacity" Value="0.4" />
+                  </VisualState.Setters>
+                </VisualState>
+              </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+
+            <Border x:Name="RootBorder" 
+                    Background="{TemplateBinding Background}"
+                    Margin="0,0,10,0">
+              <Grid Margin="10,5,0,5">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="Auto"/>
+                  <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Control x:Name="Avatar" 
+                         Style="{StaticResource CircleFaceStyle}"
+                         BorderBrush="{StaticResource DefaultAvatarBorderBrush}" 
+                         Margin="0,0,2,0"/>
+                <StackPanel Grid.Column="1" Margin="5,0,0,0">
+                  <TextBlock x:Name="NameText" 
+                             Text="{Binding Name}"
+                             Foreground="#A09B8C" 
+                             FontSize="13"/>
+                  <TextBlock x:Name="StatusText"
+                             Text="{Binding Status}"
+                             Foreground="#FF5B5A56" 
+                             FontSize="12"/>
+                </StackPanel>
+              </Grid>
+            </Border>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
 </ResourceDictionary>
