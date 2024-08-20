@@ -1,27 +1,10 @@
 ﻿<ResourceDictionary
   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:cnvts="using:Leagueoflegends.Support.Local.Converters"
   xmlns:units="using:Leagueoflegends.Support.UI.Units">
 
-  <Style TargetType="units:RiotFriendsTreeViewItem">
-    <Setter Property="ItemsBindingPath" Value="Children"/>
-    <Setter Property="Template">
-      <Setter.Value>
-        <ControlTemplate TargetType="units:RiotFriendsTreeViewItem">
-          <Grid Background="Transparent">
-            <Grid.RowDefinitions>
-              <RowDefinition Height="Auto"/>
-              <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Grid x:Name="PART_Root" >
-              <TextBlock Text="{Binding Name}" Foreground="#FFFFFF"/>
-            </Grid>
-            <StackPanel Grid.Row="1" x:Name="PART_ItemsPanel" Margin="10 0 0 0"/>
-          </Grid>
-        </ControlTemplate>
-      </Setter.Value>
-    </Setter>
-  </Style>
+  <cnvts:UserToThumbnailConverter x:Key="UserToThumbnailConverter"/>
 
   <LinearGradientBrush x:Key="DefaultAvatarBorderBrush" StartPoint="0.5,0" EndPoint="0.5,1">
     <GradientStop Color="#B79349" Offset="0"/>
@@ -36,23 +19,17 @@
   </LinearGradientBrush>
 
   <Style x:Key="CircleFaceStyle" TargetType="Control">
+    <Setter Property="BorderBrush" Value="{StaticResource DefaultAvatarBorderBrush}"/>
     <Setter Property="Width" Value="36"/>
     <Setter Property="Height" Value="36"/>
     <Setter Property="Template">
       <Setter.Value>
         <ControlTemplate TargetType="Control">
           <Grid>
-            <Ellipse Stroke="{TemplateBinding BorderBrush}"  
-                                 StrokeThickness="2"
-                                 Fill="Transparent"/>
-            <Ellipse Margin="3"
-                                 Stroke="#000000"
-                                 StrokeThickness="1">
+            <Ellipse Stroke="{TemplateBinding BorderBrush}" StrokeThickness="2" Fill="Transparent"/>
+            <Ellipse Margin="3" Stroke="#000000" StrokeThickness="1">
               <Ellipse.Fill>
-                <!--<ImageBrush ImageSource="{Binding Source, RelativeSource={RelativeSource Mode=TemplatedParent}}" 
-                                            Stretch="UniformToFill"/>-->
-                <ImageBrush ImageSource="ms-appx:///Leagueoflegends.Support/Images/thumb-gankplank.png" 
-                                            Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="{Binding Seq, Converter={StaticResource UserToThumbnailConverter}}" Stretch="UniformToFill"/>
               </Ellipse.Fill>
             </Ellipse>
           </Grid>
@@ -61,11 +38,11 @@
     </Setter>
   </Style>
 
-  <Style TargetType="units:RiotFriendsUserTreeViewItem">
+  <Style TargetType="units:RiotFriendItemControl">
     <Setter Property="Background" Value="Transparent"/>
     <Setter Property="Template">
       <Setter.Value>
-        <ControlTemplate TargetType="units:RiotFriendsUserTreeViewItem">
+        <ControlTemplate TargetType="units:RiotFriendItemControl">
           <Grid Background="Transparent">
             <VisualStateManager.VisualStateGroups>
               <VisualStateGroup x:Name="CommonStates">
@@ -87,27 +64,16 @@
               </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
 
-            <Border x:Name="RootBorder" 
-                    Background="{TemplateBinding Background}"
-                    Margin="0,0,10,0">
+            <Border x:Name="RootBorder" Background="{TemplateBinding Background}" Margin="0,0,10,0">
               <Grid Margin="10,5,0,5">
                 <Grid.ColumnDefinitions>
                   <ColumnDefinition Width="Auto"/>
                   <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Control x:Name="Avatar" 
-                         Style="{StaticResource CircleFaceStyle}"
-                         BorderBrush="{StaticResource DefaultAvatarBorderBrush}" 
-                         Margin="0,0,2,0"/>
+                <Control x:Name="Avatar" Style="{StaticResource CircleFaceStyle}" Margin="0,0,2,0"/>
                 <StackPanel Grid.Column="1" Margin="5,0,0,0">
-                  <TextBlock x:Name="NameText" 
-                             Text="{Binding Name}"
-                             Foreground="#A09B8C" 
-                             FontSize="13"/>
-                  <TextBlock x:Name="StatusText"
-                             Text="{Binding Status}"
-                             Foreground="#FF5B5A56" 
-                             FontSize="12"/>
+                  <TextBlock x:Name="NameText"  Text="{Binding Name}" Foreground="#A09B8C" FontSize="13"/>
+                  <TextBlock x:Name="StatusText" Text="{Binding Status}" Foreground="#FF5B5A56" FontSize="12"/>
                 </StackPanel>
               </Grid>
             </Border>

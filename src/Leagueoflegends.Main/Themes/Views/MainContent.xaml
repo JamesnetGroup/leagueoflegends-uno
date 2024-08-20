@@ -33,16 +33,16 @@
               <based:RiotPlayButton Content="Play" Margin="25 20 20 20"/>
               <based:RiotNoticeButton Grid.Column="1"/>
               <StackPanel Orientation="Horizontal" Grid.Column="2">
-                <based:RiotMainMenuListBoxItem Command="{Binding SelectMenuCommand}" GroupName="MainMenu" CommandParameter="HOME" MenuName="HOME" IsChecked="True"/>
-                <based:RiotMainMenuListBoxItem Command="{Binding SelectMenuCommand}" GroupName="MainMenu" CommandParameter="TFT" MenuName="TFT"/>
-                <based:RiotMainMenuListBoxItem Command="{Binding SelectMenuCommand}" GroupName="MainMenu" CommandParameter="CLASH" MenuName="CLASH"/>
+                <based:RiotMainMenu Command="{Binding SelectMenuCommand}" GroupName="MainMenu" CommandParameter="HOME" MenuName="HOME" IsChecked="True"/>
+                <based:RiotMainMenu Command="{Binding SelectMenuCommand}" GroupName="MainMenu" CommandParameter="TFT" MenuName="TFT"/>
+                <based:RiotMainMenu Command="{Binding SelectMenuCommand}" GroupName="MainMenu" CommandParameter="CLASH" MenuName="CLASH"/>
               </StackPanel>
               <StackPanel Orientation="Horizontal" Grid.Column="4">
-                <based:RiotMainIconMenuListBoxItem Command="{Binding SelectMenuCommand}" GroupName="MainMenu" CommandParameter="PROFILE" MenuIcon="Profile"/>
-                <based:RiotMainIconMenuListBoxItem Command="{Binding SelectMenuCommand}" GroupName="MainMenu" CommandParameter="COLLECTION" MenuIcon="Collection"/>
-                <based:RiotMainIconMenuListBoxItem Command="{Binding SelectMenuCommand}" GroupName="MainMenu" CommandParameter="LOOT" MenuIcon="Loot"/>
-                <based:RiotMainIconMenuListBoxItem Command="{Binding SelectMenuCommand}" GroupName="MainMenu" CommandParameter="SHOP" MenuIcon="Shop"/>
-                <based:RiotMainIconMenuListBoxItem Command="{Binding SelectMenuCommand}" GroupName="MainMenu" CommandParameter="STORE" MenuIcon="Store"/>
+                <based:RiotMainIconMenu Command="{Binding SelectMenuCommand}" GroupName="MainMenu" CommandParameter="PROFILE" MenuIcon="Profile"/>
+                <based:RiotMainIconMenu Command="{Binding SelectMenuCommand}" GroupName="MainMenu" CommandParameter="COLLECTION" MenuIcon="Collection"/>
+                <based:RiotMainIconMenu Command="{Binding SelectMenuCommand}" GroupName="MainMenu" CommandParameter="LOOT" MenuIcon="Loot"/>
+                <based:RiotMainIconMenu Command="{Binding SelectMenuCommand}" GroupName="MainMenu" CommandParameter="SHOP" MenuIcon="Shop"/>
+                <based:RiotMainIconMenu Command="{Binding SelectMenuCommand}" GroupName="MainMenu" CommandParameter="STORE" MenuIcon="Store"/>
               </StackPanel>
               <based:VerticalMainMenuSeparator Grid.Column="5"/>
               <StackPanel Grid.Column="6"

@@ -1,6 +1,5 @@
 using Jamesnet.Core;
 using Leagueoflegends.Support.Local.Models;
-using System.Collections.ObjectModel;
 namespace Leagueoflegends.Social.Local.ViewModels;
 
 public class SocialContentViewModel : ViewModelBase, IViewLoadable

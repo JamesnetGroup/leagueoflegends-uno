@@ -36,7 +36,18 @@
     <None Remove="Images\blue-essence.png" />
     <None Remove="Images\profile-default.png" />
     <None Remove="Images\rp.png" />
-    <None Remove="Images\thumb-gankplank.png" />
+    <None Remove="Images\thumb-1.png" />
+    <None Remove="Images\thumb-10.png" />
+    <None Remove="Images\thumb-11.png" />
+    <None Remove="Images\thumb-12.png" />
+    <None Remove="Images\thumb-2.png" />
+    <None Remove="Images\thumb-3.png" />
+    <None Remove="Images\thumb-4.png" />
+    <None Remove="Images\thumb-5.png" />
+    <None Remove="Images\thumb-6.png" />
+    <None Remove="Images\thumb-7.png" />
+    <None Remove="Images\thumb-8.png" />
+    <None Remove="Images\thumb-9.png" />
     <None Remove="Images\wallpaper-ezreal.jpg" />
     <None Remove="Images\wallpaper-leona.jpg" />
     <None Remove="Images\wallpaper-maokai.jpg" />
@@ -45,12 +56,13 @@
     <None Remove="Images\wallpaper-singed.png" />
     <None Remove="Themes\Generic.xaml" />
     <None Remove="Themes\RiotPlayButton.xaml" />
-    <None Remove="Themes\Units\RiotFriendsTreeView.xaml" />
-    <None Remove="Themes\Units\RiotFriendsTreeViewItem.xaml" />
+    <None Remove="Themes\Units\RiotFoldableIcon.xaml" />
+    <None Remove="Themes\Units\RiotFriendGroupItem.xaml" />
+    <None Remove="Themes\Units\RiotFriendItemControl.xaml" />
+    <None Remove="Themes\Units\RiotFriendListBox.xaml" />
     <None Remove="Themes\Units\RiotIconButton.xaml" />
-    <None Remove="Themes\Units\RiotMainIconMenuListBox.xaml" />
-    <None Remove="Themes\Units\RiotMainIconMenuListBoxItem.xaml" />
-    <None Remove="Themes\Units\RiotMainMenuListBoxItem.xaml" />
+    <None Remove="Themes\Units\RiotMainIconMenu.xaml" />
+    <None Remove="Themes\Units\RiotMainMenu.xaml" />
     <None Remove="Themes\Units\RiotNoticeButton.xaml" />
     <None Remove="Themes\Units\RiotStatusIndicator.xaml" />
     <None Remove="Themes\Units\RiotUserAvatar.xaml" />
@@ -100,7 +112,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Page Include="Themes\Units\RiotFriendsTreeViewItem.xaml">
+    <Page Include="Themes\Units\RiotFoldableIcon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotFriendItemControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotFriendGroupItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -108,19 +128,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\Units\RiotMainIconMenuListBoxItem.xaml">
+    <Page Include="Themes\Units\RiotMainIconMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\Units\RiotMainIconMenuListBox.xaml">
+    <Page Include="Themes\Units\RiotFriendListBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\Units\RiotFriendsTreeView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Themes\Units\RiotMainMenuListBoxItem.xaml">
+    <Page Include="Themes\Units\RiotMainMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -155,19 +171,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Themes\Units\RiotMainMenuListBoxItem.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Units\RiotNoticeButton.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Themes\Units\RiotMainIconMenuListBoxItem.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Themes\Units\RiotMainIconMenuListBox.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -182,14 +186,12 @@
     <Content Include="Images\blue-essence.png" />
     <Content Include="Images\profile-default.png" />
     <Content Include="Images\rp.png" />
-    <EmbeddedResource Include="Images\thumb-gankplank.png" />
     <Content Include="Images\wallpaper-ezreal.jpg" />
     <Content Include="Images\wallpaper-leona.jpg" />
     <Content Include="Images\wallpaper-maokai.jpg" />
     <Content Include="Images\wallpaper-rucian.png" />
     <Content Include="Images\wallpaper-sena.png" />
     <Content Include="Images\wallpaper-singed.png" />
-    <Content Include="Images\thumb-gankplank.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -217,10 +219,26 @@
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Themes\Units\RiotFriendsTreeView.xaml" />
+    <UpToDateCheckInput Remove="Themes\Units\RiotFriendListBox.xaml" />
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Themes\Units\RiotFriendsTreeViewItem.xaml" />
+    <UpToDateCheckInput Remove="Themes\Units\RiotFriendGroupItem.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotFriendItemControl.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotMainMenu.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotMainIconMenu.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotFoldableIcon.xaml" />
   </ItemGroup>
 </Project>

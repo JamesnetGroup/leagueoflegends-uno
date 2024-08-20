@@ -1,4 +1,3 @@
-using System.Reflection;
 using Jamesnet.Core;
 using Leagueoflegends.Support.Local.Models;
 namespace Leagueoflegends.Social.Local.Loaders;
@@ -14,6 +13,7 @@ public class FriendsLoader : BaseResourceLoader<Friend, List<FriendCategory>>, I
     {
         return rawData.Select(item => new Friend
         {
+            Seq = item.GetValue<int>("seq"),
             Name = item.GetValue<string>("name"),
             Status = item.GetValue<string>("status"),
             Category = item.GetValue<string>("category")

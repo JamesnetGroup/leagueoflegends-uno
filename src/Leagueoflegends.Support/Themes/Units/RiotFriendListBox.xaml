@@ -4,11 +4,11 @@
   xmlns:cnvts="using:Leagueoflegends.Support.Local.Converters"
   xmlns:units="using:Leagueoflegends.Support.UI.Units">
 
-  <Style TargetType="units:RiotFriendsTreeView">
+  <Style TargetType="units:RiotFriendListBox">
     <Setter Property="Background" Value="Transparent"/>
     <Setter Property="Template">
       <Setter.Value>
-        <ControlTemplate TargetType="units:RiotFriendsTreeView">
+        <ControlTemplate TargetType="units:RiotFriendListBox">
           <Grid Background="{TemplateBinding Background}">
             <ItemsPresenter/>
           </Grid>
