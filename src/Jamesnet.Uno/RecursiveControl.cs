@@ -46,8 +46,8 @@ public class RecursiveControl : Control
         }
     }
 
-    protected virtual RecursiveControlItem GetContainerForItem()
+    protected virtual RecursiveItem GetContainerForItem()
     {
-        return new RecursiveControlItem();
+        return new RecursiveItem();
     }
 }

@@ -3,11 +3,11 @@ using Microsoft.UI.Xaml.Input;
 
 namespace Jamesnet.Uno;
 
-public class RecursiveControlItem : Control
+public class RecursiveItem : ContentControl
 {
-    public RecursiveControlItem()
+    public RecursiveItem()
     {
-        DefaultStyleKey = typeof(RecursiveControlItem);
+        DefaultStyleKey = typeof(RecursiveItem);
     }
 
     public object ItemsSource
@@ -17,7 +17,7 @@ public class RecursiveControlItem : Control
     }
 
     public static readonly DependencyProperty ItemsSourceProperty =
-        DependencyProperty.Register(nameof(ItemsSource), typeof(object), typeof(RecursiveControlItem), new PropertyMetadata(null, OnItemsSourceChanged));
+        DependencyProperty.Register(nameof(ItemsSource), typeof(object), typeof(RecursiveItem), new PropertyMetadata(null, OnItemsSourceChanged));
 
     public string ItemsBindingPath
     {
@@ -26,11 +26,11 @@ public class RecursiveControlItem : Control
     }
 
     public static readonly DependencyProperty ItemsBindingPathProperty =
-        DependencyProperty.Register(nameof(ItemsBindingPath), typeof(string), typeof(RecursiveControlItem), new PropertyMetadata(null));
+        DependencyProperty.Register(nameof(ItemsBindingPath), typeof(string), typeof(RecursiveItem), new PropertyMetadata(null));
 
     private static void OnItemsSourceChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
     {
-        ((RecursiveControlItem)d).GenerateItems();
+        ((RecursiveItem)d).GenerateItems();
     }
 
     public bool IsExpanded
@@ -40,11 +40,11 @@ public class RecursiveControlItem : Control
     }
 
     public static readonly DependencyProperty IsExpandedProperty =
-        DependencyProperty.Register(nameof(IsExpanded), typeof(bool), typeof(RecursiveControlItem), new PropertyMetadata(true, OnIsExpandedChanged));
+        DependencyProperty.Register(nameof(IsExpanded), typeof(bool), typeof(RecursiveItem), new PropertyMetadata(true, OnIsExpandedChanged));
 
     private static void OnIsExpandedChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
     {
-        ((RecursiveControlItem)d).UpdateChildrenVisibility();
+        ((RecursiveItem)d).UpdateChildrenVisibility();
     }
 
     private Panel _itemsPanel;
@@ -93,16 +93,19 @@ public class RecursiveControlItem : Control
 
         foreach (var item in ItemsSource as IEnumerable)
         {
-            var container = GetContainerForItem();
-            container.DataContext = item;
-            container.ItemsBindingPath = ItemsBindingPath;
-            _itemsPanel.Children.Add(container);
+            var container = GetContainerForItemOverride();
+
+            if (container is FrameworkElement fe)
+            {
+                fe.DataContext = item;
+                _itemsPanel.Children.Add(fe);
+            }
         }
     }
 
-    protected virtual RecursiveControlItem GetContainerForItem()
+    protected virtual DependencyObject GetContainerForItemOverride()
     {
-        return new RecursiveControlItem();
+        return new RecursiveItem();
     }
 
     private void UpdateChildrenVisibility()

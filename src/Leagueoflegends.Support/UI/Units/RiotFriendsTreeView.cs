@@ -2,23 +2,15 @@ using Jamesnet.Uno;
 
 namespace Leagueoflegends.Support.UI.Units;
 
-public class RiotFriendsTreeViewItem : RecursiveControlItem
+public class RiotFriendsTreeView : ListBox
 {
-    public RiotFriendsTreeViewItem()
+    public RiotFriendsTreeView()
     {
-        DefaultStyleKey = typeof(RiotFriendsTreeViewItem);
+        DefaultStyleKey = typeof(RiotFriendsTreeView);
     }
 
-    protected override RecursiveControlItem GetContainerForItem()
+    protected override DependencyObject GetContainerForItemOverride()
     {
-        return new RiotFriendsUserTreeViewItem();
-    }
-}
-
-public class RiotFriendsUserTreeViewItem : RecursiveControlItem
-{
-    public RiotFriendsUserTreeViewItem()
-    {
-        DefaultStyleKey = typeof(RiotFriendsUserTreeViewItem);
+        return new RiotFriendsTreeViewItem();
     }
 }

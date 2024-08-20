@@ -10,7 +10,7 @@
       <Setter.Value>
         <ControlTemplate TargetType="units:RiotFriendsTreeView">
           <Grid Background="{TemplateBinding Background}">
-            <StackPanel x:Name="PART_ItemsPanel"/>
+            <ItemsPresenter/>
           </Grid>
         </ControlTemplate>
       </Setter.Value>

@@ -23,7 +23,7 @@ public class FriendsLoader : BaseResourceLoader<Friend, List<FriendCategory>>, I
     protected override List<FriendCategory> OrganizeItems(IEnumerable<Friend> friends)
     {
         return friends.GroupBy(f => f.Category)
-                      .Select(g => new FriendCategory { Name = g.Key, Friends = g.ToList() })
+                      .Select(g => new FriendCategory { Name = g.Key, Children = g.ToList() })
                       .ToList();
     }
 }
