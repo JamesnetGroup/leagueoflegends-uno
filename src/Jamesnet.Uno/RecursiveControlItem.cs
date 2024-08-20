@@ -39,8 +39,7 @@ public class RecursiveItem : ContentControl
         set => SetValue(IsExpandedProperty, value);
     }
 
-    public static readonly DependencyProperty IsExpandedProperty =
-        DependencyProperty.Register(nameof(IsExpanded), typeof(bool), typeof(RecursiveItem), new PropertyMetadata(true, OnIsExpandedChanged));
+    public static readonly DependencyProperty IsExpandedProperty = DependencyProperty.Register(nameof(IsExpanded), typeof(bool), typeof(RecursiveItem), new PropertyMetadata(true, OnIsExpandedChanged));
 
     private static void OnIsExpandedChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
     {
@@ -55,17 +54,6 @@ public class RecursiveItem : ContentControl
         _itemsPanel = GetTemplateChild("PART_ItemsPanel") as Panel;
         UpdateChildrenVisibility();
         SetItemsSourceFromDataContext();
-
-        if (GetTemplateChild("PART_Root") is FrameworkElement root)
-        {
-            root.DoubleTapped += OnDoubleTapped;
-        }
-    }
-
-    private void OnDoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
-    {
-        IsExpanded = !IsExpanded;
-        e.Handled = true;
     }
 
     private void SetItemsSourceFromDataContext()

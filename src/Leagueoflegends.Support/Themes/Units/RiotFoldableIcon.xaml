@@ -60,7 +60,10 @@
                 </VisualState>
               </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
-            <Path x:Name="path" Style="{StaticResource ExpandArrow}"/>
+            <StackPanel Orientation="Horizontal">
+              <Path x:Name="path" Style="{StaticResource ExpandArrow}" VerticalAlignment="Center"/>
+              <ContentPresenter Content="{TemplateBinding Content}" VerticalAlignment="Center"/>
+            </StackPanel>
           </Grid>
         </ControlTemplate>
       </Setter.Value>
