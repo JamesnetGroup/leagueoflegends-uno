@@ -23,7 +23,7 @@
                 <TextBlock Text="{Binding Name}" FontWeight="Bold" Margin="5 0 0 0"/>
               </units:RiotFoldableIcon>
             </Grid>
-            <StackPanel Grid.Row="1" x:Name="PART_ItemsPanel" Margin="10 4 0 0"/>
+            <StackPanel Grid.Row="1" x:Name="PART_ItemsPanel" Margin="0 4 0 0"/>
           </Grid>
         </ControlTemplate>
       </Setter.Value>

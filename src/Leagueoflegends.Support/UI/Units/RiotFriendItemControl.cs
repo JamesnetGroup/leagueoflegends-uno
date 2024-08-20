@@ -1,6 +1,6 @@
-﻿namespace Leagueoflegends.Support.UI.Units;
+namespace Leagueoflegends.Support.UI.Units;
 
-public class RiotFriendItemControl : ContentControl
+public class RiotFriendItemControl : RadioButton
 {
     public RiotFriendItemControl()
     {
