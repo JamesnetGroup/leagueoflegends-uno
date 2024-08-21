@@ -9,13 +9,14 @@
     <Setter Property="HorizontalScrollMode" Value="Auto" />
     <Setter Property="VerticalScrollMode" Value="Auto" />
     <Setter Property="ZoomMode" Value="Disabled" />
-    <Setter Property="IsTabStop" Value="False" />
+    <Setter Property="Background" Value="Transparent" />
     <Setter Property="Template">
       <Setter.Value>
         <ControlTemplate TargetType="units:RiotScrollViewer">
-          <Border BorderBrush="{TemplateBinding BorderBrush}" 
-                            BorderThickness="{TemplateBinding BorderThickness}" 
-                            Background="{TemplateBinding Background}">
+          <Border
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{TemplateBinding CornerRadius}">
             <VisualStateManager.VisualStateGroups>
               <VisualStateGroup x:Name="ScrollingIndicatorStates">
                 <VisualState x:Name="NoIndicator" />
@@ -42,7 +43,7 @@
               </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
 
-            <Grid Background="{TemplateBinding Background}" x:Name="Root">
+            <Grid Background="{TemplateBinding Background}">
               <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
@@ -52,56 +53,74 @@
                 <RowDefinition Height="Auto" />
               </Grid.RowDefinitions>
 
-              <ScrollContentPresenter x:Name="ScrollContentPresenter" 
-                                                    Grid.RowSpan="2" 
-                                                    Grid.ColumnSpan="2"
-                                                    Content="{TemplateBinding Content}"
-                                                    Margin="{TemplateBinding Padding}" />
+              <ScrollContentPresenter
+                                x:Name="ScrollContentPresenter"
+                                Grid.RowSpan="2"
+                                Grid.ColumnSpan="2"
+                                Content="{TemplateBinding Content}"
+                                ContentTemplate="{TemplateBinding ContentTemplate}"
+                                Margin="{TemplateBinding Padding}" />
 
-              <ScrollBar x:Name="VerticalScrollBar"
-                                       Grid.Column="1"
-                                       IsTabStop="False"
-                                       Maximum="{TemplateBinding ScrollableHeight}"
-                                       Orientation="Vertical"
-                                       Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"
-                                       Value="{TemplateBinding VerticalOffset}"
-                                       ViewportSize="{TemplateBinding ViewportHeight}"
-                                       HorizontalAlignment="Right"
-                                       Width="8">
-                <ScrollBar.Style>
-                  <Style TargetType="ScrollBar">
-                    <Setter Property="Background" Value="#785A28" />
-                    <Setter Property="Foreground" Value="#CDBE91" />
-                  </Style>
-                </ScrollBar.Style>
-              </ScrollBar>
+              <ScrollBar
+                                x:Name="VerticalScrollBar"
+                                Grid.Column="1"
+                                Grid.Row="0"
+                                Orientation="Vertical"
+                                ViewportSize="{TemplateBinding ViewportHeight}"
+                                Maximum="{TemplateBinding ScrollableHeight}"
+                                Value="{Binding VerticalOffset, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"
+                                Style="{StaticResource RiotVerticalScrollBarStyle}" />
 
-              <ScrollBar x:Name="HorizontalScrollBar"
-                                       Grid.Row="1"
-                                       IsTabStop="False"
-                                       Maximum="{TemplateBinding ScrollableWidth}"
-                                       Orientation="Horizontal"
-                                       Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"
-                                       Value="{TemplateBinding HorizontalOffset}"
-                                       ViewportSize="{TemplateBinding ViewportWidth}"
-                                       VerticalAlignment="Bottom"
-                                       Height="8">
-                <ScrollBar.Style>
-                  <Style TargetType="ScrollBar">
-                    <Setter Property="Background" Value="#785A28" />
-                    <Setter Property="Foreground" Value="#CDBE91" />
-                  </Style>
-                </ScrollBar.Style>
-              </ScrollBar>
+              <ScrollBar
+                                x:Name="HorizontalScrollBar"
+                                Grid.Column="0"
+                                Grid.Row="1"
+                                Orientation="Horizontal"
+                                ViewportSize="{TemplateBinding ViewportWidth}"
+                                Maximum="{TemplateBinding ScrollableWidth}"
+                                Value="{Binding HorizontalOffset, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"
+                                Style="{StaticResource RiotHorizontalScrollBarStyle}" />
 
-              <Border x:Name="ScrollBarSeparator"
-                                    Grid.Row="1"
-                                    Grid.Column="1"
-                                    Background="{ThemeResource ScrollBarSeparatorBackground}" />
+              <Border
+                                x:Name="ScrollBarSeparator"
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Background="{ThemeResource ScrollBarSeparatorBackground}" />
             </Grid>
           </Border>
         </ControlTemplate>
       </Setter.Value>
     </Setter>
+  </Style>
+
+  <Style x:Key="RiotScrollBarStyle" TargetType="ScrollBar">
+    <Setter Property="Background" Value="#785A28" />
+    <Setter Property="Foreground" Value="#CDBE91" />
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="ScrollBar">
+          <Grid x:Name="Root">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="*" />
+              <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Rectangle x:Name="TrackRect" Fill="{TemplateBinding Background}" Grid.Row="1" />
+            <Rectangle x:Name="ThumbRect" Fill="{TemplateBinding Foreground}" Grid.Row="1" />
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style x:Key="RiotVerticalScrollBarStyle" TargetType="ScrollBar" BasedOn="{StaticResource RiotScrollBarStyle}">
+    <Setter Property="Width" Value="8" />
+  </Style>
+
+  <Style x:Key="RiotHorizontalScrollBarStyle" TargetType="ScrollBar" BasedOn="{StaticResource RiotScrollBarStyle}">
+    <Setter Property="Height" Value="8" />
   </Style>
 </ResourceDictionary>

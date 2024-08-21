@@ -10,9 +10,9 @@
       <Setter.Value>
         <ControlTemplate TargetType="units:RiotFriendListBox">
           <Grid Background="{TemplateBinding Background}">
-            <units:RiotScrollViewer>
+            <ScrollViewer>
               <ItemsPresenter/>
-            </units:RiotScrollViewer>
+            </ScrollViewer>
           </Grid>
         </ControlTemplate>
       </Setter.Value>
