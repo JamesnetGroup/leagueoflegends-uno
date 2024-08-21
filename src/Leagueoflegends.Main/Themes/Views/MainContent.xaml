@@ -81,7 +81,14 @@
               </Grid>
             </Grid>
             <Border Grid.Row="2" Background="#553D4143"/>
-            <james:UnoLayer Grid.Row="3" LayerName="SocialLayer" HorizontalAlignment="Right"/>
+            <Grid Grid.Row="3">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+              </Grid.ColumnDefinitions>
+              <james:UnoLayer Grid.Column="0" LayerName="ContentLayer"/>
+              <james:UnoLayer Grid.Column="1" LayerName="SocialLayer"/>
+            </Grid>
           </Grid>
         </ControlTemplate>
       </Setter.Value>

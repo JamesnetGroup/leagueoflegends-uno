@@ -1,6 +1,6 @@
 <Project Sdk="Uno.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net8.0-desktop;net8.0-browserwasm</TargetFrameworks>
+    <TargetFrameworks>net8.0-desktop</TargetFrameworks>
     <UnoSingleProject>true</UnoSingleProject>
     <OutputType>Library</OutputType>
     <!-- Ensures the .xr.xml files are generated in a proper layout folder -->

@@ -21,7 +21,7 @@
     <!--
     If you encounter this error message:
 
-      error NETSDK1148: A referenced assembly was compiled using a newer version of Microsoft.Windows.SDK.NET.dll.
+      error NETSDK1148: A referenced assembly was compiled using a newer version of MicrosofUt.Windows.SDK.NET.dll.
       Please update to a newer .NET SDK in order to reference this assembly.
 
     This means that the two packages below must be aligned with the "build" version number of
@@ -34,15 +34,19 @@
 
   <ItemGroup>
     <None Remove="Themes\Generic.xaml" />
-    <None Remove="Themes\Views\SocialContent.xaml" />
+    <None Remove="Themes\Views\TftContent.xaml" />
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Themes\Views\SocialContent.xaml" />
+    <ProjectReference Include="..\Jamesnet.Uno\Jamesnet.Uno.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Page Update="Themes\Views\SocialContent.xaml">
+    <UpToDateCheckInput Remove="Themes\Views\TftContent.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Themes\Views\TftContent.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
@@ -52,13 +56,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Page Include="Themes\Generic.xaml">
+    <Page Update="Themes\Generic.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Leagueoflegends.Support\Leagueoflegends.Support.csproj" />
   </ItemGroup>
 </Project>

@@ -34,17 +34,7 @@
 
   <ItemGroup>
     <None Remove="Themes\Generic.xaml" />
-    <None Remove="Themes\Views\SocialContent.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Themes\Views\SocialContent.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Page Update="Themes\Views\SocialContent.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <None Remove="Themes\Views\HomeContent.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -52,13 +42,24 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Page Include="Themes\Generic.xaml">
+    <ProjectReference Include="..\Jamesnet.Uno\Jamesnet.Uno.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Themes\Generic.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Leagueoflegends.Support\Leagueoflegends.Support.csproj" />
+    <UpToDateCheckInput Remove="Themes\Views\HomeContent.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="Themes\Views\HomeContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 </Project>

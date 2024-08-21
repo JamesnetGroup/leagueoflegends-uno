@@ -10,7 +10,7 @@
       <Setter.Value>
         <ControlTemplate TargetType="units:RiotFriendListBox">
           <Grid Background="{TemplateBinding Background}">
-            <ScrollViewer>
+            <ScrollViewer VerticalScrollBarVisibility="Hidden">
               <ItemsPresenter/>
             </ScrollViewer>
           </Grid>
