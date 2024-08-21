@@ -11,40 +11,69 @@
     <GradientStop Color="#448B6811" Offset="1"/>
   </LinearGradientBrush>
 
-  <Style TargetType="units:RiotFriendItemControl">
+  <Style TargetType="units:RiotMainMenu">
     <Setter Property="Background" Value="Transparent"/>
+    <Setter Property="Foreground" Value="#CDBE91"/>
+    <Setter Property="Padding" Value="15,28"/>
+    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+    <Setter Property="VerticalContentAlignment" Value="Center"/>
     <Setter Property="Template">
       <Setter.Value>
-        <ControlTemplate TargetType="units:RiotFriendItemControl">
-          <Grid Background="{TemplateBinding Background}">
+        <ControlTemplate TargetType="units:RiotMainMenu">
+          <Grid>
             <VisualStateManager.VisualStateGroups>
               <VisualStateGroup x:Name="CommonStates">
                 <VisualState x:Name="Normal"/>
                 <VisualState x:Name="PointerOver">
                   <VisualState.Setters>
-                    <Setter Target="HoverRect.Fill" Value="#11FFFFFF"/>
-                    <Setter Target="NameText.Foreground" Value="#F0E6D2"/>
-                    <Setter Target="StatusText.Foreground" Value="#FFA09B8C"/>
-                    <Setter Target="Avatar.BorderBrush" Value="{StaticResource HoverAvatarBorderBrush}"/>
+                    <Setter Target="CheckedRect.Fill" Value="Transparent"/>
+                    <Setter Target="PointerOverRect.Fill" Value="{StaticResource CheckedBackground}"/>
+                  </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Pressed">
+                  <VisualState.Setters>
+                    <Setter Target="PointerOverRect.Fill" Value="{StaticResource CheckedBackground}"/>
+                    <Setter Target="ContentPresenter.Foreground" Value="#FFFCF1DC"/>
+                  </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Disabled"/>
+              </VisualStateGroup>
+              <VisualStateGroup x:Name="CheckStates">
+                <VisualState x:Name="Checked">
+                  <VisualState.Setters>
+                    <Setter Target="PointerOverRect.Fill" Value="Transparent"/>
+                    <Setter Target="CheckedRect.Fill" Value="{StaticResource CheckedBackground}"/>
+                    <Setter Target="ContentPresenter.Foreground" Value="#FFFFFF"/>
+                    <Setter Target="SelectionImage.Visibility" Value="Visible"/>
+                  </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Unchecked">
+                  <VisualState.Setters>
+                    <Setter Target="CheckedRect.Fill" Value="Transparent"/>
+                    <Setter Target="ContentPresenter.Foreground" Value="#CDBE91"/>
+                    <Setter Target="SelectionImage.Visibility" Value="Collapsed"/>
                   </VisualState.Setters>
                 </VisualState>
               </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
-
-            <Rectangle x:Name="HoverRect" 
-                               Fill="Transparent"/>
-
-            <Grid Margin="10,5,10,5">
-              <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-              </Grid.ColumnDefinitions>
-              <Control x:Name="Avatar" Style="{StaticResource CircleFaceStyle}" Margin="0,0,2,0"/>
-              <StackPanel Grid.Column="1" Margin="5,0,0,0">
-                <TextBlock x:Name="NameText" Text="{Binding Name}" Foreground="#A09B8C" FontSize="13"/>
-                <TextBlock x:Name="StatusText" Text="{Binding Status}" Foreground="#FF5B5A56" FontSize="12"/>
-              </StackPanel>
-            </Grid>
+            <Rectangle x:Name="CheckedRect" 
+                       Fill="Transparent"/>
+            <Rectangle x:Name="PointerOverRect" 
+                       Fill="Transparent"/>
+            <Image x:Name="SelectionImage"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Center"
+                   Source="ms-appx:///Leagueoflegends.Support/Images/menu-selection.png"
+                   Visibility="Collapsed"
+                   Width="28"
+                   Height="15"/>
+            <TextBlock x:Name="ContentPresenter"
+                       Text="{TemplateBinding MenuName}"
+                       HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                       VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                       Margin="{TemplateBinding Padding}"
+                       FontSize="15"
+                       FontWeight="Bold"/>
           </Grid>
         </ControlTemplate>
       </Setter.Value>

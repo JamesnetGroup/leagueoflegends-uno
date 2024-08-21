@@ -64,6 +64,7 @@
     <None Remove="Themes\Units\RiotMainIconMenu.xaml" />
     <None Remove="Themes\Units\RiotMainMenu.xaml" />
     <None Remove="Themes\Units\RiotNoticeButton.xaml" />
+    <None Remove="Themes\Units\RiotScrollViewer.xaml" />
     <None Remove="Themes\Units\RiotStatusIndicator.xaml" />
     <None Remove="Themes\Units\RiotUserAvatar.xaml" />
     <None Remove="Themes\Units\RIotUserDisplayStatus.xaml" />
@@ -141,6 +142,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Units\RiotNoticeButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotScrollViewer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -240,5 +245,9 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Units\RiotFoldableIcon.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotScrollViewer.xaml" />
   </ItemGroup>
 </Project>
