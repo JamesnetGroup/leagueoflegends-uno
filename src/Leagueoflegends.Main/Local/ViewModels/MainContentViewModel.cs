@@ -1,49 +1,31 @@
 using Jamesnet.Core;
+using Leagueoflegends.Support.Local.Services;
 
-namespace Leagueoflegends.Main.Local.ViewModel;
+namespace Leagueoflegends.Main.Local.ViewModels;
 
 public class MainContentViewModel : ViewModelBase, IViewLoadable
 {
-    private readonly IContainer _container;
-    private readonly ILayerManager _layerManager;
-
+    private readonly ISubMenuNavigator _subNavigator;
     private string _currentMenu;
 
     public string CurrentMenu
     {
-        get => _currentMenu; 
+        get => _currentMenu;
         set => SetProperty(ref _currentMenu, value);
     }
 
     public ICommand SelectMenuCommand { get; }
 
-    public MainContentViewModel(IContainer container, ILayerManager layerManager)
+    public MainContentViewModel(ISubMenuNavigator subNavigator)
     {
-        _container = container;
-        _layerManager = layerManager;
-
+        _subNavigator = subNavigator;
         SelectMenuCommand = new RelayCommand<string>(SelectMenuItem);
     }
 
     private void SelectMenuItem(string menuName)
     {
         CurrentMenu = menuName;
-
-        string contentName = null;
-        string layerName = "ContentLayer";
-
-        switch (menuName)
-        {
-            case "TFT": contentName = "TftContent"; break;
-            case "HOME": contentName = "HomeContent"; break;
-        }
-
-        if (contentName != null)
-        {
-            IView content = _container.Resolve<IView>(contentName);
-            _layerManager.AddView(layerName, content);
-            _layerManager.ActivateView(layerName, content);
-        }
+        _subNavigator.UpdateSubMenuItems(menuName);
     }
 
     public void Loaded()

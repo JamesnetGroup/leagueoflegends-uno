@@ -1,8 +1,9 @@
 using Jamesnet.Core;
+using Leagueoflegends.Support.Local.Datas;
 using Leagueoflegends.Support.Local.Models;
-namespace Leagueoflegends.Social.Local.Loaders;
+namespace Leagueoflegends.Social.Local.Datas;
 
-public class FriendsLoader : BaseResourceLoader<Friend, List<FriendCategory>>, IFriendsLoader
+public class FriendDataLoader : BaseResourceLoader<Friend, List<FriendCategory>>, IFriendDataLoader
 {
     protected override string AssemblyName => "Leagueoflegends.Support";
     protected override string ResourcePath => "Leagueoflegends.Support.Datas.Friends.yml";

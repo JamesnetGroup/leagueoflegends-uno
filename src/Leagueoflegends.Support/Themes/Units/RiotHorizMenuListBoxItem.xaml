@@ -3,13 +3,69 @@
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:units="using:Leagueoflegends.Support.UI.Units">
 
+  <LinearGradientBrush x:Key="SelectedBorderBrush" StartPoint="0, 0.5" EndPoint="1, 0.5">
+    <GradientStop Color="Transparent" Offset="0"/>
+    <GradientStop Color="#33C8BA8E" Offset="0.1"/>
+    <GradientStop Color="#C8BA8E" Offset="0.5"/>
+    <GradientStop Color="#33C8BA8E" Offset="0.9"/>
+    <GradientStop Color="Transparent" Offset="1"/>
+  </LinearGradientBrush>
+
   <Style TargetType="units:RiotHorizMenuListBoxItem">
-    <Setter Property="Foreground" Value="#A09B8C"/>
-    <Setter Property="FontSize" Value="12"/>
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="Foreground" Value="#CDBE91" />
+    <Setter Property="Padding" Value="16,7,16,7" />
+    <Setter Property="HorizontalContentAlignment" Value="Left" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="FontSize" Value="12" />
     <Setter Property="Template">
       <Setter.Value>
         <ControlTemplate TargetType="units:RiotHorizMenuListBoxItem">
-          <CheckBox/>
+          <Grid x:Name="LayoutRoot" Background="{TemplateBinding Background}">
+            <VisualStateManager.VisualStateGroups>
+              <VisualStateGroup x:Name="CommonStates">
+                <VisualState x:Name="Normal" />
+                <VisualState x:Name="PointerOver">
+                  <VisualState.Setters>
+                    <Setter Target="ContentPresenter.Foreground" Value="#F0E6D2" />
+                  </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Pressed">
+                  <VisualState.Setters>
+                    <Setter Target="ContentPresenter.Foreground" Value="#FFC800" />
+                  </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Selected">
+                  <VisualState.Setters>
+                    <Setter Target="ContentPresenter.Foreground" Value="#F0E6D2" />
+                    <Setter Target="BorderElement.BorderBrush" Value="{StaticResource SelectedBorderBrush}" />
+                  </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="SelectedUnfocused">
+                  <VisualState.Setters>
+                    <Setter Target="ContentPresenter.Foreground" Value="#F0E6D2" />
+                    <Setter Target="BorderElement.BorderBrush" Value="{StaticResource SelectedBorderBrush}" />
+                  </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="PointerOverSelected">
+                  <VisualState.Setters>
+                    <Setter Target="ContentPresenter.Foreground" Value="#F0E6D2" />
+                    <Setter Target="BorderElement.BorderBrush" Value="{StaticResource SelectedBorderBrush}" />
+                  </VisualState.Setters>
+                </VisualState>
+              </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Border x:Name="BorderElement"
+                    Background="Transparent"
+                    BorderBrush="Transparent"
+                    BorderThickness="0,0,0,1">
+              <TextBlock x:Name="ContentPresenter"
+                         Text="{Binding Name}"
+                         HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                         VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                         Margin="{TemplateBinding Padding}" />
+            </Border>
+          </Grid>
         </ControlTemplate>
       </Setter.Value>
     </Setter>

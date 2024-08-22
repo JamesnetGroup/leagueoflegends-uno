@@ -18,5 +18,7 @@
     <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotFriendListBox.xaml"/>
     <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotMainMenu.xaml"/>
     <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotMainIconMenu.xaml"/>
+    <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotHorizMenuListBoxItem.xaml"/>
+    <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotHorizMenuListBox.xaml"/>
   </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

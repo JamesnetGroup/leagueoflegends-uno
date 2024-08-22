@@ -1,16 +1,19 @@
 using Jamesnet.Core;
-using Leagueoflegends.Main.Local.ViewModel;
 using Leagueoflegends.Main.UI.Views;
 using Leagueoflegends.Social.UI.Views;
 using Leagueoflegends.Tft.UI.Views;
-using Leagueoflegends.Social.Local.Loaders;
 using Leagueoflegends.Social.Local.ViewModels;
-using Leagueoflegends.Support.Local.Models;
 using Leagueoflegends.Home.UI.Views;
 using Leagueoflegends.Home.Local.ViewModels;
 using Leagueoflegends.Tft.Local.ViewModels;
 using Leagueoflegends.Navigate.Local.ViewModels;
 using Leagueoflegends.Navigate.UI.Views;
+using Leagueoflegends.Support.Local.Services;
+using Leagueoflegends.Navigate.Local.Services;
+using Leagueoflegends.Main.Local.ViewModels;
+using Leagueoflegends.Support.Local.Datas;
+using Leagueoflegends.Social.Local.Datas;
+using Leagueoflegends.Navigate.Local.Datas;
 namespace Leagueoflegends;
 
 public class LeagueOfLegendsBootstrapper : AppBootstrapper
@@ -21,24 +24,26 @@ public class LeagueOfLegendsBootstrapper : AppBootstrapper
         ViewModelMapper.Register<SocialContent, SocialContentViewModel>();
         ViewModelMapper.Register<HomeContent, HomeContentViewModel>();
         ViewModelMapper.Register<TftContent, TftContentViewModel>();
-        ViewModelMapper.Register<SubNavContent, SubNavContentViewModel>();
+        ViewModelMapper.Register<SubMenuContent, SubMenuContentViewModel>();
     }
 
     protected override void RegisterDependencies()
     {
-        Container.RegisterSingleton<IFriendsLoader, FriendsLoader>();
+        Container.RegisterSingleton<ISubMenuNavigator, SubMenuNavigator>();
+        Container.RegisterSingleton<IFriendDataLoader, FriendDataLoader>();
+        Container.RegisterSingleton<ISubMenuDataLoader, SubMenuDataLoader>();
         Container.RegisterSingleton<IView, MainContent>();
-        Container.RegisterSingleton<IView, SubNavContent>("HomeContent");
+        Container.RegisterSingleton<IView, SubMenuContent>("SubNavContent");
         Container.RegisterSingleton<IView, SocialContent>();
         Container.RegisterSingleton<IView, TftContent>("TftContent");
         Container.RegisterSingleton<IView, HomeContent>("HomeContent");
 
         IView mainContent = Container.Resolve<MainContent>();
-        IView subNavContent = Container.Resolve<SubNavContent>();
+        IView subNavContent = Container.Resolve<SubMenuContent>();
         IView socialContent = Container.Resolve<SocialContent>();
 
         Layer.SetLayerViewMapping("MainLayer", mainContent);
-        Layer.SetLayerViewMapping("UsbNavLayer", subNavContent);
+        Layer.SetLayerViewMapping("SubNavLayer", subNavContent);
         Layer.SetLayerViewMapping("SocialLayer", socialContent);
     }
 

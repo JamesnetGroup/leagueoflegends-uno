@@ -34,22 +34,12 @@
 
   <ItemGroup>
     <None Remove="Themes\Generic.xaml" />
-    <None Remove="Themes\Views\SubNavContent.xaml" />
+    <None Remove="Themes\Views\SubMenuContent.xaml" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Jamesnet.Uno\Jamesnet.Uno.csproj" />
     <ProjectReference Include="..\Leagueoflegends.Support\Leagueoflegends.Support.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Themes\Views\SubNavContent.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Page Update="Themes\Views\SubNavContent.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
 
   <ItemGroup>
@@ -61,5 +51,12 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Views\SubMenuContent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Views\SubMenuContent.xaml" />
   </ItemGroup>
 </Project>

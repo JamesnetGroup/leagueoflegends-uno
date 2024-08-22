@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+using System;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 namespace Jamesnet.Core;
@@ -12,13 +13,14 @@ public class ViewModelBase : INotifyPropertyChanged
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 
-    protected bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string propertyName = null)
+    protected bool SetProperty<T>(ref T storage, T value, Action? callback = null, [CallerMemberName] string propertyName = null)
     {
         if (EqualityComparer<T>.Default.Equals(storage, value))
             return false;
 
         storage = value;
         OnPropertyChanged(propertyName);
+        callback?.Invoke();
         return true;
     }
 }

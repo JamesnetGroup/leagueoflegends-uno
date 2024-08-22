@@ -1,4 +1,4 @@
-﻿<Project Sdk="Uno.Sdk">
+<Project Sdk="Uno.Sdk">
   <PropertyGroup>
     <TargetFrameworks>net8.0-desktop</TargetFrameworks>
     <UnoSingleProject>true</UnoSingleProject>
@@ -33,6 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Datas\SubMenus.yml" />
     <None Remove="Images\blue-essence.png" />
     <None Remove="Images\profile-default.png" />
     <None Remove="Images\rp.png" />
@@ -105,6 +106,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Datas\SubMenus.yml" />
     <EmbeddedResource Include="Images\logo.png" />
     <EmbeddedResource Include="Images\menu-selection.png" />
     <EmbeddedResource Include="Images\rp.png" />

@@ -87,7 +87,7 @@
                 <ColumnDefinition Width="Auto"/>
               </Grid.ColumnDefinitions>
               <james:UnoLayer Grid.Column="0" LayerName="ContentLayer"/>
-              <james:UnoLayer Grid.Column="0" LayerName="UsbNavLayer"/>
+              <james:UnoLayer Grid.Column="0" LayerName="SubNavLayer"/>
               <james:UnoLayer Grid.Column="1" LayerName="SocialLayer"/>
             </Grid>
           </Grid>

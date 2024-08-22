@@ -2,6 +2,6 @@
   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <ResourceDictionary.MergedDictionaries>
-    <ResourceDictionary Source="ms-appx:///Leagueoflegends.Navigate/Themes/Views/SubNavContent.xaml"/>
+    <ResourceDictionary Source="ms-appx:///Leagueoflegends.Navigate/Themes/Views/SubMenuContent.xaml"/>
   </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

@@ -21,14 +21,14 @@ public class Container : IContainer
 
     public void RegisterSingleton<TInterface, TImplementation>(string name) where TImplementation : TInterface
     {
-        var instance = CreateInstance(typeof(TImplementation));
-        _registrations[(typeof(TInterface), name)] = () => instance;
+        var lazy = new Lazy<object>(() => CreateInstance(typeof(TImplementation)));
+        _registrations[(typeof(TInterface), name)] = () => lazy.Value;
     }
 
     public void RegisterSingleton<TImplementation>(string name)
     {
-        var instance = CreateInstance(typeof(TImplementation));
-        _registrations[(typeof(TImplementation), name)] = () => instance;
+        var lazy = new Lazy<object>(() => CreateInstance(typeof(TImplementation)));
+        _registrations[(typeof(TImplementation), name)] = () => lazy.Value;
     }
 
     public void RegisterInstance<TInterface>(TInterface instance)

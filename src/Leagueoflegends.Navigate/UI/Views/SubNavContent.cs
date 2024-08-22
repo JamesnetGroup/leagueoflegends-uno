@@ -2,10 +2,10 @@ using Jamesnet.Uno;
 
 namespace Leagueoflegends.Navigate.UI.Views;
 
-public class SubNavContent : UnoView
+public class SubMenuContent : UnoView
 {
-    public SubNavContent()
+    public SubMenuContent()
     { 
-        DefaultStyleKey = typeof(SubNavContent);
+        DefaultStyleKey = typeof(SubMenuContent);
     }
 }
