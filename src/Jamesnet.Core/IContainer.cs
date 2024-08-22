@@ -13,4 +13,6 @@ public interface IContainer
     T Resolve<T>(string name);
     object Resolve(Type type);
     object Resolve(Type type, string name);
+    bool TryResolve<T>(out T result);
+    bool TryResolve<T>(string name, out T result);
 }

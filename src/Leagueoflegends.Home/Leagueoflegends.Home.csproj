@@ -34,7 +34,7 @@
 
   <ItemGroup>
     <None Remove="Themes\Generic.xaml" />
-    <None Remove="Themes\Views\HomeContent.xaml" />
+    <None Remove="Themes\Views\OverviewContent.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -53,13 +53,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Themes\Views\HomeContent.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Page Include="Themes\Views\HomeContent.xaml">
+    <Page Include="Themes\Views\OverviewContent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Views\OverviewContent.xaml" />
   </ItemGroup>
 </Project>

@@ -1,10 +1,10 @@
-﻿namespace Jamesnet.Core;
+namespace Jamesnet.Core;
 
 public interface ILayerManager
 {
-    void RegisterLayer(string layerName, ILayer layer);
-    void AddView(string layerName, IView view);
-    void ActivateView(string layerName, IView view);
-    void DeactivateView(string layerName);
-    void SetLayerViewMapping(string layerName, IView view);
+    void Register(string layerName, ILayer layer);
+    void Add(string layerName, IView view);
+    void Show(string layerName, IView view);
+    void Hide(string layerName);
+    void Mapping(string layerName, IView view);
 }

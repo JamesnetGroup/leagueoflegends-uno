@@ -3,10 +3,9 @@ using Leagueoflegends.Support.Local.Models;
 using Leagueoflegends.Support.Local.Services;
 
 namespace Leagueoflegends.Navigate.Local.ViewModels;
-
 public class SubMenuContentViewModel : ViewModelBase
 {
-    private readonly ISubMenuNavigator _subNavigator;
+    private readonly ISubMenuNavigator _subMenuNavigator;
     private List<SubMenuItem> _subMenuItems;
     private SubMenuItem _selectedItem;
 
@@ -22,14 +21,18 @@ public class SubMenuContentViewModel : ViewModelBase
         set => SetProperty(ref _selectedItem, value, OnSelectedItemChanged);
     }
 
-    private void OnSelectedItemChanged()
+    public SubMenuContentViewModel(ISubMenuNavigator subMenuNavigator)
     {
+        _subMenuNavigator = subMenuNavigator;
+        _subMenuNavigator.SubMenuItemsUpdated += OnSubMenuItemsUpdated;
     }
 
-    public SubMenuContentViewModel(ISubMenuNavigator subNavigator)
+    private void OnSelectedItemChanged()
     {
-        _subNavigator = subNavigator;
-        _subNavigator.SubMenuItemsUpdated += OnSubMenuItemsUpdated;
+        if (_selectedItem != null)
+        {
+            _subMenuNavigator.NavigateToSubMenu(_selectedItem);
+        }
     }
 
     private void OnSubMenuItemsUpdated(List<SubMenuItem> subMenuItems)

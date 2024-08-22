@@ -69,6 +69,27 @@ public class Container : IContainer
         throw new InvalidOperationException($"Type {type} has not been registered.");
     }
 
+    public bool TryResolve<T>(out T result)
+    {
+        return TryResolve<T>(null, out result);
+    }
+
+    public bool TryResolve<T>(string name, out T result)
+    {
+        if (_registrations.TryGetValue((typeof(T), name), out var creator))
+        {
+            result = (T)creator();
+            return true;
+        }
+        if (!typeof(T).IsAbstract && !typeof(T).IsInterface)
+        {
+            result = (T)CreateInstance(typeof(T));
+            return true;
+        }
+        result = default;
+        return false;
+    }
+
     private object CreateInstance(Type type)
     {
         var constructors = type.GetConstructors();

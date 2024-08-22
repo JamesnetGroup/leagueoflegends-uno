@@ -29,7 +29,7 @@ public class UnoLayer : ContentControl, ILayer
         if (!string.IsNullOrEmpty(LayerName))
         {
             var layerManager = ContainerProvider.GetContainer().Resolve<ILayerManager>();
-            layerManager.RegisterLayer(LayerName, this);
+            layerManager.Register   (LayerName, this);
         }
     }
 

@@ -22,7 +22,7 @@ public class LeagueOfLegendsBootstrapper : AppBootstrapper
     {
         ViewModelMapper.Register<MainContent, MainContentViewModel>();
         ViewModelMapper.Register<SocialContent, SocialContentViewModel>();
-        ViewModelMapper.Register<HomeContent, HomeContentViewModel>();
+        ViewModelMapper.Register<OverviewContent, OverviewContentViewModel>();
         ViewModelMapper.Register<TftContent, TftContentViewModel>();
         ViewModelMapper.Register<SubMenuContent, SubMenuContentViewModel>();
     }
@@ -36,15 +36,15 @@ public class LeagueOfLegendsBootstrapper : AppBootstrapper
         Container.RegisterSingleton<IView, SubMenuContent>("SubNavContent");
         Container.RegisterSingleton<IView, SocialContent>();
         Container.RegisterSingleton<IView, TftContent>("TftContent");
-        Container.RegisterSingleton<IView, HomeContent>("HomeContent");
+        Container.RegisterSingleton<IView, OverviewContent>("HomeOverviewContent");
 
         IView mainContent = Container.Resolve<MainContent>();
         IView subNavContent = Container.Resolve<SubMenuContent>();
         IView socialContent = Container.Resolve<SocialContent>();
 
-        Layer.SetLayerViewMapping("MainLayer", mainContent);
-        Layer.SetLayerViewMapping("SubNavLayer", subNavContent);
-        Layer.SetLayerViewMapping("SocialLayer", socialContent);
+        Layer.Mapping("MainLayer", mainContent);
+        Layer.Mapping("SubNavLayer", subNavContent);
+        Layer.Mapping("SocialLayer", socialContent);
     }
 
     protected override void OnStartup()
