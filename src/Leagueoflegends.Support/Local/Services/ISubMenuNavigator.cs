@@ -8,4 +8,5 @@ public interface ISubMenuNavigator
     void UpdateSubMenuItems(string mainMenu);
     List<SubMenuItem> GetSubMenuItems(string mainMenu);
     void NavigateToSubMenu(SubMenuItem subMenuItem);
+    void NavigateToMainMenu();
 }

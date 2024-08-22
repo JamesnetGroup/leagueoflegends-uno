@@ -10,6 +10,8 @@ public class SubMenuNavigator : ISubMenuNavigator
     private readonly ILayerManager _layerManager;
     private readonly IContainer _container;
     private List<SubMenuItem> _allMenuItems;
+    private string _currentMainMenu;
+
     public event Action<List<SubMenuItem>> SubMenuItemsUpdated;
 
     public SubMenuNavigator(ISubMenuDataLoader dataLoader, ILayerManager layerManager, IContainer container)
@@ -22,6 +24,7 @@ public class SubMenuNavigator : ISubMenuNavigator
 
     public void UpdateSubMenuItems(string mainMenu)
     {
+        _currentMainMenu = mainMenu;
         var subMenuItems = GetSubMenuItems(mainMenu);
         SubMenuItemsUpdated?.Invoke(subMenuItems);
     }
@@ -43,7 +46,15 @@ public class SubMenuNavigator : ISubMenuNavigator
         string contentName = $"{category}{menuName}Content";
 
         _container.TryResolve<IView>(contentName, out var view);
-        _layerManager.Show("ContentLayer", view);
+        _layerManager.Show("ContentLayer", view); 
     }
 
+    public void NavigateToMainMenu()
+    {
+        string category = _currentMainMenu;
+        string contentName = $"{category}Content";
+
+        _container.TryResolve<IView>(contentName, out var view);
+        _layerManager.Show("ContentLayer", view);
+    }
 }

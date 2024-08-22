@@ -2,7 +2,7 @@ using System.Collections;
 
 namespace Jamesnet.Uno;
 
-public class RecursiveControl : Control
+public class RecursiveControl : ContentControl
 {
     public RecursiveControl()
     {
@@ -18,9 +18,31 @@ public class RecursiveControl : Control
     public static readonly DependencyProperty ItemsSourceProperty =
         DependencyProperty.Register(nameof(ItemsSource), typeof(object), typeof(RecursiveControl), new PropertyMetadata(null, OnItemsSourceChanged));
 
+    public string ItemsBindingPath
+    {
+        get => (string)GetValue(ItemsBindingPathProperty);
+        set => SetValue(ItemsBindingPathProperty, value);
+    }
+
+    public static readonly DependencyProperty ItemsBindingPathProperty =
+        DependencyProperty.Register(nameof(ItemsBindingPath), typeof(string), typeof(RecursiveControl), new PropertyMetadata(null));
+
     private static void OnItemsSourceChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
     {
         ((RecursiveControl)d).GenerateItems();
+    }
+
+    public bool IsExpanded
+    {
+        get => (bool)GetValue(IsExpandedProperty);
+        set => SetValue(IsExpandedProperty, value);
+    }
+
+    public static readonly DependencyProperty IsExpandedProperty = DependencyProperty.Register(nameof(IsExpanded), typeof(bool), typeof(RecursiveControl), new PropertyMetadata(true, OnIsExpandedChanged));
+
+    private static void OnIsExpandedChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+    {
+        ((RecursiveControl)d).UpdateChildrenVisibility();
     }
 
     private Panel _itemsPanel;
@@ -29,7 +51,25 @@ public class RecursiveControl : Control
     {
         base.OnApplyTemplate();
         _itemsPanel = GetTemplateChild("PART_ItemsPanel") as Panel;
-        GenerateItems();
+        UpdateChildrenVisibility();
+        SetItemsSourceFromDataContext();
+    }
+
+    private void SetItemsSourceFromDataContext()
+    {
+        if (DataContext == null || string.IsNullOrEmpty(ItemsBindingPath)) return;
+
+        var dataContextType = DataContext.GetType();
+        var property = dataContextType.GetProperty(ItemsBindingPath);
+
+        if (property != null && typeof(IEnumerable).IsAssignableFrom(property.PropertyType))
+        {
+            var value = property.GetValue(DataContext);
+            if (value is IEnumerable enumerable)
+            {
+                ItemsSource = enumerable;
+            }
+        }
     }
 
     private void GenerateItems()
@@ -40,14 +80,26 @@ public class RecursiveControl : Control
 
         foreach (var item in ItemsSource as IEnumerable)
         {
-            var container = GetContainerForItem();
-            container.DataContext = item;
-            _itemsPanel.Children.Add(container);
+            var container = GetContainerForItemOverride();
+
+            if (container is FrameworkElement fe)
+            {
+                fe.DataContext = item;
+                _itemsPanel.Children.Add(fe);
+            }
         }
     }
 
-    protected virtual RecursiveItem GetContainerForItem()
+    protected virtual DependencyObject GetContainerForItemOverride()
     {
-        return new RecursiveItem();
+        return new RecursiveControl();
+    }
+
+    private void UpdateChildrenVisibility()
+    {
+        if (_itemsPanel != null)
+        {
+            _itemsPanel.Visibility = IsExpanded ? Visibility.Visible : Visibility.Collapsed;
+        }
     }
 }

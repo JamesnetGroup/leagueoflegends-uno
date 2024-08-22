@@ -39,5 +39,10 @@ public class SubMenuContentViewModel : ViewModelBase
     {
         SubMenuItems = subMenuItems;
         SelectedItem = subMenuItems.FirstOrDefault();
+
+        if(SelectedItem == null)
+        {
+            _subMenuNavigator.NavigateToMainMenu();
+        }
     }
 }

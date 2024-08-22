@@ -2,7 +2,7 @@ using Jamesnet.Uno;
 
 namespace Leagueoflegends.Support.UI.Units;
 
-public class RiotFriendGroupItem : RecursiveItem
+public class RiotFriendGroupItem : RecursiveControl
 {
     public RiotFriendGroupItem()
     {
