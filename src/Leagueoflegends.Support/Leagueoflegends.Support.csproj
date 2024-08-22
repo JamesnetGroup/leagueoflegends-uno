@@ -1,4 +1,4 @@
-<Project Sdk="Uno.Sdk">
+﻿<Project Sdk="Uno.Sdk">
   <PropertyGroup>
     <TargetFrameworks>net8.0-desktop</TargetFrameworks>
     <UnoSingleProject>true</UnoSingleProject>
@@ -60,6 +60,8 @@
     <None Remove="Themes\Units\RiotFriendGroupItem.xaml" />
     <None Remove="Themes\Units\RiotFriendItemControl.xaml" />
     <None Remove="Themes\Units\RiotFriendListBox.xaml" />
+    <None Remove="Themes\Units\RiotHorizMenuListBox.xaml" />
+    <None Remove="Themes\Units\RiotHorizMenuListBoxItem.xaml" />
     <None Remove="Themes\Units\RiotIconButton.xaml" />
     <None Remove="Themes\Units\RiotMainIconMenu.xaml" />
     <None Remove="Themes\Units\RiotMainMenu.xaml" />
@@ -122,6 +124,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Units\RiotFriendGroupItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotHorizMenuListBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotHorizMenuListBoxItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -249,5 +259,13 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Units\RiotScrollViewer.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotHorizMenuListBox.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotHorizMenuListBoxItem.xaml" />
   </ItemGroup>
 </Project>

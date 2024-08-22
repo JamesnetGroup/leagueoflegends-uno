@@ -1,0 +1,23 @@
+﻿<ResourceDictionary
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:units="using:Leagueoflegends.Support.UI.Units"
+  xmlns:views="using:Leagueoflegends.Navigate.UI.Views">
+
+  <Style TargetType="views:SubNavContent">
+    <Setter Property="VerticalAlignment" Value="Top"/>
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="views:SubNavContent">
+          <units:RiotHorizMenuListBox>
+            <units:RiotHorizMenuListBoxItem/>
+            <units:RiotHorizMenuListBoxItem/>
+            <units:RiotHorizMenuListBoxItem/>
+            <units:RiotHorizMenuListBoxItem/>
+            <units:RiotHorizMenuListBoxItem/>
+          </units:RiotHorizMenuListBox>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+</ResourceDictionary>
