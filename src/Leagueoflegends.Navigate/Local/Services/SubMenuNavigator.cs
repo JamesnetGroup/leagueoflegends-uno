@@ -51,7 +51,7 @@ public class SubMenuNavigator : ISubMenuNavigator
 
     public void NavigateToMainMenu()
     {
-        string category = _currentMainMenu;
+        string category = _currentMainMenu.ToPascal();
         string contentName = $"{category}Content";
 
         _container.TryResolve<IView>(contentName, out var view);
