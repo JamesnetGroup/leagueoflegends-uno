@@ -1,6 +1,4 @@
 using Jamesnet.Core;
-using Jamesnet.Uno;
-using Microsoft.UI.Xaml.Controls;
 
 namespace Leagueoflegends.Main.Local.ViewModel;
 
@@ -31,17 +29,20 @@ public class MainContentViewModel : ViewModelBase, IViewLoadable
     {
         CurrentMenu = menuName;
 
-        if (menuName == "TFT")
+        string contentName = null;
+        string layerName = "ContentLayer";
+
+        switch (menuName)
         {
-            IView tft = _container.Resolve<IView>("TftContent");
-            _layerManager.AddView("ContentLayer", tft);
-            _layerManager.ActivateView("ContentLayer", tft);
+            case "TFT": contentName = "TftContent"; break;
+            case "HOME": contentName = "HomeContent"; break;
         }
-        else if (menuName == "HOME")
+
+        if (contentName != null)
         {
-            IView home = _container.Resolve<IView>("HomeContent");
-            _layerManager.AddView("ContentLayer", home);
-            _layerManager.ActivateView("ContentLayer", home);
+            IView content = _container.Resolve<IView>(contentName);
+            _layerManager.AddView(layerName, content);
+            _layerManager.ActivateView(layerName, content);
         }
     }
 
