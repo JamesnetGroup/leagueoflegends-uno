@@ -1,4 +1,4 @@
-<Project Sdk="Uno.Sdk">
+﻿<Project Sdk="Uno.Sdk">
   <PropertyGroup>
     <TargetFrameworks>net8.0-desktop</TargetFrameworks>
     <UnoSingleProject>true</UnoSingleProject>
@@ -55,6 +55,8 @@
     <None Remove="Images\wallpaper-rucian.png" />
     <None Remove="Images\wallpaper-sena.png" />
     <None Remove="Images\wallpaper-singed.png" />
+    <None Remove="Images\wallpaper-thumb-1.png" />
+    <None Remove="Images\wallpaper-thumb-2.png" />
     <None Remove="Themes\Generic.xaml" />
     <None Remove="Themes\RiotPlayButton.xaml" />
     <None Remove="Themes\Units\RiotButton.xaml" />
@@ -67,6 +69,7 @@
     <None Remove="Themes\Units\RiotIconButton.xaml" />
     <None Remove="Themes\Units\RiotMainIconMenu.xaml" />
     <None Remove="Themes\Units\RiotMainMenu.xaml" />
+    <None Remove="Themes\Units\RiotNewsButton.xaml" />
     <None Remove="Themes\Units\RiotNoticeButton.xaml" />
     <None Remove="Themes\Units\RiotScrollViewer.xaml" />
     <None Remove="Themes\Units\RiotStatusIndicator.xaml" />
@@ -158,6 +161,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Units\RiotNewsButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Units\RiotNoticeButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -214,6 +221,8 @@
     <Content Include="Images\wallpaper-rucian.png" />
     <Content Include="Images\wallpaper-sena.png" />
     <Content Include="Images\wallpaper-singed.png" />
+    <Content Include="Images\wallpaper-thumb-1.png" />
+    <Content Include="Images\wallpaper-thumb-2.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -278,5 +287,9 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Units\RiotButton.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotNewsButton.xaml" />
   </ItemGroup>
 </Project>

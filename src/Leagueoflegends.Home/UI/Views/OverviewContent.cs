@@ -6,6 +6,6 @@ public class OverviewContent : UnoView
 {
     public OverviewContent()
     {
-        DefaultStyleKey = typeof(OverviewContent);   
+        DefaultStyleKey = typeof(OverviewContent);
     }
 }
