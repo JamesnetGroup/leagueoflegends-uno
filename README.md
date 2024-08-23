@@ -9,7 +9,8 @@ A high-fidelity recreation of the League of Legends client using Uno, showcasing
 [![Issues](https://img.shields.io/github/issues/jamesnet214/leagueoflegends-uno.svg)](https://github.com/jamesnet214/leagueoflegends-uno/issues)
 
 ## Project Overview
-TBD...
+![image](https://github.com/user-attachments/assets/2d5643b9-da31-4292-80c5-716a0cd80fdc)
+
 
 ## Supported Platforms
 
