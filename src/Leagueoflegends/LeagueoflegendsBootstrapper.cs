@@ -14,6 +14,7 @@ using Leagueoflegends.Main.Local.ViewModels;
 using Leagueoflegends.Support.Local.Datas;
 using Leagueoflegends.Social.Local.Datas;
 using Leagueoflegends.Navigate.Local.Datas;
+using Leagueoflegends.Collection.UI.Views;
 namespace Leagueoflegends;
 
 public class LeagueOfLegendsBootstrapper : AppBootstrapper
@@ -37,6 +38,7 @@ public class LeagueOfLegendsBootstrapper : AppBootstrapper
         Container.RegisterSingleton<IView, SocialContent>();
         Container.RegisterSingleton<IView, TftContent>("TftContent");
         Container.RegisterSingleton<IView, OverviewContent>("HomeOverviewContent");
+        Container.RegisterSingleton<IView, ChampionsContent>("CollectionChampionsContent");
 
         IView mainContent = Container.Resolve<MainContent>();
         IView subNavContent = Container.Resolve<SubMenuContent>();

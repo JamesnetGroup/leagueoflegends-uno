@@ -4,6 +4,8 @@ namespace Jamesnet.Uno;
 
 public class UnoView : ContentControl, IView
 {
+    private bool _viewModelInitialized = false;
+
     public UnoView()
     {
         DefaultStyleKey = typeof(UnoView);
@@ -13,11 +15,10 @@ public class UnoView : ContentControl, IView
 
     private void OnLoaded(object sender, RoutedEventArgs e)
     {
-        if (DataContext is IViewLoadable loadable)
+        if (_viewModelInitialized && DataContext is IViewLoadable loadable)
         {
             loadable.Loaded();
         }
-
         Loaded -= OnLoaded;
     }
 
@@ -25,6 +26,9 @@ public class UnoView : ContentControl, IView
     {
         var initializer = ContainerProvider.GetContainer().Resolve<IViewModelInitializer>();
         initializer.InitializeViewModel(this);
+
+        _viewModelInitialized = DataContext != null;
+
         OnViewModelInitialized();
     }
 
