@@ -45,7 +45,6 @@
               <based:RiotIconButton Margin="5 10 5 10" ControlType="Magnify"/>
             </StackPanel>
             <based:RiotFriendListBox Grid.Row="1" ItemsSource="{Binding Friends}"/>
-            <TextBlock Grid.Row="2" Text="{Binding Friends}" Foreground="Red"/>
           </Grid>
         </ControlTemplate>
       </Setter.Value>

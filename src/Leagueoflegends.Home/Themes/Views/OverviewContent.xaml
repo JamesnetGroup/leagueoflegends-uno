@@ -5,11 +5,21 @@
   xmlns:views="using:Leagueoflegends.Home.UI.Views">
 
   <Style x:Key="RiotButtonStyle" TargetType="units:RiotButton">
-    <Setter Property="FontFamily" Value="Friz Quadrata Std"/>
     <Setter Property="FontWeight" Value="Bold"/>
     <Setter Property="BorderThickness" Value="2"/>
     <Setter Property="FontSize" Value="14"/>
     <Setter Property="Padding" Value="18,0"/>
+  </Style>
+
+  <Style x:Key="RiotHeadlineNewsButtonStyle" TargetType="units:RiotNewsButton">
+    <Setter Property="Width" Value="600"/>
+    <Setter Property="Margin" Value="0 20 0 0"/>
+    <Setter Property="ImageSource" Value="ms-appx:///Leagueoflegends.Support/Images/wallpaper-jinx.jpg"/>
+  </Style>
+
+  <Style x:Key="RiotNewsButtonStyle" TargetType="units:RiotNewsButton">
+    <Setter Property="ImageHeight" Value="120"/>
+    <Setter Property="Margin" Value="0 0 10 0"/>
   </Style>
 
   <Style TargetType="views:OverviewContent">
@@ -68,10 +78,7 @@
                 BorderThickness="1"
                 Margin="0,6,0,0"/>
 
-              <units:RiotNewsButton 
-                Margin="0,20,0,0"
-                Width="600"
-                ImageSource="ms-appx:///Leagueoflegends.Support/Images/wallpaper-jinx.jpg"/>
+              <units:RiotNewsButton Style="{StaticResource RiotHeadlineNewsButtonStyle}"/>
             </StackPanel>
 
             <Grid Grid.Row="2" Grid.ColumnSpan="2" Margin="30,0,30,20">
@@ -83,39 +90,31 @@
                 <ColumnDefinition Width="115"/>
               </Grid.ColumnDefinitions>
 
-              <units:RiotNewsButton 
-                Grid.Column="0"
-                ImageHeight="120"
-                Margin="0,0,10,0"
+              <units:RiotNewsButton Grid.Column="0"
+                Style="{StaticResource RiotNewsButtonStyle}"
                 Text="▶ K/DA x 1MILLION - I'LL SHOW YOU ↗"
                 ImageSource="ms-appx:///Leagueoflegends.Support/Images/wallpaper-maokai.jpg"/>
 
-              <units:RiotNewsButton 
-                Grid.Column="1"
-                ImageHeight="120"
-                Margin="0,0,10,0"
+              <units:RiotNewsButton Grid.Column="1"
+                Style="{StaticResource RiotNewsButtonStyle}"
                 Text="2024 Preseason Update ↗"
                 ImageSource="ms-appx:///Leagueoflegends.Support/Images/wallpaper-gnar.jpg"/>
 
-              <units:RiotNewsButton 
-                Grid.Column="2"
-                ImageHeight="120"
-                Margin="0,0,10,0"
+              <units:RiotNewsButton Grid.Column="2"
+                Style="{StaticResource RiotNewsButtonStyle}"
                 Text="[Riot Store] Check out the new Jhin UNLOCKED Statue and more! ↗"
-                ImageSource="ms-appx:///Leagueoflegends.Support/Images/wallpaper-rucian.png"/>
+                ImageSource="ms-appx:///Leagueoflegends.Support/Images/wallpaper-caitlyn.jpg"/>
 
-              <units:RiotNewsButton 
-                Grid.Column="3"
-                ImageHeight="120"
-                Margin="0,0,10,0"
+              <units:RiotNewsButton Grid.Column="3"
+                Style="{StaticResource RiotNewsButtonStyle}"
                 Text="Cosmic Sting Skarner: New Skin Spotlight"
                 ImageSource="ms-appx:///Leagueoflegends.Support/Images/wallpaper-thumb-1.png"/>
 
-              <units:RiotNewsButton 
-                Grid.Column="4"
-                ImageHeight="120"
+              <units:RiotNewsButton Grid.Column="4"
+                Style="{StaticResource RiotNewsButtonStyle}"
                 Text="Dark Cosmic Lissandra: Ability Preview"
-                ImageSource="ms-appx:///Leagueoflegends.Support/Images/wallpaper-thumb-2.png"/>
+                ImageSource="ms-appx:///Leagueoflegends.Support/Images/wallpaper-thumb-2.png"
+                Margin="0, 0, 0, 0"/>
             </Grid>
           </Grid>
         </ControlTemplate>
