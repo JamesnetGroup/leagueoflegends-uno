@@ -3,30 +3,35 @@
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:cnvts="using:Leagueoflegends.Support.Local.Converters"
   xmlns:units="using:Leagueoflegends.Support.UI.Units">
-
+  
   <cnvts:MenuNameToWallpaperConverter x:Key="MenuNameToWallpaperConverter"/>
-
   <LinearGradientBrush x:Key="TopFadeOutGradient" EndPoint="0.5,1" StartPoint="0.5,0">
     <GradientStop Color="#DD000000"/>
     <GradientStop Color="#77000000" Offset="0.5"/>
     <GradientStop Color="#00000000" Offset="1"/>
   </LinearGradientBrush>
-
+  
   <LinearGradientBrush x:Key="LeftFadeOutGradient" EndPoint="1,0.5" StartPoint="0,0.5">
     <GradientStop Color="#FF000000"/>
-    <GradientStop Color="#44000000" Offset="0.5"/>
+    <GradientStop Color="#CC000000" Offset="0.5"/>
     <GradientStop Color="#00000000" Offset="1"/>
   </LinearGradientBrush>
-
+  
   <Style TargetType="Rectangle" x:Key="TopFadeOutOverlay">
     <Setter Property="Fill" Value="{StaticResource TopFadeOutGradient}"/>
     <Setter Property="Height" Value="300"/>
     <Setter Property="VerticalAlignment" Value="Top"/>
   </Style>
-
-  <Style TargetType="Rectangle" x:Key="LeftFadeOutOverlay">
+  
+  <Style TargetType="Rectangle" x:Key="StandardLeftFadeOutOverlay">
     <Setter Property="Fill" Value="{StaticResource LeftFadeOutGradient}"/>
     <Setter Property="Width" Value="500"/>
+    <Setter Property="HorizontalAlignment" Value="Left"/>
+  </Style>
+  
+  <Style TargetType="Rectangle" x:Key="WideSidebarFadeOutOverlay">
+    <Setter Property="Fill" Value="{StaticResource LeftFadeOutGradient}"/>
+    <Setter Property="Width" Value="1600"/>
     <Setter Property="HorizontalAlignment" Value="Left"/>
   </Style>
   
@@ -36,9 +41,19 @@
       <Setter.Value>
         <ControlTemplate TargetType="units:RiotWallpaper">
           <Grid>
-            <Image Source="{TemplateBinding MenuName, Converter={StaticResource MenuNameToWallpaperConverter}}" Stretch="UniformToFill"/>
+            <Image Source="{Binding Path=MenuName, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter={StaticResource MenuNameToWallpaperConverter}}" Stretch="UniformToFill"/>
             <Rectangle Style="{StaticResource TopFadeOutOverlay}"/>
-            <Rectangle Style="{StaticResource LeftFadeOutOverlay}"/>
+            <Rectangle x:Name="LeftOverlay" Style="{StaticResource StandardLeftFadeOutOverlay}"/>
+            <VisualStateManager.VisualStateGroups>
+              <VisualStateGroup x:Name="MenuStates">
+                <VisualState x:Name="DefaultState"/>
+                <VisualState x:Name="CollectionState">
+                  <VisualState.Setters>
+                    <Setter Target="LeftOverlay.Style" Value="{StaticResource WideSidebarFadeOutOverlay}"/>
+                  </VisualState.Setters>
+                </VisualState>
+              </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
           </Grid>
         </ControlTemplate>
       </Setter.Value>

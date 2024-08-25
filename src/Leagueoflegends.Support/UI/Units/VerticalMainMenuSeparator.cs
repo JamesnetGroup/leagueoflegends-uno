@@ -1,10 +1,9 @@
-namespace Leagueoflegends.Support.UI.Units
+namespace Leagueoflegends.Support.UI.Units;
+
+public class VerticalMainMenuSeparator : Control
 {
-    public class VerticalMainMenuSeparator : Control
+    public VerticalMainMenuSeparator() 
     {
-        public VerticalMainMenuSeparator() 
-        {
-            DefaultStyleKey = typeof(VerticalMainMenuSeparator);
-        }
+        DefaultStyleKey = typeof(VerticalMainMenuSeparator);
     }
 }

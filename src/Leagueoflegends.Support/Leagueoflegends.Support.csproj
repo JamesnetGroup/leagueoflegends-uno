@@ -1,4 +1,4 @@
-﻿<Project Sdk="Uno.Sdk">
+<Project Sdk="Uno.Sdk">
   <PropertyGroup>
     <TargetFrameworks>net8.0-desktop</TargetFrameworks>
     <UnoSingleProject>true</UnoSingleProject>
@@ -33,8 +33,166 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Datas\PersonalChampStats.yml" />
     <None Remove="Datas\SubMenus.yml" />
     <None Remove="Images\blue-essence.png" />
+    <None Remove="Images\portrait_aatrox.jpg" />
+    <None Remove="Images\portrait_ahri.jpg" />
+    <None Remove="Images\portrait_akali.jpg" />
+    <None Remove="Images\portrait_akshan.jpg" />
+    <None Remove="Images\portrait_alistar.jpg" />
+    <None Remove="Images\portrait_amumu.jpg" />
+    <None Remove="Images\portrait_anivia.jpg" />
+    <None Remove="Images\portrait_annie.jpg" />
+    <None Remove="Images\portrait_aphelios.jpg" />
+    <None Remove="Images\portrait_ashe.jpg" />
+    <None Remove="Images\portrait_aurelionsol.jpg" />
+    <None Remove="Images\portrait_azir.jpg" />
+    <None Remove="Images\portrait_bard.jpg" />
+    <None Remove="Images\portrait_blitzcrank.jpg" />
+    <None Remove="Images\portrait_brand.jpg" />
+    <None Remove="Images\portrait_braum.jpg" />
+    <None Remove="Images\portrait_caitlyn.jpg" />
+    <None Remove="Images\portrait_camille.jpg" />
+    <None Remove="Images\portrait_cassiopeia.jpg" />
+    <None Remove="Images\portrait_chogath.jpg" />
+    <None Remove="Images\portrait_corki.jpg" />
+    <None Remove="Images\portrait_darius.jpg" />
+    <None Remove="Images\portrait_diana.jpg" />
+    <None Remove="Images\portrait_draven.jpg" />
+    <None Remove="Images\portrait_drmundo.jpg" />
+    <None Remove="Images\portrait_ekko.jpg" />
+    <None Remove="Images\portrait_elise.jpg" />
+    <None Remove="Images\portrait_evelynn.jpg" />
+    <None Remove="Images\portrait_ezreal.jpg" />
+    <None Remove="Images\portrait_fiddlesticks.jpg" />
+    <None Remove="Images\portrait_fiora.jpg" />
+    <None Remove="Images\portrait_fizz.jpg" />
+    <None Remove="Images\portrait_galio.jpg" />
+    <None Remove="Images\portrait_gangplank.jpg" />
+    <None Remove="Images\portrait_garen.jpg" />
+    <None Remove="Images\portrait_gnar.jpg" />
+    <None Remove="Images\portrait_gragas.jpg" />
+    <None Remove="Images\portrait_graves.jpg" />
+    <None Remove="Images\portrait_gwen.jpg" />
+    <None Remove="Images\portrait_hecarim.jpg" />
+    <None Remove="Images\portrait_heimerdinger.jpg" />
+    <None Remove="Images\portrait_illaoi.jpg" />
+    <None Remove="Images\portrait_insignia.png" />
+    <None Remove="Images\portrait_irelia.jpg" />
+    <None Remove="Images\portrait_ivern.jpg" />
+    <None Remove="Images\portrait_janna.jpg" />
+    <None Remove="Images\portrait_jarvaniv.jpg" />
+    <None Remove="Images\portrait_jax.jpg" />
+    <None Remove="Images\portrait_jayce.jpg" />
+    <None Remove="Images\portrait_jhin.jpg" />
+    <None Remove="Images\portrait_jinx.jpg" />
+    <None Remove="Images\portrait_kaisa.jpg" />
+    <None Remove="Images\portrait_kalista.jpg" />
+    <None Remove="Images\portrait_karma.jpg" />
+    <None Remove="Images\portrait_karthus.jpg" />
+    <None Remove="Images\portrait_kassadin.jpg" />
+    <None Remove="Images\portrait_katarina.jpg" />
+    <None Remove="Images\portrait_kayle.jpg" />
+    <None Remove="Images\portrait_kayn.jpg" />
+    <None Remove="Images\portrait_kennen.jpg" />
+    <None Remove="Images\portrait_khazix.jpg" />
+    <None Remove="Images\portrait_kindred.jpg" />
+    <None Remove="Images\portrait_kled.jpg" />
+    <None Remove="Images\portrait_kogmaw.jpg" />
+    <None Remove="Images\portrait_leblanc.jpg" />
+    <None Remove="Images\portrait_leesin.jpg" />
+    <None Remove="Images\portrait_leona.jpg" />
+    <None Remove="Images\portrait_lillia.jpg" />
+    <None Remove="Images\portrait_lissandra.jpg" />
+    <None Remove="Images\portrait_lucian.jpg" />
+    <None Remove="Images\portrait_lulu.jpg" />
+    <None Remove="Images\portrait_lux.jpg" />
+    <None Remove="Images\portrait_malphite.jpg" />
+    <None Remove="Images\portrait_malzahar.jpg" />
+    <None Remove="Images\portrait_maokai.jpg" />
+    <None Remove="Images\portrait_masteryi.jpg" />
+    <None Remove="Images\portrait_missfortune.jpg" />
+    <None Remove="Images\portrait_mordekaiser.jpg" />
+    <None Remove="Images\portrait_morgana.jpg" />
+    <None Remove="Images\portrait_nami.jpg" />
+    <None Remove="Images\portrait_nasus.jpg" />
+    <None Remove="Images\portrait_nautilus.jpg" />
+    <None Remove="Images\portrait_neeko.jpg" />
+    <None Remove="Images\portrait_nidalee.jpg" />
+    <None Remove="Images\portrait_nocturne.jpg" />
+    <None Remove="Images\portrait_nunuwillump.jpg" />
+    <None Remove="Images\portrait_olaf.jpg" />
+    <None Remove="Images\portrait_orianna.jpg" />
+    <None Remove="Images\portrait_ornn.jpg" />
+    <None Remove="Images\portrait_pantheon.jpg" />
+    <None Remove="Images\portrait_poppy.jpg" />
+    <None Remove="Images\portrait_pyke.jpg" />
+    <None Remove="Images\portrait_qiyana.jpg" />
+    <None Remove="Images\portrait_quinn.jpg" />
+    <None Remove="Images\portrait_rakan.jpg" />
+    <None Remove="Images\portrait_rammus.jpg" />
+    <None Remove="Images\portrait_reksai.jpg" />
+    <None Remove="Images\portrait_rell.jpg" />
+    <None Remove="Images\portrait_renekton.jpg" />
+    <None Remove="Images\portrait_rengar.jpg" />
+    <None Remove="Images\portrait_riven.jpg" />
+    <None Remove="Images\portrait_rumble.jpg" />
+    <None Remove="Images\portrait_ryze.jpg" />
+    <None Remove="Images\portrait_samira.jpg" />
+    <None Remove="Images\portrait_sejuani.jpg" />
+    <None Remove="Images\portrait_senna.jpg" />
+    <None Remove="Images\portrait_seraphine.jpg" />
+    <None Remove="Images\portrait_sett.jpg" />
+    <None Remove="Images\portrait_shaco.jpg" />
+    <None Remove="Images\portrait_shen.jpg" />
+    <None Remove="Images\portrait_shyvana.jpg" />
+    <None Remove="Images\portrait_singed.jpg" />
+    <None Remove="Images\portrait_sion.jpg" />
+    <None Remove="Images\portrait_sivir.jpg" />
+    <None Remove="Images\portrait_skarner.jpg" />
+    <None Remove="Images\portrait_sona.jpg" />
+    <None Remove="Images\portrait_soraka.jpg" />
+    <None Remove="Images\portrait_swain.jpg" />
+    <None Remove="Images\portrait_sylas.jpg" />
+    <None Remove="Images\portrait_syndra.jpg" />
+    <None Remove="Images\portrait_tahmkench.jpg" />
+    <None Remove="Images\portrait_taliyah.jpg" />
+    <None Remove="Images\portrait_talon.jpg" />
+    <None Remove="Images\portrait_taric.jpg" />
+    <None Remove="Images\portrait_teemo.jpg" />
+    <None Remove="Images\portrait_thresh.jpg" />
+    <None Remove="Images\portrait_tristana.jpg" />
+    <None Remove="Images\portrait_trundle.jpg" />
+    <None Remove="Images\portrait_tryndamere.jpg" />
+    <None Remove="Images\portrait_twistedfate.jpg" />
+    <None Remove="Images\portrait_twitch.jpg" />
+    <None Remove="Images\portrait_udyr.jpg" />
+    <None Remove="Images\portrait_urgot.jpg" />
+    <None Remove="Images\portrait_varus.jpg" />
+    <None Remove="Images\portrait_vayne.jpg" />
+    <None Remove="Images\portrait_veigar.jpg" />
+    <None Remove="Images\portrait_velkoz.jpg" />
+    <None Remove="Images\portrait_vi.jpg" />
+    <None Remove="Images\portrait_viego.jpg" />
+    <None Remove="Images\portrait_viktor.jpg" />
+    <None Remove="Images\portrait_vladimir.jpg" />
+    <None Remove="Images\portrait_volibear.jpg" />
+    <None Remove="Images\portrait_warwick.jpg" />
+    <None Remove="Images\portrait_wukong.jpg" />
+    <None Remove="Images\portrait_xayah.jpg" />
+    <None Remove="Images\portrait_xerath.jpg" />
+    <None Remove="Images\portrait_xinzhao.jpg" />
+    <None Remove="Images\portrait_yasuo.jpg" />
+    <None Remove="Images\portrait_yone.jpg" />
+    <None Remove="Images\portrait_yorick.jpg" />
+    <None Remove="Images\portrait_yuumi.jpg" />
+    <None Remove="Images\portrait_zac.jpg" />
+    <None Remove="Images\portrait_zed.jpg" />
+    <None Remove="Images\portrait_ziggs.jpg" />
+    <None Remove="Images\portrait_zilean.jpg" />
+    <None Remove="Images\portrait_zoe.jpg" />
+    <None Remove="Images\portrait_zyra.jpg" />
     <None Remove="Images\profile-default.png" />
     <None Remove="Images\rp.png" />
     <None Remove="Images\thumb-1.png" />
@@ -60,6 +218,10 @@
     <None Remove="Themes\Generic.xaml" />
     <None Remove="Themes\RiotPlayButton.xaml" />
     <None Remove="Themes\Units\RiotButton.xaml" />
+    <None Remove="Themes\Units\RiotChampCollectionListBox.xaml" />
+    <None Remove="Themes\Units\RiotChampSummary.xaml" />
+    <None Remove="Themes\Units\RiotCheckBox.xaml" />
+    <None Remove="Themes\Units\RiotComboBox.xaml" />
     <None Remove="Themes\Units\RiotFoldableIcon.xaml" />
     <None Remove="Themes\Units\RiotFriendGroupItem.xaml" />
     <None Remove="Themes\Units\RiotFriendItemControl.xaml" />
@@ -73,6 +235,8 @@
     <None Remove="Themes\Units\RiotNoticeButton.xaml" />
     <None Remove="Themes\Units\RiotScrollViewer.xaml" />
     <None Remove="Themes\Units\RiotStatusIndicator.xaml" />
+    <None Remove="Themes\Units\RiotTextBox.xaml" />
+    <None Remove="Themes\Units\RiotTextBoxCloseButton.xaml" />
     <None Remove="Themes\Units\RiotUserAvatar.xaml" />
     <None Remove="Themes\Units\RIotUserDisplayStatus.xaml" />
     <None Remove="Themes\Units\RiotWallpaper.xaml" />
@@ -110,6 +274,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Datas\PersonalChampStats.yml" />
     <EmbeddedResource Include="Datas\SubMenus.yml" />
     <EmbeddedResource Include="Images\logo.png" />
     <EmbeddedResource Include="Images\menu-selection.png" />
@@ -122,6 +287,22 @@
 
   <ItemGroup>
     <Page Include="Themes\Units\RiotButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotChampCollectionListBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotChampSummary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotCheckBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotComboBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -177,6 +358,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Units\RiotTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotTextBoxCloseButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Units\RiotUserAvatar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -213,6 +402,9 @@
 
   <ItemGroup>
     <Content Include="Images\blue-essence.png" />
+    <Content Include="Images\portrait_caitlyn.jpg" />
+    <Content Include="Images\portrait_nunuwillump.jpg" />
+    <Content Include="Images\portrait_wukong.jpg" />
     <Content Include="Images\profile-default.png" />
     <Content Include="Images\rp.png" />
     <Content Include="Images\wallpaper-ezreal.jpg" />
@@ -291,5 +483,29 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Units\RiotNewsButton.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotChampSummary.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotTextBox.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotTextBoxCloseButton.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotCheckBox.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotComboBox.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotChampCollectionListBox.xaml" />
   </ItemGroup>
 </Project>

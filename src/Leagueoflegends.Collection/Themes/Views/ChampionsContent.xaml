@@ -9,7 +9,28 @@
       <Setter.Value>
         <ControlTemplate TargetType="views:ChampionsContent">
           <Grid>
-            <TextBlock Text="Champions Content" FontSize="30" Foreground="Pink"/>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Margin="20 60 0 0">
+              <units:RiotChampSummary HorizontalAlignment="Center"/>
+              <units:RiotTextBox Margin="0 20 0 0"/>
+              <units:RiotCheckBox Content="View Unowned Items"/>
+              <units:RiotComboBox 
+                ItemsSource="{Binding FilterOptions}"
+                SelectedItem="{Binding SelectedFilterOption, Mode=TwoWay}"
+                DisplayMemberPath="Name"/>
+              <units:RiotComboBox
+                Margin="0  10 0 0"
+                ItemsSource="{Binding SortOptions}"
+                SelectedItem="{Binding SelectedSortOption, Mode=TwoWay}"
+                DisplayMemberPath="Name"/>
+            </StackPanel>
+            <units:RiotChampCollectionListBox
+              Grid.Column="1"
+              ItemsSource="{Binding Champions}"
+              Margin="20 0 0 0"/>
           </Grid>
         </ControlTemplate>
       </Setter.Value>

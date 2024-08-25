@@ -1,0 +1,84 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:units="using:Leagueoflegends.Support.UI.Units">
+
+  <!-- 스타일에서 사용될 브러쉬 정의 -->
+  <LinearGradientBrush x:Key="CbxBorderOverBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+    <GradientStop Color="#735627" Offset="0"/>
+    <GradientStop Color="#7C6130" Offset="0.5"/>
+    <GradientStop Color="#997D46" Offset="1"/>
+  </LinearGradientBrush>
+
+  <!-- RiotCheckBox 스타일 정의 -->
+  <Style TargetType="units:RiotCheckBox">
+    <Setter Property="VerticalContentAlignment" Value="Center"/>
+    <Setter Property="FontWeight" Value="Bold"/>
+    <Setter Property="Foreground" Value="#A09B8C"/>
+    <Setter Property="FontSize" Value="12"/>
+    <Setter Property="Margin" Value="0,8,0,8"/>
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="units:RiotCheckBox">
+          <Grid>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <VisualStateManager.VisualStateGroups>
+              <VisualStateGroup x:Name="CommonStates">
+                <VisualState x:Name="Normal"/>
+                <VisualState x:Name="PointerOver">
+                  <VisualState.Setters>
+                    <Setter Target="BorderElement.BorderBrush" Value="{StaticResource CbxBorderOverBrush}"/>
+                    <Setter Target="ContentPresenter.Foreground" Value="#F0E6D2"/>
+                  </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Disabled">
+                  <VisualState.Setters>
+                    <Setter Target="BorderElement.BorderBrush" Value="#3A2B14"/>
+                    <Setter Target="IconElement.Fill" Value="#3A2B14"/>
+                    <Setter Target="ContentPresenter.Foreground" Value="#494741"/>
+                  </VisualState.Setters>
+                </VisualState>
+              </VisualStateGroup>
+              <VisualStateGroup x:Name="CheckStates">
+                <VisualState x:Name="Unchecked"/>
+                <VisualState x:Name="Checked">
+                  <VisualState.Setters>
+                    <Setter Target="IconElement.Visibility" Value="Visible"/>
+                  </VisualState.Setters>
+                </VisualState>
+              </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Border
+              x:Name="BorderElement"
+              Width="18" 
+              Height="18" 
+              Background="Transparent" 
+              BorderBrush="#705427" 
+              BorderThickness="1"
+              VerticalAlignment="Center"
+              Margin="0,0,8,0">
+              <Path
+                x:Name="IconElement"
+                Data="M17.5625,6.5625 L10.0005,14.188 6.5004996,10.53201 5.0942497,11.875848 10.031599,16.876176 19.000529,8.0005944"
+                Fill="#705427"
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center"
+                Stretch="Uniform"
+                Width="10" 
+                Height="10" 
+                Visibility="Collapsed"/>
+            </Border>
+            <ContentPresenter
+              Grid.Column="1"
+              VerticalAlignment="Center"
+              Content="{TemplateBinding Content}"/>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+</ResourceDictionary>
