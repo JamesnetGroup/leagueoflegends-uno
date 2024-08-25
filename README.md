@@ -66,3 +66,8 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Check
+- [ ] Foreground (GradientBrush) https://platform.uno/docs/articles/features/shapes-and-brushes.html
+- [ ] TextBox CaretBrush
+- [ ] TextBox CustomControl Button Click Not Working
