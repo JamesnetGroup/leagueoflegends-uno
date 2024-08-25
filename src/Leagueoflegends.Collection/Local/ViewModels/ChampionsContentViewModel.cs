@@ -1,6 +1,5 @@
 using Jamesnet.Core;
 using System.Collections.ObjectModel;
-using Leagueoflegends.Collection.Local.Datas;
 using Leagueoflegends.Support.Local.Datas;
 using Leagueoflegends.Support.Local.Models;  // ChampionStats가 정의된 네임스페이스를 포함
 

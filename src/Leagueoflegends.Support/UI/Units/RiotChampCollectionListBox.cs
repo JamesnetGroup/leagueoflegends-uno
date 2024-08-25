@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Jamesnet.Uno;
 
 namespace Leagueoflegends.Support.UI.Units;
@@ -32,7 +27,7 @@ public class RiotChampCollectionGroupItem : RecursiveControl
     }
 }
 
-public class RiotChampCollectionItemControl : Button
+public class RiotChampCollectionItemControl : RadioButton
 {
     public RiotChampCollectionItemControl()
     {

@@ -1,4 +1,4 @@
-<Project Sdk="Uno.Sdk">
+﻿<Project Sdk="Uno.Sdk">
   <PropertyGroup>
     <TargetFrameworks>net8.0-desktop</TargetFrameworks>
     <UnoSingleProject>true</UnoSingleProject>
@@ -34,6 +34,7 @@
 
   <ItemGroup>
     <None Remove="Datas\PersonalChampStats.yml" />
+    <None Remove="Datas\Spells.yml" />
     <None Remove="Datas\SubMenus.yml" />
     <None Remove="Images\blue-essence.png" />
     <None Remove="Images\portrait_aatrox.jpg" />
@@ -195,6 +196,17 @@
     <None Remove="Images\portrait_zyra.jpg" />
     <None Remove="Images\profile-default.png" />
     <None Remove="Images\rp.png" />
+    <None Remove="Images\spell_barrier.png" />
+    <None Remove="Images\spell_clarity.png" />
+    <None Remove="Images\spell_cleanse.png" />
+    <None Remove="Images\spell_exhaust.png" />
+    <None Remove="Images\spell_flash.png" />
+    <None Remove="Images\spell_ghost.png" />
+    <None Remove="Images\spell_heal.png" />
+    <None Remove="Images\spell_ignite.png" />
+    <None Remove="Images\spell_mark.png" />
+    <None Remove="Images\spell_smite.png" />
+    <None Remove="Images\spell_teleport.png" />
     <None Remove="Images\thumb-1.png" />
     <None Remove="Images\thumb-10.png" />
     <None Remove="Images\thumb-11.png" />
@@ -234,6 +246,7 @@
     <None Remove="Themes\Units\RiotNewsButton.xaml" />
     <None Remove="Themes\Units\RiotNoticeButton.xaml" />
     <None Remove="Themes\Units\RiotScrollViewer.xaml" />
+    <None Remove="Themes\Units\RiotSpellListBoxItem.xaml" />
     <None Remove="Themes\Units\RiotStatusIndicator.xaml" />
     <None Remove="Themes\Units\RiotTextBox.xaml" />
     <None Remove="Themes\Units\RiotTextBoxCloseButton.xaml" />
@@ -274,6 +287,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Datas\Spells.yml" />
     <EmbeddedResource Include="Datas\PersonalChampStats.yml" />
     <EmbeddedResource Include="Datas\SubMenus.yml" />
     <EmbeddedResource Include="Images\logo.png" />
@@ -351,6 +365,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Units\RiotScrollViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotSpellListBoxItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -507,5 +525,9 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Units\RiotChampCollectionListBox.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotSpellListBoxItem.xaml" />
   </ItemGroup>
 </Project>
