@@ -230,6 +230,8 @@
     <None Remove="Themes\Generic.xaml" />
     <None Remove="Themes\RiotPlayButton.xaml" />
     <None Remove="Themes\Units\RiotButton.xaml" />
+    <None Remove="Themes\Units\RiotChampCollectionGroupItem.xaml" />
+    <None Remove="Themes\Units\RiotChampCollectionItemControl.xaml" />
     <None Remove="Themes\Units\RiotChampCollectionListBox.xaml" />
     <None Remove="Themes\Units\RiotChampSummary.xaml" />
     <None Remove="Themes\Units\RiotCheckBox.xaml" />
@@ -301,6 +303,14 @@
 
   <ItemGroup>
     <Page Include="Themes\Units\RiotButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotChampCollectionGroupItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotChampCollectionItemControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -529,5 +539,13 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Units\RiotSpellListBoxItem.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotChampCollectionGroupItem.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotChampCollectionItemControl.xaml" />
   </ItemGroup>
 </Project>

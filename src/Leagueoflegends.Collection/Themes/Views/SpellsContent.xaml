@@ -19,7 +19,7 @@
   
   <Style TargetType="views:SpellsContent">
     <Setter Property="Foreground" Value="#9C9889"/>
-    <Setter Property="Margin" Value="0 60 0 0"/>
+    <Setter Property="Margin" Value="30 60 0 0"/>
     <Setter Property="Template">
       <Setter.Value>
         <ControlTemplate TargetType="views:SpellsContent">
