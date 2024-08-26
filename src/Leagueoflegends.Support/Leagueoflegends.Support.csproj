@@ -1,4 +1,4 @@
-﻿<Project Sdk="Uno.Sdk">
+<Project Sdk="Uno.Sdk">
   <PropertyGroup>
     <TargetFrameworks>net8.0-desktop</TargetFrameworks>
     <UnoSingleProject>true</UnoSingleProject>
@@ -1485,6 +1485,12 @@
     <None Remove="Images\Skins\skin_zyra_06.jpg" />
     <None Remove="Images\Skins\skin_zyra_07.jpg" />
     <None Remove="Images\Skins\skin_zyra_16.jpg" />
+    <None Remove="Images\skin_chroma.png" />
+    <None Remove="Images\skin_epic.png" />
+    <None Remove="Images\skin_legend.png" />
+    <None Remove="Images\skin_limit.png" />
+    <None Remove="Images\skin_myth.png" />
+    <None Remove="Images\skin_transcend.png" />
     <None Remove="Images\spell_barrier.png" />
     <None Remove="Images\spell_clarity.png" />
     <None Remove="Images\spell_cleanse.png" />
@@ -1525,6 +1531,7 @@
     <None Remove="Themes\Units\RiotChampSkinGroupItem.xaml" />
     <None Remove="Themes\Units\RiotChampSkinItemControl.xaml" />
     <None Remove="Themes\Units\RiotChampSkinLIstBox.xaml" />
+    <None Remove="Themes\Units\RiotChampSkinSummary.xaml" />
     <None Remove="Themes\Units\RiotChampSummary.xaml" />
     <None Remove="Themes\Units\RiotCheckBox.xaml" />
     <None Remove="Themes\Units\RiotComboBox.xaml" />
@@ -1540,6 +1547,7 @@
     <None Remove="Themes\Units\RiotNewsButton.xaml" />
     <None Remove="Themes\Units\RiotNoticeButton.xaml" />
     <None Remove="Themes\Units\RiotScrollViewer.xaml" />
+    <None Remove="Themes\Units\RiotSkinTierButton.xaml" />
     <None Remove="Themes\Units\RiotSpellListBoxItem.xaml" />
     <None Remove="Themes\Units\RiotStatusIndicator.xaml" />
     <None Remove="Themes\Units\RiotTextBox.xaml" />
@@ -1681,6 +1689,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Units\RiotScrollViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotChampSkinSummary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotSkinTierButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1865,5 +1881,13 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Units\RiotChampSkinItemControl.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotChampSkinSummary.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotSkinTierButton.xaml" />
   </ItemGroup>
 </Project>

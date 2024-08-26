@@ -22,3 +22,30 @@
 - name: Chest Available
   category: SortOptions
   isSelected: false
+- name: All Champions
+  category: ChampionFilter
+  isSelected: true
+- name: Owned
+  category: ChampionFilter
+  isSelected: false
+- name: Role Group
+  category: ChampionFilter
+  isSelected: false
+- name: Set
+  category: ChampionFilter
+  isSelected: false
+- name: Tier
+  category: ChampionFilter
+  isSelected: false
+- name: Alphabetical Order
+  category: ChampionSort
+  isSelected: true
+- name: Recent
+  category: ChampionSort
+  isSelected: false
+- name: Upcoming
+  category: ChampionSort
+  isSelected: false
+- name: Show Unowned Items
+  category: AdditionalOption
+  isSelected: false

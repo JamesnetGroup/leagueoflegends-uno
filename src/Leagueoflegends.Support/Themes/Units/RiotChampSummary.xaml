@@ -47,10 +47,11 @@
                     FontSize="40"
                     FontWeight="Bold"
                     HorizontalAlignment="Center"/>
-                  <Border Background="{StaticResource OverlayGradient}"
-                          Width="100" Height="50"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"/>
+                  <Border
+                    Background="{StaticResource OverlayGradient}"
+                    Width="100" Height="50"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"/>
                 </Grid>
                 <TextBlock
                   FontSize="11"
@@ -66,10 +67,11 @@
                     FontSize="40"
                     FontWeight="Bold"
                     HorizontalAlignment="Center"/>
-                  <Border Background="{StaticResource OverlayGradient}"
-                          Width="100" Height="50"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"/>
+                  <Border
+                    Background="{StaticResource OverlayGradient}"
+                    Width="100" Height="50"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"/>
                 </Grid>
                 <TextBlock
                   FontSize="11"

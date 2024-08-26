@@ -7,18 +7,12 @@ namespace Leagueoflegends.Collection.Local.ViewModels;
 
 public class SkinsContentViewModel : ViewModelBase
 {
-    private int _proficiency;
-    public int Proficiency
-    {
-        get => _proficiency;
-        set => SetProperty(ref _proficiency, value);
-    }
+    private int _ownedSkinsCount;
 
-    private int _achieve;
-    public int Achieve
+    public int OwnedSkinsCount
     {
-        get => _achieve;
-        set => SetProperty(ref _achieve, value);
+        get => _ownedSkinsCount;
+        set => SetProperty(ref _ownedSkinsCount, value);
     }
 
     private ObservableCollection<FilterOption> _filterOptions;
@@ -68,16 +62,16 @@ public class SkinsContentViewModel : ViewModelBase
 
     private void InitializeViewModel()
     {
-        Proficiency = 282;
-        Achieve = 343;
         LoadFilterAndSortOptions();
         LoadChampions();
+
+        OwnedSkinsCount = Champions.Count;
     }
 
     private void LoadFilterAndSortOptions()
     {
-        var filters = _optionsDataLoader.LoadOptions().Where(x => x.Category == "FilterOptions");
-        var options = _optionsDataLoader.LoadOptions().Where(x => x.Category == "SortOptions");
+        var filters = _optionsDataLoader.LoadOptions().Where(x => x.Category == "ChampionFilter");
+        var options = _optionsDataLoader.LoadOptions().Where(x => x.Category == "ChampionSort");
         FilterOptions = new ObservableCollection<FilterOption>(filters);
         SortOptions = new ObservableCollection<FilterOption>(options);
         SelectedFilterOption = FilterOptions.FirstOrDefault();

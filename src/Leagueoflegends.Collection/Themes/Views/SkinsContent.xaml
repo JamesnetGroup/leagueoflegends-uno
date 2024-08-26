@@ -14,9 +14,9 @@
               <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <StackPanel Margin="20 60 0 0">
-              <units:RiotChampSummary HorizontalAlignment="Center"/>
+              <units:RiotChampSkinSummary HorizontalAlignment="Center"/>
               <units:RiotTextBox Margin="0 20 0 0"/>
-              <units:RiotCheckBox Content="View Unowned Items"/>
+              <units:RiotCheckBox Content="Show Unowned Items"/>
               <units:RiotComboBox 
                 ItemsSource="{Binding FilterOptions}"
                 SelectedItem="{Binding SelectedFilterOption, Mode=TwoWay}"
@@ -37,3 +37,4 @@
     </Setter>
   </Style>
 </ResourceDictionary>
+
