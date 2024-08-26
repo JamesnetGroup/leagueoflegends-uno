@@ -27,7 +27,7 @@
                 SelectedItem="{Binding SelectedSortOption, Mode=TwoWay}"
                 DisplayMemberPath="Name"/>
             </StackPanel>
-            <units:RiotChampCollectionListBox
+            <units:RiotChampListBox
               Grid.Column="1"
               ItemsSource="{Binding Champions}"
               Margin="20 0 0 0"/>

@@ -3,12 +3,12 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:units="using:Leagueoflegends.Support.UI.Units">
 
-  <Style TargetType="units:RiotChampCollectionGroupItem">
+  <Style TargetType="units:RiotChampGroupItem">
     <Setter Property="IsExpanded" Value="True"/>
     <Setter Property="ItemsBindingPath" Value="Children"/>
     <Setter Property="Template">
       <Setter.Value>
-        <ControlTemplate TargetType="units:RiotChampCollectionGroupItem">
+        <ControlTemplate TargetType="units:RiotChampGroupItem">
           <StackPanel Margin="0,0,20,0">
             <StackPanel Orientation="Horizontal" Margin="10, 20, 0, 20">
               <TextBlock

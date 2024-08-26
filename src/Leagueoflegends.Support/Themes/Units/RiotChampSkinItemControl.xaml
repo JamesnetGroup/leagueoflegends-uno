@@ -38,11 +38,11 @@
     <Setter Property="Orientation" Value="Horizontal"/>
   </Style>
 
-  <Style TargetType="units:RiotChampCollectionItemControl">
+  <Style TargetType="units:RiotChampSkinItemControl">
     <Setter Property="GroupName" Value="Champion"/>
     <Setter Property="Template">
       <Setter.Value>
-        <ControlTemplate TargetType="units:RiotChampCollectionItemControl">
+        <ControlTemplate TargetType="units:RiotChampSkinItemControl">
           <Grid Width="140" Margin="10">
             <Grid.RowDefinitions>
               <RowDefinition/>
@@ -119,7 +119,7 @@
             <TextBlock
               x:Name="NameText"
               Grid.Row="1"
-              Text="{Binding Name}"
+              Text="{Binding DisplayName}"
               FontSize="12"
               Margin="0 12 0 0"
               Foreground="#B09B8C" 

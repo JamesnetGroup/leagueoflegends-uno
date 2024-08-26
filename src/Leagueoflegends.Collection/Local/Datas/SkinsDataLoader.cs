@@ -29,6 +29,7 @@ namespace Leagueoflegends.Collection.Local.Datas
                 return new Skin
                 {
                     Name = item.GetValue<string>("name"),
+                    SkinName = item.GetValue<string>("skinName"),
                     ImageUrl = $"ms-appx:///Leagueoflegends.Support/Images/Skins/{item.GetValue<string>("imageUrl")}",
                     IsPurchased = item.GetValue<bool>("isPurchased")
                 };
