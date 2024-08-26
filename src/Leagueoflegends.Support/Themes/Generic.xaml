@@ -25,9 +25,12 @@
     <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotFriendListBox.xaml"/>
     <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotMainMenu.xaml"/>
     <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotMainIconMenu.xaml"/>
-    <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotChampCollectionItemControl.xaml"/>
-    <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotChampCollectionGroupItem.xaml"/>
-    <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotChampCollectionListBox.xaml"/>
+    <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotChampSkinItemControl.xaml"/>
+    <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotChampSkinGroupItem.xaml"/>
+    <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotChampSkinListBox.xaml"/>
+    <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotChampItemControl.xaml"/>
+    <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotChampGroupItem.xaml"/>
+    <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotChampListBox.xaml"/>
     <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotHorizMenuListBoxItem.xaml"/>
     <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotHorizMenuListBox.xaml"/>
     <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotSpellListBoxItem.xaml"/>

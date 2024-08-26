@@ -3,11 +3,11 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:units="using:Leagueoflegends.Support.UI.Units">
 
-  <Style TargetType="units:RiotChampCollectionListBox">
+  <Style TargetType="units:RiotChampListBox">
     <Setter Property="Margin" Value="0,15,0,0"/>
     <Setter Property="Template">
       <Setter.Value>
-        <ControlTemplate TargetType="units:RiotChampCollectionListBox">
+        <ControlTemplate TargetType="units:RiotChampListBox">
           <ScrollViewer Margin="0,40,0,15">
             <ItemsPresenter/>
           </ScrollViewer>

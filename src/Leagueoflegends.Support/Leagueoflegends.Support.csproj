@@ -1519,9 +1519,12 @@
     <None Remove="Themes\Generic.xaml" />
     <None Remove="Themes\RiotPlayButton.xaml" />
     <None Remove="Themes\Units\RiotButton.xaml" />
-    <None Remove="Themes\Units\RiotChampCollectionGroupItem.xaml" />
-    <None Remove="Themes\Units\RiotChampCollectionItemControl.xaml" />
-    <None Remove="Themes\Units\RiotChampCollectionListBox.xaml" />
+    <None Remove="Themes\Units\RiotChampGroupItem.xaml" />
+    <None Remove="Themes\Units\RiotChampItemControl.xaml" />
+    <None Remove="Themes\Units\RiotChampListBox.xaml" />
+    <None Remove="Themes\Units\RiotChampSkinGroupItem.xaml" />
+    <None Remove="Themes\Units\RiotChampSkinItemControl.xaml" />
+    <None Remove="Themes\Units\RiotChampSkinLIstBox.xaml" />
     <None Remove="Themes\Units\RiotChampSummary.xaml" />
     <None Remove="Themes\Units\RiotCheckBox.xaml" />
     <None Remove="Themes\Units\RiotComboBox.xaml" />
@@ -1597,15 +1600,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\Units\RiotChampCollectionGroupItem.xaml">
+    <Page Include="Themes\Units\RiotChampGroupItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\Units\RiotChampCollectionItemControl.xaml">
+    <Page Include="Themes\Units\RiotChampItemControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\Units\RiotChampCollectionListBox.xaml">
+    <Page Include="Themes\Units\RiotChampListBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotChampSkinGroupItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotChampSkinItemControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotChampSkinLIstBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1825,18 +1840,30 @@
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Themes\Units\RiotChampCollectionListBox.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Units\RiotSpellListBoxItem.xaml" />
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Themes\Units\RiotChampCollectionGroupItem.xaml" />
+    <UpToDateCheckInput Remove="Themes\Units\RiotChampSkinLIstBox.xaml" />
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Themes\Units\RiotChampCollectionItemControl.xaml" />
+    <UpToDateCheckInput Remove="Themes\Units\RiotChampSkinGroupItem.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotChampListBox.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotChampItemControl.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotChampGroupItem.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotChampSkinItemControl.xaml" />
   </ItemGroup>
 </Project>
