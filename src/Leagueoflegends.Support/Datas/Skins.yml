@@ -826,6 +826,7 @@
   imageUrl: skin_fiora_04.jpg
   isPurchased: false
 - name: Fiora
+  skinName: Pulsefire Fiora
   imageUrl: skin_fiora_41.jpg
   isPurchased: true
 - name: Fiora
@@ -856,6 +857,7 @@
   imageUrl: skin_fizz_16.jpg
   isPurchased: false
 - name: Fizz
+  skinName: Tundra Fizz
   imageUrl: skin_fizz_02.jpg
   isPurchased: true
 - name: Fizz
@@ -865,6 +867,7 @@
   imageUrl: skin_fizz_04.jpg
   isPurchased: false
 - name: Fizz
+  skinName: Cottontail Fizz
   imageUrl: skin_fizz_08.jpg
   isPurchased: true
 - name: Fizz
@@ -895,33 +898,43 @@
   imageUrl: skin_galio_06.jpg
   isPurchased: false
 - name: Gangplank
+  skinName: Spooky Gangplank
   imageUrl: skin_gangplank_01.jpg
   isPurchased: true
 - name: Gangplank
+  skinName: Minuteman Gangplank
   imageUrl: skin_gangplank_14.jpg
   isPurchased: true
 - name: Gangplank
+  skinName: Sailor Gangplank
   imageUrl: skin_gangplank_02.jpg
   isPurchased: true
 - name: Gangplank
+  skinName: Toy Soldier Gangplank
   imageUrl: skin_gangplank_21.jpg
   isPurchased: true
 - name: Gangplank
+  skinName: Special Forces Gangplank
   imageUrl: skin_gangplank_03.jpg
   isPurchased: true
 - name: Gangplank
+  skinName: Sultan Gangplank
   imageUrl: skin_gangplank_04.jpg
   isPurchased: true
 - name: Gangplank
+  skinName: Captain Gangplank
   imageUrl: skin_gangplank_05.jpg
   isPurchased: true
 - name: Gangplank
+  skinName: Dreadnova Gangplank
   imageUrl: skin_gangplank_06.jpg
   isPurchased: true
 - name: Gangplank
+  skinName: Pool Party Gangplank
   imageUrl: skin_gangplank_07.jpg
   isPurchased: true
 - name: Gangplank
+  skinName: FPX Gangplank
   imageUrl: skin_gangplank_08.jpg
   isPurchased: true
 - name: Garen
