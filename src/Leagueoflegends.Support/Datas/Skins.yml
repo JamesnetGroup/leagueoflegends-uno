@@ -137,9 +137,11 @@
   imageUrl: skin_alistar_05.jpg
   isPurchased: false
 - name: Alistar
+  skinName: Infernal Alistar
   imageUrl: skin_alistar_06.jpg
   isPurchased: true
 - name: Alistar
+  skinName: Sweeper Alistar
   imageUrl: skin_alistar_07.jpg
   isPurchased: true
 - name: Alistar
@@ -293,6 +295,7 @@
   imageUrl: skin_ashe_08.jpg
   isPurchased: false
 - name: Ashe
+  skinName: Worlds 2017 Ashe
   imageUrl: skin_ashe_09.jpg
   isPurchased: true
 - name: AurelionSol
@@ -302,6 +305,7 @@
   imageUrl: skin_aurelionsol_11.jpg
   isPurchased: false
 - name: AurelionSol
+  skinName: Ashen Load Aurelion Sol
   imageUrl: skin_aurelionsol_02.jpg
   isPurchased: true
 - name: Azir
@@ -389,6 +393,7 @@
   imageUrl: skin_brand_07.jpg
   isPurchased: false
 - name: Brand
+  skinName: Eternal Dragon Brand
   imageUrl: skin_brand_08.jpg
   isPurchased: true
 - name: Braum
@@ -485,8 +490,9 @@
   imageUrl: skin_chogath_01.jpg
   isPurchased: false
 - name: Chogath
+  skinName: Shan Hai Scrolls Cho'Gath
   imageUrl: skin_chogath_14.jpg
-  isPurchased: false
+  isPurchased: true
 - name: Chogath
   imageUrl: skin_chogath_02.jpg
   isPurchased: false
@@ -501,7 +507,7 @@
   isPurchased: false
 - name: Chogath
   imageUrl: skin_chogath_50.png
-  isPurchased: true
+  isPurchased: false
 - name: Chogath
   imageUrl: skin_chogath_06.jpg
   isPurchased: false
@@ -560,6 +566,7 @@
   imageUrl: skin_darius_03.jpg
   isPurchased: false
 - name: Darius
+  skinName: Crime City Nightmare Darius
   imageUrl: skin_darius_33.jpg
   isPurchased: true
 - name: Darius
@@ -605,12 +612,14 @@
   imageUrl: skin_draven_13.jpg
   isPurchased: false
 - name: Draven
+  skinName: Gladiator Draven
   imageUrl: skin_draven_02.jpg
   isPurchased: true
 - name: Draven
   imageUrl: skin_draven_20.jpg
   isPurchased: false
 - name: Draven
+  skinName: Primetime Draven
   imageUrl: skin_draven_03.jpg
   isPurchased: true
 - name: Draven
@@ -776,6 +785,7 @@
   imageUrl: skin_fiddlesticks_03.jpg
   isPurchased: false
 - name: FiddleSticks
+  skinName: Pumkinhead Fiddlesticks
   imageUrl: skin_fiddlesticks_04.jpg
   isPurchased: true
 - name: FiddleSticks
