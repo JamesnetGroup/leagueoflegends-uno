@@ -1,0 +1,24 @@
+- name: All Champions
+  category: FilterOptions
+  isSelected: true
+- name: All Champions
+  category: FilterOptions
+  isSelected: false
+- name: Role Group
+  category: FilterOptions
+  isSelected: false
+- name: Ownership Status
+  category: FilterOptions
+  isSelected: false
+- name: Alphabetical Order
+  category: SortOptions
+  isSelected: true
+- name: Champion Mastery
+  category: SortOptions
+  isSelected: false
+- name: Achievements Completed
+  category: SortOptions
+  isSelected: false
+- name: Chest Available
+  category: SortOptions
+  isSelected: false

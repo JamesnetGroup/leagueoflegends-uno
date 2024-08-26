@@ -10,13 +10,13 @@
       <Setter.Value>
         <ControlTemplate TargetType="units:RiotChampCollectionGroupItem">
           <StackPanel Margin="0,0,20,0">
-            <StackPanel Orientation="Horizontal" Margin="10, 0, 0, 20">
+            <StackPanel Orientation="Horizontal" Margin="10, 20, 0, 20">
               <TextBlock
                 Text="{Binding Header}"
                 Foreground="#F0E6D2"
                 FontSize="20"
                 FontWeight="Bold"
-                Margin="0,0,40,0"/>
+                Margin="0,0,10,0"/>
               <TextBlock
                 Text="{Binding Children.Count}"
                 Foreground="#C0A267"

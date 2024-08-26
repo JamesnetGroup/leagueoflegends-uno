@@ -11,6 +11,17 @@ public class PersonalChampStatsDataLoader : BaseResourceLoader<ChampionStats, Li
 
     public List<ChampionStats> LoadChampionStats() => LoadAndOrganize();
 
+    public Dictionary<string, List<ChampionStats>> LoadChampionStatsGroupedByPosition()
+    {
+        var allChampions = LoadAndOrganize();
+        return allChampions
+            .GroupBy(c => c.Position)
+            .ToDictionary(
+                g => g.Key,
+                g => g.OrderBy(c => c.Name).ToList()
+            );
+    }
+
     protected override IEnumerable<ChampionStats> ConvertToItems(YamlData rawData)
     {
         return rawData.Select(item => new ChampionStats

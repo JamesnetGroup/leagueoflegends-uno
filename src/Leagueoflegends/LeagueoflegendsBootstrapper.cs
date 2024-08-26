@@ -27,6 +27,7 @@ public class LeagueOfLegendsBootstrapper : AppBootstrapper
         ViewModelMapper.Register<SocialContent, SocialContentViewModel>();
         ViewModelMapper.Register<OverviewContent, OverviewContentViewModel>();
         ViewModelMapper.Register<ChampionsContent, ChampionsContentViewModel>();
+        ViewModelMapper.Register<SkinsContent, SkinsContentViewModel>();
         ViewModelMapper.Register<SpellsContent, SpellsContentViewModel>();
         ViewModelMapper.Register<TftContent, TftContentViewModel>();
         ViewModelMapper.Register<SubMenuContent, SubMenuContentViewModel>();
@@ -39,6 +40,8 @@ public class LeagueOfLegendsBootstrapper : AppBootstrapper
         Container.RegisterSingleton<IFriendDataLoader, FriendDataLoader>();
         Container.RegisterSingleton<ISubMenuDataLoader, SubMenuDataLoader>();
         Container.RegisterSingleton<IPersonalChampStatsDataLoader, PersonalChampStatsDataLoader>();
+        Container.RegisterSingleton<IFilterSortOptionsDataLoader, FilterSortOptionsDataLoader>();
+        Container.RegisterSingleton<ISkinsDataLoader, SkinsDataLoader>();
         Container.RegisterSingleton<ISpellsDataLoader, SpellsDataLoader>();
 
         Container.RegisterSingleton<IView, MainContent>();
@@ -47,6 +50,7 @@ public class LeagueOfLegendsBootstrapper : AppBootstrapper
         Container.RegisterSingleton<IView, TftContent>("TftContent");
         Container.RegisterSingleton<IView, OverviewContent>("HomeOverviewContent");
         Container.RegisterSingleton<IView, ChampionsContent>("CollectionChampionsContent");
+        Container.RegisterSingleton<IView, SkinsContent>("CollectionSkinsContent");
         Container.RegisterSingleton<IView, SpellsContent>("CollectionSpellsContent");
 
         IView mainContent = Container.Resolve<MainContent>();

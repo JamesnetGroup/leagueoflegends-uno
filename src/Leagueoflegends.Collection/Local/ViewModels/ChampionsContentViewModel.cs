@@ -1,21 +1,9 @@
 using Jamesnet.Core;
 using System.Collections.ObjectModel;
 using Leagueoflegends.Support.Local.Datas;
-using Leagueoflegends.Support.Local.Models;  // ChampionStats가 정의된 네임스페이스를 포함
+using Leagueoflegends.Support.Local.Models;
 
 namespace Leagueoflegends.Collection.Local.ViewModels;
-
-public class FilterOption
-{
-    public string Name { get; set; }
-    public bool IsSelected { get; set; }
-}
-
-public class ChampionGroup
-{
-    public string Header { get; set; }
-    public List<ChampionStats> Children { get; set; }
-}
 
 public class ChampionsContentViewModel : ViewModelBase
 {
@@ -68,11 +56,13 @@ public class ChampionsContentViewModel : ViewModelBase
         set => SetProperty(ref _champions, value);
     }
 
-    private readonly IPersonalChampStatsDataLoader _dataLoader;
+    private readonly IPersonalChampStatsDataLoader _champDataLoader;
+    private readonly IFilterSortOptionsDataLoader _optionsDataLoader;
 
-    public ChampionsContentViewModel(IPersonalChampStatsDataLoader dataLoader)
+    public ChampionsContentViewModel(IPersonalChampStatsDataLoader champDataLoader, IFilterSortOptionsDataLoader optionsDataLoader)
     {
-        _dataLoader = dataLoader;
+        _champDataLoader = champDataLoader;
+        _optionsDataLoader = optionsDataLoader;
         InitializeViewModel();
     }
 
@@ -80,47 +70,29 @@ public class ChampionsContentViewModel : ViewModelBase
     {
         Proficiency = 282;
         Achieve = 343;
-
-        InitializeFilterOptions();
-        InitializeSortOptions();
+        LoadFilterAndSortOptions();
         LoadChampions();
     }
 
-    private void InitializeFilterOptions()
+    private void LoadFilterAndSortOptions()
     {
-        FilterOptions = new ObservableCollection<FilterOption>
-        {
-            new FilterOption { Name = "All Champions", IsSelected = true },
-            new FilterOption { Name = "Most Popular Position", IsSelected = false },
-            new FilterOption { Name = "Role Group", IsSelected = false },
-            new FilterOption { Name = "Ownership Status", IsSelected = false }
-        };
-        SelectedFilterOption = FilterOptions[0];
-    }
-
-    private void InitializeSortOptions()
-    {
-        SortOptions = new ObservableCollection<FilterOption>
-        {
-            new FilterOption { Name = "Alphabetical Order", IsSelected = true },
-            new FilterOption { Name = "Champion Mastery", IsSelected = false },
-            new FilterOption { Name = "Achievements Completed", IsSelected = false },
-            new FilterOption { Name = "Chest Available", IsSelected = false }
-        };
-        SelectedSortOption = SortOptions[0];
+        var filters = _optionsDataLoader.LoadOptions().Where(x => x.Category == "FilterOptions");
+        var options = _optionsDataLoader.LoadOptions().Where(x => x.Category == "SortOptions");
+        FilterOptions = new ObservableCollection<FilterOption>(filters);
+        SortOptions = new ObservableCollection<FilterOption>(options);
+        SelectedFilterOption = FilterOptions.FirstOrDefault();
+        SelectedSortOption = SortOptions.FirstOrDefault();
     }
 
     private void LoadChampions()
     {
-        var allChampions = _dataLoader.LoadChampionStats();
-
-        Champions = new ObservableCollection<ChampionGroup>
-        {
-            new ChampionGroup
+        var groupedChampions = _champDataLoader.LoadChampionStatsGroupedByPosition();
+        Champions = new ObservableCollection<ChampionGroup>(
+            groupedChampions.Select(kvp => new ChampionGroup
             {
-                Header = "All Champions",
-                Children = allChampions
-            }
-        };
+                Header = kvp.Key,
+                Children = kvp.Value
+            })
+        );
     }
 }
