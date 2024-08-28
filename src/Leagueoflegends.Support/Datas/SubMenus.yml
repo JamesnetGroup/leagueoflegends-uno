@@ -65,27 +65,27 @@
 - name: EMOTES
   seq: 17
   category: COLLECTION
-  isUsed: true
+  isUsed: false
 - name: RUNES
   seq: 18
   category: COLLECTION
-  isUsed: true
+  isUsed: false
 - name: SPELLS
   seq: 19
   category: COLLECTION
-  isUsed: false
+  isUsed: true
 - name: ITEMS
   seq: 20
   category: COLLECTION
-  isUsed: true
+  isUsed: false
 - name: ICONS
   seq: 21
   category: COLLECTION
-  isUsed: true
+  isUsed: false
 - name: WARDS
   seq: 22
   category: COLLECTION
-  isUsed: true
+  isUsed: false
 - name: CHROMAS
   seq: 23
   category: COLLECTION

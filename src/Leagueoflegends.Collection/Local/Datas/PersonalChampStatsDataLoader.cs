@@ -31,7 +31,7 @@ public class PersonalChampStatsDataLoader : BaseResourceLoader<ChampionStats, Li
             Mastery = item.GetValue<int>("mastery"),
             Achievements = item.GetValue<int>("achievements"),
             Position = item.GetValue<string>("position"),
-            ImageUrl = $"ms-appx:///Leagueoflegends.Support/Images/portrait_{item.GetValue<string>("name").Replace(" ", "").Replace("&", "").Replace(".", "").Replace("'", "").ToLower()}.jpg"
+            ImageUrl = $"ms-appx:///Leagueoflegends.Support/Images/Portraits/portrait_{item.GetValue<string>("name").Replace(" ", "").Replace("&", "").Replace(".", "").Replace("'", "").ToLower()}.jpg"
         });
     }
 

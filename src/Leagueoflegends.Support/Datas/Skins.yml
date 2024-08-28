@@ -12,14 +12,16 @@
   imageUrl: skin_aatrox_03.jpg
   isPurchased: false
 - name: Aatrox
+  skinName: Blood Moon Aatrox
   imageUrl: skin_aatrox_07.jpg
-  isPurchased: false
+  isPurchased: true
 - name: Aatrox
   imageUrl: skin_aatrox_08.jpg
   isPurchased: false
 - name: Aatrox
+  skinName: Victorious Aatrox
   imageUrl: skin_aatrox_09.jpg
-  isPurchased: false
+  isPurchased: true
 - name: Ahri
   imageUrl: skin_ahri_01.jpg
   isPurchased: false
@@ -64,7 +66,7 @@
   isPurchased: false
 - name: Akali
   imageUrl: skin_akali_01.jpg
-  isPurchased: false
+  isPurchased: true
 - name: Akali
   imageUrl: skin_akali_13.jpg
   isPurchased: false
@@ -73,13 +75,13 @@
   isPurchased: false
 - name: Akali
   imageUrl: skin_akali_15.jpg
-  isPurchased: false
+  isPurchased: true
 - name: Akali
   imageUrl: skin_akali_02.jpg
   isPurchased: false
 - name: Akali
   imageUrl: skin_akali_03.jpg
-  isPurchased: false
+  isPurchased: true
 - name: Akali
   imageUrl: skin_akali_32.jpg
   isPurchased: false
@@ -88,13 +90,13 @@
   isPurchased: false
 - name: Akali
   imageUrl: skin_akali_05.jpg
-  isPurchased: false
+  isPurchased: true
 - name: Akali
   imageUrl: skin_akali_50.jpg
   isPurchased: false
 - name: Akali
   imageUrl: skin_akali_06.jpg
-  isPurchased: false
+  isPurchased: true
 - name: Akali
   imageUrl: skin_akali_07.jpg
   isPurchased: false
@@ -115,19 +117,19 @@
   isPurchased: false
 - name: Alistar
   imageUrl: skin_alistar_19.jpg
-  isPurchased: false
+  isPurchased: true
 - name: Alistar
   imageUrl: skin_alistar_02.jpg
   isPurchased: false
 - name: Alistar
   imageUrl: skin_alistar_20.jpg
-  isPurchased: false
+  isPurchased: true
 - name: Alistar
   imageUrl: skin_alistar_22.jpg
   isPurchased: false
 - name: Alistar
   imageUrl: skin_alistar_29.jpg
-  isPurchased: false
+  isPurchased: true
 - name: Alistar
   imageUrl: skin_alistar_03.jpg
   isPurchased: false
@@ -144,7 +146,7 @@
 - name: Alistar
   skinName: Sweeper Alistar
   imageUrl: skin_alistar_07.jpg
-  isPurchased: true
+  isPurchased: false
 - name: Alistar
   imageUrl: skin_alistar_08.jpg
   isPurchased: false
@@ -273,7 +275,7 @@
   isPurchased: false
 - name: Ashe
   imageUrl: skin_ashe_23.jpg
-  isPurchased: false
+  isPurchased: true
 - name: Ashe
   imageUrl: skin_ashe_03.jpg
   isPurchased: false
@@ -282,7 +284,7 @@
   isPurchased: false
 - name: Ashe
   imageUrl: skin_ashe_04.jpg
-  isPurchased: false
+  isPurchased: true
 - name: Ashe
   imageUrl: skin_ashe_05.jpg
   isPurchased: false
