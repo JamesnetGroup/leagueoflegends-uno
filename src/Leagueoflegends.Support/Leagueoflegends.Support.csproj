@@ -36,6 +36,7 @@
     <None Remove="Datas\FilterSortOptions.yml" />
     <None Remove="Datas\MatchHistories.yml" />
     <None Remove="Datas\PersonalChampStats.yml" />
+    <None Remove="Datas\PlayChamps.yml" />
     <None Remove="Datas\Skins.yml" />
     <None Remove="Datas\Spells.yml" />
     <None Remove="Datas\SubMenus.yml" />
@@ -1592,11 +1593,14 @@
     <None Remove="Themes\Units\RiotMainIconMenu.xaml" />
     <None Remove="Themes\Units\RiotMainMenu.xaml" />
     <None Remove="Themes\Units\RiotMatchHistoryListBox.xaml" />
+    <None Remove="Themes\Units\RiotMatchHistoryListBoxItem.xaml" />
     <None Remove="Themes\Units\RiotNewsButton.xaml" />
     <None Remove="Themes\Units\RiotNoticeButton.xaml" />
+    <None Remove="Themes\Units\RiotPlayedChampListBox.xaml" />
     <None Remove="Themes\Units\RiotSaleChampion.xaml" />
     <None Remove="Themes\Units\RiotScrollViewer.xaml" />
     <None Remove="Themes\Units\RiotSkinTierButton.xaml" />
+    <None Remove="Themes\Units\RiotSpellListBox.xaml" />
     <None Remove="Themes\Units\RiotSpellListBoxItem.xaml" />
     <None Remove="Themes\Units\RiotStatusIndicator.xaml" />
     <None Remove="Themes\Units\RiotTextBox.xaml" />
@@ -1639,6 +1643,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Datas\FilterSortOptions.yml" />
+    <EmbeddedResource Include="Datas\PlayChamps.yml" />
     <EmbeddedResource Include="Datas\MatchHistories.yml" />
     <EmbeddedResource Include="Datas\Skins.yml" />
     <EmbeddedResource Include="Datas\Spells.yml" />
@@ -1734,11 +1739,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Units\RiotMatchHistoryListBoxItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Units\RiotNewsButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Units\RiotNoticeButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotPlayedChampListBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1755,6 +1768,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Units\RiotSkinTierButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotSpellListBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1953,5 +1970,17 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Units\RiotMatchHistoryListBox.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotMatchHistoryListBoxItem.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotSpellListBox.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotPlayedChampListBox.xaml" />
   </ItemGroup>
 </Project>

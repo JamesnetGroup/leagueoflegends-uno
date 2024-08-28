@@ -1,4 +1,4 @@
-﻿using Microsoft.UI.Xaml.Data;
+using Microsoft.UI.Xaml.Data;
 namespace Leagueoflegends.Support.Local.Converters;
 
 public class CooldownConverter : IValueConverter

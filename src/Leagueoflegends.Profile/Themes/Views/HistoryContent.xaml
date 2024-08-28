@@ -24,8 +24,9 @@
     <Setter Property="Template">
       <Setter.Value>
         <ControlTemplate TargetType="views:HistoryContent">
-          <Grid RowDefinitions="Auto,*,Auto,Auto" Margin="0 60 0 0">
+          <Grid Margin="0 60 0 0" ColumnDefinitions="*, Auto">
             <units:RiotMatchHistoryListBox ItemsSource="{Binding MatchHistories}" SelectedItem="{Binding CurrentHistory}"/>
+            <units:RiotPlayedChampListBox Grid.Column="1" ItemsSource="{Binding PlayChamps}"/>
           </Grid>
         </ControlTemplate>
       </Setter.Value>
