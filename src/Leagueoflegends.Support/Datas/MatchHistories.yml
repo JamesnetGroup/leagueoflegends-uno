@@ -1,0 +1,92 @@
+- seq: 0
+  mapType: Summoner's Rift
+  gameMode: Solo Ranked
+  result: VICTORY
+  timestamp: 2023-09-25T19:42:00
+  duration: 31:24
+  date: 2023/09/25
+  goldEarned: 14231
+  creepScore: 231
+  kills: 8
+  deaths: 3
+  assists: 11
+  championLevel: 18
+  champion: Gangplank
+  summonerSpell1: Flash
+  summonerSpell2: Ignite
+  item1: Luden's Tempest
+  item2: Sorcerer's Shoes
+  item3: Zhonya's Hourglass
+  item4: Rabadon's Deathcap
+  item5: Void Staff
+  item6: Morellonomicon
+  wardItem: Farsight Alteration
+- seq: 1
+  mapType: Summoner's Rift
+  gameMode: Solo Ranked
+  result: VICTORY
+  timestamp: 2023-09-24T22:15:00
+  duration: 28:47
+  date: 2023/09/24
+  goldEarned: 13452
+  creepScore: 187
+  kills: 5
+  deaths: 2
+  assists: 14
+  championLevel: 16
+  champion: Rumble
+  summonerSpell1: Flash
+  summonerSpell2: Ignite
+  item1: Locket of the Iron Solari
+  item2: Plated Steelcaps
+  item3: Knight's Vow
+  item4: Thornmail
+  item5: Zeke's Convergence
+  item6: Knight's Vow
+  wardItem: Oracle Lens
+- seq: 2
+  mapType: Summoner's Rift
+  gameMode: Solo Ranked
+  result: DEFEAT
+  timestamp: 2023-09-23T18:30:00
+  duration: 35:52
+  date: 2023/09/23
+  goldEarned: 15311
+  creepScore: 283
+  kills: 12
+  deaths: 7
+  assists: 9
+  championLevel: 18
+  champion: Riven
+  summonerSpell1: Flash
+  summonerSpell2: Ignite
+  item1: Immortal Shieldbow
+  item2: Infinity Edge
+  item3: Berserker's Greaves
+  item4: Bloodthirster
+  item5: Mortal Reminder
+  item6: Guardian Angel
+  wardItem: Farsight Alteration
+- seq: 3
+  mapType: Summoner's Rift
+  gameMode: Solo Ranked
+  result: DEFEAT
+  timestamp: 2023-09-22T20:05:00
+  duration: 26:18
+  date: 2023/09/22
+  goldEarned: 10131
+  creepScore: 201
+  kills: 3
+  deaths: 8
+  assists: 6
+  championLevel: 15
+  champion: Malphite
+  summonerSpell1: Flash
+  summonerSpell2: Heal
+  item1: Kraken Slayer
+  item2: Runaan's Hurricane
+  item3: Berserker's Greaves
+  item4: Infinity Edge
+  item5: Bloodthirster
+  item6: Last Whisper
+  wardItem: Stealth Ward

@@ -45,10 +45,11 @@
                 <based:RiotMainIconMenu Command="{Binding SelectMenuCommand}" GroupName="MainMenu" CommandParameter="STORE" MenuIcon="Store"/>
               </StackPanel>
               <based:VerticalMainMenuSeparator Grid.Column="5"/>
-              <StackPanel Grid.Column="6"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
-                          Margin="10 0 0 0">
+              <StackPanel
+                Grid.Column="6"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="10 0 0 0">
                 <based:RiotStatusIndicator IconType="RP" Value="104"/>
                 <based:RiotStatusIndicator IconType="BlueEssence" Value="271"/>
               </StackPanel>
@@ -58,26 +59,29 @@
                   <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <based:RiotUserAvatar Margin="10 0 0 0" HorizontalAlignment="Left"/>
-                <based:RiotUserDisplayStatus Grid.Column="1"
-                                             Margin="10 10 0 0"
-                                             UserName="Hide on bush"
-                                             VerticalAlignment="Center"
-                                             IsOnline="True"/>
-                <StackPanel Grid.Column="1"
-                            Orientation="Horizontal"
-                            HorizontalAlignment="Right"
-                            VerticalAlignment="Top"
-                            Margin="40 2 5 10">
+                <based:RiotUserDisplayStatus
+                  Grid.Column="1"
+                  Margin="10 10 0 0"
+                  UserName="Hide on bush"
+                  VerticalAlignment="Center"
+                  IsOnline="True"/>
+                <StackPanel
+                  Grid.Column="1"
+                  Orientation="Horizontal"
+                  HorizontalAlignment="Right"
+                  VerticalAlignment="Top"
+                  Margin="40 2 5 10">
                   <based:RiotWindowControlButton Margin="10 5 5 5" ControlType="Help"/>
                   <based:RiotWindowControlButton Margin="10 5 5 5" ControlType="Minimize"/>
                   <based:RiotWindowControlButton Margin="10 5 5 5" ControlType="Settings"/>
                   <based:RiotWindowControlButton Margin="10 5 5 5" ControlType="Close"/>
                 </StackPanel>
-                <based:RiotIconButton Grid.Column="1"
-                                       Margin="10 10 8 10"
-                                       ControlType="Alarm"
-                                       HorizontalAlignment="Right"
-                                       VerticalAlignment="Bottom"/>
+                <based:RiotIconButton
+                  Grid.Column="1"
+                  Margin="10 10 8 10"
+                  ControlType="Alarm"
+                  HorizontalAlignment="Right"
+                  VerticalAlignment="Bottom"/>
               </Grid>
             </Grid>
             <Border Grid.Row="2" Background="#553D4143"/>
@@ -87,7 +91,7 @@
                 <ColumnDefinition Width="Auto"/>
               </Grid.ColumnDefinitions>
               <james:UnoLayer Grid.Column="0" LayerName="ContentLayer" Margin="0 0 0 0"/>
-              <james:UnoLayer Grid.Column="0" LayerName="SubNavLayer" HorizontalAlignment="Left"/>
+              <james:UnoLayer Grid.Column="0" LayerName="SubNavLayer" Margin="20 0 0 0" HorizontalAlignment="Left"/>
               <james:UnoLayer Grid.Column="1" LayerName="SocialLayer"/>
             </Grid>
           </Grid>

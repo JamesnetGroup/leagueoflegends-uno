@@ -31,11 +31,15 @@ public class RiotWallpaper : Control
     {
         if (MenuName == "COLLECTION")
         {
-            VisualStateManager.GoToState(this, "CollectionState", false);
+            VisualStateManager.GoToState(this, "DarknessState", false);
         }
         else if (MenuName == "SHOP")
         {
-            VisualStateManager.GoToState(this, "ShopState", false);
+            VisualStateManager.GoToState(this, "DarknessState", false);
+        }
+        else if (MenuName == "PROFILE")
+        {
+            VisualStateManager.GoToState(this, "DarknessState", false);
         }
         else
         {

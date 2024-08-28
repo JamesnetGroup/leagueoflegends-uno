@@ -18,6 +18,9 @@ using Leagueoflegends.Collection.UI.Views;
 using Leagueoflegends.Collection.Local.ViewModels;
 using Leagueoflegends.Collection.Local.Datas;
 using Leagueoflegends.Shop.UI.Views;
+using Leagueoflegends.Profile.UI.Views;
+using Leagueoflegends.Profile.Local.ViewModels;
+using Leagueoflegends.Profile.Local.Datas;
 namespace Leagueoflegends;
 
 public class LeagueOfLegendsBootstrapper : AppBootstrapper
@@ -26,12 +29,14 @@ public class LeagueOfLegendsBootstrapper : AppBootstrapper
     {
         ViewModelMapper.Register<MainContent, MainContentViewModel>();
         ViewModelMapper.Register<SocialContent, SocialContentViewModel>();
+        ViewModelMapper.Register<SubMenuContent, SubMenuContentViewModel>();
+
         ViewModelMapper.Register<OverviewContent, OverviewContentViewModel>();
         ViewModelMapper.Register<ChampionsContent, ChampionsContentViewModel>();
         ViewModelMapper.Register<SkinsContent, SkinsContentViewModel>();
         ViewModelMapper.Register<SpellsContent, SpellsContentViewModel>();
         ViewModelMapper.Register<TftContent, TftContentViewModel>();
-        ViewModelMapper.Register<SubMenuContent, SubMenuContentViewModel>();
+        ViewModelMapper.Register<HistoryContent, HistoryContentViewModel>();
     }
 
     protected override void RegisterDependencies()
@@ -44,16 +49,19 @@ public class LeagueOfLegendsBootstrapper : AppBootstrapper
         Container.RegisterSingleton<IFilterSortOptionsDataLoader, FilterSortOptionsDataLoader>();
         Container.RegisterSingleton<ISkinsDataLoader, SkinsDataLoader>();
         Container.RegisterSingleton<ISpellsDataLoader, SpellsDataLoader>();
+        Container.RegisterSingleton<IMatchHistoryDataLoader, MatchHistoryDataLoader>();
 
         Container.RegisterSingleton<IView, MainContent>();
         Container.RegisterSingleton<IView, SubMenuContent>();
         Container.RegisterSingleton<IView, SocialContent>();
+
         Container.RegisterSingleton<IView, TftContent>("TftContent");
         Container.RegisterSingleton<IView, ShopContent>("ShopContent");
         Container.RegisterSingleton<IView, OverviewContent>("HomeOverviewContent");
         Container.RegisterSingleton<IView, ChampionsContent>("CollectionChampionsContent");
         Container.RegisterSingleton<IView, SkinsContent>("CollectionSkinsContent");
         Container.RegisterSingleton<IView, SpellsContent>("CollectionSpellsContent");
+        Container.RegisterSingleton<IView, HistoryContent>("ProfileMatchHistoryContent");
 
         IView mainContent = Container.Resolve<MainContent>();
         IView subNavContent = Container.Resolve<SubMenuContent>();

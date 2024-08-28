@@ -1,4 +1,4 @@
-<Project Sdk="Uno.Sdk">
+﻿<Project Sdk="Uno.Sdk">
   <PropertyGroup>
     <TargetFrameworks>net8.0-desktop</TargetFrameworks>
     <UnoSingleProject>true</UnoSingleProject>
@@ -34,11 +34,14 @@
 
   <ItemGroup>
     <None Remove="Datas\FilterSortOptions.yml" />
+    <None Remove="Datas\MatchHistories.yml" />
     <None Remove="Datas\PersonalChampStats.yml" />
     <None Remove="Datas\Skins.yml" />
     <None Remove="Datas\Spells.yml" />
     <None Remove="Datas\SubMenus.yml" />
     <None Remove="Images\blue-essence.png" />
+    <None Remove="Images\Items\berserkersgreaves.png" />
+    <None Remove="Images\Items\voidstaff.png" />
     <None Remove="Images\portrait_aatrox.jpg" />
     <None Remove="Images\portrait_ahri.jpg" />
     <None Remove="Images\portrait_akali.jpg" />
@@ -1514,6 +1517,49 @@
     <None Remove="Images\thumb-7.png" />
     <None Remove="Images\thumb-8.png" />
     <None Remove="Images\thumb-9.png" />
+    <None Remove="Images\Thumbnails\0.png" />
+    <None Remove="Images\Thumbnails\1.png" />
+    <None Remove="Images\Thumbnails\10.png" />
+    <None Remove="Images\Thumbnails\11.png" />
+    <None Remove="Images\Thumbnails\12.png" />
+    <None Remove="Images\Thumbnails\13.png" />
+    <None Remove="Images\Thumbnails\14.png" />
+    <None Remove="Images\Thumbnails\15.png" />
+    <None Remove="Images\Thumbnails\16.png" />
+    <None Remove="Images\Thumbnails\17.png" />
+    <None Remove="Images\Thumbnails\18.png" />
+    <None Remove="Images\Thumbnails\19.png" />
+    <None Remove="Images\Thumbnails\2.png" />
+    <None Remove="Images\Thumbnails\20.png" />
+    <None Remove="Images\Thumbnails\21.png" />
+    <None Remove="Images\Thumbnails\22.png" />
+    <None Remove="Images\Thumbnails\23.png" />
+    <None Remove="Images\Thumbnails\24.png" />
+    <None Remove="Images\Thumbnails\25.png" />
+    <None Remove="Images\Thumbnails\26.png" />
+    <None Remove="Images\Thumbnails\27.png" />
+    <None Remove="Images\Thumbnails\28.png" />
+    <None Remove="Images\Thumbnails\29.png" />
+    <None Remove="Images\Thumbnails\3.png" />
+    <None Remove="Images\Thumbnails\30.png" />
+    <None Remove="Images\Thumbnails\31.png" />
+    <None Remove="Images\Thumbnails\32.png" />
+    <None Remove="Images\Thumbnails\33.png" />
+    <None Remove="Images\Thumbnails\34.png" />
+    <None Remove="Images\Thumbnails\35.png" />
+    <None Remove="Images\Thumbnails\36.png" />
+    <None Remove="Images\Thumbnails\37.png" />
+    <None Remove="Images\Thumbnails\38.png" />
+    <None Remove="Images\Thumbnails\39.png" />
+    <None Remove="Images\Thumbnails\4.png" />
+    <None Remove="Images\Thumbnails\40.png" />
+    <None Remove="Images\Thumbnails\41.png" />
+    <None Remove="Images\Thumbnails\42.png" />
+    <None Remove="Images\Thumbnails\5.png" />
+    <None Remove="Images\Thumbnails\6.png" />
+    <None Remove="Images\Thumbnails\7.png" />
+    <None Remove="Images\Thumbnails\8.png" />
+    <None Remove="Images\Thumbnails\9.png" />
     <None Remove="Images\wallpaper-ezreal.jpg" />
     <None Remove="Images\wallpaper-leesin.png" />
     <None Remove="Images\wallpaper-leona.jpg" />
@@ -1545,6 +1591,7 @@
     <None Remove="Themes\Units\RiotIconButton.xaml" />
     <None Remove="Themes\Units\RiotMainIconMenu.xaml" />
     <None Remove="Themes\Units\RiotMainMenu.xaml" />
+    <None Remove="Themes\Units\RiotMatchHistoryListBox.xaml" />
     <None Remove="Themes\Units\RiotNewsButton.xaml" />
     <None Remove="Themes\Units\RiotNoticeButton.xaml" />
     <None Remove="Themes\Units\RiotSaleChampion.xaml" />
@@ -1592,6 +1639,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Datas\FilterSortOptions.yml" />
+    <EmbeddedResource Include="Datas\MatchHistories.yml" />
     <EmbeddedResource Include="Datas\Skins.yml" />
     <EmbeddedResource Include="Datas\Spells.yml" />
     <EmbeddedResource Include="Datas\PersonalChampStats.yml" />
@@ -1679,6 +1727,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Units\RiotMainMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotMatchHistoryListBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1897,5 +1949,9 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Units\RiotSaleChampion.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotMatchHistoryListBox.xaml" />
   </ItemGroup>
 </Project>

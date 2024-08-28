@@ -47,12 +47,7 @@
             <VisualStateManager.VisualStateGroups>
               <VisualStateGroup x:Name="MenuStates">
                 <VisualState x:Name="DefaultState"/>
-                <VisualState x:Name="CollectionState">
-                  <VisualState.Setters>
-                    <Setter Target="LeftOverlay.Style" Value="{StaticResource WideSidebarFadeOutOverlay}"/>
-                  </VisualState.Setters>
-                </VisualState>
-                <VisualState x:Name="ShopState">
+                <VisualState x:Name="DarknessState">
                   <VisualState.Setters>
                     <Setter Target="LeftOverlay.Style" Value="{StaticResource WideSidebarFadeOutOverlay}"/>
                   </VisualState.Setters>
