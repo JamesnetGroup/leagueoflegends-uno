@@ -98,7 +98,7 @@
               <units:RiotNewsButton Grid.Column="1"
                 Style="{StaticResource RiotNewsButtonStyle}"
                 Text="2024 Preseason Update ↗"
-                ImageSource="ms-appx:///Leagueoflegends.Support/Images/wallpaper-gnar.jpg"/>
+                ImageSource="ms-appx:///Leagueoflegends.Support/Images/wallpaper-lux.jpg"/>
 
               <units:RiotNewsButton Grid.Column="2"
                 Style="{StaticResource RiotNewsButtonStyle}"

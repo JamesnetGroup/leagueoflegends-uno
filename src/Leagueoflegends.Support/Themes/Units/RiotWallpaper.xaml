@@ -52,6 +52,11 @@
                     <Setter Target="LeftOverlay.Style" Value="{StaticResource WideSidebarFadeOutOverlay}"/>
                   </VisualState.Setters>
                 </VisualState>
+                <VisualState x:Name="ShopState">
+                  <VisualState.Setters>
+                    <Setter Target="LeftOverlay.Style" Value="{StaticResource WideSidebarFadeOutOverlay}"/>
+                  </VisualState.Setters>
+                </VisualState>
               </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
           </Grid>

@@ -9,6 +9,7 @@ public class SubMenuItem : ViewModelBase
     public int Seq { get; set; }
     public string Name { get; set; }
     public string Category { get; set; }
+    public bool IsUsed { get; set; }
 
     public bool IsSelected
     {

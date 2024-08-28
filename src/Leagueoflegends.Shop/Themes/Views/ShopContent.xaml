@@ -1,0 +1,78 @@
+﻿<ResourceDictionary
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:units="using:Leagueoflegends.Support.UI.Units"
+  xmlns:views="using:Leagueoflegends.Shop.UI.Views">
+
+  <LinearGradientBrush x:Key="HeaderBorderBrush" StartPoint="0, 0.5" EndPoint="1, 0.5">
+    <GradientStop Color="#4B3D18" Offset="0.25"/>
+    <GradientStop Color="#B3933C" Offset="0.35"/>
+    <GradientStop Color="#534824" Offset="0.5"/>
+    <GradientStop Color="#B3933C" Offset="0.65"/>
+    <GradientStop Color="#4B3D18" Offset="0.75"/>
+  </LinearGradientBrush>
+
+  <Style x:Key="HeaderPathStyle" TargetType="Path">
+    <Setter Property="Data" Value="M0.35000001,0.65792049 L242.54163,0.65792049 M365.45935,0.48690727 L607.689,0.48690727 M242.08469,0.48069294 L250.7274,9.6305725 M365.65276,0.35000001 L356.7272,9.6604608 M250.39051,9.4891814 L299.01453,9.4891814 M305.01749,9.5403831 L356.91913,9.5403831 M298.62496,9.4651472 L302.02739,13.145463 M305.18564,9.3647624 L301.46767,13.167 M3.9929998,4.5758302 L252.222,4.5541682 M251.8066,4.2413798 L257.1134,9.4346217 M356.279,4.3258302 L604.508,4.3041682 M356.62715,4.0457615 L350.77585,9.4402432"/>
+    <Setter Property="Stroke" Value="{StaticResource HeaderBorderBrush}"/>
+    <Setter Property="Width" Value="970"/>
+    <Setter Property="Height" Value="30"/>
+    <Setter Property="Stretch" Value="Uniform"/>
+  </Style>
+
+  <Style TargetType="views:ShopContent">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="views:ShopContent">
+          <Grid RowDefinitions="Auto,*,Auto,Auto">
+            <Grid VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,20,0,0">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+              </Grid.RowDefinitions>
+              <TextBlock
+                Text="PERSONAL SHOP" 
+                FontSize="18" 
+                FontWeight="Bold"
+                Foreground="#F0E6D2" 
+                HorizontalAlignment="Center" 
+                Margin="0,0,0,-10"/>
+              <Path
+                Grid.Row="1"
+                Style="{StaticResource HeaderPathStyle}"/>
+            </Grid>
+            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+              <units:RiotSaleChampion Discount="15" ImageSource="ms-appx:///Leagueoflegends.Support/Images/Skins/skin_leesin_11.jpg"/>
+              <units:RiotSaleChampion Discount="30" ImageSource="ms-appx:///Leagueoflegends.Support/Images/Skins/skin_corki_18.jpg"/>
+              <units:RiotSaleChampion Discount="45" ImageSource="ms-appx:///Leagueoflegends.Support/Images/Skins/skin_janna_05.jpg"/>
+              <units:RiotSaleChampion Discount="70" ImageSource="ms-appx:///Leagueoflegends.Support/Images/Skins/skin_gangplank_05.jpg"/>
+              <units:RiotSaleChampion Discount="20" ImageSource="ms-appx:///Leagueoflegends.Support/Images/Skins/skin_kogmaw_09.jpg"/>
+              <units:RiotSaleChampion Discount="55" ImageSource="ms-appx:///Leagueoflegends.Support/Images/Skins/skin_lux_08.jpg"/>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Margin="0,20,0,10">
+              <TextBlock Text="End Date: November 9, 02:00 GMT+9" 
+                         FontSize="16" 
+                         Foreground="#C8AA6E" 
+                         HorizontalAlignment="Center"/>
+              <TextBlock Text="Personalized offers on champions and skins you don't own" 
+                         FontSize="14" 
+                         Foreground="#A09B8C" 
+                         HorizontalAlignment="Center"/>
+            </StackPanel>
+            <Rectangle Grid.Row="2"
+                       Width="970"
+                       Height="1" 
+                       Fill="#1E2328" 
+                       VerticalAlignment="Bottom"/>
+            <TextBlock Grid.Row="3"
+                       Text="Check out special discounts and grab them before they're gone!" 
+                       FontSize="14" 
+                       Foreground="#A09B8C" 
+                       HorizontalAlignment="Center"
+                       Margin="0,10,0,30"/>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+</ResourceDictionary>

@@ -44,8 +44,8 @@
                 <Image
                   x:Name="Image"
                   Source="{TemplateBinding ImageSource}"
-                  Stretch="Fill"
                   Height="{TemplateBinding ImageHeight}"
+                  Stretch="UniformToFill"
                   Opacity="0.9"/>
               </Border>
             </Border>

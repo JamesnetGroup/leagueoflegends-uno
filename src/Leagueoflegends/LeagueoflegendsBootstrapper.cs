@@ -17,6 +17,7 @@ using Leagueoflegends.Navigate.Local.Datas;
 using Leagueoflegends.Collection.UI.Views;
 using Leagueoflegends.Collection.Local.ViewModels;
 using Leagueoflegends.Collection.Local.Datas;
+using Leagueoflegends.Shop.UI.Views;
 namespace Leagueoflegends;
 
 public class LeagueOfLegendsBootstrapper : AppBootstrapper
@@ -48,6 +49,7 @@ public class LeagueOfLegendsBootstrapper : AppBootstrapper
         Container.RegisterSingleton<IView, SubMenuContent>();
         Container.RegisterSingleton<IView, SocialContent>();
         Container.RegisterSingleton<IView, TftContent>("TftContent");
+        Container.RegisterSingleton<IView, ShopContent>("ShopContent");
         Container.RegisterSingleton<IView, OverviewContent>("HomeOverviewContent");
         Container.RegisterSingleton<IView, ChampionsContent>("CollectionChampionsContent");
         Container.RegisterSingleton<IView, SkinsContent>("CollectionSkinsContent");

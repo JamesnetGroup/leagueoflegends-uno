@@ -33,6 +33,10 @@ public class RiotWallpaper : Control
         {
             VisualStateManager.GoToState(this, "CollectionState", false);
         }
+        else if (MenuName == "SHOP")
+        {
+            VisualStateManager.GoToState(this, "ShopState", false);
+        }
         else
         {
             VisualStateManager.GoToState(this, "DefaultState", false);

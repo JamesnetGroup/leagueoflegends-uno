@@ -1515,6 +1515,7 @@
     <None Remove="Images\thumb-8.png" />
     <None Remove="Images\thumb-9.png" />
     <None Remove="Images\wallpaper-ezreal.jpg" />
+    <None Remove="Images\wallpaper-leesin.png" />
     <None Remove="Images\wallpaper-leona.jpg" />
     <None Remove="Images\wallpaper-maokai.jpg" />
     <None Remove="Images\wallpaper-rucian.png" />
@@ -1546,6 +1547,7 @@
     <None Remove="Themes\Units\RiotMainMenu.xaml" />
     <None Remove="Themes\Units\RiotNewsButton.xaml" />
     <None Remove="Themes\Units\RiotNoticeButton.xaml" />
+    <None Remove="Themes\Units\RiotSaleChampion.xaml" />
     <None Remove="Themes\Units\RiotScrollViewer.xaml" />
     <None Remove="Themes\Units\RiotSkinTierButton.xaml" />
     <None Remove="Themes\Units\RiotSpellListBoxItem.xaml" />
@@ -1688,6 +1690,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Units\RiotSaleChampion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Units\RiotScrollViewer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1758,6 +1764,7 @@
     <Content Include="Images\profile-default.png" />
     <Content Include="Images\rp.png" />
     <Content Include="Images\wallpaper-ezreal.jpg" />
+    <Content Include="Images\wallpaper-leesin.png" />
     <Content Include="Images\wallpaper-leona.jpg" />
     <Content Include="Images\wallpaper-maokai.jpg" />
     <Content Include="Images\wallpaper-rucian.png" />
@@ -1889,5 +1896,9 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Units\RiotSkinTierButton.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotSaleChampion.xaml" />
   </ItemGroup>
 </Project>

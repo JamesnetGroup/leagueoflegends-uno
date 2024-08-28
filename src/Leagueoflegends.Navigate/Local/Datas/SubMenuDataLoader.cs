@@ -17,12 +17,13 @@ public class SubMenuDataLoader : BaseResourceLoader<SubMenuItem, List<SubMenuIte
         {
             Seq = item.GetValue<int>("seq"),
             Name = item.GetValue<string>("name"),
-            Category = item.GetValue<string>("category")
+            Category = item.GetValue<string>("category"),
+            IsUsed = item.GetValue<bool>("isUsed")
         });
     }
 
     protected override List<SubMenuItem> OrganizeItems(IEnumerable<SubMenuItem> menuItems)
     {
-        return menuItems.OrderBy(m => m.Seq).ToList();
+        return menuItems.Where(x=>x.IsUsed).OrderBy(m => m.Seq).ToList();
     }
 }

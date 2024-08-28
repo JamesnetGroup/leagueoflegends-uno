@@ -16,7 +16,7 @@ public class MenuNameToWallpaperConverter : IValueConverter
                 case "PROFILE": fileName = "wallpaper-leona.jpg"; break;
                 case "COLLECTION": fileName = "wallpaper-ezreal.jpg"; break;
                 case "LOOT": fileName = "wallpaper-rucian.png"; break;
-                case "SHOP": fileName = "wallpaper-gnar.jpg"; break;
+                case "SHOP": fileName = "wallpaper-leesin.png"; break;
                 case "STORE": fileName = "wallpaper-maokai.jpg"; break;
             }
             return $"ms-appx:///Leagueoflegends.Support/Images/{fileName}";
