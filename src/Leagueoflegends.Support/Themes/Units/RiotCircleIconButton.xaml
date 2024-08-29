@@ -1,0 +1,71 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:units="using:Leagueoflegends.Support.UI.Units">
+
+  <LinearGradientBrush x:Key="ButtonBorderBrush" StartPoint="0.5, 0" EndPoint="0.5, 1">
+    <GradientStop Color="#B89959" Offset="0"/>
+    <GradientStop Color="#997B44" Offset="0.5"/>
+    <GradientStop Color="#70552A" Offset="1"/>
+  </LinearGradientBrush>
+
+  <LinearGradientBrush x:Key="ButtonBorderBrushOver" StartPoint="0.5, 0" EndPoint="0.5, 1">
+    <GradientStop Color="#EFC574" Offset="0"/>
+    <GradientStop Color="#BA9652" Offset="0.5"/>
+    <GradientStop Color="#8C6A34" Offset="1"/>
+  </LinearGradientBrush>
+
+  <Style TargetType="units:RiotCircleIconButton">
+    <Setter Property="VerticalAlignment" Value="Top"/>
+    <Setter Property="Width" Value="34"/>
+    <Setter Property="Height" Value="34"/>
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="units:RiotCircleIconButton">
+          <Border
+            x:Name="BorderOuter"
+            CornerRadius="20"
+            Background="#1E2328" 
+            Grid.Column="5" 
+            BorderThickness="2.5" 
+            Margin="0 0 0 0"
+            BorderBrush="{StaticResource ButtonBorderBrush}">
+            <VisualStateManager.VisualStateGroups>
+              <VisualStateGroup x:Name="CommonStates">
+                <VisualState x:Name="Normal"/>
+                <VisualState x:Name="MouseOver">
+                  <VisualState.Setters>
+                    <Setter Target="BorderOuter.BorderBrush" Value="{StaticResource ButtonBorderBrushOver}"/>
+                    <Setter Target="Icon.Fill" Value="#FFEDB5"/>
+                  </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Disabled">
+                  <VisualState.Setters>
+                    <Setter Target="BorderOuter.BorderBrush" Value="#5B5A56"/>
+                    <Setter Target="BorderOuter.Background" Value="#1E282D"/>
+                    <Setter Target="Icon.Fill" Value="#5B5A56"/>
+                  </VisualState.Setters>
+                </VisualState>
+              </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Border
+              x:Name="BorderInner"
+              Background="Transparent"
+              BorderBrush="#14171A"
+              BorderThickness="1"
+              CornerRadius="20">
+              <Path x:Name="Icon"
+                Fill="#CDBE91"                                         
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Data="M2 12H4V17H20V12H22V17C22 18.11 21.11 19 20 19H4C2.9 19 2 18.11 2 17V12M12 15L17.55 9.54L16.13 8.13L13 11.25V2H11V11.25L7.88 8.13L6.46 9.55L12 15Z"
+                Stretch="Uniform"
+                Width="16"
+                Height="16"/>
+            </Border>
+          </Border>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+</ResourceDictionary>

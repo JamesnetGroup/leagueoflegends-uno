@@ -219,6 +219,7 @@
                     <TextBlock Text="{Binding Date}" Style="{StaticResource BaseTextBlockStyle}" Margin="6,0,0,0"/>
                   </StackPanel>
                 </StackPanel>
+                <units:RiotCircleIconButton/>
               </StackPanel>
             </Border>
             <Border x:Name="LeftBorder" BorderThickness="3,0,0,0" BorderBrush="Transparent" Height="90"/>

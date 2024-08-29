@@ -1,4 +1,4 @@
-﻿namespace Jamesnet.Core;
+namespace Jamesnet.Core;
 
 public class DefaultViewModelInitializer : IViewModelInitializer
 {

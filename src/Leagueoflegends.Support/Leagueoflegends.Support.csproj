@@ -1,4 +1,4 @@
-﻿<Project Sdk="Uno.Sdk">
+<Project Sdk="Uno.Sdk">
   <PropertyGroup>
     <TargetFrameworks>net8.0-desktop</TargetFrameworks>
     <UnoSingleProject>true</UnoSingleProject>
@@ -37,10 +37,17 @@
     <None Remove="Datas\MatchHistories.yml" />
     <None Remove="Datas\PersonalChampStats.yml" />
     <None Remove="Datas\PlayChamps.yml" />
+    <None Remove="Datas\RecentActivities.yml" />
     <None Remove="Datas\Skins.yml" />
     <None Remove="Datas\Spells.yml" />
     <None Remove="Datas\SubMenus.yml" />
     <None Remove="Images\blue-essence.png" />
+    <None Remove="Images\Concepts\assassin.PNG" />
+    <None Remove="Images\Concepts\dealer.PNG" />
+    <None Remove="Images\Concepts\support.PNG" />
+    <None Remove="Images\Concepts\tanker.PNG" />
+    <None Remove="Images\Concepts\warrior.PNG" />
+    <None Remove="Images\Concepts\wizard.PNG" />
     <None Remove="Images\Items\berserkersgreaves.png" />
     <None Remove="Images\Items\voidstaff.png" />
     <None Remove="Images\portrait_aatrox.jpg" />
@@ -1582,6 +1589,7 @@
     <None Remove="Themes\Units\RiotChampSkinSummary.xaml" />
     <None Remove="Themes\Units\RiotChampSummary.xaml" />
     <None Remove="Themes\Units\RiotCheckBox.xaml" />
+    <None Remove="Themes\Units\RiotCircleIconButton.xaml" />
     <None Remove="Themes\Units\RiotComboBox.xaml" />
     <None Remove="Themes\Units\RiotFoldableIcon.xaml" />
     <None Remove="Themes\Units\RiotFriendGroupItem.xaml" />
@@ -1597,6 +1605,7 @@
     <None Remove="Themes\Units\RiotNewsButton.xaml" />
     <None Remove="Themes\Units\RiotNoticeButton.xaml" />
     <None Remove="Themes\Units\RiotPlayedChampListBox.xaml" />
+    <None Remove="Themes\Units\RiotRecentActivityListBox.xaml" />
     <None Remove="Themes\Units\RiotSaleChampion.xaml" />
     <None Remove="Themes\Units\RiotScrollViewer.xaml" />
     <None Remove="Themes\Units\RiotSkinTierButton.xaml" />
@@ -1642,6 +1651,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Datas\RecentActivities.yml" />
     <EmbeddedResource Include="Datas\FilterSortOptions.yml" />
     <EmbeddedResource Include="Datas\PlayChamps.yml" />
     <EmbeddedResource Include="Datas\MatchHistories.yml" />
@@ -1692,6 +1702,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Units\RiotCheckBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotCircleIconButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1752,6 +1766,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Units\RiotPlayedChampListBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotRecentActivityListBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1827,6 +1845,12 @@
 
   <ItemGroup>
     <Content Include="Images\blue-essence.png" />
+    <Content Include="Images\Concepts\assassin.png" />
+    <Content Include="Images\Concepts\dealer.png" />
+    <Content Include="Images\Concepts\support.png" />
+    <Content Include="Images\Concepts\tanker.png" />
+    <Content Include="Images\Concepts\warrior.png" />
+    <Content Include="Images\Concepts\wizard.png" />
     <Content Include="Images\profile-default.png" />
     <Content Include="Images\rp.png" />
     <Content Include="Images\wallpaper-ezreal.jpg" />
@@ -1982,5 +2006,13 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Units\RiotPlayedChampListBox.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotRecentActivityListBox.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotCircleIconButton.xaml" />
   </ItemGroup>
 </Project>

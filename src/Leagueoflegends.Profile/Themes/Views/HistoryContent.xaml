@@ -12,6 +12,14 @@
     <GradientStop Color="#4B3D18" Offset="0.75"/>
   </LinearGradientBrush>
 
+  <LinearGradientBrush x:Key="DetailBorderBrush" StartPoint="0.5,0" EndPoint="0.5,1">
+    <GradientStop Color="Transparent" Offset="0.1"/>
+    <GradientStop Color="#66000000" Offset="0.25"/>
+    <GradientStop Color="#AA000000" Offset="0.5"/>
+    <GradientStop Color="#CC000000" Offset="0.75"/>
+  </LinearGradientBrush>
+
+
   <Style x:Key="HeaderPathStyle" TargetType="Path">
     <Setter Property="Data" Value="M0.35000001,0.65792049 L242.54163,0.65792049 M365.45935,0.48690727 L607.689,0.48690727 M242.08469,0.48069294 L250.7274,9.6305725 M365.65276,0.35000001 L356.7272,9.6604608 M250.39051,9.4891814 L299.01453,9.4891814 M305.01749,9.5403831 L356.91913,9.5403831 M298.62496,9.4651472 L302.02739,13.145463 M305.18564,9.3647624 L301.46767,13.167 M3.9929998,4.5758302 L252.222,4.5541682 M251.8066,4.2413798 L257.1134,9.4346217 M356.279,4.3258302 L604.508,4.3041682 M356.62715,4.0457615 L350.77585,9.4402432"/>
     <Setter Property="Stroke" Value="{StaticResource HeaderBorderBrush}"/>
@@ -26,7 +34,10 @@
         <ControlTemplate TargetType="views:HistoryContent">
           <Grid Margin="0 60 0 0" ColumnDefinitions="*, Auto">
             <units:RiotMatchHistoryListBox ItemsSource="{Binding MatchHistories}" SelectedItem="{Binding CurrentHistory}"/>
-            <units:RiotPlayedChampListBox Grid.Column="1" ItemsSource="{Binding PlayChamps}"/>
+            <Grid Grid.Column="1" RowDefinitions="Auto, *" Background="{StaticResource DetailBorderBrush}">
+              <units:RiotPlayedChampListBox ItemsSource="{Binding PlayChamps}"/>
+              <units:RiotRecentActivityListBox Grid.Row="1" ItemsSource="{Binding RecentActivities}"/>
+            </Grid>
           </Grid>
         </ControlTemplate>
       </Setter.Value>

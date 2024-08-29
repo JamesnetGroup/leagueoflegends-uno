@@ -62,8 +62,4 @@
   <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Views\HistoryContent.xaml" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Local\Converters\" />
-  </ItemGroup>
 </Project>

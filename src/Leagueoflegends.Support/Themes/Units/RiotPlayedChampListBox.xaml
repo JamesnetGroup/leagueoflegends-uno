@@ -38,8 +38,14 @@
       <Setter.Value>
         <ControlTemplate TargetType="units:RiotPlayedChampListBoxItem">
           <StackPanel>
-            <Border BorderThickness="1" BorderBrush="#33FFFFFF" Margin="4 4 4 1">
-              <Image Source="{Binding Champion, Converter={StaticResource ChampionNameToThumbnailConverter}}" Width="68" Height="68"/>
+            <Border
+              BorderThickness="1"
+              BorderBrush="#33FFFFFF"
+              Margin="4 4 4 1">
+              <Image
+                Source="{Binding Champion, Converter={StaticResource ChampionNameToThumbnailConverter}}"
+                Width="68"
+                Height="68"/>
             </Border>
             <Grid Margin="6,-1,6,0">
               <Grid.RowDefinitions>
@@ -47,7 +53,11 @@
                 <RowDefinition Height="1*"/>
               </Grid.RowDefinitions>
               <Grid>
-                <Image Source="{Binding Percent, Converter={StaticResource PercentToBadgeConverter}}" Stretch="Uniform" Margin="0" Width="48"/>
+                <Image
+                  Source="{Binding Percent, Converter={StaticResource PercentToBadgeConverter}}"
+                  Stretch="Uniform"
+                  Margin="0"
+                  Width="48"/>
               </Grid>
             </Grid>
             <TextBlock
@@ -82,7 +92,7 @@
         <ControlTemplate TargetType="units:RiotPlayedChampListBox">
           <StackPanel>
             <TextBlock Style="{StaticResource PlayedChampionsHeaderStyle}" Text="RECENTLY PLAYED CHAMPIONS"/>
-            <StackPanel Background="#CC000000" Padding="0 20 0 0">
+            <StackPanel Background="Transparent" Padding="0 0 0 0">
               <ItemsPresenter/>
               <TextBlock Style="{StaticResource PlayRatioTextStyle}" Text="$ of games played"/>
               <Border Style="{StaticResource SeparatorBorderStyle}"/>

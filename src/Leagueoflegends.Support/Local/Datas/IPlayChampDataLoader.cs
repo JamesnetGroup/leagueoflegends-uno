@@ -1,4 +1,4 @@
-﻿using Leagueoflegends.Support.Local.Models;
+using Leagueoflegends.Support.Local.Models;
 
 namespace Leagueoflegends.Support.Local.Datas;
 
