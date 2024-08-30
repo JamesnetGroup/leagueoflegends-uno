@@ -38,6 +38,33 @@
     <Setter Property="Orientation" Value="Horizontal"/>
   </Style>
 
+  <Style x:Key="DisplayNameStyle" TargetType="TextBlock">
+    <Setter Property="Grid.Row" Value="1"/>
+    <Setter Property="FontSize" Value="12"/>
+    <Setter Property="Margin" Value="0 12 0 0"/>
+    <Setter Property="Foreground" Value="#B09B8C"/>
+    <Setter Property="HorizontalAlignment" Value="Center"/>
+    <Setter Property="VerticalAlignment" Value="Center"/>
+  </Style>
+
+  <Style x:Key="EternalsStyle" TargetType="TextBlock">
+    <Setter Property="Text" Value="{Binding Achievements}"/>
+    <Setter Property="FontSize" Value="13"/>
+    <Setter Property="Foreground" Value="#B09B8C"/>
+    <Setter Property="HorizontalAlignment" Value="Center"/>
+    <Setter Property="VerticalAlignment" Value="Center"/>
+  </Style>
+
+  <Style x:Key="ChampionImageStyle" TargetType="Image">
+    <Setter Property="Source" Value="{Binding ImageUrl}"/>
+    <Setter Property="Stretch" Value="Uniform"/>
+  </Style>
+
+  <Style x:Key="MainBorderStyle" TargetType="Border">
+    <Setter Property="BorderThickness" Value="1"/>
+    <Setter Property="BorderBrush" Value="#1E2328"/>
+  </Style>
+
   <Style TargetType="units:RiotChampSkinItemControl">
     <Setter Property="GroupName" Value="Champion"/>
     <Setter Property="Template">
@@ -94,37 +121,17 @@
                 </VisualState>                
               </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
-
             <Grid x:Name="ChampionContent">
-              <Border x:Name="Border" BorderThickness="1" BorderBrush="#1E2328">
-                <Image x:Name="ChampionImage" Source="{Binding ImageUrl}" Stretch="Uniform"/>
+              <Border x:Name="Border" Style="{StaticResource MainBorderStyle}">
+                <Image x:Name="ChampionImage" Style="{StaticResource ChampionImageStyle}" Source="{Binding ImageUrl}"/>
               </Border>
-
               <StackPanel x:Name="BottomPanel" Style="{StaticResource ChampionPanelStyle}">
-
                 <Path x:Name="FireIcon" Style="{StaticResource FireIconStyle}"/>
-
-                <TextBlock
-                  x:Name="EternalsText"  
-                  Text="{Binding Achievements}" 
-                  FontSize="13"  
-                  Foreground="#B09B8C" 
-                  HorizontalAlignment="Center" 
-                  VerticalAlignment="Center"/>
+                <TextBlock x:Name="EternalsText" Style="{StaticResource EternalsStyle}" Text="0"/>
               </StackPanel>
-
               <Image Style="{StaticResource ChampionBadgeStyle}"/>
             </Grid>
-
-            <TextBlock
-              x:Name="NameText"
-              Grid.Row="1"
-              Text="{Binding DisplayName}"
-              FontSize="12"
-              Margin="0 12 0 0"
-              Foreground="#B09B8C" 
-              HorizontalAlignment="Center" 
-              VerticalAlignment="Center"/>
+            <TextBlock x:Name="NameText" Style="{StaticResource DisplayNameStyle}" Text="{Binding DisplayName}"/>
           </Grid>
         </ControlTemplate>
       </Setter.Value>

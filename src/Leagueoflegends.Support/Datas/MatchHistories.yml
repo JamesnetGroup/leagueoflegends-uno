@@ -1,6 +1,6 @@
 - seq: 0
   mapType: Summoner's Rift
-  gameMode: Solo Ranked
+  gameMode: Solo Ranked/Duo
   result: VICTORY
   timestamp: 2023-09-25T19:42:00
   duration: 31:24
@@ -24,7 +24,7 @@
 
 - seq: 1
   mapType: Summoner's Rift
-  gameMode: Solo Ranked
+  gameMode: Solo Ranked/Duo
   result: VICTORY
   timestamp: 2023-09-24T22:15:00
   duration: 28:47
@@ -48,7 +48,7 @@
 
 - seq: 2
   mapType: Summoner's Rift
-  gameMode: Solo Ranked
+  gameMode: Solo Ranked/Duo
   result: DEFEAT
   timestamp: 2023-09-23T18:30:00
   duration: 35:52
@@ -72,7 +72,7 @@
 
 - seq: 3
   mapType: Summoner's Rift
-  gameMode: Solo Ranked
+  gameMode: Solo Ranked/Duo
   result: DEFEAT
   timestamp: 2023-09-22T20:05:00
   duration: 26:18
@@ -96,7 +96,7 @@
 
 - seq: 4
   mapType: Summoner's Rift
-  gameMode: Solo Ranked
+  gameMode: Solo Ranked/Duo
   result: VICTORY
   timestamp: 2023-09-21T15:30:00
   duration: 33:45
@@ -120,7 +120,7 @@
 
 - seq: 5
   mapType: Summoner's Rift
-  gameMode: Solo Ranked
+  gameMode: Solo Ranked/Duo
   result: VICTORY
   timestamp: 2023-09-20T12:10:00
   duration: 29:56
@@ -144,7 +144,7 @@
 
 - seq: 6
   mapType: Summoner's Rift
-  gameMode: Solo Ranked
+  gameMode: Solo Ranked/Duo
   result: DEFEAT
   timestamp: 2023-09-19T23:05:00
   duration: 40:12
@@ -168,7 +168,7 @@
 
 - seq: 7
   mapType: Summoner's Rift
-  gameMode: Solo Ranked
+  gameMode: Solo Ranked/Duo
   result: VICTORY
   timestamp: 2023-09-18T18:20:00
   duration: 25:33
@@ -192,7 +192,7 @@
 
 - seq: 8
   mapType: Summoner's Rift
-  gameMode: Solo Ranked
+  gameMode: Solo Ranked/Duo
   result: DEFEAT
   timestamp: 2023-09-17T14:45:00
   duration: 36:28
@@ -216,7 +216,7 @@
 
 - seq: 9
   mapType: Summoner's Rift
-  gameMode: Solo Ranked
+  gameMode: Solo Ranked/Duo
   result: VICTORY
   timestamp: 2023-09-16T21:30:00
   duration: 32:15

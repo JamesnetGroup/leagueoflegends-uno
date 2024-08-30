@@ -3,6 +3,29 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:units="using:Leagueoflegends.Support.UI.Units">
 
+  <Style x:Key="HeaderTextStyle" TargetType="TextBlock">
+    <Setter Property="Foreground" Value="#F0E6D2"/>
+    <Setter Property="FontSize" Value="20"/>
+    <Setter Property="FontWeight" Value="Bold"/>
+    <Setter Property="Margin" Value="0,0,10,0"/>
+  </Style>
+
+  <Style x:Key="ContentTextStyle" TargetType="TextBlock">
+    <Setter Property="Foreground" Value="#C0A267"/>
+    <Setter Property="FontSize" Value="20"/>
+    <Setter Property="FontStyle" Value="Italic"/>
+  </Style>
+
+  <Style x:Key="ItemsPresenterStyle" TargetType="WrapPanel">
+    <Setter Property="Orientation" Value="Horizontal"/>
+    <Setter Property="HorizontalAlignment" Value="Stretch"/>
+  </Style>
+
+  <Style x:Key="HeaderStackStyle" TargetType="StackPanel">
+    <Setter Property="Orientation" Value="Horizontal"/>
+    <Setter Property="Margin" Value="10, 20, 0, 20"/>
+  </Style>
+
   <Style TargetType="units:RiotChampSkinGroupItem">
     <Setter Property="IsExpanded" Value="True"/>
     <Setter Property="ItemsBindingPath" Value="Children"/>
@@ -10,27 +33,14 @@
       <Setter.Value>
         <ControlTemplate TargetType="units:RiotChampSkinGroupItem">
           <StackPanel Margin="0,0,20,0">
-            <StackPanel Orientation="Horizontal" Margin="10, 20, 0, 20">
-              <TextBlock
-                Text="{Binding Header}"
-                Foreground="#F0E6D2"
-                FontSize="20"
-                FontWeight="Bold"
-                Margin="0,0,10,0"/>
-              <TextBlock
-                Text="{Binding Children.Count}"
-                Foreground="#C0A267"
-                FontSize="20"
-                FontStyle="Italic"/>
+            <StackPanel Style="{StaticResource HeaderStackStyle}">
+              <TextBlock Style="{StaticResource HeaderTextStyle}" Text="{Binding Header}"/>
+              <TextBlock Style="{StaticResource ContentTextStyle}" Text="{Binding Children.Count}"/>
             </StackPanel>
-            <WrapPanel
-              x:Name="PART_ItemsPanel" 
-              Orientation="Horizontal" 
-              HorizontalAlignment="Stretch"/>
+            <WrapPanel x:Name="PART_ItemsPanel" Style="{StaticResource ItemsPresenterStyle}"/>
           </StackPanel>
         </ControlTemplate>
       </Setter.Value>
     </Setter>
   </Style>
-
 </ResourceDictionary>

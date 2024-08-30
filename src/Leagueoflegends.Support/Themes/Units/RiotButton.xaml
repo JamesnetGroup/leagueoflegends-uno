@@ -28,6 +28,20 @@
     <GradientStop Color="#1e2328" Offset="1"/>
   </LinearGradientBrush>
 
+  <Style x:Key="InnerBorderStyle" TargetType="Border">
+    <Setter Property="Background" Value="Transparent"/>
+    <Setter Property="BorderBrush" Value="#CC091119"/>
+    <Setter Property="BorderThickness" Value="1"/>
+    <Setter Property="Margin" Value="0"/>
+  </Style>
+
+  <Style x:Key="ContentPresenterStyle" TargetType="ContentPresenter">
+    <Setter Property="HorizontalAlignment" Value="Center"/>
+    <Setter Property="VerticalAlignment" Value="Center"/>
+    <Setter Property="Content" Value="{Binding Path=Content, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+    <Setter Property="ContentTemplate" Value="{Binding Path=ContentTemplate, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+  </Style>
+
   <Style TargetType="units:RiotButton">
     <Setter Property="Height" Value="30"/>
     <Setter Property="FontWeight" Value="Normal"/>
@@ -59,22 +73,18 @@
                 </VisualState>
               </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
-
-            <Border x:Name="BorderElement"
-                    Background="{TemplateBinding Background}"
-                    BorderBrush="{TemplateBinding BorderBrush}"
-                    BorderThickness="{TemplateBinding BorderThickness}"
-                    CornerRadius="0">
+            <Border
+              x:Name="BorderElement"
+              Background="{TemplateBinding Background}"
+              BorderBrush="{TemplateBinding BorderBrush}"
+              BorderThickness="{TemplateBinding BorderThickness}">
               <Grid>
-                <ContentPresenter x:Name="ContentPresenter"
-                                  HorizontalAlignment="Center"
-                                  VerticalAlignment="Center"
-                                  Content="{TemplateBinding Content}"
-                                  ContentTemplate="{TemplateBinding ContentTemplate}"/>
-                <Border Background="Transparent"
-                        BorderBrush="#CC091119"
-                        BorderThickness="1"
-                        Margin="0"/>
+                <ContentPresenter
+                  x:Name="ContentPresenter"
+                  Style="{StaticResource ContentPresenterStyle}"
+                  ContentTemplate="{TemplateBinding ContentTemplate}"
+                  Content="{TemplateBinding Content}"/>
+                <Border Style="{StaticResource InnerBorderStyle}"/>
               </Grid>
             </Border>
           </Grid>

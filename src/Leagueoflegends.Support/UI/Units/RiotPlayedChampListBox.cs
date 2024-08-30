@@ -1,5 +1,3 @@
-
-
 namespace Leagueoflegends.Support.UI.Units;
 public class RiotPlayedChampListBox : ListBox
 {
@@ -11,13 +9,5 @@ public class RiotPlayedChampListBox : ListBox
     protected override DependencyObject GetContainerForItemOverride()
     {
         return new RiotPlayedChampListBoxItem();
-    }
-}
-
-public class RiotPlayedChampListBoxItem : ListBoxItem
-{
-    public RiotPlayedChampListBoxItem()
-    {
-        DefaultStyleKey = typeof(RiotPlayedChampListBoxItem);
     }
 }

@@ -3,14 +3,41 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:units="using:Leagueoflegends.Support.UI.Units">
 
-  <!-- 스타일에서 사용될 브러쉬 정의 -->
+  <x:String x:Key="CheckGeometry">M17.5625,6.5625 L10.0005,14.188 6.5004996,10.53201 5.0942497,11.875848 10.031599,16.876176 19.000529,8.0005944</x:String>
+  
   <LinearGradientBrush x:Key="CbxBorderOverBrush" EndPoint="0.5,1" StartPoint="0.5,0">
     <GradientStop Color="#735627" Offset="0"/>
     <GradientStop Color="#7C6130" Offset="0.5"/>
     <GradientStop Color="#997D46" Offset="1"/>
   </LinearGradientBrush>
 
-  <!-- RiotCheckBox 스타일 정의 -->
+  <Style x:Key="ContentStyle" TargetType="ContentPresenter">
+    <Setter Property="Grid.Column" Value="1"/>
+    <Setter Property="VerticalAlignment" Value="Center"/>
+    <Setter Property="Content" Value="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}"/>
+  </Style>
+
+  <Style x:Key="MainBorderStyle" TargetType="Border">
+    <Setter Property="Width" Value="18"/>
+    <Setter Property="Height" Value="18"/>
+    <Setter Property="Background" Value="Transparent"/>
+    <Setter Property="BorderBrush" Value="#705427"/>
+    <Setter Property="BorderThickness" Value="1"/>
+    <Setter Property="VerticalAlignment" Value="Center"/>
+    <Setter Property="Margin" Value="0,0,8,0"/>
+  </Style>
+
+  <Style x:Key="CheckPathStyle" TargetType="Path">
+    <Setter Property="Data" Value="{StaticResource CheckGeometry}"/>
+    <Setter Property="Fill" Value="#705427"/>
+    <Setter Property="HorizontalAlignment" Value="Center"/>
+    <Setter Property="VerticalAlignment" Value="Center"/>
+    <Setter Property="Stretch" Value="Uniform"/>
+    <Setter Property="Width" Value="10"/>
+    <Setter Property="Height" Value="10"/>
+    <Setter Property="Visibility" Value="Collapsed"/>
+  </Style>
+
   <Style TargetType="units:RiotCheckBox">
     <Setter Property="VerticalContentAlignment" Value="Center"/>
     <Setter Property="FontWeight" Value="Bold"/>
@@ -51,30 +78,10 @@
                 </VisualState>
               </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
-            <Border
-              x:Name="BorderElement"
-              Width="18" 
-              Height="18" 
-              Background="Transparent" 
-              BorderBrush="#705427" 
-              BorderThickness="1"
-              VerticalAlignment="Center"
-              Margin="0,0,8,0">
-              <Path
-                x:Name="IconElement"
-                Data="M17.5625,6.5625 L10.0005,14.188 6.5004996,10.53201 5.0942497,11.875848 10.031599,16.876176 19.000529,8.0005944"
-                Fill="#705427"
-                HorizontalAlignment="Center" 
-                VerticalAlignment="Center"
-                Stretch="Uniform"
-                Width="10" 
-                Height="10" 
-                Visibility="Collapsed"/>
+            <Border x:Name="BorderElement" Style="{StaticResource MainBorderStyle}">
+              <Path x:Name="IconElement" Style="{StaticResource CheckPathStyle}"/>
             </Border>
-            <ContentPresenter
-              Grid.Column="1"
-              VerticalAlignment="Center"
-              Content="{TemplateBinding Content}"/>
+            <ContentPresenter Style="{StaticResource ContentStyle}" Content="{TemplateBinding Content}"/>
           </Grid>
         </ControlTemplate>
       </Setter.Value>

@@ -3,65 +3,87 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:units="using:Leagueoflegends.Support.UI.Units">
 
-  <LinearGradientBrush x:Key="ButtonBorderBrush" StartPoint="0.5, 0" EndPoint="0.5, 1">
+  <x:String x:Key="CircleGeometry">M2 12H4V17H20V12H22V17C22 18.11 21.11 19 20 19H4C2.9 19 2 18.11 2 17V12M12 15L17.55 9.54L16.13 8.13L13 11.25V2H11V11.25L7.88 8.13L6.46 9.55L12 15Z</x:String>
+
+  <LinearGradientBrush x:Key="RiotButtonBorderBrush" StartPoint="0.5,0" EndPoint="0.5,1">
     <GradientStop Color="#B89959" Offset="0"/>
     <GradientStop Color="#997B44" Offset="0.5"/>
     <GradientStop Color="#70552A" Offset="1"/>
   </LinearGradientBrush>
 
-  <LinearGradientBrush x:Key="ButtonBorderBrushOver" StartPoint="0.5, 0" EndPoint="0.5, 1">
-    <GradientStop Color="#EFC574" Offset="0"/>
-    <GradientStop Color="#BA9652" Offset="0.5"/>
-    <GradientStop Color="#8C6A34" Offset="1"/>
+  <LinearGradientBrush x:Key="RiotButtonBorderBrushHover" StartPoint="0.5,0" EndPoint="0.5,1">
+    <GradientStop Color="#f0e6d7" Offset="0"/>
+    <GradientStop Color="#c99d3d" Offset="1"/>
   </LinearGradientBrush>
 
+  <LinearGradientBrush x:Key="RiotButtonBackgroundHover" StartPoint="0.5,0" EndPoint="0.5,1">
+    <GradientStop Color="#1e232a" Offset="0"/>
+    <GradientStop Color="#443e2e" Offset="1"/>
+  </LinearGradientBrush>
+
+  <LinearGradientBrush x:Key="RiotButtonBorderBrushPressed" StartPoint="0.5,0" EndPoint="0.5,1">
+    <GradientStop Color="#785a28" Offset="0"/>
+    <GradientStop Color="#c8aa6e" Offset="1"/>
+  </LinearGradientBrush>
+
+  <LinearGradientBrush x:Key="RiotButtonBackgroundPressed" StartPoint="0.5,0" EndPoint="0.5,1">
+    <GradientStop Color="#373121" Offset="0"/>
+    <GradientStop Color="#1e2328" Offset="1"/>
+  </LinearGradientBrush>
+
+  <Style x:Key="MainBorderStyle" TargetType="Border">
+    <Setter Property="BorderBrush" Value="{StaticResource RiotButtonBorderBrush}"/>
+    <Setter Property="CornerRadius" Value="20"/>
+    <Setter Property="Background" Value="#1E2328"/>
+    <Setter Property="BorderThickness" Value="2.5"/>
+    <Setter Property="Margin" Value="0 0 0 0"/>
+  </Style>
+
+  <Style x:Key="InnerBorderStyle" TargetType="Border">
+    <Setter Property="Background" Value="Transparent"/>
+    <Setter Property="BorderBrush" Value="#14171A"/>
+    <Setter Property="BorderThickness" Value="1"/>
+    <Setter Property="CornerRadius" Value="20"/>
+  </Style>
+
+  <Style x:Key="CirclePathStyle" TargetType="Path">
+    <Setter Property="Fill" Value="#CDBE91"/>
+    <Setter Property="HorizontalAlignment" Value="Center"/>
+    <Setter Property="VerticalAlignment" Value="Center"/>
+    <Setter Property="Data" Value="{StaticResource CircleGeometry}"/>
+    <Setter Property="Stretch" Value="Uniform"/>
+    <Setter Property="Width" Value="15"/>
+    <Setter Property="Height" Value="15"/>
+  </Style>
+
   <Style TargetType="units:RiotCircleIconButton">
-    <Setter Property="VerticalAlignment" Value="Top"/>
+    <Setter Property="VerticalAlignment" Value="Center"/>
     <Setter Property="Width" Value="34"/>
     <Setter Property="Height" Value="34"/>
     <Setter Property="Template">
       <Setter.Value>
         <ControlTemplate TargetType="units:RiotCircleIconButton">
-          <Border
-            x:Name="BorderOuter"
-            CornerRadius="20"
-            Background="#1E2328" 
-            Grid.Column="5" 
-            BorderThickness="2.5" 
-            Margin="0 0 0 0"
-            BorderBrush="{StaticResource ButtonBorderBrush}">
+          <Border x:Name="BorderOuter" Style="{StaticResource MainBorderStyle}">
             <VisualStateManager.VisualStateGroups>
               <VisualStateGroup x:Name="CommonStates">
                 <VisualState x:Name="Normal"/>
-                <VisualState x:Name="MouseOver">
+                <VisualState x:Name="PointerOver">
                   <VisualState.Setters>
-                    <Setter Target="BorderOuter.BorderBrush" Value="{StaticResource ButtonBorderBrushOver}"/>
+                    <Setter Target="BorderOuter.BorderBrush" Value="{StaticResource RiotButtonBorderBrushHover}"/>
+                    <Setter Target="BorderOuter.Background" Value="{StaticResource RiotButtonBackgroundHover}"/>
                     <Setter Target="Icon.Fill" Value="#FFEDB5"/>
                   </VisualState.Setters>
                 </VisualState>
-                <VisualState x:Name="Disabled">
+                <VisualState x:Name="Pressed">
                   <VisualState.Setters>
-                    <Setter Target="BorderOuter.BorderBrush" Value="#5B5A56"/>
-                    <Setter Target="BorderOuter.Background" Value="#1E282D"/>
-                    <Setter Target="Icon.Fill" Value="#5B5A56"/>
+                    <Setter Target="BorderOuter.BorderBrush" Value="{StaticResource RiotButtonBorderBrushPressed}"/>
+                    <Setter Target="BorderOuter.Background" Value="{StaticResource RiotButtonBackgroundPressed}"/>
                   </VisualState.Setters>
                 </VisualState>
               </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
-            <Border
-              x:Name="BorderInner"
-              Background="Transparent"
-              BorderBrush="#14171A"
-              BorderThickness="1"
-              CornerRadius="20">
-              <Path x:Name="Icon"
-                Fill="#CDBE91"                                         
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Data="M2 12H4V17H20V12H22V17C22 18.11 21.11 19 20 19H4C2.9 19 2 18.11 2 17V12M12 15L17.55 9.54L16.13 8.13L13 11.25V2H11V11.25L7.88 8.13L6.46 9.55L12 15Z"
-                Stretch="Uniform"
-                Width="16"
-                Height="16"/>
+            <Border x:Name="BorderInner" Style="{StaticResource InnerBorderStyle}">
+              <Path x:Name="Icon" Style="{StaticResource CirclePathStyle}"/>
             </Border>
           </Border>
         </ControlTemplate>

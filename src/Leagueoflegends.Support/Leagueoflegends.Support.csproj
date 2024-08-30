@@ -1581,6 +1581,7 @@
     <None Remove="Themes\RiotPlayButton.xaml" />
     <None Remove="Themes\Units\RiotButton.xaml" />
     <None Remove="Themes\Units\RiotChampGroupItem.xaml" />
+    <None Remove="Themes\Units\RiotChampionAvatar.xaml" />
     <None Remove="Themes\Units\RiotChampItemControl.xaml" />
     <None Remove="Themes\Units\RiotChampListBox.xaml" />
     <None Remove="Themes\Units\RiotChampSkinGroupItem.xaml" />
@@ -1598,6 +1599,7 @@
     <None Remove="Themes\Units\RiotHorizMenuListBox.xaml" />
     <None Remove="Themes\Units\RiotHorizMenuListBoxItem.xaml" />
     <None Remove="Themes\Units\RiotIconButton.xaml" />
+    <None Remove="Themes\Units\RiotItemBadge.xaml" />
     <None Remove="Themes\Units\RiotMainIconMenu.xaml" />
     <None Remove="Themes\Units\RiotMainMenu.xaml" />
     <None Remove="Themes\Units\RiotMatchHistoryListBox.xaml" />
@@ -1605,10 +1607,12 @@
     <None Remove="Themes\Units\RiotNewsButton.xaml" />
     <None Remove="Themes\Units\RiotNoticeButton.xaml" />
     <None Remove="Themes\Units\RiotPlayedChampListBox.xaml" />
+    <None Remove="Themes\Units\RiotPlayedChampListBoxItem.xaml" />
     <None Remove="Themes\Units\RiotRecentActivityListBox.xaml" />
     <None Remove="Themes\Units\RiotSaleChampion.xaml" />
     <None Remove="Themes\Units\RiotScrollViewer.xaml" />
     <None Remove="Themes\Units\RiotSkinTierButton.xaml" />
+    <None Remove="Themes\Units\RIotSpellBadge.xaml" />
     <None Remove="Themes\Units\RiotSpellListBox.xaml" />
     <None Remove="Themes\Units\RiotSpellListBoxItem.xaml" />
     <None Remove="Themes\Units\RiotStatusIndicator.xaml" />
@@ -1677,6 +1681,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Units\RiotChampionAvatar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Units\RiotChampItemControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1737,6 +1745,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Units\RiotItemBadge.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Units\RiotMainIconMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1769,6 +1781,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Units\RiotPlayedChampListBoxItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Units\RiotRecentActivityListBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1786,6 +1802,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Units\RiotSkinTierButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RIotSpellBadge.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -2014,5 +2034,21 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Units\RiotCircleIconButton.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotChampionAvatar.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotItemBadge.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RIotSpellBadge.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotPlayedChampListBoxItem.xaml" />
   </ItemGroup>
 </Project>
