@@ -11,6 +11,20 @@
     <GradientStop Color="#448B6811" Offset="1"/>
   </LinearGradientBrush>
 
+  <Style x:Key="SelectImageStyle" TargetType="Image">
+    <Setter Property="VerticalAlignment" Value="Top"/>
+    <Setter Property="HorizontalAlignment" Value="Center"/>
+    <Setter Property="Source" Value="ms-appx:///Leagueoflegends.Support/Images/menu-selection.png"/>
+    <Setter Property="Visibility" Value="Collapsed"/>
+    <Setter Property="Width" Value="28"/>
+    <Setter Property="Height" Value="15"/>
+  </Style>
+
+  <Style x:Key="ContentStyle" TargetType="TextBlock">
+    <Setter Property="FontSize" Value="15"/>
+    <Setter Property="FontWeight" Value="Bold"/>
+  </Style>
+
   <Style TargetType="units:RiotMainMenu">
     <Setter Property="Background" Value="Transparent"/>
     <Setter Property="Foreground" Value="#CDBE91"/>
@@ -56,24 +70,16 @@
                 </VisualState>
               </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
-            <Rectangle x:Name="CheckedRect" 
-                       Fill="Transparent"/>
-            <Rectangle x:Name="PointerOverRect" 
-                       Fill="Transparent"/>
-            <Image x:Name="SelectionImage"
-                   VerticalAlignment="Top"
-                   HorizontalAlignment="Center"
-                   Source="ms-appx:///Leagueoflegends.Support/Images/menu-selection.png"
-                   Visibility="Collapsed"
-                   Width="28"
-                   Height="15"/>
-            <TextBlock x:Name="ContentPresenter"
-                       Text="{TemplateBinding MenuName}"
-                       HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                       VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                       Margin="{TemplateBinding Padding}"
-                       FontSize="15"
-                       FontWeight="Bold"/>
+            <Rectangle x:Name="CheckedRect" Fill="Transparent"/>
+            <Rectangle x:Name="PointerOverRect" Fill="Transparent"/>
+            <Image x:Name="SelectionImage" Style="{StaticResource SelectImageStyle}"/>
+            <TextBlock
+              x:Name="ContentPresenter"
+              Style="{StaticResource ContentStyle}"
+              Text="{TemplateBinding MenuName}"
+              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+              Margin="{TemplateBinding Padding}"/>
           </Grid>
         </ControlTemplate>
       </Setter.Value>

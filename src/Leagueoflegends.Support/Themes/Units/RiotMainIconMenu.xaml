@@ -13,6 +13,22 @@
     <GradientStop Color="#448B6811" Offset="1"/>
   </LinearGradientBrush>
 
+  <Style x:Key="SelectImageStyle" TargetType="Image">
+    <Setter Property="VerticalAlignment" Value="Top"/>
+    <Setter Property="HorizontalAlignment" Value="Center"/>
+    <Setter Property="Source" Value="ms-appx:///Leagueoflegends.Support/Images/menu-selection.png"/>
+    <Setter Property="Visibility" Value="Collapsed"/>
+    <Setter Property="Width" Value="28"/>
+    <Setter Property="Height" Value="15"/>
+  </Style>
+
+  <Style x:Key="MenuPathStyle" TargetType="Path">
+    <Setter Property="Fill" Value="#CDBE91"/>
+    <Setter Property="Stretch" Value="Uniform"/>
+    <Setter Property="Width" Value="24"/>
+    <Setter Property="Height" Value="24"/>
+  </Style>
+
   <Style TargetType="units:RiotMainIconMenu">
     <Setter Property="Background" Value="Transparent"/>
     <Setter Property="Foreground" Value="#CDBE91"/>
@@ -58,26 +74,16 @@
                 </VisualState>
               </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
-            <Rectangle x:Name="CheckedRect" 
-                       Fill="Transparent"/>
-            <Rectangle x:Name="PointerOverRect" 
-                       Fill="Transparent"/>
-            <Image x:Name="SelectionImage"
-                   VerticalAlignment="Top"
-                   HorizontalAlignment="Center"
-                   Source="ms-appx:///Leagueoflegends.Support/Images/menu-selection.png"
-                   Visibility="Collapsed"
-                   Width="28"
-                   Height="15"/>
-            <Path x:Name="IconPath"
-                  Data="{Binding MenuIcon, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource MenuIconToGeometryConverter}}"
-                  Fill="#CDBE91"
-                  Stretch="Uniform"
-                  Width="24"
-                  Height="24"
-                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                  Margin="{TemplateBinding Padding}"/>
+            <Rectangle x:Name="CheckedRect" Fill="Transparent"/>
+            <Rectangle x:Name="PointerOverRect" Fill="Transparent"/>
+            <Image x:Name="SelectionImage" Style="{StaticResource SelectImageStyle}"/>
+            <Path
+              x:Name="IconPath"
+              Style="{StaticResource MenuPathStyle}"
+              Data="{Binding MenuIcon, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource MenuIconToGeometryConverter}}"
+              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+              Margin="{TemplateBinding Padding}"/>
           </Grid>
         </ControlTemplate>
       </Setter.Value>

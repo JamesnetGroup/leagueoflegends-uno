@@ -27,26 +27,14 @@
                 <VisualState x:Name="Normal"/>
                 <VisualState x:Name="PointerOver">
                   <Storyboard>
-                    <ColorAnimation
-                      Storyboard.TargetName="RootBorder" 
-                      Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)"
-                      To="#C89B3C" Duration="0:0:0.2"/>
-                    <ColorAnimation
-                      Storyboard.TargetName="OverlayBorder" 
-                      Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
-                      To="#33F0E6D2" Duration="0:0:0.2"/>
+                    <ColorAnimation Storyboard.TargetName="RootBorder" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" To="#C89B3C" Duration="0:0:0.2"/>
+                    <ColorAnimation Storyboard.TargetName="OverlayBorder" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="#33F0E6D2" Duration="0:0:0.2"/>
                   </Storyboard>
                 </VisualState>
                 <VisualState x:Name="Pressed">
                   <Storyboard>
-                    <ColorAnimation
-                      Storyboard.TargetName="RootBorder" 
-                      Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)"
-                      To="#F0E6D2" Duration="0:0:0.1"/>
-                    <ColorAnimation
-                      Storyboard.TargetName="OverlayBorder" 
-                      Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
-                      To="#66785A28" Duration="0:0:0.1"/>
+                    <ColorAnimation Storyboard.TargetName="RootBorder" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" To="#F0E6D2" Duration="0:0:0.1"/>
+                    <ColorAnimation Storyboard.TargetName="OverlayBorder" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="#66785A28" Duration="0:0:0.1"/>
                   </Storyboard>
                 </VisualState>
               </VisualStateGroup>

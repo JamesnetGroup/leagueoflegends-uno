@@ -11,6 +11,12 @@
     <GradientStop Color="Transparent" Offset="1"/>
   </LinearGradientBrush>
 
+  <Style x:Key="MainBorderStyle" TargetType="Border">
+    <Setter Property="Background" Value="Transparent"/>
+    <Setter Property="BorderBrush" Value="Transparent"/>
+    <Setter Property="BorderThickness" Value="0,0,0,1"/>
+  </Style>
+
   <Style TargetType="units:RiotHorizMenuListBoxItem">
     <Setter Property="Background" Value="Transparent" />
     <Setter Property="Foreground" Value="#CDBE91" />
@@ -55,15 +61,13 @@
                 </VisualState>
               </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
-            <Border x:Name="BorderElement"
-                    Background="Transparent"
-                    BorderBrush="Transparent"
-                    BorderThickness="0,0,0,1">
-              <TextBlock x:Name="ContentPresenter"
-                         Text="{Binding Name}"
-                         HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                         VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                         Margin="{TemplateBinding Padding}" />
+            <Border x:Name="BorderElement" Style="{StaticResource MainBorderStyle}">
+              <TextBlock
+                x:Name="ContentPresenter"
+                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                Margin="{TemplateBinding Padding}"
+                Text="{Binding Name}"/>
             </Border>
           </Grid>
         </ControlTemplate>

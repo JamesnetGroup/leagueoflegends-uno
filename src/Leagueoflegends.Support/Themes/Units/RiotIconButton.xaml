@@ -3,6 +3,12 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:units="using:Leagueoflegends.Support.UI.Units">
 
+  <Style x:Key="PathStyle" TargetType="Path">
+    <Setter Property="Stretch" Value="Uniform"/>
+    <Setter Property="HorizontalAlignment" Value="Center"/>
+    <Setter Property="VerticalAlignment" Value="Center"/>
+  </Style>
+
   <Style TargetType="units:RiotIconButton">
     <Setter Property="Background" Value="Transparent"/>
     <Setter Property="BorderThickness" Value="0"/>
@@ -11,7 +17,7 @@
     <Setter Property="Template">
       <Setter.Value>
         <ControlTemplate TargetType="units:RiotIconButton">
-          <Grid x:Name="RootGrid" Background="{TemplateBinding Background}">
+          <Grid Background="{TemplateBinding Background}">
             <VisualStateManager.VisualStateGroups>
               <VisualStateGroup x:Name="CommonStates">
                 <VisualState x:Name="Normal">
@@ -58,10 +64,7 @@
                 </VisualState>
               </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
-            <Path x:Name="IconPath"
-                  Stretch="Uniform"
-                  HorizontalAlignment="Center"
-                  VerticalAlignment="Center"/>
+            <Path x:Name="IconPath" Style="{StaticResource PathStyle}"/>
           </Grid>
         </ControlTemplate>
       </Setter.Value>

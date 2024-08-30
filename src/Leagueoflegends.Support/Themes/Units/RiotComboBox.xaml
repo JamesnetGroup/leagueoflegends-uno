@@ -4,20 +4,48 @@
   xmlns:cnvts="using:Leagueoflegends.Support.Local.Converters"
   xmlns:units="using:Leagueoflegends.Support.UI.Units">
 
-  <!-- Converters -->
-  <cnvts:FromNullToValueConverter
-    x:Key="NullToVisibleConverter" 
-    NotNullValue="Collapsed"
-    NullValue="Visible" />
+  <x:String x:Key="DropDownGeometry">M12,6L7,11H17L12,6M7,13L12,18L17,13H7Z</x:String>
+  <cnvts:FromNullToValueConverter x:Key="NullToVisibleConverter" NotNullValue="Collapsed" NullValue="Visible"/>
 
-  <!-- Brushes and Colors -->
   <SolidColorBrush x:Key="RiotComboBoxBorderBrush" Color="#C6A667" />
   <SolidColorBrush x:Key="RiotComboBoxBackgroundBrush" Color="#0F1A20" />
   <SolidColorBrush x:Key="RiotComboBoxForegroundBrush" Color="White" />
   <SolidColorBrush x:Key="RiotComboBoxHighlightBrush" Color="#1E2328" />
   <SolidColorBrush x:Key="RiotComboBoxDisabledBrush" Color="#463714" />
 
-  <!-- Styles -->
+  <Style x:Key="ContentItemStyle" TargetType="ContentPresenter">
+    <Setter Property="VerticalAlignment" Value="Center"/>
+  </Style>
+
+  <Style x:Key="ContentStyle" TargetType="ContentPresenter">
+    <Setter Property="Padding" Value="10 0 0 0"/>
+    <Setter Property="FontSize" Value="11"/>
+    <Setter Property="VerticalAlignment" Value="Center"/>
+  </Style>
+
+  <Style x:Key="PlaceHolderStyle" TargetType="TextBlock">
+    <Setter Property="Foreground" Value="{StaticResource RiotComboBoxDisabledBrush}"/>
+    <Setter Property="VerticalAlignment" Value="Center"/>
+  </Style>
+
+  <Style x:Key="DropDownPathStyle" TargetType="Path">
+    <Setter Property="Grid.Column" Value="1"/>
+    <Setter Property="Data" Value="{StaticResource DropDownGeometry}"/>
+    <Setter Property="Fill" Value="{StaticResource RiotComboBoxForegroundBrush}"/>
+    <Setter Property="Width" Value="10"/>
+    <Setter Property="Height" Value="10"/>
+    <Setter Property="Stretch" Value="Uniform"/>
+    <Setter Property="VerticalAlignment" Value="Center"/>
+    <Setter Property="HorizontalAlignment" Value="Right"/>
+    <Setter Property="Margin" Value="0,0,10,0"/>
+  </Style>
+
+  <Style x:Key="PopupBorderStyle" TargetType="Border">
+    <Setter Property="Background" Value="{StaticResource RiotComboBoxBackgroundBrush}" />
+    <Setter Property="BorderBrush" Value="{StaticResource RiotComboBoxBorderBrush}" />
+    <Setter Property="BorderThickness" Value="1"/>
+  </Style>
+
   <Style TargetType="units:RiotComboBoxItem">
     <Setter Property="Background" Value="Transparent" />
     <Setter Property="Foreground" Value="{StaticResource RiotComboBoxForegroundBrush}" />
@@ -49,10 +77,10 @@
               </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
             <ContentPresenter
+              Style="{StaticResource ContentItemStyle}"
               Content="{TemplateBinding Content}"
               ContentTemplate="{TemplateBinding ContentTemplate}"
-              Margin="{TemplateBinding Padding}"
-              VerticalAlignment="Center" />
+              Margin="{TemplateBinding Padding}"/>
           </Grid>
         </ControlTemplate>
       </Setter.Value>
@@ -75,52 +103,27 @@
               Background="{TemplateBinding Background}"
               BorderBrush="{TemplateBinding BorderBrush}"
               BorderThickness="{TemplateBinding BorderThickness}">
-              <Grid>
-                <Grid.ColumnDefinitions>
-                  <ColumnDefinition Width="*" />
-                  <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
-
+              <Grid ColumnDefinitions="*, Auto">
                 <ContentPresenter
                   x:Name="ContentPresenter"
-                  Padding="10 0 0 0"
-                  FontSize="11"
+                  Style="{StaticResource ContentStyle}"
                   Content="{TemplateBinding SelectedItem}"
-                  ContentTemplate="{TemplateBinding ItemTemplate}"
-                  VerticalAlignment="Center" />
-
+                  ContentTemplate="{TemplateBinding ItemTemplate}"/>
                 <TextBlock
                   x:Name="PlaceholderTextBlock"
-                  Grid.Column="0"
-                  Text="{TemplateBinding PlaceholderText}"
-                  Foreground="{StaticResource RiotComboBoxDisabledBrush}"
-                  VerticalAlignment="Center"
-                  Visibility="{Binding SelectedItem, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource NullToVisibleConverter}}" />
-
-                <Path x:Name="DropDownIcon"
-                  Grid.Column="1"
-                  Data="M12,6L7,11H17L12,6M7,13L12,18L17,13H7Z"
-                  Fill="{StaticResource RiotComboBoxForegroundBrush}"
-                  Width="10"
-                  Height="10"
-                  Stretch="Uniform"
-                  VerticalAlignment="Center"
-                  HorizontalAlignment="Right"
-                  Margin="0,0,10,0" />
+                  Style="{StaticResource PlaceHolderStyle}"
+                  Visibility="{Binding SelectedItem, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource NullToVisibleConverter}}"
+                  Text="{TemplateBinding PlaceholderText}"/>
+                <Path x:Name="DropDownIcon" Style="{StaticResource DropDownPathStyle}"/>
               </Grid>
             </Border>
-
             <Popup x:Name="Popup">
-              <Border
-                Background="{TemplateBinding Background}"
-                BorderBrush="{TemplateBinding BorderBrush}"
-                BorderThickness="1">
+              <Border Style="{StaticResource PopupBorderStyle}">
                 <ScrollViewer MaxHeight="300">
                   <ItemsPresenter />
                 </ScrollViewer>
               </Border>
             </Popup>
-
             <VisualStateManager.VisualStateGroups>
               <VisualStateGroup x:Name="CommonStates">
                 <VisualState x:Name="Normal" />

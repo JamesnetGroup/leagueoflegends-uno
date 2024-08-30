@@ -151,7 +151,7 @@
                   <RowDefinition Height="Auto"/>
                   <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Grid Style="{StaticResource ContentGridStyle}">
+                <Grid Grid.Row="0" Style="{StaticResource ContentGridStyle}">
                   <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="35"/>
                     <ColumnDefinition Width="35"/>
@@ -164,7 +164,7 @@
                   <units:RiotSkinTierButton Count="16" Style="{StaticResource EpicTierStyle}"/>
                 </Grid>
                 <Border Style="{StaticResource SeparatorBorderStyle}"/>
-                <Grid Style="{StaticResource ContentGridStyle}">
+                <Grid Grid.Row="1" Style="{StaticResource ContentGridStyle}">
                   <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="35"/>
                     <ColumnDefinition Width="35"/>
