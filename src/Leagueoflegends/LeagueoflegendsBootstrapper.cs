@@ -21,6 +21,8 @@ using Leagueoflegends.Shop.UI.Views;
 using Leagueoflegends.Profile.UI.Views;
 using Leagueoflegends.Profile.Local.ViewModels;
 using Leagueoflegends.Profile.Local.Datas;
+using Leagueoflegends.Clash.UI.Views;
+using Leagueoflegends.Clash.Local.ViewModels;
 namespace Leagueoflegends;
 
 public class LeagueOfLegendsBootstrapper : AppBootstrapper
@@ -37,6 +39,7 @@ public class LeagueOfLegendsBootstrapper : AppBootstrapper
         ViewModelMapper.Register<SpellsContent, SpellsContentViewModel>();
         ViewModelMapper.Register<TftContent, TftContentViewModel>();
         ViewModelMapper.Register<HistoryContent, HistoryContentViewModel>();
+        ViewModelMapper.Register<HubContent, HubContentViewModel>();
     }
 
     protected override void RegisterDependencies()
@@ -60,6 +63,7 @@ public class LeagueOfLegendsBootstrapper : AppBootstrapper
         Container.RegisterSingleton<IView, TftContent>("TftContent");
         Container.RegisterSingleton<IView, ShopContent>("ShopContent");
         Container.RegisterSingleton<IView, OverviewContent>("HomeOverviewContent");
+        Container.RegisterSingleton<IView, HubContent>("ClashHubContent");
         Container.RegisterSingleton<IView, ChampionsContent>("CollectionChampionsContent");
         Container.RegisterSingleton<IView, SkinsContent>("CollectionSkinsContent");
         Container.RegisterSingleton<IView, SpellsContent>("CollectionSpellsContent");

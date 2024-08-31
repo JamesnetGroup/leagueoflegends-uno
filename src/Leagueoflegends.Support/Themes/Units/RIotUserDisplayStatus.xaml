@@ -2,6 +2,37 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:units="using:Leagueoflegends.Support.UI.Units">
+
+  <Style x:Key="UserNameTextBlockStyle" TargetType="TextBlock">
+    <Setter Property="FontSize" Value="14"/>
+    <Setter Property="FontWeight" Value="Bold"/>
+    <Setter Property="Foreground" Value="#F0E6D2"/>
+    <Setter Property="Margin" Value="0,0,0,0"/>
+  </Style>
+
+  <Style x:Key="StatusIndicatorEllipseStyle" TargetType="Ellipse">
+    <Setter Property="Width" Value="11"/>
+    <Setter Property="Height" Value="11"/>
+    <Setter Property="Stroke" Value="#66F8A0"/>
+    <Setter Property="StrokeThickness" Value="2"/>
+    <Setter Property="Fill" Value="#09A646"/>
+    <Setter Property="Margin" Value="0,0,6,0"/>
+  </Style>
+
+  <Style x:Key="StatusTextBlockStyle" TargetType="TextBlock">
+    <Setter Property="FontSize" Value="11"/>
+    <Setter Property="FontWeight" Value="Bold"/>
+    <Setter Property="Foreground" Value="#099441"/>
+  </Style>
+
+  <Style x:Key="StatusStackPanelStyle" TargetType="StackPanel">
+    <Setter Property="Orientation" Value="Horizontal"/>
+  </Style>
+
+  <Style x:Key="MainStackPanelStyle" TargetType="StackPanel">
+    <Setter Property="Orientation" Value="Vertical"/>
+  </Style>
+
   <Style TargetType="units:RiotUserDisplayStatus">
     <Setter Property="Template">
       <Setter.Value>
@@ -14,31 +45,17 @@
                   <VisualState.Setters>
                     <Setter Target="PART_StatusIndicator.Fill" Value="Transparent"/>
                     <Setter Target="PART_StatusIndicator.Stroke" Value="#9C3213"/>
-                    <Setter Target="PART_StatusText.Text" Value="자리 비움"/>
+                    <Setter Target="PART_StatusText.Text" Value="Away"/>
                     <Setter Target="PART_StatusText.Foreground" Value="#A09B8C"/>
                   </VisualState.Setters>
                 </VisualState>
               </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
-            <StackPanel>
-              <TextBlock x:Name="PART_UserName" 
-                         Text="{TemplateBinding UserName}"
-                         FontSize="14"
-                         FontWeight="Bold"
-                         Foreground="#F0E6D2"
-                         Margin="0,0,0,0"/>
-              <StackPanel Orientation="Horizontal">
-                <Ellipse x:Name="PART_StatusIndicator" 
-                         Width="11" Height="11" 
-                         Stroke="#66F8A0" 
-                         StrokeThickness="2"
-                         Fill="#09A646" 
-                         Margin="0,0,6,0"/>
-                <TextBlock x:Name="PART_StatusText" 
-                           Text="Online"
-                           FontSize="11"
-                           FontWeight="Bold"
-                           Foreground="#099441"/>
+            <StackPanel Style="{StaticResource MainStackPanelStyle}">
+              <TextBlock x:Name="PART_UserName" Style="{StaticResource UserNameTextBlockStyle}" Text="{TemplateBinding UserName}"/>
+              <StackPanel Style="{StaticResource StatusStackPanelStyle}">
+                <Ellipse x:Name="PART_StatusIndicator" Style="{StaticResource StatusIndicatorEllipseStyle}"/>
+                <TextBlock x:Name="PART_StatusText" Style="{StaticResource StatusTextBlockStyle}" Text="Online"/>
               </StackPanel>
             </StackPanel>
           </Grid>

@@ -9,6 +9,37 @@
     <GradientStop Color="#CDB17A" Offset="1"/>
   </LinearGradientBrush>
 
+  <Style x:Key="SpellImageContainerStyle" TargetType="Border">
+    <Setter Property="BorderBrush" Value="#323438"/>
+    <Setter Property="BorderThickness" Value="1"/>
+  </Style>
+
+  <Style x:Key="SpellImageBackgroundStyle" TargetType="Border">
+    <Setter Property="Background" Value="#000000"/>
+  </Style>
+
+  <Style x:Key="SpellImageStyle" TargetType="Image">
+    <Setter Property="Width" Value="50"/>
+    <Setter Property="Height" Value="50"/>
+    <Setter Property="Margin" Value="1"/>
+    <Setter Property="Opacity" Value="0.7"/>
+  </Style>
+
+  <Style x:Key="SelectionBorderStyle" TargetType="Border">
+    <Setter Property="BorderBrush" Value="{StaticResource ButtonBorderBrush}"/>
+    <Setter Property="BorderThickness" Value="2"/>
+    <Setter Property="Visibility" Value="Collapsed"/>
+    <Setter Property="Margin" Value="-2"/>
+  </Style>
+
+  <Style x:Key="SpellNameTextStyle" TargetType="TextBlock">
+    <Setter Property="Grid.Row" Value="1"/>
+    <Setter Property="HorizontalAlignment" Value="Center"/>
+    <Setter Property="VerticalAlignment" Value="Bottom"/>
+    <Setter Property="Margin" Value="0,10,0,3"/>
+    <Setter Property="Padding" Value="0,2,0,0"/>
+  </Style>
+
   <Style TargetType="units:RiotSpellListBoxItem">
     <Setter Property="Foreground" Value="#A09B8C"/>
     <Setter Property="Template">
@@ -16,64 +47,49 @@
         <ControlTemplate TargetType="units:RiotSpellListBoxItem">
           <Grid Margin="0,8,46,0" Background="Transparent">
             <VisualStateManager.VisualStateGroups>
-                <VisualStateGroup x:Name="CommonStates">
-                  <VisualState x:Name="Normal" />
-                  <VisualState x:Name="PointerOver">
-                    <VisualState.Setters>
-                      <Setter Target="SpellImage.Opacity" Value="1"/>
-                    </VisualState.Setters>
-                  </VisualState>
-                  <VisualState x:Name="SelectedPressed">
-                    <VisualState.Setters>
-                      <Setter Target="ContentPresenter.Foreground" Value="#FFC800" />
-                    </VisualState.Setters>
-                  </VisualState>
-                  <VisualState x:Name="Selected">
-                    <VisualState.Setters>
-                      <Setter Target="ContentPresenter.Foreground" Value="#F0E6D2"/>
-                      <Setter Target="SelectionBorder.Visibility" Value="Visible"/>
-                    </VisualState.Setters>
-                  </VisualState>
-                  <VisualState x:Name="SelectedUnfocused">
-                    <VisualState.Setters>
-                      <Setter Target="ContentPresenter.Foreground" Value="#F0E6D2"/>
-                      <Setter Target="SelectionBorder.Visibility" Value="Visible"/>
-                    </VisualState.Setters>
-                  </VisualState>
-                  <VisualState x:Name="PointerOverSelected">
-                    <VisualState.Setters>
-                      <Setter Target="ContentPresenter.Foreground" Value="#F0E6D2"/>
-                      <Setter Target="SelectionBorder.Visibility" Value="Visible"/>
-                    </VisualState.Setters>
-                  </VisualState>
-                </VisualStateGroup>
+              <VisualStateGroup x:Name="CommonStates">
+                <VisualState x:Name="Normal"/>
+                <VisualState x:Name="PointerOver">
+                  <VisualState.Setters>
+                    <Setter Target="SpellImage.Opacity" Value="1"/>
+                  </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="SelectedPressed">
+                  <VisualState.Setters>
+                    <Setter Target="ContentPresenter.Foreground" Value="#FFC800"/>
+                  </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Selected">
+                  <VisualState.Setters>
+                    <Setter Target="ContentPresenter.Foreground" Value="#F0E6D2"/>
+                    <Setter Target="SelectionBorder.Visibility" Value="Visible"/>
+                  </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="SelectedUnfocused">
+                  <VisualState.Setters>
+                    <Setter Target="ContentPresenter.Foreground" Value="#F0E6D2"/>
+                    <Setter Target="SelectionBorder.Visibility" Value="Visible"/>
+                  </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="PointerOverSelected">
+                  <VisualState.Setters>
+                    <Setter Target="ContentPresenter.Foreground" Value="#F0E6D2"/>
+                    <Setter Target="SelectionBorder.Visibility" Value="Visible"/>
+                  </VisualState.Setters>
+                </VisualState>
+              </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
             <Grid.RowDefinitions>
               <RowDefinition Height="*"/>
               <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Border Grid.Row="0" BorderBrush="#323438" BorderThickness="1"> 
-              <Border Background="#000000">
-                <Image x:Name="SpellImage" 
-                       Source="{Binding ImageUrl}"
-                       Width="50"
-                       Height="50"
-                       Margin="1" 
-                       Opacity="0.7"/>
+            <Border Style="{StaticResource SpellImageContainerStyle}">
+              <Border Style="{StaticResource SpellImageBackgroundStyle}">
+                <Image x:Name="SpellImage" Style="{StaticResource SpellImageStyle}" Source="{Binding ImageUrl}"/>
               </Border>
             </Border>
-            <Border x:Name="SelectionBorder" 
-              BorderBrush="{StaticResource ButtonBorderBrush}" 
-              BorderThickness="2" 
-              Visibility="Collapsed"
-              Margin="-2"/>
-            <TextBlock x:Name="ContentPresenter"
-              Grid.Row="1" 
-              Text="{Binding Name}" 
-              HorizontalAlignment="Center" 
-              VerticalAlignment="Bottom"
-              Margin="0,10,0,3"
-              Padding="0,2,0,0"/>
+            <Border x:Name="SelectionBorder" Style="{StaticResource SelectionBorderStyle}"/>
+            <TextBlock x:Name="ContentPresenter" Style="{StaticResource SpellNameTextStyle}" Text="{Binding Name}"/>
           </Grid>
         </ControlTemplate>
       </Setter.Value>

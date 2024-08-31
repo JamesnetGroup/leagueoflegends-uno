@@ -207,6 +207,11 @@
     <None Remove="Images\portrait_zilean.jpg" />
     <None Remove="Images\portrait_zoe.jpg" />
     <None Remove="Images\portrait_zyra.jpg" />
+    <None Remove="Images\Positions\bottom.png" />
+    <None Remove="Images\Positions\jungle.png" />
+    <None Remove="Images\Positions\mid.png" />
+    <None Remove="Images\Positions\support.png" />
+    <None Remove="Images\Positions\top.png" />
     <None Remove="Images\profile-default.png" />
     <None Remove="Images\rp.png" />
     <None Remove="Images\Skins\skin_aatrox_01.jpg" />
@@ -1598,6 +1603,7 @@
     <None Remove="Themes\Units\RiotFriendListBox.xaml" />
     <None Remove="Themes\Units\RiotHorizMenuListBox.xaml" />
     <None Remove="Themes\Units\RiotHorizMenuListBoxItem.xaml" />
+    <None Remove="Themes\Units\RiotHubSummary.xaml" />
     <None Remove="Themes\Units\RiotIconButton.xaml" />
     <None Remove="Themes\Units\RiotItemBadge.xaml" />
     <None Remove="Themes\Units\RiotMainIconMenu.xaml" />
@@ -1608,6 +1614,7 @@
     <None Remove="Themes\Units\RiotNoticeButton.xaml" />
     <None Remove="Themes\Units\RiotPlayedChampListBox.xaml" />
     <None Remove="Themes\Units\RiotPlayedChampListBoxItem.xaml" />
+    <None Remove="Themes\Units\RiotPositionButton.xaml" />
     <None Remove="Themes\Units\RiotRecentActivityListBox.xaml" />
     <None Remove="Themes\Units\RiotSaleChampion.xaml" />
     <None Remove="Themes\Units\RiotScrollViewer.xaml" />
@@ -1616,8 +1623,11 @@
     <None Remove="Themes\Units\RiotSpellListBox.xaml" />
     <None Remove="Themes\Units\RiotSpellListBoxItem.xaml" />
     <None Remove="Themes\Units\RiotStatusIndicator.xaml" />
+    <None Remove="Themes\Units\RiotSwitchButton.xaml" />
     <None Remove="Themes\Units\RiotTextBox.xaml" />
     <None Remove="Themes\Units\RiotTextBoxCloseButton.xaml" />
+    <None Remove="Themes\Units\RiotTicketAddButton.xaml" />
+    <None Remove="Themes\Units\RiotTicketButton.xaml" />
     <None Remove="Themes\Units\RiotUserAvatar.xaml" />
     <None Remove="Themes\Units\RIotUserDisplayStatus.xaml" />
     <None Remove="Themes\Units\RiotWallpaper.xaml" />
@@ -1741,6 +1751,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Units\RiotHubSummary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Units\RiotIconButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1785,6 +1799,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Units\RiotPositionButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Units\RiotRecentActivityListBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1821,11 +1839,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Units\RiotSwitchButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Units\RiotTextBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Units\RiotTextBoxCloseButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotTicketAddButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotTicketButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1871,6 +1901,11 @@
     <Content Include="Images\Concepts\tanker.png" />
     <Content Include="Images\Concepts\warrior.png" />
     <Content Include="Images\Concepts\wizard.png" />
+    <Content Include="Images\Positions\bottom.png" />
+    <Content Include="Images\Positions\jungle.png" />
+    <Content Include="Images\Positions\mid.png" />
+    <Content Include="Images\Positions\support.png" />
+    <Content Include="Images\Positions\top.png" />
     <Content Include="Images\profile-default.png" />
     <Content Include="Images\rp.png" />
     <Content Include="Images\wallpaper-ezreal.jpg" />
@@ -2050,5 +2085,25 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Units\RiotPlayedChampListBoxItem.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotHubSummary.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotTicketButton.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotPositionButton.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotSwitchButton.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotTicketAddButton.xaml" />
   </ItemGroup>
 </Project>

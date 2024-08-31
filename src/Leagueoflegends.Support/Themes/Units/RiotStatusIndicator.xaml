@@ -6,24 +6,35 @@
 
   <cnvts:IconTypeToStatusIndicatorConverter x:Key="IconTypeToStatusIndicatorConverter"/>
 
+  <Style x:Key="RootGridStyle" TargetType="Grid">
+    <Setter Property="Background" Value="Transparent"/>
+  </Style>
+
+  <Style x:Key="StatusIconStyle" TargetType="Image">
+    <Setter Property="Width" Value="16"/>
+    <Setter Property="Height" Value="16"/>
+  </Style>
+
+  <Style x:Key="StatusTextStyle" TargetType="TextBlock">
+    <Setter Property="Grid.Column" Value="1"/>
+    <Setter Property="FontSize" Value="14"/>
+    <Setter Property="Padding" Value="8 2 2 2"/>
+    <Setter Property="Foreground" Value="#FFFFFF"/>
+    <Setter Property="FontWeight" Value="Bold"/>
+  </Style>
+
   <Style TargetType="units:RiotStatusIndicator">
     <Setter Property="Background" Value="Transparent"/>
     <Setter Property="Template">
       <Setter.Value>
         <ControlTemplate TargetType="units:RiotStatusIndicator">
-          <Grid x:Name="RootGrid" Background="{TemplateBinding Background}">
+          <Grid Style="{StaticResource RootGridStyle}">
             <Grid.ColumnDefinitions>
               <ColumnDefinition Width="Auto"/>
               <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Image Width="16" Height="16"
-                   Source="{Binding IconType, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource IconTypeToStatusIndicatorConverter}}"/>
-            <TextBlock Grid.Column="1"
-                       Text="{TemplateBinding Value}"
-                       FontSize="14"
-                       Padding="8 2 2 2"
-                       Foreground="#FFFFFF"
-                       FontWeight="Bold"/>
+            <Image Style="{StaticResource StatusIconStyle}" Source="{Binding IconType, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource IconTypeToStatusIndicatorConverter}}"/>
+            <TextBlock Style="{StaticResource StatusTextStyle}" Text="{TemplateBinding Value}"/>
           </Grid>
         </ControlTemplate>
       </Setter.Value>

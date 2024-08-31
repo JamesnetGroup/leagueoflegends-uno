@@ -8,6 +8,27 @@
     <GradientStop Color="#FFDC9F27" Offset="1"/>
   </LinearGradientBrush>
 
+  <Style x:Key="MainBorderStyle" TargetType="Border">
+    <Setter Property="Grid.Row" Value="0"/>
+    <Setter Property="Background" Value="#0B131B"/>
+    <Setter Property="BorderBrush" Value="#28282B"/>
+    <Setter Property="BorderThickness" Value="1"/>
+  </Style>
+
+  <Style x:Key="ImageStyle" TargetType="Image">
+    <Setter Property="Stretch" Value="UniformToFill"/>
+    <Setter Property="Opacity" Value="0.9"/>
+  </Style>
+
+  <Style x:Key="TextStyle" TargetType="TextBlock">
+    <Setter Property="Grid.Row" Value="1"/>
+    <Setter Property="Foreground" Value="#cdbe91"/>
+    <Setter Property="TextWrapping" Value="Wrap"/>
+    <Setter Property="FontSize" Value="12"/>
+    <Setter Property="FontWeight" Value="Bold"/>
+    <Setter Property="Margin" Value="4,8,4,4"/>
+  </Style>
+
   <Style TargetType="units:RiotNewsButton">
     <Setter Property="Template">
       <Setter.Value>
@@ -19,7 +40,7 @@
                 <VisualState x:Name="PointerOver">
                   <VisualState.Setters>
                     <Setter Target="BorderBrush.BorderBrush" Value="{StaticResource RiotNewsButtonHoverBorderBrush}" />
-                    <Setter Target="Image.Opacity" Value="1" />
+                    <Setter Target="Image.Opacity" Value="1"/>
                   </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="Pressed">
@@ -34,29 +55,10 @@
               <RowDefinition Height="Auto"/>
               <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Border
-              x:Name="BorderBrush"
-              Grid.Row="0"
-              Background="#0B131B"
-              BorderBrush="#28282B"
-              BorderThickness="1">
-              <Border VerticalAlignment="Top">
-                <Image
-                  x:Name="Image"
-                  Source="{TemplateBinding ImageSource}"
-                  Height="{TemplateBinding ImageHeight}"
-                  Stretch="UniformToFill"
-                  Opacity="0.9"/>
-              </Border>
+            <Border x:Name="BorderBrush" Style="{StaticResource MainBorderStyle}">
+              <Image x:Name="Image" Style="{StaticResource ImageStyle}" Source="{TemplateBinding ImageSource}" Height="{TemplateBinding ImageHeight}"/>
             </Border>
-            <TextBlock
-              Grid.Row="1" 
-              Text="{TemplateBinding Text}" 
-              Foreground="#cdbe91" 
-              TextWrapping="Wrap"
-              FontSize="12" 
-              FontWeight="Bold" 
-              Margin="4,8,4,4"/>
+            <TextBlock Style="{StaticResource TextStyle}" Text="{TemplateBinding Text}"/>
           </Grid>
         </ControlTemplate>
       </Setter.Value>

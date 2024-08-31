@@ -4,6 +4,9 @@
     xmlns:cnvts="using:Leagueoflegends.Support.Local.Converters"
     xmlns:units="using:Leagueoflegends.Support.UI.Units">
 
+  <x:String x:Key="IconLabelGeometry">M16.540789,9.5129013E-05 L16.540789,0.019199848 16.551642,0.0083463192 20.144328,4.9928575 16.551037,9.978035 16.54089,9.9678879 16.54089,9.9752855 3.6029096,9.9856553 3.6029112,9.9665513 3.5920568,9.9774055 0,4.9935226 3.5933933,0.0084471703 3.6035385,0.018592358 3.6035388,0.011195183 z</x:String>
+  <x:String x:Key="DefaultProfileImageSource">ms-appx:///Leagueoflegends.Support/Images/profile-default.png</x:String>
+  
   <LinearGradientBrush x:Key="ImageBorder" StartPoint="0.5, 0" EndPoint="0.5, 1">
     <GradientStop Color="#C5A668" Offset="0"/>
     <GradientStop Color="#A47D30" Offset="0.25"/>
@@ -29,8 +32,8 @@
     <GradientStop Color="#0c131a" Offset="1"/>
   </LinearGradientBrush>
 
-  <Style TargetType="Path" x:Key="IconLabel">
-    <Setter Property="Data" Value="M16.540789,9.5129013E-05 L16.540789,0.019199848 16.551642,0.0083463192 20.144328,4.9928575 16.551037,9.978035 16.54089,9.9678879 16.54089,9.9752855 3.6029096,9.9856553 3.6029112,9.9665513 3.5920568,9.9774055 0,4.9935226 3.5933933,0.0084471703 3.6035385,0.018592358 3.6035388,0.011195183 z"/>
+  <Style x:Key="IconLabelStyle" TargetType="Path">
+    <Setter Property="Data" Value="{StaticResource IconLabelGeometry}"/>
     <Setter Property="HorizontalAlignment" Value="Center"/>
     <Setter Property="VerticalAlignment" Value="Center"/>
     <Setter Property="Fill" Value="{StaticResource LabelGeometryFill}"/>
@@ -45,25 +48,52 @@
     <Setter Property="Height" Value="20"/>
   </Style>
 
-  <Style TargetType="Control" x:Key="ControlLabel">
+  <Style x:Key="LabelTextStyle" TargetType="TextBlock">
+    <Setter Property="Foreground" Value="#A09B8C"/>
+    <Setter Property="FontWeight" Value="Bold"/>
+    <Setter Property="Canvas.ZIndex" Value="1"/>
+    <Setter Property="Margin" Value="0 0 0 1.5"/>
+    <Setter Property="HorizontalAlignment" Value="Center"/>
+    <Setter Property="VerticalAlignment" Value="Center"/>
+  </Style>
+
+  <Style x:Key="ControlLabelStyle" TargetType="Control">
     <Setter Property="VerticalAlignment" Value="Bottom"/>
     <Setter Property="Template">
       <Setter.Value>
         <ControlTemplate TargetType="Control">
           <Grid>
-            <Path x:Name="path" 
-                  Style="{StaticResource IconLabel}"/>
-            <TextBlock Text="123"
-                       Foreground="#A09B8C"
-                       FontWeight="Bold"
-                       Canvas.ZIndex="1" 
-                       Margin="0 0 0 1.5" 
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"/>
+            <Path x:Name="path" Style="{StaticResource IconLabelStyle}"/>
+            <TextBlock Text="123" Style="{StaticResource LabelTextStyle}"/>
           </Grid>
         </ControlTemplate>
       </Setter.Value>
     </Setter>
+  </Style>
+
+  <Style x:Key="OuterBorderStyle" TargetType="Border">
+    <Setter Property="HorizontalAlignment" Value="Center"/>
+    <Setter Property="VerticalAlignment" Value="Top"/>
+    <Setter Property="BorderThickness" Value="1"/>
+    <Setter Property="BorderBrush" Value="#010A13"/>
+    <Setter Property="Background" Value="{StaticResource ImageBorder}"/>
+    <Setter Property="Width" Value="60"/>
+    <Setter Property="Height" Value="60"/>
+    <Setter Property="CornerRadius" Value="60"/>
+  </Style>
+
+  <Style x:Key="MiddleBorderStyle" TargetType="Border">
+    <Setter Property="Margin" Value="2"/>
+    <Setter Property="Background" Value="#0A323C"/>
+    <Setter Property="CornerRadius" Value="60"/>
+  </Style>
+
+  <Style x:Key="InnerBorderStyle" TargetType="Border">
+    <Setter Property="Margin" Value="4"/>
+    <Setter Property="BorderThickness" Value="2"/>
+    <Setter Property="BorderBrush" Value="{StaticResource ImageBorder}"/>
+    <Setter Property="Background" Value="#01070D"/>
+    <Setter Property="CornerRadius" Value="50"/>
   </Style>
 
   <Style TargetType="units:RiotUserAvatar">
@@ -73,30 +103,14 @@
       <Setter.Value>
         <ControlTemplate TargetType="units:RiotUserAvatar">
           <Grid>
-            <Border x:Name="border1" 
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Top"
-                    BorderThickness="1"
-                    BorderBrush="#010A13"
-                    Background="{StaticResource ImageBorder}"
-                    Width="60"
-                    Height="60" 
-                    CornerRadius="60">
-              <Border x:Name="border2" 
-                      Margin="2"
-                      Background="#0A323C"
-                      CornerRadius="60">
-                <Border x:Name="border3" 
-                        Margin="4" 
-                        BorderThickness="2"
-                        BorderBrush="{StaticResource ImageBorder}"
-                        Background="#01070D" 
-                        CornerRadius="50">
-                  <Image Source="ms-appx:///Leagueoflegends.Support/Images/profile-default.png"/>
+            <Border x:Name="border1" Style="{StaticResource OuterBorderStyle}">
+              <Border x:Name="border2" Style="{StaticResource MiddleBorderStyle}">
+                <Border x:Name="border3" Style="{StaticResource InnerBorderStyle}">
+                  <Image Source="{StaticResource DefaultProfileImageSource}"/>
                 </Border>
               </Border>
             </Border>
-            <Control Style="{StaticResource ControlLabel}"/>
+            <Control Style="{StaticResource ControlLabelStyle}"/>
             <VisualStateManager.VisualStateGroups>
               <VisualStateGroup x:Name="CommonStates">
                 <VisualState x:Name="Normal"/>

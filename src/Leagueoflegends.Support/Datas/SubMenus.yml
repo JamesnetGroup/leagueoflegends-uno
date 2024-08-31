@@ -17,7 +17,7 @@
 - name: HUB
   seq: 5
   category: CLASH
-  isUsed: false
+  isUsed: true
 - name: FIND A TEAM
   seq: 6
   category: CLASH
@@ -29,7 +29,7 @@
 - name: WINNERS
   seq: 8
   category: CLASH
-  isUsed: true
+  isUsed: false
 - name: WARDS
   seq: 9
   category: CLASH

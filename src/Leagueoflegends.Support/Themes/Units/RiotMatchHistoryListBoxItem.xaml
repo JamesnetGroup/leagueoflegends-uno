@@ -4,11 +4,9 @@
   xmlns:cnvts="using:Leagueoflegends.Support.Local.Converters"
   xmlns:units="using:Leagueoflegends.Support.UI.Units">
 
-  <!-- Converters -->
   <cnvts:MatchResultToColorConverter x:Key="MatchResultToColorConverter"/>
   <cnvts:NumberFormatConverter x:Key="NumberFormatConverter"/>
 
-  <!-- Brush resources -->
   <LinearGradientBrush x:Key="PointerOverLeftBorderBrush" StartPoint="0.5,0" EndPoint="0.5,1">
     <GradientStop Color="#C89B3C" Offset="0"/>
     <GradientStop Color="#785A28" Offset="1"/>
@@ -31,7 +29,6 @@
     <GradientStop Color="Transparent" Offset="1"/>
   </LinearGradientBrush>
 
-  <!-- Common Styles -->
   <Style x:Key="BaseTextBlockStyle" TargetType="TextBlock">
     <Setter Property="FontSize" Value="12"/>
     <Setter Property="Foreground" Value="#A09B8C"/>
@@ -111,7 +108,6 @@
     <Setter Property="VerticalAlignment" Value="Top"/>
   </Style>
 
-  <!-- MatchHistoryListBoxItem Style -->
   <Style TargetType="units:RiotMatchHistoryListBoxItem">
     <Setter Property="Template">
       <Setter.Value>
@@ -159,7 +155,6 @@
               <StackPanel Orientation="Horizontal">
                 <units:RiotChampionAvatar Champion="{Binding Champion}" Level="{Binding ChampionLevel}"/>
 
-                <!-- Result and Game Mode -->
                 <StackPanel Style="{StaticResource GameInfoStackPanelStyle}">
                   <TextBlock
                     Style="{StaticResource GameResultTextStyle}"
@@ -172,7 +167,6 @@
                   </StackPanel>
                 </StackPanel>
 
-                <!-- Items and Stats -->
                 <StackPanel>
                   <StackPanel Style="{StaticResource ItemStackPanelStyle}">
                     <units:RiotItemBadge ItemName="{Binding Item1}"/>
@@ -196,7 +190,6 @@
                   </Grid>
                 </StackPanel>
 
-                <!-- Game Info -->
                 <StackPanel Style="{StaticResource DetailInfoStackPanelStyle}">
                   <TextBlock Text="{Binding MapType}" Style="{StaticResource BaseTextBlockStyle}"/>
                   <StackPanel Orientation="Horizontal">
