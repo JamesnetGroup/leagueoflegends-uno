@@ -27,7 +27,7 @@
             <units:RiotMatchHistoryListBox ItemsSource="{Binding MatchHistories}" SelectedItem="{Binding CurrentHistory}"/>
             <Grid Style="{StaticResource DetailGridStyle}" RowDefinitions="Auto, *">
               <units:RiotPlayedChampListBox ItemsSource="{Binding PlayChamps}"/>
-              <units:RiotRecentActivityListBox Grid.Row="1" ItemsSource="{Binding RecentActivities}"/>
+              <units:RiotRecentListBox Grid.Row="1" ItemsSource="{Binding Recents}"/>
             </Grid>
           </Grid>
         </ControlTemplate>

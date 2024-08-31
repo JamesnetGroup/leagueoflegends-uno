@@ -1,39 +1,4 @@
-using Microsoft.UI.Xaml.Automation;
-using Microsoft.UI.Xaml.Controls.Primitives;
-
-namespace Leagueoflegends.Support.UI.Units;
-
-public class RiotHubCupSummary : Control
-{
-    public RiotHubCupSummary()
-    {
-        DefaultStyleKey = typeof(RiotHubCupSummary);
-    }
-}
-
-public class RiotTicketButton : Button
-{
-    public RiotTicketButton()
-    {
-        DefaultStyleKey = typeof(RiotTicketButton);
-    }
-}
-
-public class RiotSwitchButton : CheckBox
-{
-    public RiotSwitchButton()
-    {
-        DefaultStyleKey = typeof(RiotSwitchButton);
-    }
-}
-
-public class RiotTicketAddButton : Button
-{
-    public RiotTicketAddButton()
-    {
-        DefaultStyleKey = typeof(RiotTicketAddButton);
-    }
-}
+﻿namespace Leagueoflegends.Support.UI.Units;
 
 public class RiotPositionButton : Button
 {

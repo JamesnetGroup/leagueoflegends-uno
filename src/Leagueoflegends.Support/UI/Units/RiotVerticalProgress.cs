@@ -2,10 +2,10 @@ using Microsoft.UI.Xaml.Shapes;
 
 namespace Leagueoflegends.Support.UI.Units;
 
-public sealed class RiotActivityBar : Control
+public sealed class RiotVerticalProgress : Control
 {
     public static readonly DependencyProperty ValueProperty =
-        DependencyProperty.Register("Value", typeof(double), typeof(RiotActivityBar), new PropertyMetadata(0d, OnValueChanged));
+        DependencyProperty.Register("Value", typeof(double), typeof(RiotVerticalProgress), new PropertyMetadata(0d, OnValueChanged));
 
     public double Value
     {
@@ -16,9 +16,9 @@ public sealed class RiotActivityBar : Control
     private Rectangle _backgroundRect;
     private Rectangle _foregroundRect;
 
-    public RiotActivityBar()
+    public RiotVerticalProgress()
     {
-        this.DefaultStyleKey = typeof(RiotActivityBar);
+        this.DefaultStyleKey = typeof(RiotVerticalProgress);
     }
 
     protected override void OnApplyTemplate()
@@ -34,7 +34,7 @@ public sealed class RiotActivityBar : Control
 
     private static void OnValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
     {
-        var control = d as RiotActivityBar;
+        var control = d as RiotVerticalProgress;
         control?.UpdateBarHeight();
     }
 

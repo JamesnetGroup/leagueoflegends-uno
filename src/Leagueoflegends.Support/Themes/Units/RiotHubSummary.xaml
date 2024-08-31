@@ -3,15 +3,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:units="using:Leagueoflegends.Support.UI.Units">
 
-  <x:String x:Key="SummaryImage">ms-appx:///Leagueoflegends.Support/Images/wallpaper-ezreal.jpg</x:String>
-  <x:String x:Key="QuestionGeometry">M15.07,11.25L14.17,12.17C13.45,12.89 13,13.5 13,15H11V14.5C11,13.39 11.45,12.39 12.17,11.67L13.41,10.41C13.78,10.05 14,9.55 14,9C14,7.89 13.1,7 12,7A2,2 0 0,0 10,9H8A4,4 0 0,1 12,5A4,4 0 0,1 16,9C16,9.88 15.64,10.67 15.07,11.25M13,19H11V17H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12C22,6.47 17.5,2 12,2Z</x:String>
-  
-  <LinearGradientBrush x:Key="ImageBorderBrush" StartPoint="0.5,0" EndPoint="0.5,1">
-    <GradientStop Color="#785A28" Offset="0"/>
-    <GradientStop Color="#CBB883" Offset="0.5"/>
-    <GradientStop Color="#463714" Offset="1"/>
-  </LinearGradientBrush>
-
   <LinearGradientBrush x:Key="TextForegroundBrush" StartPoint="0.5,0" EndPoint="0.5,1">
     <GradientStop Color="#CBB883" Offset="0"/>
     <GradientStop Color="#74623D" Offset="1"/>
@@ -48,23 +39,6 @@
     <Setter Property="Margin" Value="0 6 0 0"/>
   </Style>
 
-  <Style x:Key="CircleBorderStyle" TargetType="Border">
-    <Setter Property="Width" Value="158"/>
-    <Setter Property="Height" Value="158"/>
-    <Setter Property="CornerRadius" Value="300"/>
-    <Setter Property="Background" Value="Transparent"/>
-    <Setter Property="BorderBrush" Value="{StaticResource ImageBorderBrush}"/>
-    <Setter Property="BorderThickness" Value="2.5"/>
-    <Setter Property="Margin" Value="0 14 0 0"/>
-  </Style>
-
-  <Style x:Key="InnerCircleBorderStyle" TargetType="Border">
-    <Setter Property="Margin" Value="8"/>
-    <Setter Property="BorderBrush" Value="{StaticResource ImageBorderBrush}"/>
-    <Setter Property="BorderThickness" Value="1.5"/>
-    <Setter Property="CornerRadius" Value="300"/>
-  </Style>
-
   <Style x:Key="SeparatorBorderStyle" TargetType="Border">
     <Setter Property="Background" Value="Transparent"/>
     <Setter Property="BorderBrush" Value="{StaticResource TransparentBorderBrush}"/>
@@ -74,39 +48,11 @@
     <Setter Property="Opacity" Value="0.5"/>
   </Style>
 
-  <Style x:Key="QuestionPathStyle" TargetType="Path">
-    <Setter Property="Data" Value="{StaticResource QuestionGeometry}"/>
-    <Setter Property="Fill" Value="#C89B3C"/>
-    <Setter Property="Stretch" Value="Uniform"/>
-    <Setter Property="Width" Value="20"/>
-    <Setter Property="Height" Value="20"/>
-    <Setter Property="Margin" Value="14 0 0 0"/>
-    <Setter Property="VerticalAlignment" Value="Center"/>
-  </Style>
-
   <Style x:Key="FreeAgentStyle" TargetType="TextBlock">
     <Setter Property="Foreground" Value="#A09B8C"/>
     <Setter Property="FontSize" Value="12"/>
     <Setter Property="Text" Value="Free Agent"/>
     <Setter Property="VerticalAlignment" Value="Center"/>
-  </Style>
-
-  <Style x:Key="TierStyle" TargetType="TextBlock">
-    <Setter Property="Text" Value="TIER IV"/>
-    <Setter Property="FontSize" Value="13"/>
-    <Setter Property="Foreground" Value="#000000"/>
-    <Setter Property="FontWeight" Value="Bold"/>
-    <Setter Property="HorizontalAlignment" Value="Center"/>
-    <Setter Property="VerticalAlignment" Value="Center"/>
-  </Style>
-
-  <Style x:Key="TierBorderSTyle" TargetType="Border">
-    <Setter Property="VerticalAlignment" Value="Center"/>
-    <Setter Property="Height" Value="20"/>
-    <Setter Property="Margin" Value="8 0 0 0"/>
-    <Setter Property="Padding" Value="6 0 6 0"/>
-    <Setter Property="CornerRadius" Value="3"/>
-    <Setter Property="Background" Value="#A09B8C"/>
   </Style>
 
   <Style x:Key="TierLabelStyle" TargetType="TextBlock">
@@ -138,52 +84,26 @@
     <Setter Property="HorizontalAlignment" Value="Center"/>
   </Style>
 
-  <Style x:Key="FreePlayerContentControlStyle" TargetType="ContentControl">
+  <Style x:Key="ToggleSwitchStackStyle" TargetType="StackPanel">
+    <Setter Property="Orientation" Value="Horizontal"/>
     <Setter Property="HorizontalAlignment" Value="Center"/>
+    <Setter Property="VerticalAlignment" Value="Center"/>
     <Setter Property="Margin" Value="0 10 0 0"/>
-    <Setter Property="Template">
-      <Setter.Value>
-        <ControlTemplate TargetType="ContentControl">
-          <StackPanel Orientation="Horizontal">
-            <TextBlock Style="{StaticResource FreeAgentStyle}" Text="Free Agent"/>
-            <units:RiotSwitchButton/>
-            <Path Style="{StaticResource QuestionPathStyle}"/>
-          </StackPanel>
-        </ControlTemplate>
-      </Setter.Value>
-    </Setter>
   </Style>
 
-  <Style x:Key="TierContentControlStyle" TargetType="ContentControl">
+  <Style x:Key="TierContentStackStyle" TargetType="StackPanel">
+    <Setter Property="Orientation" Value="Horizontal"/>
     <Setter Property="HorizontalAlignment" Value="Center"/>
-    <Setter Property="Template">
-      <Setter.Value>
-        <ControlTemplate TargetType="ContentControl">
-          <StackPanel Orientation="Horizontal">
-            <TextBlock Style="{StaticResource TierLabelStyle}" Text="Your Clash Tier:"/>
-            <Border Style="{StaticResource TierBorderSTyle}">
-              <TextBlock Style="{StaticResource TierStyle}" Text="TIER IV"/>
-            </Border>
-          </StackPanel>
-        </ControlTemplate>
-      </Setter.Value>
-    </Setter>
   </Style>
 
-    <Style TargetType="units:RiotHubCupSummary">
+  <Style TargetType="units:RiotHubSummary">
     <Setter Property="Template">
       <Setter.Value>
-        <ControlTemplate TargetType="units:RiotHubCupSummary">
+        <ControlTemplate TargetType="units:RiotHubSummary">
           <StackPanel>
             <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="IONIA CUP"/>
             <TextBlock Style="{StaticResource SubHeaderTextBlockStyle}" Text="DAY 3"/>
-            <Border Style="{StaticResource CircleBorderStyle}">
-              <Border Style="{StaticResource InnerCircleBorderStyle}">
-                <Border.Background>
-                  <ImageBrush ImageSource="{StaticResource SummaryImage}" Stretch="UniformToFill"/>
-                </Border.Background>
-              </Border>
-            </Border>
+            <units:RiotClashEmblem/>
             <TextBlock Style="{StaticResource GaugeTextBlockStyle}"/>
             <StackPanel Style="{StaticResource TicketStackStyle}">
               <units:RiotTicketAddButton/>
@@ -191,8 +111,15 @@
               <units:RiotTicketButton Style="{StaticResource SecondTicketStyle}"/>
             </StackPanel>
             <Border Style="{StaticResource SeparatorBorderStyle}"/>
-            <ContentControl Style="{StaticResource TierContentControlStyle}"/>
-            <ContentControl Style="{StaticResource FreePlayerContentControlStyle}"/>
+            <StackPanel Style="{StaticResource TierContentStackStyle}">
+              <TextBlock Style="{StaticResource TierLabelStyle}" Text="Your Clash Tier:"/>
+              <units:RiotClashTierButton Content="TIER IV"/>
+            </StackPanel>
+            <StackPanel Style="{StaticResource ToggleSwitchStackStyle}">
+              <TextBlock Style="{StaticResource FreeAgentStyle}" Text="Free Agent"/>
+              <units:RiotSwitchButton/>
+              <units:RiotQuestionButton/>
+            </StackPanel>
             <StackPanel Style="{StaticResource PositionButtonContainerStyle}">
               <units:RiotPositionButton Margin="0 0 17 0" Position="Mid"/>
               <units:RiotPositionButton Margin="17 0 0 0" Position="Support"/>

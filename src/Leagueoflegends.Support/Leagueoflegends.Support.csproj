@@ -37,11 +37,11 @@
     <None Remove="Datas\MatchHistories.yml" />
     <None Remove="Datas\PersonalChampStats.yml" />
     <None Remove="Datas\PlayChamps.yml" />
-    <None Remove="Datas\RecentActivities.yml" />
     <None Remove="Datas\Skins.yml" />
     <None Remove="Datas\Spells.yml" />
     <None Remove="Datas\SubMenus.yml" />
     <None Remove="Images\blue-essence.png" />
+    <None Remove="Images\clash.jpg" />
     <None Remove="Images\Concepts\assassin.PNG" />
     <None Remove="Images\Concepts\dealer.PNG" />
     <None Remove="Images\Concepts\support.PNG" />
@@ -1574,6 +1574,7 @@
     <None Remove="Images\Thumbnails\8.png" />
     <None Remove="Images\Thumbnails\9.png" />
     <None Remove="Images\wallpaper-ezreal.jpg" />
+    <None Remove="Images\wallpaper-kindred.jpg" />
     <None Remove="Images\wallpaper-leesin.png" />
     <None Remove="Images\wallpaper-leona.jpg" />
     <None Remove="Images\wallpaper-maokai.jpg" />
@@ -1582,6 +1583,7 @@
     <None Remove="Images\wallpaper-singed.png" />
     <None Remove="Images\wallpaper-thumb-1.png" />
     <None Remove="Images\wallpaper-thumb-2.png" />
+    <None Remove="Images\worlds_2022.png" />
     <None Remove="Themes\Generic.xaml" />
     <None Remove="Themes\RiotPlayButton.xaml" />
     <None Remove="Themes\Units\RiotButton.xaml" />
@@ -1596,6 +1598,8 @@
     <None Remove="Themes\Units\RiotChampSummary.xaml" />
     <None Remove="Themes\Units\RiotCheckBox.xaml" />
     <None Remove="Themes\Units\RiotCircleIconButton.xaml" />
+    <None Remove="Themes\Units\RiotClashEmblem.xaml" />
+    <None Remove="Themes\Units\RiotClashTierButton.xaml" />
     <None Remove="Themes\Units\RiotComboBox.xaml" />
     <None Remove="Themes\Units\RiotFoldableIcon.xaml" />
     <None Remove="Themes\Units\RiotFriendGroupItem.xaml" />
@@ -1615,7 +1619,9 @@
     <None Remove="Themes\Units\RiotPlayedChampListBox.xaml" />
     <None Remove="Themes\Units\RiotPlayedChampListBoxItem.xaml" />
     <None Remove="Themes\Units\RiotPositionButton.xaml" />
-    <None Remove="Themes\Units\RiotRecentActivityListBox.xaml" />
+    <None Remove="Themes\Units\RIotQuestionButton.xaml" />
+    <None Remove="Themes\Units\RiotRecentListBox.xaml" />
+    <None Remove="Themes\Units\RiotRecentListBoxItem.xaml" />
     <None Remove="Themes\Units\RiotSaleChampion.xaml" />
     <None Remove="Themes\Units\RiotScrollViewer.xaml" />
     <None Remove="Themes\Units\RiotSkinTierButton.xaml" />
@@ -1624,12 +1630,14 @@
     <None Remove="Themes\Units\RiotSpellListBoxItem.xaml" />
     <None Remove="Themes\Units\RiotStatusIndicator.xaml" />
     <None Remove="Themes\Units\RiotSwitchButton.xaml" />
+    <None Remove="Themes\Units\RiotTabMenu.xaml" />
     <None Remove="Themes\Units\RiotTextBox.xaml" />
     <None Remove="Themes\Units\RiotTextBoxCloseButton.xaml" />
     <None Remove="Themes\Units\RiotTicketAddButton.xaml" />
     <None Remove="Themes\Units\RiotTicketButton.xaml" />
     <None Remove="Themes\Units\RiotUserAvatar.xaml" />
     <None Remove="Themes\Units\RIotUserDisplayStatus.xaml" />
+    <None Remove="Themes\Units\RiotVerticalProgress.xaml" />
     <None Remove="Themes\Units\RiotWallpaper.xaml" />
     <None Remove="Themes\Units\RiotWindowControlButton.xaml" />
     <None Remove="Themes\Units\VerticalMainMenuSeparator.xaml" />
@@ -1665,7 +1673,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Datas\RecentActivities.yml" />
     <EmbeddedResource Include="Datas\FilterSortOptions.yml" />
     <EmbeddedResource Include="Datas\PlayChamps.yml" />
     <EmbeddedResource Include="Datas\MatchHistories.yml" />
@@ -1680,6 +1687,7 @@
     <EmbeddedResource Include="Images\profile-default.png" />
     <EmbeddedResource Include="Images\wallpaper-rucian.png" />
     <EmbeddedResource Include="Datas\Friends.yml" />
+    <EmbeddedResource Include="Datas\Recents.yml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -1724,6 +1732,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Units\RiotCircleIconButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotClashEmblem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotClashTierButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1803,7 +1819,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\Units\RiotRecentActivityListBox.xaml">
+    <Page Include="Themes\Units\RIotQuestionButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotRecentListBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotRecentListBoxItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1843,6 +1867,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Units\RiotTabMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Units\RiotTextBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1864,6 +1892,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Units\RIotUserDisplayStatus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotVerticalProgress.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1909,6 +1941,7 @@
     <Content Include="Images\profile-default.png" />
     <Content Include="Images\rp.png" />
     <Content Include="Images\wallpaper-ezreal.jpg" />
+    <Content Include="Images\wallpaper-kindred.jpg" />
     <Content Include="Images\wallpaper-leesin.png" />
     <Content Include="Images\wallpaper-leona.jpg" />
     <Content Include="Images\wallpaper-maokai.jpg" />
@@ -2064,10 +2097,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Themes\Units\RiotRecentActivityListBox.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Units\RiotCircleIconButton.xaml" />
   </ItemGroup>
 
@@ -2105,5 +2134,33 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Units\RiotTicketAddButton.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotClashEmblem.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RIotQuestionButton.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotClashTierButton.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotVerticalProgress.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotRecentListBox.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotRecentListBoxItem.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotTabMenu.xaml" />
   </ItemGroup>
 </Project>

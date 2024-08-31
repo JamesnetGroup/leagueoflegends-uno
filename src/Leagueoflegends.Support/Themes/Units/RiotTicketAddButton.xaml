@@ -14,7 +14,7 @@
     <GradientStop Color="#BDAE85" Offset="0.5"/>
     <GradientStop Color="#C1953B" Offset="1"/>
   </LinearGradientBrush>
-
+  
   <LinearGradientBrush x:Key="ButtonBackgroundBrush" StartPoint="0.5, 0" EndPoint="0.5, 1">
     <GradientStop Color="#563E1E" Offset="0"/>
     <GradientStop Color="#46331B" Offset="0.5"/>
@@ -25,6 +25,18 @@
     <GradientStop Color="#77592B" Offset="0"/>
     <GradientStop Color="#6D5227" Offset="0.5"/>
     <GradientStop Color="#4E3B19" Offset="1"/>
+  </LinearGradientBrush>
+
+  <LinearGradientBrush x:Key="ButtonBorderBrushPressed" StartPoint="0.5, 0" EndPoint="0.5, 1">
+    <GradientStop Color="#A1834A" Offset="0"/>
+    <GradientStop Color="#6E522D" Offset="0.5"/>
+    <GradientStop Color="#3F2F1B" Offset="1"/>
+  </LinearGradientBrush>
+
+  <LinearGradientBrush x:Key="ButtonBackgroundBrushPressed" StartPoint="0.5, 0" EndPoint="0.5, 1">
+    <GradientStop Color="#563E1E" Offset="0"/>
+    <GradientStop Color="#46331B" Offset="0.5"/>
+    <GradientStop Color="#332617" Offset="1"/>
   </LinearGradientBrush>
 
   <Style x:Key="AddIconPathStyle" TargetType="Path">
@@ -75,15 +87,17 @@
                 </VisualState>
                 <VisualState x:Name="Pressed">
                   <VisualState.Setters>
-                    <Setter Target="ButtonBorder.BorderBrush" Value="{StaticResource ButtonBorderBrushOver}"/>
-                    <Setter Target="ButtonBorder.Background" Value="{StaticResource ButtonBackgroundBrushOver}"/>
-                    <Setter Target="AddIcon.Fill" Value="#F0E6D2"/>
-                    <Setter Target="ArrowIcon.Fill" Value="#CDBE91"/>
+                    <Setter Target="ButtonBorder.Background" Value="{StaticResource ButtonBackgroundBrushPressed}"/>
+                    <Setter Target="AddIcon.Fill" Value="#A09B8C"/>
+                    <Setter Target="ArrowIcon.Fill" Value="#A09B8C"/>
                   </VisualState.Setters>
                 </VisualState>
               </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
             <Grid>
+              <Grid.RenderTransform>
+                <TranslateTransform x:Name="ContentTransform"/>
+              </Grid.RenderTransform>
               <Path x:Name="AddIcon" Style="{StaticResource AddIconPathStyle}"/>
               <Path x:Name="ArrowIcon" Style="{StaticResource ArrowIconPathStyle}"/>
             </Grid>

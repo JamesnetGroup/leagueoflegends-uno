@@ -2,7 +2,7 @@
 
 namespace Leagueoflegends.Support.Local.Datas;
 
-public interface IRecentActivityDataLoader
+public interface IRecentDataLoader
 {
-    List<RecentActivity> LoadRecentActivities();
+    List<Recent> LoadRecents();
 }

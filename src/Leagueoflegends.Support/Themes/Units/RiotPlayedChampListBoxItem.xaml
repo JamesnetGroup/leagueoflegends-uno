@@ -58,10 +58,7 @@
               </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
             <Border x:Name="MainBorder" Style="{StaticResource MainBorderStyle}">
-              <Image
-                x:Name="ChampionImage"
-                Style="{StaticResource ChampionImageStyle}" 
-                Source="{Binding Champion, Converter={StaticResource ChampionNameToThumbnailConverter}}"/>
+              <Image x:Name="ChampionImage" Style="{StaticResource ChampionImageStyle}" Source="{Binding Champion, Converter={StaticResource ChampionNameToThumbnailConverter}}"/>
             </Border>
             <Image Style="{StaticResource BadgeImageStyle}" Source="{Binding Percent, Converter={StaticResource PercentToBadgeConverter}}"/>
             <TextBlock x:Name="PercentText" Style="{StaticResource PercentTextStyle}">

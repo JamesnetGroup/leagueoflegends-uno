@@ -10,7 +10,11 @@
       <Setter.Value>
         <ControlTemplate TargetType="views:HubContent">
           <Grid ColumnDefinitions="Auto, *">
-            <units:RiotHubCupSummary/>
+            <units:RiotHubSummary/>
+            <units:RiotTabMenu Grid.Column="1">
+              <units:RiotTabMenuItem>SCHEDULE</units:RiotTabMenuItem>
+              <units:RiotTabMenuItem>HISTORY</units:RiotTabMenuItem>
+            </units:RiotTabMenu>
           </Grid>
         </ControlTemplate>
       </Setter.Value>

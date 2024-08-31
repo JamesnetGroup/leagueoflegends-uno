@@ -10,12 +10,12 @@ public class HistoryContentViewModel : ViewModelBase
 {
     private readonly IMatchHistoryDataLoader _matchHistoryDataLoader;
     private readonly IPlayChampDataLoader _playChampDataLoader;
-    private readonly IRecentActivityDataLoader _recentActivityDataLoader;
+    private readonly IRecentDataLoader _RecentDataLoader;
 
     private List<MatchHistory> _matchHistories;
     private MatchHistory _currentHistory;
     private List<PlayChamp> _playChamps;
-    private List<RecentActivity> _recentActivities;
+    private List<Recent> _Recents;
 
     public List<MatchHistory> MatchHistories
     {
@@ -35,19 +35,19 @@ public class HistoryContentViewModel : ViewModelBase
         set => SetProperty(ref _playChamps, value);
     }
 
-    public List<RecentActivity> RecentActivities
+    public List<Recent> Recents
     {
-        get => _recentActivities;
-        set => SetProperty(ref _recentActivities, value);
+        get => _Recents;
+        set => SetProperty(ref _Recents, value);
     }
 
     public HistoryContentViewModel(IMatchHistoryDataLoader matchHistoryDataLoader,
                                    IPlayChampDataLoader playChampDataLoader,
-                                   IRecentActivityDataLoader recentActivityDataLoader)
+                                   IRecentDataLoader RecentDataLoader)
     {
         _matchHistoryDataLoader = matchHistoryDataLoader;
         _playChampDataLoader = playChampDataLoader;
-        _recentActivityDataLoader = recentActivityDataLoader;
+        _RecentDataLoader = RecentDataLoader;
         LoadData();
     }
 
@@ -55,7 +55,7 @@ public class HistoryContentViewModel : ViewModelBase
     {
         LoadMatchHistories();
         LoadPlayChamps();
-        LoadRecentActivities();
+        LoadRecents();
     }
 
     private void LoadMatchHistories()
@@ -69,8 +69,8 @@ public class HistoryContentViewModel : ViewModelBase
         PlayChamps = _playChampDataLoader.LoadPlayChamps();
     }
 
-    private void LoadRecentActivities()
+    private void LoadRecents()
     {
-        RecentActivities = _recentActivityDataLoader.LoadRecentActivities();
+        Recents = _RecentDataLoader.LoadRecents();
     }
 }
