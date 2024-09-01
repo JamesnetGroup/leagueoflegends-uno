@@ -29,21 +29,13 @@ public class RiotWallpaper : Control
 
     private void UpdateVisualState()
     {
-        if (MenuName == "COLLECTION")
+        switch (MenuName)
         {
-            VisualStateManager.GoToState(this, "DarknessState", false);
-        }
-        else if (MenuName == "SHOP")
-        {
-            VisualStateManager.GoToState(this, "DarknessState", false);
-        }
-        else if (MenuName == "PROFILE")
-        {
-            VisualStateManager.GoToState(this, "DarknessState", false);
-        }
-        else
-        {
-            VisualStateManager.GoToState(this, "DefaultState", false);
+            case "COLLECTION": VisualStateManager.GoToState(this, "DarknessState", false); break;
+            case "SHOP": VisualStateManager.GoToState(this, "DarknessState", false); break;
+            case "PROFILE": VisualStateManager.GoToState(this, "DarknessState", false); break;
+            case "CLASH": VisualStateManager.GoToState(this, "Darkness2State", false); break;
+            default: VisualStateManager.GoToState(this, "DefaultState", false); break;
         }
     }
 

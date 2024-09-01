@@ -1,3 +1,4 @@
+
 namespace Leagueoflegends.Support.UI.Units;
 
 public class RiotButton : Button
@@ -8,19 +9,44 @@ public class RiotButton : Button
     }
 }
 
-public class RiotQuestionButton : Button
+public class RiotScheduleListBox : ListBox
 {
-    public RiotQuestionButton()
+    public RiotScheduleListBox()
     {
-        DefaultStyleKey = typeof(RiotQuestionButton);
+        DefaultStyleKey = typeof(RiotScheduleListBox);
+        SelectionChanged += RiotScheduleListBox_SelectionChanged;
+    }
+
+    private void RiotScheduleListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        foreach (var item in e.RemovedItems)
+        {
+            if (ContainerFromItem(item) is ListBoxItem listBoxItem)
+            {
+                listBoxItem.IsSelected = false;
+            }
+        }
+
+        foreach (var item in e.AddedItems)
+        {
+            if (ContainerFromItem(item) is ListBoxItem listBoxItem)
+            {
+                listBoxItem.IsSelected = true;
+            }
+        }
+    }
+
+    protected override DependencyObject GetContainerForItemOverride()
+    {
+        return new RiotScheduleListBoxItem();
     }
 }
 
 
-public class RiotClashTierButton : Button
+public class RiotScheduleListBoxItem : ListBoxItem
 {
-    public RiotClashTierButton()
+    public RiotScheduleListBoxItem()
     {
-        DefaultStyleKey = typeof(RiotClashTierButton);
+        DefaultStyleKey = typeof(RiotScheduleListBoxItem);
     }
 }

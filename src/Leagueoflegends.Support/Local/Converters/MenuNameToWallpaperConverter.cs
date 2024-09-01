@@ -10,9 +10,9 @@ public class MenuNameToWallpaperConverter : IValueConverter
             string fileName = "wallpaper-rucian.png";
             switch (menuName.ToUpper())
             {
+                case "CLASH": fileName = "wallpaper-fiora.jpg"; break;
                 case "HOME": fileName = "wallpaper-caitlyn.jpg"; break;
                 case "TFT": fileName = "wallpaper-singed.png"; break;
-                case "CLASH": fileName = "wallpaper-sena.png"; break;
                 case "PROFILE": fileName = "wallpaper-leona.jpg"; break;
                 case "COLLECTION": fileName = "wallpaper-ezreal.jpg"; break;
                 case "LOOT": fileName = "wallpaper-rucian.png"; break;

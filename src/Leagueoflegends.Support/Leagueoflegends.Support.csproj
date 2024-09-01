@@ -37,6 +37,7 @@
     <None Remove="Datas\MatchHistories.yml" />
     <None Remove="Datas\PersonalChampStats.yml" />
     <None Remove="Datas\PlayChamps.yml" />
+    <None Remove="Datas\Schedules.yml" />
     <None Remove="Datas\Skins.yml" />
     <None Remove="Datas\Spells.yml" />
     <None Remove="Datas\SubMenus.yml" />
@@ -1623,6 +1624,7 @@
     <None Remove="Themes\Units\RiotRecentListBox.xaml" />
     <None Remove="Themes\Units\RiotRecentListBoxItem.xaml" />
     <None Remove="Themes\Units\RiotSaleChampion.xaml" />
+    <None Remove="Themes\Units\RIotScheduleListBox.xaml" />
     <None Remove="Themes\Units\RiotScrollViewer.xaml" />
     <None Remove="Themes\Units\RiotSkinTierButton.xaml" />
     <None Remove="Themes\Units\RIotSpellBadge.xaml" />
@@ -1631,6 +1633,7 @@
     <None Remove="Themes\Units\RiotStatusIndicator.xaml" />
     <None Remove="Themes\Units\RiotSwitchButton.xaml" />
     <None Remove="Themes\Units\RiotTabMenu.xaml" />
+    <None Remove="Themes\Units\RiotTabMenuItem.xaml" />
     <None Remove="Themes\Units\RiotTextBox.xaml" />
     <None Remove="Themes\Units\RiotTextBoxCloseButton.xaml" />
     <None Remove="Themes\Units\RiotTicketAddButton.xaml" />
@@ -1674,6 +1677,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Datas\FilterSortOptions.yml" />
+    <EmbeddedResource Include="Datas\Schedules.yml" />
     <EmbeddedResource Include="Datas\PlayChamps.yml" />
     <EmbeddedResource Include="Datas\MatchHistories.yml" />
     <EmbeddedResource Include="Datas\Skins.yml" />
@@ -1835,6 +1839,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Units\RIotScheduleListBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Units\RiotScrollViewer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1868,6 +1876,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Units\RiotTabMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotTabMenuItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -2162,5 +2174,13 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Units\RiotTabMenu.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotTabMenuItem.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RIotScheduleListBox.xaml" />
   </ItemGroup>
 </Project>
