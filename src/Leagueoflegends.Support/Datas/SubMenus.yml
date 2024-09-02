@@ -114,3 +114,11 @@
   seq: 29
   category: STORE
   isUsed: false
+- name: SCHEDULE
+  seq: 30
+  category: HUB
+  isUsed: true
+- name: RESULT
+  seq: 31
+  category: HUB
+  isUsed: true

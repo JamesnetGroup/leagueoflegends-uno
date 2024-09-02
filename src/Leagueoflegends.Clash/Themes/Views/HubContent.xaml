@@ -12,10 +12,7 @@
           <Grid ColumnDefinitions="Auto, *">
             <units:RiotHubSummary/>
             <Grid Grid.Column="1" RowDefinitions="Auto, *" Margin="30">
-              <units:RiotTabMenu>
-                <units:RiotTabMenuItem>SCHEDULE</units:RiotTabMenuItem>
-                <units:RiotTabMenuItem>HISTORY</units:RiotTabMenuItem>
-              </units:RiotTabMenu>
+              <units:RiotTabMenu ItemsSource="{Binding TabMenus}" SelectedItem="{Binding CurrentTabMenu}"/>
               <units:RiotScheduleListBox Grid.Row="1" ItemsSource="{Binding Schedules}"/>
             </Grid>
           </Grid>

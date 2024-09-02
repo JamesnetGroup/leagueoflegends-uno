@@ -1,10 +1,19 @@
-
 namespace Leagueoflegends.Support.UI.Units;
 
 public class RiotTabMenu : ListBox
 {
     private Grid _uniformGrid;
-    private int _columns = 2;  // 기본값을 2로 설정
+    private int _columns = 2;
+    private int _currentColumn = 0;
+    private int _currentRow = 0;
+
+    public static readonly DependencyProperty SelectionCommandProperty = DependencyProperty.Register("SelectionCommand", typeof(ICommand), typeof(RiotTabMenu), new PropertyMetadata(null));
+
+    public ICommand SelectionCommand
+    {
+        get { return (ICommand)GetValue(SelectionCommandProperty); }
+        set { SetValue(SelectionCommandProperty, value); }
+    }
 
     public int Columns
     {
@@ -19,7 +28,7 @@ public class RiotTabMenu : ListBox
     public RiotTabMenu()
     {
         DefaultStyleKey = typeof(RiotTabMenu);
-        SelectionChanged += RiotRiotTabMenu_SelectionChanged;
+        SelectionChanged += RiotTabMenu_SelectionChanged;
     }
 
     protected override void OnApplyTemplate()
@@ -54,18 +63,12 @@ public class RiotTabMenu : ListBox
             _uniformGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
         }
 
-        for (int i = 0; i < itemCount; i++)
-        {
-            var item = Items[i] as FrameworkElement;
-            if (item != null)
-            {
-                Grid.SetRow(item, i / _columns);
-                Grid.SetColumn(item, i % _columns);
-            }
-        }
+        // Reset positioning counters
+        _currentColumn = 0;
+        _currentRow = 0;
     }
 
-    private void RiotRiotTabMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    private void RiotTabMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
         foreach (var item in e.RemovedItems)
         {
@@ -80,12 +83,24 @@ public class RiotTabMenu : ListBox
             if (ContainerFromItem(item) is ListBoxItem listBoxItem)
             {
                 listBoxItem.IsSelected = true;
+                SelectionCommand?.Execute(listBoxItem.DataContext);
             }
         }
     }
 
     protected override DependencyObject GetContainerForItemOverride()
     {
-        return new RiotTabMenuItem();
+        var item = new RiotTabMenuItem();
+        Grid.SetRow(item, _currentRow);
+        Grid.SetColumn(item, _currentColumn);
+
+        _currentColumn++;
+        if (_currentColumn >= _columns)
+        {
+            _currentColumn = 0;
+            _currentRow++;
+        }
+
+        return item;
     }
 }
