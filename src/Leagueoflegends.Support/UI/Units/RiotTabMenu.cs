@@ -18,11 +18,7 @@ public class RiotTabMenu : ListBox
     public int Columns
     {
         get => _columns;
-        set
-        {
-            _columns = value;
-            UpdateUniformGrid();
-        }
+        set { _columns = value; UpdateUniformGrid(); }
     }
 
     public RiotTabMenu()
