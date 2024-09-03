@@ -20,7 +20,7 @@ public class TeamFightsDataLoader : BaseResourceLoader<TeamFight, List<TeamFight
             Level = item.GetValue<int>("level"),
             Explain = item.GetValue<string>("explain"),
             IsPremium = item.GetValue<bool>("isPremium"),
-            Image = $"ms-appx:///Leagueoflegends.Support/Images/TeamFights{item.GetValue<string>("image")}",
+            Image = $"ms-appx:///Leagueoflegends.Support/Images/TeamFights/{item.GetValue<string>("image")}",
             IsFree = item.GetValue<bool>("isFree")
         });
     }

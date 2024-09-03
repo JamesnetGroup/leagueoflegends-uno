@@ -10,7 +10,10 @@
       <Setter.Value>
         <ControlTemplate TargetType="units:RiotStageListBox">
           <Grid Background="{TemplateBinding Background}">
-            <ItemsPresenter/>
+            <ScrollViewer HorizontalScrollBarVisibility="Auto"
+                          VerticalScrollBarVisibility="Disabled">
+              <ItemsPresenter/>
+            </ScrollViewer>
           </Grid>
         </ControlTemplate>
       </Setter.Value>
