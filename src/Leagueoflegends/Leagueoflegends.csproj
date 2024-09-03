@@ -45,6 +45,7 @@
     <ProjectReference Include="..\Leagueoflegends.Profile\Leagueoflegends.Profile.csproj" />
     <ProjectReference Include="..\Leagueoflegends.Shop\Leagueoflegends.Shop.csproj" />
     <ProjectReference Include="..\Leagueoflegends.Social\Leagueoflegends.Social.csproj" />
+    <ProjectReference Include="..\Leagueoflegends.Store\Leagueoflegends.Store.csproj" />
     <ProjectReference Include="..\Leagueoflegends.Tft\Leagueoflegends.Tft.csproj" />
   </ItemGroup>
 

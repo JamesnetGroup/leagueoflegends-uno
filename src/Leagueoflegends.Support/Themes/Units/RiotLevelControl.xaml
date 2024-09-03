@@ -95,7 +95,7 @@
                 </TextBlock>
                 <TextBlock Style="{StaticResource CurrentXPStyle}" Text="{Binding CurrentXP, RelativeSource={RelativeSource TemplatedParent}}"/>
                 <TextBlock Style="{StaticResource MaxXPTextBlockStyle}">
-                  <Run Text="/ "/>
+                  <Run Text=" /"/>
                   <Run Text="{Binding MaxXP, RelativeSource={RelativeSource TemplatedParent}}"/>
                 </TextBlock>
               </StackPanel>
