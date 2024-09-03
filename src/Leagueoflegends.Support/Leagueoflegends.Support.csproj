@@ -52,6 +52,7 @@
     <None Remove="Images\Concepts\wizard.PNG" />
     <None Remove="Images\Items\berserkersgreaves.png" />
     <None Remove="Images\Items\voidstaff.png" />
+    <None Remove="Images\Pieces\star-piece.png" />
     <None Remove="Images\portrait_aatrox.jpg" />
     <None Remove="Images\portrait_ahri.jpg" />
     <None Remove="Images\portrait_akali.jpg" />
@@ -1636,6 +1637,7 @@
     <None Remove="Themes\Units\RiotSpellListBoxItem.xaml" />
     <None Remove="Themes\Units\RiotStageListBox.xaml" />
     <None Remove="Themes\Units\RiotStageListBoxItem.xaml" />
+    <None Remove="Themes\Units\RiotStarButton.xaml" />
     <None Remove="Themes\Units\RiotStatusIndicator.xaml" />
     <None Remove="Themes\Units\RiotSwitchButton.xaml" />
     <None Remove="Themes\Units\RiotTabMenu.xaml" />
@@ -1883,6 +1885,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Units\RiotStarButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Units\RiotStatusIndicator.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1973,6 +1979,7 @@
     <Content Include="Images\Concepts\tanker.png" />
     <Content Include="Images\Concepts\warrior.png" />
     <Content Include="Images\Concepts\wizard.png" />
+    <Content Include="Images\Pieces\star-piece.png" />
     <Content Include="Images\Positions\bottom.png" />
     <Content Include="Images\Positions\jungle.png" />
     <Content Include="Images\Positions\mid.png" />
@@ -2231,5 +2238,9 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Units\RiotLevelControl.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotStarButton.xaml" />
   </ItemGroup>
 </Project>

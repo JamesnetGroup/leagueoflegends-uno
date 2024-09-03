@@ -95,7 +95,7 @@
 
   <Style x:Key="RightStackStyle" TargetType="StackPanel">
     <Setter Property="HorizontalAlignment" Value="Right"/>
-    <Setter Property="Margin" Value="30"/>
+    <Setter Property="Margin" Value="30 30 0 30"/>
   </Style>
 
 
@@ -126,7 +126,10 @@
               </StackPanel>
 
               <StackPanel Style="{StaticResource RightStackStyle}">
-                <units:RiotCapsuleButton Content="TFT Missions"/>
+                <StackPanel Orientation="Horizontal">
+                  <units:RiotCapsuleButton Content="TFT Missions"/>
+                  <units:RiotStarButton Content="214"/>
+                </StackPanel>
               </StackPanel>
 
               <units:RiotStageListBox Style="{StaticResource StageListBoxStyle}" ItemsSource="{Binding TeamFights}"/>

@@ -65,9 +65,9 @@
   </Style>
 
   <Style TargetType="units:RiotCapsuleButton">
-    <Setter Property="Margin" Value="0,10,15,0"/>
+    <Setter Property="Margin" Value="0,0,15,0"/>
     <Setter Property="HorizontalAlignment" Value="Right"/>
-    <Setter Property="VerticalAlignment" Value="Top"/>
+    <Setter Property="VerticalAlignment" Value="Center"/>
     <Setter Property="Template">
       <Setter.Value>
         <ControlTemplate TargetType="units:RiotCapsuleButton">
