@@ -43,7 +43,7 @@
 
   <Style TargetType="Rectangle" x:Key="WideSidebar3FadeOutOverlay">
     <Setter Property="Fill" Value="{StaticResource LeftFadeOutGradient}"/>
-    <Setter Property="Width" Value="150"/>
+    <Setter Property="Width" Value="300"/>
     <Setter Property="Opacity" Value="0.95"/>
     <Setter Property="HorizontalAlignment" Value="Left"/>
   </Style>

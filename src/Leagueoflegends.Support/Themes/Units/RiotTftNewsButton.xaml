@@ -31,7 +31,7 @@
     <Setter Property="Foreground" Value="#cdbe91"/>
     <Setter Property="TextWrapping" Value="Wrap"/>
     <Setter Property="FontSize" Value="12"/>
-    <Setter Property="FontWeight" Value="Bold"/>
+    <Setter Property="FontWeight" Value="Normal"/>
     <Setter Property="Margin" Value="4,8,4,10"/>
     <Setter Property="HorizontalAlignment" Value="Center"/>
     <Setter Property="VerticalAlignment" Value="Bottom"/>

@@ -9,7 +9,7 @@
     <Setter Property="Fill" Value="#F0E6D2"/>
     <Setter Property="Width" Value="36"/>
     <Setter Property="Height" Value="36"/>
-    <Setter Property="Margin" Value="0 2 10 -2"/>
+    <Setter Property="Margin" Value="0 1 10 -1"/>
     <Setter Property="VerticalAlignment" Value="Center"/>
     <Setter Property="Stretch" Value="Uniform"/>
   </Style>
@@ -22,8 +22,10 @@
   </Style>
 
   <Style x:Key="SplitBorderStyle" TargetType="Border">
+    <Setter Property="Width" Value="280"/>
     <Setter Property="BorderBrush" Value="#BC9D6B"/>
     <Setter Property="BorderThickness" Value="0 0 0 2"/>
+    <Setter Property="HorizontalAlignment" Value="Left"/>
     <Setter Property="Margin" Value="0 5 0 10"/>
   </Style>
 
@@ -56,11 +58,12 @@
   </Style>
 
   <LinearGradientBrush x:Key="LevelBackgroundBrush" StartPoint="0, 0.5" EndPoint="1, 0.5">
-    <GradientStop Color="#BB000000" Offset="0"/>
-    <GradientStop Color="#99000000" Offset="0.3"/>
-    <GradientStop Color="#66000000" Offset="0.7"/>
+    <GradientStop Color="#FF000000" Offset="0"/>
+    <GradientStop Color="#CC000000" Offset="0.25"/>
+    <GradientStop Color="#AA000000" Offset="0.5"/>
+    <GradientStop Color="#66000000" Offset="0.75"/>
     <GradientStop Color="#33000000" Offset="0.9"/>
-    <GradientStop Color="#00000000" Offset="1"/>
+    <GradientStop Color="#05000000" Offset="1"/>
   </LinearGradientBrush>
 
   <Style x:Key="RiotNewsButtonStyle" TargetType="units:RiotNewsButton">
@@ -69,8 +72,9 @@
   </Style>
 
   <Style x:Key="LevelProgressBarStyle" TargetType="ProgressBar">
+    <Setter Property="HorizontalAlignment" Value="Left"/>
     <Setter Property="Margin" Value="0 3 0 0"/>
-    <Setter Property="Width" Value="270"/>
+    <Setter Property="Width" Value="280"/>
     <Setter Property="Template">
       <Setter.Value>
         <ControlTemplate TargetType="ProgressBar">
@@ -92,7 +96,7 @@
       <Setter.Value>
         <ControlTemplate TargetType="ContentControl">
           <Grid>
-            <Polygon Points="0,0 150,0 175,25 270,25 270,60 0,60 0,0" Fill="{StaticResource LevelBackgroundBrush}"/>
+            <Polygon Points="0,0 150,0 170,25 300,25 300,60 0,60 0,0" Fill="{StaticResource LevelBackgroundBrush}"/>
             <Border>
               <Grid Margin="0 0 5 5">
                 <Grid.RowDefinitions>
@@ -120,12 +124,12 @@
           <Border>
             <Grid>
               <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
               </Grid.RowDefinitions>
 
-              <StackPanel HorizontalAlignment="Left" Margin="30">
+              <StackPanel HorizontalAlignment="Left" Margin="30 30 0 0">
                 <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
                   <Path Style="{StaticResource TicketIconStyle}"/>
                   <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="FATES PASS"/>
@@ -139,7 +143,11 @@
                 <ContentControl Style="{StaticResource LevelControlStyle}"/>
               </StackPanel>
 
-              <units:RiotStageListBox Grid.Row="1" ItemsSource="{Binding TeamFights}"/>
+              <StackPanel HorizontalAlignment="Right">
+                <units:RiotCapsuleButton Content="TFT Missions"/>
+              </StackPanel>
+
+              <units:RiotStageListBox Margin="20 0 0 2" Grid.Row="1" ItemsSource="{Binding TeamFights}"/>
 
               <Border Grid.Row="2" Padding="10 10 10 10" Background="#AA000000">
                 <Grid>
@@ -156,7 +164,7 @@
                   <units:RiotTftNewsButton Grid.Column="1" Margin="10"
                     Style="{StaticResource RiotNewsButtonStyle}"
                     Text="Wallpaper Jinx"
-                    ImageSource="ms-appx:///Leagueoflegends.Support/Images/wallpaper-jinx.jpg"/>
+                    ImageSource="ms-appx:///Leagueoflegends.Support/Images/wallpaper-lux.jpg"/>
                   <units:RiotTftNewsButton Grid.Column="2" Margin="10"
                     Style="{StaticResource RiotNewsButtonStyle}"
                     Text="Wallpaper Maokai"

@@ -23,6 +23,7 @@
     <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotTicketButton.xaml"/>
     <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RIotQuestionButton.xaml"/>
     <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotClashTierButton.xaml"/>
+    <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotCapsuleButton.xaml"/>
     <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotButton.xaml"/>
     <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotComboBox.xaml"/>
     <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotTextBoxCloseButton.xaml"/>

@@ -1590,6 +1590,7 @@
     <None Remove="Themes\Generic.xaml" />
     <None Remove="Themes\RiotPlayButton.xaml" />
     <None Remove="Themes\Units\RiotButton.xaml" />
+    <None Remove="Themes\Units\RiotCapsuleButton.xaml" />
     <None Remove="Themes\Units\RiotChampGroupItem.xaml" />
     <None Remove="Themes\Units\RiotChampionAvatar.xaml" />
     <None Remove="Themes\Units\RiotChampItemControl.xaml" />
@@ -1702,6 +1703,10 @@
 
   <ItemGroup>
     <Page Include="Themes\Units\RiotButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotCapsuleButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -2213,5 +2218,9 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Units\RiotStageListBoxItem.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotCapsuleButton.xaml" />
   </ItemGroup>
 </Project>
