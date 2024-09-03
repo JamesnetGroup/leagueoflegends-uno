@@ -1612,10 +1612,12 @@
     <None Remove="Themes\Units\RiotFriendListBox.xaml" />
     <None Remove="Themes\Units\RiotHorizMenuListBox.xaml" />
     <None Remove="Themes\Units\RiotHorizMenuListBoxItem.xaml" />
+    <None Remove="Themes\Units\RiotHorizontalProgress.xaml" />
     <None Remove="Themes\Units\RiotHubSummary.xaml" />
     <None Remove="Themes\Units\RiotIconButton.xaml" />
     <None Remove="Themes\Units\RiotItemBadge.xaml" />
     <None Remove="Themes\Units\RiotLevelControl.xaml" />
+    <None Remove="Themes\Units\RiotLevelInfoControl.xaml" />
     <None Remove="Themes\Units\RiotMainIconMenu.xaml" />
     <None Remove="Themes\Units\RiotMainMenu.xaml" />
     <None Remove="Themes\Units\RiotMatchHistoryListBox.xaml" />
@@ -1625,6 +1627,7 @@
     <None Remove="Themes\Units\RiotPlayedChampListBox.xaml" />
     <None Remove="Themes\Units\RiotPlayedChampListBoxItem.xaml" />
     <None Remove="Themes\Units\RiotPositionButton.xaml" />
+    <None Remove="Themes\Units\RiotPremiumButton.xaml" />
     <None Remove="Themes\Units\RIotQuestionButton.xaml" />
     <None Remove="Themes\Units\RiotRecentListBox.xaml" />
     <None Remove="Themes\Units\RiotRecentListBoxItem.xaml" />
@@ -1785,6 +1788,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Units\RiotHorizontalProgress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Units\RiotHubSummary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1798,6 +1805,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Units\RiotLevelControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotLevelInfoControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1838,6 +1849,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Units\RiotPositionButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotPremiumButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -2242,5 +2257,17 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Units\RiotStarButton.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotPremiumButton.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotLevelInfoControl.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotHorizontalProgress.xaml" />
   </ItemGroup>
 </Project>

@@ -10,6 +10,7 @@
     <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotUserAvatar.xaml"/>
     <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotWindowControlButton.xaml"/>
     <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotIconButton.xaml"/>
+    <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotPremiumButton.xaml"/>
     <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotTftNewsButton.xaml"/>
     <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotNewsButton.xaml"/>
     <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotSwitchButton.xaml"/>
@@ -24,6 +25,7 @@
     <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RIotQuestionButton.xaml"/>
     <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotClashTierButton.xaml"/>
     <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotCapsuleButton.xaml"/>
+    <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotLevelInfoControl.xaml"/>
     <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotButton.xaml"/>
     <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotComboBox.xaml"/>
     <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotTextBoxCloseButton.xaml"/>

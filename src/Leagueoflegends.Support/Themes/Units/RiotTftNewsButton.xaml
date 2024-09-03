@@ -18,7 +18,7 @@
   <Style x:Key="MainBorderStyle" TargetType="Border">
     <Setter Property="Grid.Row" Value="0"/>
     <Setter Property="Background" Value="#0B131B"/>
-    <Setter Property="BorderBrush" Value="#28282B"/>
+    <Setter Property="BorderBrush" Value="#000000"/>
     <Setter Property="BorderThickness" Value="1"/>
   </Style>
 

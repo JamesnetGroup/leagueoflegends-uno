@@ -102,6 +102,11 @@
               <ProgressBar
                 Style="{StaticResource LevelProgressBarStyle}"
                 Value="{Binding CurrentXP, RelativeSource={RelativeSource TemplatedParent}}" 
+                Maximum="{Binding MaxXP, RelativeSource={RelativeSource TemplatedParent}}"
+                Visibility="Collapsed"/>
+              <units:RiotHorizontalProgress
+                Grid.Row="1" 
+                Value="{Binding CurrentXP, RelativeSource={RelativeSource TemplatedParent}}" 
                 Maximum="{Binding MaxXP, RelativeSource={RelativeSource TemplatedParent}}"/>
             </Grid>
           </Grid>

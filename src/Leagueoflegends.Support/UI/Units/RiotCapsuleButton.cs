@@ -1,4 +1,4 @@
-﻿
+
 namespace Leagueoflegends.Support.UI.Units;
 
 public class RiotCapsuleButton : Button

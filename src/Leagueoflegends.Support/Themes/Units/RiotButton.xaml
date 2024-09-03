@@ -3,6 +3,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:units="using:Leagueoflegends.Support.UI.Units">
 
+  <x:String x:Key="LockData">M12,17A2,2 0 0,0 14,15C14,13.89 13.1,13 12,13A2,2 0 0,0 10,15A2,2 0 0,0 12,17M18,8A2,2 0 0,1 20,10V20A2,2 0 0,1 18,22H6A2,2 0 0,1 4,20V10C4,8.89 4.9,8 6,8H7V6A5,5 0 0,1 12,1A5,5 0 0,1 17,6V8H18M12,3A3,3 0 0,0 9,6V8H15V6A3,3 0 0,0 12,3Z</x:String>
+  
   <LinearGradientBrush x:Key="RiotButtonBorderBrush" StartPoint="0.5,0" EndPoint="0.5,1">
     <GradientStop Color="#C8AA6E" Offset="0"/>
     <GradientStop Color="#795c28" Offset="1"/>
@@ -38,9 +40,19 @@
   <Style x:Key="ContentPresenterStyle" TargetType="ContentPresenter">
     <Setter Property="HorizontalAlignment" Value="Center"/>
     <Setter Property="VerticalAlignment" Value="Center"/>
-    <Setter Property="Content" Value="{Binding Path=Content, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
-    <Setter Property="ContentTemplate" Value="{Binding Path=ContentTemplate, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
   </Style>
+
+  <Style x:Key="LockPathStyle" TargetType="Path">
+    <Setter Property="Data" Value="{StaticResource LockData}"/>
+    <Setter Property="Width" Value="16"/>
+    <Setter Property="Height" Value="16"/>
+    <Setter Property="HorizontalAlignment" Value="Center"/>
+    <Setter Property="VerticalAlignment" Value="Center"/>
+    <Setter Property="Margin" Value="0,0,0,0"/>
+    <Setter Property="Visibility" Value="Collapsed"/>
+    <Setter Property="Stretch" Value="Uniform"/>
+  </Style>
+
 
   <Style TargetType="units:RiotButton">
     <Setter Property="Height" Value="30"/>
@@ -71,6 +83,22 @@
                     <Setter Target="BorderElement.Background" Value="{StaticResource RiotButtonBackgroundPressed}"/>
                   </VisualState.Setters>
                 </VisualState>
+                <VisualState x:Name="Disabled">
+                  <VisualState.Setters>
+                    <Setter Target="ContentPresenter.Foreground" Value="#5C5B57"/>
+                    <Setter Target="BorderElement.BorderBrush" Value="#5C5B57"/>
+                    <Setter Target="BorderElement.Background" Value="#1E2328"/>
+                  </VisualState.Setters>
+                </VisualState>
+              </VisualStateGroup>
+              <VisualStateGroup x:Name="LockedStates">
+                <VisualState x:Name="Unlocked"/>
+                <VisualState x:Name="Locked">
+                  <VisualState.Setters>
+                    <Setter Target="LockIcon.Visibility" Value="Visible"/>
+                    <Setter Target="ContentPresenter.Margin" Value="0,0,0,0"/>
+                  </VisualState.Setters>
+                </VisualState>
               </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
             <Border
@@ -81,11 +109,12 @@
               <Grid>
                 <ContentPresenter
                   x:Name="ContentPresenter"
-                  Margin="{TemplateBinding Padding}"
                   Style="{StaticResource ContentPresenterStyle}"
-                  ContentTemplate="{TemplateBinding ContentTemplate}"
-                  Content="{TemplateBinding Content}"/>
+                  Margin="{TemplateBinding Padding}"
+                  Content="{TemplateBinding Content}"
+                  ContentTemplate="{TemplateBinding ContentTemplate}"/>
                 <Border Style="{StaticResource InnerBorderStyle}"/>
+                <Path x:Name="LockIcon" Style="{StaticResource LockPathStyle}" Fill="{TemplateBinding Foreground}"/>
               </Grid>
             </Border>
           </Grid>
