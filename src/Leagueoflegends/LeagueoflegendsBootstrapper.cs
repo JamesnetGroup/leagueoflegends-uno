@@ -24,6 +24,7 @@ using Leagueoflegends.Profile.Local.Datas;
 using Leagueoflegends.Clash.UI.Views;
 using Leagueoflegends.Clash.Local.ViewModels;
 using Leagueoflegends.Clash.Local.Datas;
+using Leagueoflegends.Tft.Local.Datas;
 namespace Leagueoflegends;
 
 public class LeagueOfLegendsBootstrapper : AppBootstrapper
@@ -57,6 +58,7 @@ public class LeagueOfLegendsBootstrapper : AppBootstrapper
         Container.RegisterSingleton<IPlayChampDataLoader, PlayChampDataLoader>();
         Container.RegisterSingleton<IRecentDataLoader, RecentDataLoader>();
         Container.RegisterSingleton<IScheduleDataLoader, ScheduleDataLoader>();
+        Container.RegisterSingleton<ITeamFightsDataLoader, TeamFightsDataLoader>();
 
         Container.RegisterSingleton<IView, MainContent>();
         Container.RegisterSingleton<IView, SubMenuContent>();

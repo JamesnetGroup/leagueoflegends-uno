@@ -81,6 +81,7 @@
               <Grid>
                 <ContentPresenter
                   x:Name="ContentPresenter"
+                  Margin="{TemplateBinding Padding}"
                   Style="{StaticResource ContentPresenterStyle}"
                   ContentTemplate="{TemplateBinding ContentTemplate}"
                   Content="{TemplateBinding Content}"/>

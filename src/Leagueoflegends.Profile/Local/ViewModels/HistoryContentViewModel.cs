@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using System.Linq;
 using Jamesnet.Core;
 using Leagueoflegends.Support.Local.Datas;
 using Leagueoflegends.Support.Local.Models;

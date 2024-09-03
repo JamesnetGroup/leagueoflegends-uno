@@ -39,6 +39,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Jamesnet.Uno\Jamesnet.Uno.csproj" />
+    <ProjectReference Include="..\Leagueoflegends.Support\Leagueoflegends.Support.csproj" />
   </ItemGroup>
 
   <ItemGroup>

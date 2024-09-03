@@ -1,8 +1,5 @@
-using System;
-using System.Collections.Generic;
 using Microsoft.UI;
 using Microsoft.UI.Xaml.Data;
-using Windows.UI;
 
 namespace Leagueoflegends.Support.Local.Converters;
 

@@ -1,5 +1,3 @@
-using Leagueoflegends.Support.Local.Models;
-
 namespace Leagueoflegends.Support.UI.Units;
 
 public sealed class RiotCircleIconButton : Button

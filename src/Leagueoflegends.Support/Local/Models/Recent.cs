@@ -1,4 +1,4 @@
-﻿namespace Leagueoflegends.Support.Local.Models;
+namespace Leagueoflegends.Support.Local.Models;
 
 public class Recent
 {

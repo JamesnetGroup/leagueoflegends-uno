@@ -35,6 +35,7 @@ public class RiotWallpaper : Control
             case "SHOP": VisualStateManager.GoToState(this, "DarknessState", false); break;
             case "PROFILE": VisualStateManager.GoToState(this, "DarknessState", false); break;
             case "CLASH": VisualStateManager.GoToState(this, "Darkness2State", false); break;
+            case "TFT": VisualStateManager.GoToState(this, "Darkness3State", false); break;
             default: VisualStateManager.GoToState(this, "DefaultState", false); break;
         }
     }

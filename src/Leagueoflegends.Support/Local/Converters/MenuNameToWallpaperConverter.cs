@@ -12,7 +12,7 @@ public class MenuNameToWallpaperConverter : IValueConverter
             {
                 case "CLASH": fileName = "wallpaper-fiora.jpg"; break;
                 case "HOME": fileName = "wallpaper-caitlyn.jpg"; break;
-                case "TFT": fileName = "wallpaper-singed.png"; break;
+                case "TFT": fileName = "wallpaper-tft.jpg"; break;
                 case "PROFILE": fileName = "wallpaper-leona.jpg"; break;
                 case "COLLECTION": fileName = "wallpaper-ezreal.jpg"; break;
                 case "LOOT": fileName = "wallpaper-rucian.png"; break;

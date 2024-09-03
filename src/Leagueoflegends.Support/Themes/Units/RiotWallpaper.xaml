@@ -41,6 +41,13 @@
     <Setter Property="HorizontalAlignment" Value="Left"/>
   </Style>
 
+  <Style TargetType="Rectangle" x:Key="WideSidebar3FadeOutOverlay">
+    <Setter Property="Fill" Value="{StaticResource LeftFadeOutGradient}"/>
+    <Setter Property="Width" Value="150"/>
+    <Setter Property="Opacity" Value="0.95"/>
+    <Setter Property="HorizontalAlignment" Value="Left"/>
+  </Style>
+
   <Style TargetType="units:RiotWallpaper">
     <Setter Property="Background" Value="Transparent"/>
     <Setter Property="Template">
@@ -61,6 +68,11 @@
                 <VisualState x:Name="Darkness2State">
                   <VisualState.Setters>
                     <Setter Target="LeftOverlay.Style" Value="{StaticResource WideSidebar2FadeOutOverlay}"/>
+                  </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Darkness3State">
+                  <VisualState.Setters>
+                    <Setter Target="LeftOverlay.Style" Value="{StaticResource WideSidebar3FadeOutOverlay}"/>
                   </VisualState.Setters>
                 </VisualState>
               </VisualStateGroup>

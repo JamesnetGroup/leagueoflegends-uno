@@ -41,6 +41,7 @@
     <None Remove="Datas\Skins.yml" />
     <None Remove="Datas\Spells.yml" />
     <None Remove="Datas\SubMenus.yml" />
+    <None Remove="Datas\TeamFights.yml" />
     <None Remove="Images\blue-essence.png" />
     <None Remove="Images\clash.jpg" />
     <None Remove="Images\Concepts\assassin.PNG" />
@@ -1582,6 +1583,7 @@
     <None Remove="Images\wallpaper-rucian.png" />
     <None Remove="Images\wallpaper-sena.png" />
     <None Remove="Images\wallpaper-singed.png" />
+    <None Remove="Images\wallpaper-tft.jpg" />
     <None Remove="Images\wallpaper-thumb-1.png" />
     <None Remove="Images\wallpaper-thumb-2.png" />
     <None Remove="Images\worlds_2022.png" />
@@ -1630,12 +1632,15 @@
     <None Remove="Themes\Units\RIotSpellBadge.xaml" />
     <None Remove="Themes\Units\RiotSpellListBox.xaml" />
     <None Remove="Themes\Units\RiotSpellListBoxItem.xaml" />
+    <None Remove="Themes\Units\RiotStageListBox.xaml" />
+    <None Remove="Themes\Units\RiotStageListBoxItem.xaml" />
     <None Remove="Themes\Units\RiotStatusIndicator.xaml" />
     <None Remove="Themes\Units\RiotSwitchButton.xaml" />
     <None Remove="Themes\Units\RiotTabMenu.xaml" />
     <None Remove="Themes\Units\RiotTabMenuItem.xaml" />
     <None Remove="Themes\Units\RiotTextBox.xaml" />
     <None Remove="Themes\Units\RiotTextBoxCloseButton.xaml" />
+    <None Remove="Themes\Units\RiotTftNewsButton.xaml" />
     <None Remove="Themes\Units\RiotTicketAddButton.xaml" />
     <None Remove="Themes\Units\RiotTicketButton.xaml" />
     <None Remove="Themes\Units\RiotUserAvatar.xaml" />
@@ -1677,6 +1682,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Datas\FilterSortOptions.yml" />
+    <EmbeddedResource Include="Datas\TeamFights.yml" />
     <EmbeddedResource Include="Datas\Schedules.yml" />
     <EmbeddedResource Include="Datas\PlayChamps.yml" />
     <EmbeddedResource Include="Datas\MatchHistories.yml" />
@@ -1891,6 +1897,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Units\RiotStageListBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotStageListBoxItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotTftNewsButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Units\RiotTicketAddButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1960,6 +1978,7 @@
     <Content Include="Images\wallpaper-rucian.png" />
     <Content Include="Images\wallpaper-sena.png" />
     <Content Include="Images\wallpaper-singed.png" />
+    <Content Include="Images\wallpaper-tft.jpg" />
     <Content Include="Images\wallpaper-thumb-1.png" />
     <Content Include="Images\wallpaper-thumb-2.png" />
   </ItemGroup>
@@ -2182,5 +2201,17 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Units\RIotScheduleListBox.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotTftNewsButton.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotStageListBox.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotStageListBoxItem.xaml" />
   </ItemGroup>
 </Project>
