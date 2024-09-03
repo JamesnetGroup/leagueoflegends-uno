@@ -1614,6 +1614,7 @@
     <None Remove="Themes\Units\RiotHubSummary.xaml" />
     <None Remove="Themes\Units\RiotIconButton.xaml" />
     <None Remove="Themes\Units\RiotItemBadge.xaml" />
+    <None Remove="Themes\Units\RiotLevelControl.xaml" />
     <None Remove="Themes\Units\RiotMainIconMenu.xaml" />
     <None Remove="Themes\Units\RiotMainMenu.xaml" />
     <None Remove="Themes\Units\RiotMatchHistoryListBox.xaml" />
@@ -1791,6 +1792,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Units\RiotItemBadge.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotLevelControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -2222,5 +2227,9 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Units\RiotCapsuleButton.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotLevelControl.xaml" />
   </ItemGroup>
 </Project>

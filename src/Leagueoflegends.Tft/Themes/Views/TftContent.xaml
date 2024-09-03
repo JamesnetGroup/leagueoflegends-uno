@@ -4,8 +4,11 @@
   xmlns:units="using:Leagueoflegends.Support.UI.Units"
   xmlns:views="using:Leagueoflegends.Tft.UI.Views">
 
+  <x:String x:Key="TicketData">M15.58,16.8L12,14.5L8.42,16.8L9.5,12.68L6.21,10L10.46,9.74L12,5.8L13.54,9.74L17.79,10L14.5,12.68M20,12C20,10.89 20.9,10 22,10V6C22,4.89 21.1,4 20,4H4A2,2 0 0,0 2,6V10C3.11,10 4,10.9 4,12A2,2 0 0,1 2,14V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V14A2,2 0 0,1 20,12Z</x:String>
+  <x:String x:Key="ClockData">M12 20C16.4 20 20 16.4 20 12S16.4 4 12 4 4 7.6 4 12 7.6 20 12 20M12 2C17.5 2 22 6.5 22 12S17.5 22 12 22C6.5 22 2 17.5 2 12C2 6.5 6.5 2 12 2M15.3 16.2L14 17L11 11.8V7H12.5V11.4L15.3 16.2Z</x:String>
+  
   <Style x:Key="TicketIconStyle" TargetType="Path">
-    <Setter Property="Data" Value="M15.58,16.8L12,14.5L8.42,16.8L9.5,12.68L6.21,10L10.46,9.74L12,5.8L13.54,9.74L17.79,10L14.5,12.68M20,12C20,10.89 20.9,10 22,10V6C22,4.89 21.1,4 20,4H4A2,2 0 0,0 2,6V10C3.11,10 4,10.9 4,12A2,2 0 0,1 2,14V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V14A2,2 0 0,1 20,12Z" />
+    <Setter Property="Data" Value="{StaticResource TicketData}" />
     <Setter Property="Fill" Value="#F0E6D2"/>
     <Setter Property="Width" Value="36"/>
     <Setter Property="Height" Value="36"/>
@@ -14,10 +17,26 @@
     <Setter Property="Stretch" Value="Uniform"/>
   </Style>
 
+  <Style x:Key="ClockIconStyle" TargetType="Path">
+    <Setter Property="Data" Value="{StaticResource ClockData}"/>
+    <Setter Property="Fill" Value="#C89B3C"/>
+    <Setter Property="Width" Value="16"/>
+    <Setter Property="Height" Value="16"/>
+    <Setter Property="Margin" Value="0 0 5 0"/>
+    <Setter Property="VerticalAlignment" Value="Center"/>
+    <Setter Property="Stretch" Value="Uniform"/>
+  </Style>
+
   <Style x:Key="TitleTextBlockStyle" TargetType="TextBlock">
     <Setter Property="FontSize" Value="38"/>
     <Setter Property="FontWeight" Value="Bold"/>
     <Setter Property="Foreground" Value="#F0E6D2"/>
+    <Setter Property="VerticalAlignment" Value="Center"/>
+  </Style>
+
+  <Style x:Key="EventTextStyle" TargetType="TextBlock">
+    <Setter Property="Foreground" Value="#A09B8C"/>
+    <Setter Property="FontSize" Value="14"/>
     <Setter Property="VerticalAlignment" Value="Center"/>
   </Style>
 
@@ -34,22 +53,6 @@
     <Setter Property="Margin" Value="0 5 0 10"/>
   </Style>
 
-  <Style x:Key="ClockIconStyle" TargetType="Path">
-    <Setter Property="Data" Value="M12 20C16.4 20 20 16.4 20 12S16.4 4 12 4 4 7.6 4 12 7.6 20 12 20M12 2C17.5 2 22 6.5 22 12S17.5 22 12 22C6.5 22 2 17.5 2 12C2 6.5 6.5 2 12 2M15.3 16.2L14 17L11 11.8V7H12.5V11.4L15.3 16.2Z"/>
-    <Setter Property="Fill" Value="#C89B3C"/>
-    <Setter Property="Width" Value="16"/>
-    <Setter Property="Height" Value="16"/>
-    <Setter Property="Margin" Value="0 0 5 0"/>
-    <Setter Property="VerticalAlignment" Value="Center"/>
-    <Setter Property="Stretch" Value="Uniform"/>
-  </Style>
-
-  <Style x:Key="EventTextStyle" TargetType="TextBlock">
-    <Setter Property="Foreground" Value="#A09B8C"/>
-    <Setter Property="FontSize" Value="14"/>
-    <Setter Property="VerticalAlignment" Value="Center"/>
-  </Style>
-
   <Style x:Key="PassUpgradeButtonStyle" TargetType="units:RiotButton">
     <Setter Property="Content" Value="PASS UPGRADE"/>
     <Setter Property="HorizontalAlignment" Value="Left"/>
@@ -57,65 +60,44 @@
     <Setter Property="Margin" Value="0 20 0 0"/>
   </Style>
 
-  <LinearGradientBrush x:Key="LevelBackgroundBrush" StartPoint="0, 0.5" EndPoint="1, 0.5">
-    <GradientStop Color="#FF000000" Offset="0"/>
-    <GradientStop Color="#CC000000" Offset="0.25"/>
-    <GradientStop Color="#AA000000" Offset="0.5"/>
-    <GradientStop Color="#66000000" Offset="0.75"/>
-    <GradientStop Color="#33000000" Offset="0.9"/>
-    <GradientStop Color="#05000000" Offset="1"/>
-  </LinearGradientBrush>
-
   <Style x:Key="RiotNewsButtonStyle" TargetType="units:RiotNewsButton">
     <Setter Property="ImageHeight" Value="130"/>
-    <Setter Property="Margin" Value="0 0 10 0"/>
+    <Setter Property="Margin" Value="10"/>
   </Style>
 
-  <Style x:Key="LevelProgressBarStyle" TargetType="ProgressBar">
-    <Setter Property="HorizontalAlignment" Value="Left"/>
-    <Setter Property="Margin" Value="0 3 0 0"/>
-    <Setter Property="Width" Value="280"/>
-    <Setter Property="Template">
-      <Setter.Value>
-        <ControlTemplate TargetType="ProgressBar">
-          <Border Background="Transparent" BorderBrush="#463714" BorderThickness="1">
-            <Border Background="#0A323C" BorderBrush="#072228" BorderThickness="1" Padding="1">
-              <Grid x:Name="PART_Track">
-                <Rectangle x:Name="PART_Indicator" HorizontalAlignment="Left" Fill="#0A323C" Height="4"/>
-              </Grid>
-            </Border>
-          </Border>
-        </ControlTemplate>
-      </Setter.Value>
-    </Setter>
+  <Style TargetType="Border" x:Key="BottomBorderStyle">
+    <Setter Property="Grid.Row" Value="2"/>
+    <Setter Property="Padding" Value="10"/>
+    <Setter Property="Background" Value="#AA000000"/>
   </Style>
 
-  <Style x:Key="LevelControlStyle" TargetType="ContentControl">
+  <Style x:Key="StageListBoxStyle" TargetType="units:RiotStageListBox">
+    <Setter Property="Grid.Row" Value="1"/>
+    <Setter Property="Margin" Value="20 0 0 2"/>
+  </Style>
+
+  <Style x:Key="TitleStackStyle" TargetType="StackPanel">
+    <Setter Property="Orientation" Value="Horizontal"/>
+    <Setter Property="Margin" Value="0 0 0 5"/>
+  </Style>
+
+  <Style x:Key="LevelControlStyle" TargetType="units:RiotLevelControl">
+    <Setter Property="Level" Value="6"/>
+    <Setter Property="CurrentXP" Value="0"/>
+    <Setter Property="MaxXP" Value="100"/>
     <Setter Property="Margin" Value="0 40 0 0"/>
-    <Setter Property="Template">
-      <Setter.Value>
-        <ControlTemplate TargetType="ContentControl">
-          <Grid>
-            <Polygon Points="0,0 150,0 170,25 300,25 300,60 0,60 0,0" Fill="{StaticResource LevelBackgroundBrush}"/>
-            <Border>
-              <Grid Margin="0 0 5 5">
-                <Grid.RowDefinitions>
-                  <RowDefinition Height="Auto"/>
-                  <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0 0 0 5">
-                  <TextBlock Text="Lv.6" Foreground="#F0E6D2" FontSize="25" Margin="0 5 0 -5" FontWeight="Bold" VerticalAlignment="Bottom"/>
-                  <TextBlock Text="100" Foreground="#0AC8B9" FontSize="12" FontWeight="Normal" VerticalAlignment="Bottom" Margin="30 0 0 0"/>
-                  <TextBlock Text="  /  500" Foreground="#848484" FontSize="12" FontWeight="Normal" VerticalAlignment="Bottom" Margin="0 0 0 0"/>
-                </StackPanel>
-                <ProgressBar Grid.Row="1" Style="{StaticResource LevelProgressBarStyle}"/>
-              </Grid>
-            </Border>
-          </Grid>
-        </ControlTemplate>
-      </Setter.Value>
-    </Setter>
   </Style>
+
+  <Style x:Key="LeftStackStyle" TargetType="StackPanel">
+    <Setter Property="HorizontalAlignment" Value="Left"/>
+    <Setter Property="Margin" Value="30 30 0 0"/>
+  </Style>
+
+  <Style x:Key="RightStackStyle" TargetType="StackPanel">
+    <Setter Property="HorizontalAlignment" Value="Right"/>
+    <Setter Property="Margin" Value="30"/>
+  </Style>
+
 
   <Style TargetType="views:TftContent">
     <Setter Property="Template">
@@ -129,8 +111,8 @@
                 <RowDefinition Height="Auto"/>
               </Grid.RowDefinitions>
 
-              <StackPanel HorizontalAlignment="Left" Margin="30 30 0 0">
-                <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
+              <StackPanel Style="{StaticResource LeftStackStyle}">
+                <StackPanel Style="{StaticResource TitleStackStyle}">
                   <Path Style="{StaticResource TicketIconStyle}"/>
                   <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="FATES PASS"/>
                 </StackPanel>
@@ -140,16 +122,16 @@
                   <TextBlock Style="{StaticResource EventTextStyle}" Text="Event ends in 14 days!"/>
                 </StackPanel>
                 <units:RiotButton Style="{StaticResource PassUpgradeButtonStyle}"/>
-                <ContentControl Style="{StaticResource LevelControlStyle}"/>
+                <units:RiotLevelControl Style="{StaticResource LevelControlStyle}"/>
               </StackPanel>
 
-              <StackPanel HorizontalAlignment="Right">
+              <StackPanel Style="{StaticResource RightStackStyle}">
                 <units:RiotCapsuleButton Content="TFT Missions"/>
               </StackPanel>
 
-              <units:RiotStageListBox Margin="20 0 0 2" Grid.Row="1" ItemsSource="{Binding TeamFights}"/>
+              <units:RiotStageListBox Style="{StaticResource StageListBoxStyle}" ItemsSource="{Binding TeamFights}"/>
 
-              <Border Grid.Row="2" Padding="10 10 10 10" Background="#AA000000">
+              <Border Style="{StaticResource BottomBorderStyle}">
                 <Grid>
                   <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2.5*"/>
@@ -157,19 +139,19 @@
                     <ColumnDefinition Width="2.5*"/>
                     <ColumnDefinition Width="2.5*"/>
                   </Grid.ColumnDefinitions>
-                  <units:RiotTftNewsButton Grid.Column="0" Margin="10"
+                  <units:RiotTftNewsButton Grid.Column="0" 
                     Style="{StaticResource RiotNewsButtonStyle}"
                     Text="Wallpaper Fiora"
                     ImageSource="ms-appx:///Leagueoflegends.Support/Images/wallpaper-fiora.jpg"/>
-                  <units:RiotTftNewsButton Grid.Column="1" Margin="10"
+                  <units:RiotTftNewsButton Grid.Column="1"
                     Style="{StaticResource RiotNewsButtonStyle}"
                     Text="Wallpaper Jinx"
                     ImageSource="ms-appx:///Leagueoflegends.Support/Images/wallpaper-lux.jpg"/>
-                  <units:RiotTftNewsButton Grid.Column="2" Margin="10"
+                  <units:RiotTftNewsButton Grid.Column="2" 
                     Style="{StaticResource RiotNewsButtonStyle}"
                     Text="Wallpaper Maokai"
                     ImageSource="ms-appx:///Leagueoflegends.Support/Images/wallpaper-maokai.jpg"/>
-                  <units:RiotTftNewsButton Grid.Column="3" Margin="10"
+                  <units:RiotTftNewsButton Grid.Column="3" 
                     Style="{StaticResource RiotNewsButtonStyle}"
                     Text="Wallpaper Caitlyn"
                     ImageSource="ms-appx:///Leagueoflegends.Support/Images/wallpaper-caitlyn.jpg"/>

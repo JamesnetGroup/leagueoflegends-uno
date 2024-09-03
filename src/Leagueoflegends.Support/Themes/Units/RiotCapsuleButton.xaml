@@ -17,6 +17,12 @@
     <GradientStop Color="#8C6A34" Offset="1"/>
   </LinearGradientBrush>
 
+  <LinearGradientBrush x:Key="BorderBrushPressed" StartPoint="0.5,0" EndPoint="0.5,1">
+    <GradientStop Color="#C89B3C" Offset="0"/>
+    <GradientStop Color="#785A28" Offset="0.5"/>
+    <GradientStop Color="#463714" Offset="1"/>
+  </LinearGradientBrush>
+
   <Style x:Key="TextBlockStyle" TargetType="TextBlock">
     <Setter Property="Foreground" Value="#999689"/>
     <Setter Property="FontSize" Value="12"/>
@@ -74,6 +80,15 @@
                     <Setter Target="ContentText.Foreground" Value="#BFBBAB"/>
                     <Setter Target="IconContainer.BorderBrush" Value="{StaticResource BorderBrushOver}"/>
                     <Setter Target="Icon.Fill" Value="#FFEDB5"/>
+                  </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Pressed">
+                  <VisualState.Setters>
+                    <Setter Target="ContentText.Foreground" Value="#F0E6D2"/>
+                    <Setter Target="IconContainer.BorderBrush" Value="{StaticResource BorderBrushPressed}"/>
+                    <Setter Target="Icon.Fill" Value="#F0E6D2"/>
+                    <Setter Target="TextContainer.Background" Value="#CC000000"/>
+                    <Setter Target="IconContainer.Background" Value="#010A13"/>
                   </VisualState.Setters>
                 </VisualState>
               </VisualStateGroup>
