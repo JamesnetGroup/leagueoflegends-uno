@@ -4,14 +4,14 @@ using Leagueoflegends.Support.Local.Models;
 
 namespace Leagueoflegends.Collection.Local.Datas;
 
-public class PersonalChampStatsDataLoader : BaseResourceLoader<ChampionStats, List<ChampionStats>>, IPersonalChampStatsDataLoader
+public class ChampStatsDataLoader : BaseResourceLoader<ChampionStats, List<ChampionStats>>, IChampStatsDataLoader
 {
     protected override string AssemblyName => "Leagueoflegends.Support";
     protected override string ResourcePath => "Leagueoflegends.Support.Datas.PersonalChampStats.yml";
 
     public List<ChampionStats> LoadChampionStats() => LoadAndOrganize();
 
-    public Dictionary<string, List<ChampionStats>> LoadChampionStatsGroupedByPosition()
+    public Dictionary<string, List<ChampionStats>> GetStatsByPosition()
     {
         var allChampions = LoadAndOrganize();
         return allChampions

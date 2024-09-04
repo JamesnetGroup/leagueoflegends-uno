@@ -22,7 +22,7 @@
                 SelectedItem="{Binding SelectedFilterOption, Mode=TwoWay}"
                 DisplayMemberPath="Name"/>
               <units:RiotComboBox
-                Margin="0  10 0 0"
+                Margin="0 10 0 0"
                 ItemsSource="{Binding SortOptions}"
                 SelectedItem="{Binding SelectedSortOption, Mode=TwoWay}"
                 DisplayMemberPath="Name"/>

@@ -1629,6 +1629,7 @@
     <None Remove="Themes\Units\RiotPositionButton.xaml" />
     <None Remove="Themes\Units\RiotPremiumButton.xaml" />
     <None Remove="Themes\Units\RIotQuestionButton.xaml" />
+    <None Remove="Themes\Units\RiotRadioButton.xaml" />
     <None Remove="Themes\Units\RiotRecentListBox.xaml" />
     <None Remove="Themes\Units\RiotRecentListBoxItem.xaml" />
     <None Remove="Themes\Units\RiotSaleChampion.xaml" />
@@ -1642,6 +1643,7 @@
     <None Remove="Themes\Units\RiotStageListBoxItem.xaml" />
     <None Remove="Themes\Units\RiotStarButton.xaml" />
     <None Remove="Themes\Units\RiotStatusIndicator.xaml" />
+    <None Remove="Themes\Units\RiotStoreChampSummary.xaml" />
     <None Remove="Themes\Units\RiotSwitchButton.xaml" />
     <None Remove="Themes\Units\RiotTabMenu.xaml" />
     <None Remove="Themes\Units\RiotTabMenuItem.xaml" />
@@ -1860,6 +1862,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Units\RiotRadioButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Units\RiotRecentListBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1905,6 +1911,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Units\RiotStatusIndicator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotStoreChampSummary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -2269,5 +2279,13 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Units\RiotHorizontalProgress.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotStoreChampSummary.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotRadioButton.xaml" />
   </ItemGroup>
 </Project>

@@ -6,15 +6,9 @@ namespace Leagueoflegends.Tft.Local.ViewModels;
 
 public class TftContentViewModel : ViewModelBase
 {
-    private readonly ITeamFightsDataLoader _teamFightsDataLoader;
+    private readonly ITeamFightsDataLoader _teamFightsData;
     private TeamFight _current;
     private List<TeamFight> _teamFights;
-
-    public TftContentViewModel(ITeamFightsDataLoader teamFightsDataLoader)
-    {
-        _teamFightsDataLoader = teamFightsDataLoader;
-        LoadTeamFights();
-    }
 
     public TeamFight Current
     {
@@ -28,9 +22,15 @@ public class TftContentViewModel : ViewModelBase
         set => SetProperty(ref _teamFights, value);
     }
 
+    public TftContentViewModel(ITeamFightsDataLoader teamFightsData)
+    {
+        _teamFightsData = teamFightsData;
+        LoadTeamFights();
+    }
+
     private void LoadTeamFights()
     {
-        TeamFights = _teamFightsDataLoader.LoadTeamFights();
+        TeamFights = _teamFightsData.LoadTeamFights();
         Current = TeamFights.FirstOrDefault();
     }
 }

@@ -11,7 +11,7 @@ namespace Leagueoflegends.Collection.Local.Datas
 
         public List<Skin> LoadSkins() => LoadAndOrganize();
 
-        public Dictionary<string, List<Skin>> LoadSkinsGroupedByName()
+        public Dictionary<string, List<Skin>> GetSkinsGroupedByName()
         {
             var allSkins = LoadAndOrganize();
             return allSkins

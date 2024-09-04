@@ -6,9 +6,9 @@ namespace Leagueoflegends.Profile.Local.ViewModels;
 
 public class HistoryContentViewModel : ViewModelBase
 {
-    private readonly IMatchHistoryDataLoader _matchHistoryDataLoader;
-    private readonly IPlayChampDataLoader _playChampDataLoader;
-    private readonly IRecentDataLoader _RecentDataLoader;
+    private readonly IMatchHistoryDataLoader _matchHistoryData;
+    private readonly IPlayChampDataLoader _playChampData;
+    private readonly IRecentDataLoader _RecentData;
 
     private List<MatchHistory> _matchHistories;
     private MatchHistory _currentHistory;
@@ -39,13 +39,11 @@ public class HistoryContentViewModel : ViewModelBase
         set => SetProperty(ref _Recents, value);
     }
 
-    public HistoryContentViewModel(IMatchHistoryDataLoader matchHistoryDataLoader,
-                                   IPlayChampDataLoader playChampDataLoader,
-                                   IRecentDataLoader RecentDataLoader)
+    public HistoryContentViewModel(IMatchHistoryDataLoader matchHistoryData, IPlayChampDataLoader playChampData, IRecentDataLoader recentData)
     {
-        _matchHistoryDataLoader = matchHistoryDataLoader;
-        _playChampDataLoader = playChampDataLoader;
-        _RecentDataLoader = RecentDataLoader;
+        _matchHistoryData = matchHistoryData;
+        _playChampData = playChampData;
+        _RecentData = recentData;
         LoadData();
     }
 
@@ -58,17 +56,17 @@ public class HistoryContentViewModel : ViewModelBase
 
     private void LoadMatchHistories()
     {
-        MatchHistories = _matchHistoryDataLoader.LoadMatchHistories();
+        MatchHistories = _matchHistoryData.LoadMatchHistories();
         CurrentHistory = MatchHistories.FirstOrDefault();
     }
 
     private void LoadPlayChamps()
     {
-        PlayChamps = _playChampDataLoader.LoadPlayChamps();
+        PlayChamps = _playChampData.LoadPlayChamps();
     }
 
     private void LoadRecents()
     {
-        Recents = _RecentDataLoader.LoadRecents();
+        Recents = _RecentData.LoadRecents();
     }
 }

@@ -1,5 +1,4 @@
 using Jamesnet.Core;
-using System.Collections.ObjectModel;
 using Leagueoflegends.Support.Local.Datas;
 using Leagueoflegends.Support.Local.Models;
 
@@ -21,8 +20,8 @@ public class ChampionsContentViewModel : ViewModelBase
         set => SetProperty(ref _achieve, value);
     }
 
-    private ObservableCollection<FilterOption> _filterOptions;
-    public ObservableCollection<FilterOption> FilterOptions
+    private List<FilterOption> _filterOptions;
+    public List<FilterOption> FilterOptions
     {
         get => _filterOptions;
         set => SetProperty(ref _filterOptions, value);
@@ -35,8 +34,8 @@ public class ChampionsContentViewModel : ViewModelBase
         set => SetProperty(ref _selectedFilterOption, value);
     }
 
-    private ObservableCollection<FilterOption> _sortOptions;
-    public ObservableCollection<FilterOption> SortOptions
+    private List<FilterOption> _sortOptions;
+    public List<FilterOption> SortOptions
     {
         get => _sortOptions;
         set => SetProperty(ref _sortOptions, value);
@@ -49,20 +48,20 @@ public class ChampionsContentViewModel : ViewModelBase
         set => SetProperty(ref _selectedSortOption, value);
     }
 
-    private ObservableCollection<ChampionGroup> _champions;
-    public ObservableCollection<ChampionGroup> Champions
+    private List<ChampionGroup> _champions;
+    public List<ChampionGroup> Champions
     {
         get => _champions;
         set => SetProperty(ref _champions, value);
     }
 
-    private readonly IPersonalChampStatsDataLoader _champDataLoader;
-    private readonly IFilterSortOptionsDataLoader _optionsDataLoader;
+    private readonly IChampStatsDataLoader _champData;
+    private readonly IFilterDataLoader _filterData;
 
-    public ChampionsContentViewModel(IPersonalChampStatsDataLoader champDataLoader, IFilterSortOptionsDataLoader optionsDataLoader)
+    public ChampionsContentViewModel(IChampStatsDataLoader champData, IFilterDataLoader filterData)
     {
-        _champDataLoader = champDataLoader;
-        _optionsDataLoader = optionsDataLoader;
+        _champData = champData;
+        _filterData = filterData;
         InitializeViewModel();
     }
 
@@ -76,19 +75,18 @@ public class ChampionsContentViewModel : ViewModelBase
 
     private void LoadFilterAndSortOptions()
     {
-        var filters = _optionsDataLoader.LoadOptions().Where(x => x.Category == "FilterOptions");
-        var options = _optionsDataLoader.LoadOptions().Where(x => x.Category == "SortOptions");
-        FilterOptions = new ObservableCollection<FilterOption>(filters);
-        SortOptions = new ObservableCollection<FilterOption>(options);
+        FilterOptions = _filterData.GetByCategory("FilterOptions");
+        SortOptions = _filterData.GetByCategory("SortOptions");
+
         SelectedFilterOption = FilterOptions.FirstOrDefault();
         SelectedSortOption = SortOptions.FirstOrDefault();
     }
 
     private void LoadChampions()
     {
-        var groupedChampions = _champDataLoader.LoadChampionStatsGroupedByPosition();
-        Champions = new ObservableCollection<ChampionGroup>(
-            groupedChampions.Select(kvp => new ChampionGroup
+        var kvps = _champData.GetStatsByPosition();
+        Champions = new List<ChampionGroup>(
+            kvps.Select(kvp => new ChampionGroup
             {
                 Header = kvp.Key,
                 Children = kvp.Value

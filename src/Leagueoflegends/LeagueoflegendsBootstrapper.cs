@@ -52,8 +52,8 @@ public class LeagueOfLegendsBootstrapper : AppBootstrapper
 
         Container.RegisterSingleton<IFriendDataLoader, FriendDataLoader>();
         Container.RegisterSingleton<ISubMenuDataLoader, SubMenuDataLoader>();
-        Container.RegisterSingleton<IPersonalChampStatsDataLoader, PersonalChampStatsDataLoader>();
-        Container.RegisterSingleton<IFilterSortOptionsDataLoader, FilterSortOptionsDataLoader>();
+        Container.RegisterSingleton<IChampStatsDataLoader, ChampStatsDataLoader>();
+        Container.RegisterSingleton<IFilterDataLoader, FilterDataLoader>();
         Container.RegisterSingleton<ISkinsDataLoader, SkinsDataLoader>();
         Container.RegisterSingleton<ISpellsDataLoader, SpellsDataLoader>();
         Container.RegisterSingleton<IMatchHistoryDataLoader, MatchHistoryDataLoader>();

@@ -91,6 +91,7 @@
     <Setter Property="Background" Value="{StaticResource RiotComboBoxBackgroundBrush}" />
     <Setter Property="Foreground" Value="{StaticResource RiotComboBoxForegroundBrush}" />
     <Setter Property="BorderBrush" Value="{StaticResource RiotComboBoxBorderBrush}" />
+    <Setter Property="DisplayMemberPath" Value="Name"/>
     <Setter Property="BorderThickness" Value="1" />
     <Setter Property="Padding" Value="16,0" />
     <Setter Property="Height" Value="30" />

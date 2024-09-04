@@ -1,5 +1,4 @@
 using Jamesnet.Core;
-using System.Collections.ObjectModel;
 using Leagueoflegends.Support.Local.Datas;
 using Leagueoflegends.Support.Local.Models;
 
@@ -7,7 +6,15 @@ namespace Leagueoflegends.Collection.Local.ViewModels;
 
 public class SkinsContentViewModel : ViewModelBase
 {
+    private readonly ISkinsDataLoader _skinsData;
+    private readonly IFilterDataLoader _filterData;
+
     private int _ownedSkinsCount;
+    private FilterOption _selectedFilterOption;
+    private FilterOption _selectedSortOption;
+    private List<SkinGroup> _champions;
+    private List<FilterOption> _filterOptions;
+    private List<FilterOption> _sortOptions;
 
     public int OwnedSkinsCount
     {
@@ -15,48 +22,39 @@ public class SkinsContentViewModel : ViewModelBase
         set => SetProperty(ref _ownedSkinsCount, value);
     }
 
-    private ObservableCollection<FilterOption> _filterOptions;
-    public ObservableCollection<FilterOption> FilterOptions
+    public List<FilterOption> FilterOptions
     {
         get => _filterOptions;
         set => SetProperty(ref _filterOptions, value);
     }
 
-    private FilterOption _selectedFilterOption;
     public FilterOption SelectedFilterOption
     {
         get => _selectedFilterOption;
         set => SetProperty(ref _selectedFilterOption, value);
     }
-
-    private ObservableCollection<FilterOption> _sortOptions;
-    public ObservableCollection<FilterOption> SortOptions
+    public List<FilterOption> SortOptions
     {
         get => _sortOptions;
         set => SetProperty(ref _sortOptions, value);
     }
 
-    private FilterOption _selectedSortOption;
     public FilterOption SelectedSortOption
     {
         get => _selectedSortOption;
         set => SetProperty(ref _selectedSortOption, value);
     }
 
-    private ObservableCollection<SkinGroup> _champions;
-    public ObservableCollection<SkinGroup> Champions
+    public List<SkinGroup> Champions
     {
         get => _champions;
         set => SetProperty(ref _champions, value);
     }
 
-    private readonly ISkinsDataLoader _skinsDataLoader;
-    private readonly IFilterSortOptionsDataLoader _optionsDataLoader;
-
-    public SkinsContentViewModel(ISkinsDataLoader skinsDataLoader, IFilterSortOptionsDataLoader optionsDataLoader)
+    public SkinsContentViewModel(ISkinsDataLoader skinsData, IFilterDataLoader filterData)
     {
-        _skinsDataLoader = skinsDataLoader;
-        _optionsDataLoader = optionsDataLoader;
+        _skinsData = skinsData;
+        _filterData = filterData;
         InitializeViewModel();
     }
 
@@ -70,26 +68,23 @@ public class SkinsContentViewModel : ViewModelBase
 
     private void LoadFilterAndSortOptions()
     {
-        var filters = _optionsDataLoader.LoadOptions().Where(x => x.Category == "ChampionFilter");
-        var options = _optionsDataLoader.LoadOptions().Where(x => x.Category == "ChampionSort");
-        FilterOptions = new ObservableCollection<FilterOption>(filters);
-        SortOptions = new ObservableCollection<FilterOption>(options);
+        FilterOptions = _filterData.GetByCategory("ChampionFilter");
+        SortOptions = _filterData.GetByCategory("ChampionSort");
+
         SelectedFilterOption = FilterOptions.FirstOrDefault();
         SelectedSortOption = SortOptions.FirstOrDefault();
     }
 
     private void LoadChampions()
     {
-        var groupedChampions = _skinsDataLoader.LoadSkinsGroupedByName();
-        Champions = new ObservableCollection<SkinGroup>(
-            groupedChampions
-                .Select(kvp => new SkinGroup
-                {
-                    Header = $"{kvp.Key} Collection",
-                    Children = kvp.Value.Where(skin => skin.IsPurchased).ToList()
-                })
-                .Where(group => group.Children.Any()) // Exclude empty groups
+        var kvps = _skinsData.GetSkinsGroupedByName();
+        Champions = new List<SkinGroup>(
+            kvps.Select(kvp => new SkinGroup
+            {
+                Header = $"{kvp.Key} Collection",
+                Children = kvp.Value.Where(skin => skin.IsPurchased).ToList()
+            })
+            .Where(group => group.Children.Any())
         );
     }
-
 }

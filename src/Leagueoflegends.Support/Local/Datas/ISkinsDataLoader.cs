@@ -5,5 +5,5 @@ namespace Leagueoflegends.Support.Local.Datas;
 public interface ISkinsDataLoader
 {
     List<Skin> LoadSkins();
-    Dictionary<string, List<Skin>> LoadSkinsGroupedByName();
+    Dictionary<string, List<Skin>> GetSkinsGroupedByName();
 }

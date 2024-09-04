@@ -1,5 +1,4 @@
 using Jamesnet.Core;
-using System.Collections.ObjectModel;
 using Leagueoflegends.Support.Local.Datas;
 using Leagueoflegends.Support.Local.Models;
 
@@ -7,92 +6,70 @@ namespace Leagueoflegends.Collection.Local.ViewModels;
 
 public class StoreChampionsContentViewModel : ViewModelBase
 {
-    private int _proficiency;
-    public int Proficiency
+    private readonly IFilterDataLoader _filterData;
+
+    private bool _isChampionsSelected;
+    private bool _isEternalsSelected;
+    private bool _isBundlesSelected;
+    private FilterOption _currentChamp;
+    private FilterOption _currentEternal;
+    private FilterOption _currentBundle;
+
+    public bool IsChampionsSelected
     {
-        get => _proficiency;
-        set => SetProperty(ref _proficiency, value);
+        get => _isChampionsSelected;
+        set => SetProperty(ref _isChampionsSelected, value);
     }
 
-    private int _achieve;
-    public int Achieve
+    public bool IsEternalsSelected
     {
-        get => _achieve;
-        set => SetProperty(ref _achieve, value);
+        get => _isEternalsSelected;
+        set => SetProperty(ref _isEternalsSelected, value);
     }
 
-    private ObservableCollection<FilterOption> _filterOptions;
-    public ObservableCollection<FilterOption> FilterOptions
+    public bool IsBundlesSelected
     {
-        get => _filterOptions;
-        set => SetProperty(ref _filterOptions, value);
+        get => _isBundlesSelected;
+        set => SetProperty(ref _isBundlesSelected, value);
     }
 
-    private FilterOption _selectedFilterOption;
-    public FilterOption SelectedFilterOption
+    public FilterOption CurrentChamp
     {
-        get => _selectedFilterOption;
-        set => SetProperty(ref _selectedFilterOption, value);
+        get => _currentChamp;
+        set => SetProperty(ref _currentChamp, value);
     }
 
-    private ObservableCollection<FilterOption> _sortOptions;
-    public ObservableCollection<FilterOption> SortOptions
+    public FilterOption CurrentEternal
     {
-        get => _sortOptions;
-        set => SetProperty(ref _sortOptions, value);
+        get => _currentEternal;
+        set => SetProperty(ref _currentEternal, value);
     }
 
-    private FilterOption _selectedSortOption;
-    public FilterOption SelectedSortOption
+    public FilterOption CurrentBundle
     {
-        get => _selectedSortOption;
-        set => SetProperty(ref _selectedSortOption, value);
+        get => _currentBundle;
+        set => SetProperty(ref _currentBundle, value);
     }
 
-    private ObservableCollection<ChampionGroup> _champions;
-    public ObservableCollection<ChampionGroup> Champions
+    public List<FilterOption> ChampOptions { get; set; }
+    public List<FilterOption> EternalOptions { get; set; }
+    public List<FilterOption> BundleOptions { get; set; }
+
+    public StoreChampionsContentViewModel(IFilterDataLoader filterData)
     {
-        get => _champions;
-        set => SetProperty(ref _champions, value);
+        _filterData = filterData;
+
+        IsChampionsSelected = true;
+        LoadFilters();
     }
 
-    private readonly IPersonalChampStatsDataLoader _champDataLoader;
-    private readonly IFilterSortOptionsDataLoader _optionsDataLoader;
-
-    public StoreChampionsContentViewModel(IPersonalChampStatsDataLoader champDataLoader, IFilterSortOptionsDataLoader optionsDataLoader)
+    private void LoadFilters()
     {
-        _champDataLoader = champDataLoader;
-        _optionsDataLoader = optionsDataLoader;
-        InitializeViewModel();
-    }
-
-    private void InitializeViewModel()
-    {
-        Proficiency = 282;
-        Achieve = 343;
-        LoadFilterAndSortOptions();
-        LoadChampions();
-    }
-
-    private void LoadFilterAndSortOptions()
-    {
-        var filters = _optionsDataLoader.LoadOptions().Where(x => x.Category == "FilterOptions");
-        var options = _optionsDataLoader.LoadOptions().Where(x => x.Category == "SortOptions");
-        FilterOptions = new ObservableCollection<FilterOption>(filters);
-        SortOptions = new ObservableCollection<FilterOption>(options);
-        SelectedFilterOption = FilterOptions.FirstOrDefault();
-        SelectedSortOption = SortOptions.FirstOrDefault();
-    }
-
-    private void LoadChampions()
-    {
-        var groupedChampions = _champDataLoader.LoadChampionStatsGroupedByPosition();
-        Champions = new ObservableCollection<ChampionGroup>(
-            groupedChampions.Select(kvp => new ChampionGroup
-            {
-                Header = kvp.Key,
-                Children = kvp.Value
-            })
-        );
+        ChampOptions = _filterData.GetByCategory("ItemSortOptions");
+        EternalOptions = _filterData.GetByCategory("ItemSortOptions");
+        BundleOptions = _filterData.GetByCategory("ItemSortOptions");
+        CurrentChamp = ChampOptions.FirstOrDefault();
+        CurrentEternal = EternalOptions.FirstOrDefault();
+        CurrentBundle = BundleOptions.FirstOrDefault();
     }
 }

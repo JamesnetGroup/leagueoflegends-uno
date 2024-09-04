@@ -93,7 +93,7 @@
 - name: FEATURED
   seq: 24
   category: STORE
-  isUsed: true
+  isUsed: false
 - name: CHAMPIONS
   seq: 25
   category: STORE
@@ -101,15 +101,15 @@
 - name: SKINS
   seq: 26
   category: STORE
-  isUsed: true
+  isUsed: false
 - name: TFT
   seq: 27
   category: STORE
-  isUsed: true
+  isUsed: false
 - name: LOOT
   seq: 28
   category: STORE
-  isUsed: true
+  isUsed: false
 - name: ACCESSORIES
   seq: 29
   category: STORE

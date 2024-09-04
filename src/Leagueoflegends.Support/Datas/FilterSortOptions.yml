@@ -10,6 +10,7 @@
 - name: Ownership Status
   category: FilterOptions
   isSelected: false
+
 - name: Alphabetical Order
   category: SortOptions
   isSelected: true
@@ -22,6 +23,7 @@
 - name: Chest Available
   category: SortOptions
   isSelected: false
+
 - name: All Champions
   category: ChampionFilter
   isSelected: true
@@ -37,6 +39,7 @@
 - name: Tier
   category: ChampionFilter
   isSelected: false
+
 - name: Alphabetical Order
   category: ChampionSort
   isSelected: true
@@ -48,4 +51,29 @@
   isSelected: false
 - name: Show Unowned Items
   category: AdditionalOption
+  isSelected: false
+  
+- name: Release Date
+  category: ItemSortOptions  ↑
+  isSelected: true
+- name: Release Date
+  category: ItemSortOptions  ↓
+  isSelected: false
+- name: Price (RP)  ↑
+  category: ItemSortOptions
+  isSelected: false
+- name: Price (RP)  ↓
+  category: ItemSortOptions
+  isSelected: false
+- name: Price (BE)  ↑
+  category: ItemSortOptions
+  isSelected: false
+- name: Price (BE)  ↓
+  category: ItemSortOptions
+  isSelected: false
+- name: Alphabetical  ↑
+  category: ItemSortOptions
+  isSelected: false
+- name: Alphabetical  ↓
+  category: ItemSortOptions
   isSelected: false

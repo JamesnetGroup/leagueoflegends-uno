@@ -7,8 +7,9 @@ namespace Leagueoflegends.Clash.Local.ViewModels;
 
 public class HubContentViewModel : ViewModelBase
 {
-    private readonly ISubMenuNavigator _subMenuNavigator;
-    private readonly IScheduleDataLoader _scheduleDataLoader;
+    private readonly ISubMenuNavigator _subMenu;
+    private readonly IScheduleDataLoader _scheduleData;
+
     private SubMenuItem _currentTabMenu;
     private List<SubMenuItem> _tabMenus;
     private List<Schedule> _schedules;
@@ -31,17 +32,17 @@ public class HubContentViewModel : ViewModelBase
         set => SetProperty(ref _schedules, value);
     }
 
-    public HubContentViewModel(ISubMenuNavigator subMenuNavigator, IScheduleDataLoader scheduleDataLoader)
+    public HubContentViewModel(ISubMenuNavigator subMenu, IScheduleDataLoader scheduleData)
     {
-        _subMenuNavigator = subMenuNavigator;
-        _scheduleDataLoader = scheduleDataLoader;
+        _subMenu = subMenu;
+        _scheduleData = scheduleData;
         LoadSchedules();
     }
 
     private void LoadSchedules()
     {
-        TabMenus = _subMenuNavigator.GetSubMenuItems("HUB");
+        TabMenus = _subMenu.GetSubMenuItems("HUB");
         CurrentTabMenu = TabMenus.FirstOrDefault();
-        Schedules = _scheduleDataLoader.LoadSchedules();
+        Schedules = _scheduleData.LoadSchedules();
     }
 }
