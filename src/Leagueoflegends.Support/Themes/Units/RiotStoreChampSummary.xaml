@@ -4,7 +4,7 @@
     xmlns:cnvts="using:Leagueoflegends.Support.Local.Converters"
     xmlns:units="using:Leagueoflegends.Support.UI.Units">
 
-  <cnvts:BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+  <cnvts:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
 
   <Style x:Key="FilterStackStyle" TargetType="StackPanel">
     <Setter Property="Margin" Value="0 20 0 0"/>

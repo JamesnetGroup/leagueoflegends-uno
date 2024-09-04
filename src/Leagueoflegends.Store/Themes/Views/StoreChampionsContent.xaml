@@ -19,7 +19,6 @@
             </StackPanel>
             <units:RiotChampListBox
               Grid.Column="1"
-              ItemsSource="{Binding Champions}"
               Margin="20 0 0 0"/>
           </Grid>
         </ControlTemplate>

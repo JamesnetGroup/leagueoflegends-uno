@@ -6,6 +6,6 @@ public class StoreChampionsContent : UnoView
 {
     public StoreChampionsContent()
     { 
-        DefaultStyleKey = typeof(StoreChampionsContent);    
+        DefaultStyleKey = typeof(StoreChampionsContent);
     }
 }
