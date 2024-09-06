@@ -4,7 +4,9 @@
   xmlns:units="using:Leagueoflegends.Support.UI.Units">
 
   <x:String x:Key="StarData">M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z</x:String>
-
+  <x:String x:Key="OuterPolygonData">0,5 5,0 80,0 80,15 75,20 0,20 0,5</x:String>
+  <x:String x:Key="InnerPolygonData">0,3 3,0 75,0 75,12 72,15 0,15, 0,3</x:String>
+  
   <Style x:Key="OuterViewboxStyle" TargetType="Viewbox">
     <Setter Property="Stretch" Value="Uniform"/>
     <Setter Property="Width" Value="96"/>
@@ -93,8 +95,8 @@
             </VisualStateManager.VisualStateGroups>
             <Viewbox Style="{StaticResource OuterViewboxStyle}">
               <Grid Style="{StaticResource InnerGridStyle}">
-                <Polygon x:Name="OuterPolygon" Style="{StaticResource OuterPolygonStyle}" Points="0,5 5,0 80,0 80,15 75,20 0,20 0,5"/>
-                <Polygon x:Name="InnerPolygon" Style="{StaticResource InnerPolygonStyle}" Points="0,3 3,0 75,0 75,12 72,15 0,15, 0,3"/>
+                <Polygon x:Name="OuterPolygon" Style="{StaticResource OuterPolygonStyle}" Points="{StaticResource OuterPolygonData}"/>
+                <Polygon x:Name="InnerPolygon" Style="{StaticResource InnerPolygonStyle}" Points="{StaticResource InnerPolygonData}"/>
               </Grid>
             </Viewbox>
             <Grid Style="{StaticResource ContentGridStyle}">

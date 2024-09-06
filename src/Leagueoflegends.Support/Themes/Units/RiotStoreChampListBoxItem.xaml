@@ -3,108 +3,89 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:units="using:Leagueoflegends.Support.UI.Units">
 
-  <x:String x:Key="LockOpenIconData">M18,8A2,2 0 0,1 20,10V20A2,2 0 0,1 18,22H6C4.89,22 4,21.1 4,20V10A2,2 0 0,1 6,8H15V6A3,3 0 0,0 12,3A3,3 0 0,0 9,6H7A5,5 0 0,1 12,1A5,5 0 0,1 17,6V8H18M12,17A2,2 0 0,0 14,15A2,2 0 0,0 12,13A2,2 0 0,0 10,15A2,2 0 0,0 12,17Z</x:String>
+  <x:String x:Key="LockIconData">M18,8A2,2 0 0,1 20,10V20A2,2 0 0,1 18,22H6C4.89,22 4,21.1 4,20V10A2,2 0 0,1 6,8H15V6A3,3 0 0,0 12,3A3,3 0 0,0 9,6H7A5,5 0 0,1 12,1A5,5 0 0,1 17,6V8H18M12,17A2,2 0 0,0 14,15A2,2 0 0,0 12,13A2,2 0 0,0 10,15A2,2 0 0,0 12,17Z</x:String>
 
-  <x:String x:Key="RpIconSource">ms-appx:///Leagueoflegends.Support/Images/Pieces/rp.png</x:String>
-  <x:String x:Key="BeIconSource">ms-appx:///Leagueoflegends.Support/Images/Pieces/blue-essence.png</x:String>
+  <x:String x:Key="RpIconImageSource">ms-appx:///Leagueoflegends.Support/Images/Pieces/rp.png</x:String>
+  <x:String x:Key="BeIconImageSource">ms-appx:///Leagueoflegends.Support/Images/Pieces/blue-essence.png</x:String>
 
-  <RadialGradientBrush x:Key="DefaultBackgroundBrush" Center="0.5,0.5" RadiusX="0.5" RadiusY="0.5">
-    <GradientStop Color="#1A1C1E" Offset="0"/>
-    <GradientStop Color="#0A0C0E" Offset="1"/>
-  </RadialGradientBrush>
+  <LinearGradientBrush x:Key="UnlockedBackgroundBrush" StartPoint="0.5,0" EndPoint="0.5,1">
+    <GradientStop Color="Transparent" Offset="0"/>
+    <GradientStop Color="#33000000" Offset="0.25"/>
+    <GradientStop Color="#AA000000" Offset="0.75"/>
+    <GradientStop Color="#000000" Offset="1"/>
+  </LinearGradientBrush>
 
-  <RadialGradientBrush x:Key="SelectedBackgroundBrush" Center="0.5,0.5" RadiusX="0.5" RadiusY="0.5">
-    <GradientStop Color="#2E3338" Offset="0"/>
-    <GradientStop Color="#1E2328" Offset="1"/>
-  </RadialGradientBrush>
+  <LinearGradientBrush x:Key="LockedBackgroundBrush" StartPoint="0.5,0" EndPoint="0.5,1">
+    <GradientStop Color="#BB000000" Offset="0"/>
+    <GradientStop Color="#CC000000" Offset="0.25"/>
+    <GradientStop Color="#DD000000" Offset="0.75"/>
+    <GradientStop Color="#EE000000" Offset="1"/>
+  </LinearGradientBrush>
 
-  <LinearGradientBrush x:Key="BorderBrush" StartPoint="0,0" EndPoint="1,1">
+  <LinearGradientBrush x:Key="SelectedBackgroundBrush" StartPoint="0.5,0" EndPoint="0.5,1">
+    <GradientStop Color="Transparent" Offset="0"/>
+    <GradientStop Color="#00000000" Offset="0.25"/>
+    <GradientStop Color="#77000000" Offset="0.75"/>
+    <GradientStop Color="#CC000000" Offset="1"/>
+  </LinearGradientBrush>
+
+  <LinearGradientBrush x:Key="LockIconFillBrush" StartPoint="0.5,0" EndPoint="0.5,1">
+    <GradientStop Color="#55C89B3C" Offset="0"/>
+    <GradientStop Color="#AAC89B3C" Offset="0.5"/>
+    <GradientStop Color="#FFC89B3C" Offset="1"/>
+  </LinearGradientBrush>
+
+  <LinearGradientBrush x:Key="DefaultBorderBrush" StartPoint="0,0" EndPoint="1,1">
     <GradientStop Color="#3C3C41" Offset="0"/>
     <GradientStop Color="#4C4C51" Offset="1"/>
   </LinearGradientBrush>
 
-  <LinearGradientBrush x:Key="OverBorderBrush" StartPoint="0,0" EndPoint="1,1">
-    <GradientStop Color="#C8AA6E" Offset="0"/>
-    <GradientStop Color="#F0E6D2" Offset="1"/>
+  <LinearGradientBrush x:Key="HighlightBorderBrush" StartPoint="0,0" EndPoint="1,1">
+    <GradientStop Color="#CCC8AA6E" Offset="0"/>
+    <GradientStop Color="#CCF0E6D2" Offset="1"/>
   </LinearGradientBrush>
 
-  <SolidColorBrush x:Key="IconFillBrush" Color="#C89B3C"/>
-  <SolidColorBrush x:Key="IconStrokeBrush" Color="#1E2328"/>
+  <SolidColorBrush x:Key="LockIconStrokeBrush" Color="#1E2328"/>
   <SolidColorBrush x:Key="TextBrush" Color="#F0E6D2"/>
   <SolidColorBrush x:Key="ValueBrush" Color="#C8AA6E"/>
 
-  <!-- Styles -->
-  <Style x:Key="BorderStyle" TargetType="Border">
+  <Style x:Key="ChampItemBorderStyle" TargetType="Border">
     <Setter Property="Height" Value="188"/>
     <Setter Property="Width" Value="188"/>
     <Setter Property="BorderThickness" Value="1"/>
-    <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
-    <Setter Property="Background" Value="{StaticResource DefaultBackgroundBrush}"/>
+    <Setter Property="BorderBrush" Value="{StaticResource DefaultBorderBrush}"/>
+    <Setter Property="Background" Value="{StaticResource UnlockedBackgroundBrush}"/>
     <Setter Property="Margin" Value="5"/>
     <Setter Property="CornerRadius" Value="8"/>
   </Style>
 
-  <Style x:Key="ImageStyle" TargetType="Image">
+  <Style x:Key="ChampImageStyle" TargetType="Image">
     <Setter Property="Stretch" Value="UniformToFill"/>
     <Setter Property="VerticalAlignment" Value="Center"/>
     <Setter Property="HorizontalAlignment" Value="Center"/>
   </Style>
 
-  <Style x:Key="OverBorderStyle" TargetType="Border">
-    <Setter Property="Height" Value="40"/>
-    <Setter Property="Width" Value="40"/>
-    <Setter Property="Visibility" Value="Collapsed"/>
-    <Setter Property="BorderBrush" Value="{StaticResource OverBorderBrush}"/>
-    <Setter Property="BorderThickness" Value="1.5"/>
-    <Setter Property="Background" Value="{StaticResource OverBorderBrush}"/>
-    <Setter Property="HorizontalAlignment" Value="Center"/>
-    <Setter Property="VerticalAlignment" Value="Center"/>
-    <Setter Property="RenderTransformOrigin" Value="0.5, 0.5"/>
-    <Setter Property="CornerRadius" Value="20"/>
-  </Style>
-
-  <Style x:Key="IconStyle" TargetType="Path">
-    <Setter Property="Fill" Value="{StaticResource IconFillBrush}"/>
-    <Setter Property="Stroke" Value="{StaticResource IconStrokeBrush}"/>
+  <Style x:Key="LockIconStyle" TargetType="Path">
+    <Setter Property="Fill" Value="{StaticResource LockIconFillBrush}"/>
+    <Setter Property="Stroke" Value="{StaticResource LockIconStrokeBrush}"/>
+    <Setter Property="Opacity" Value="0"/>
     <Setter Property="StrokeThickness" Value="0.5"/>
     <Setter Property="HorizontalAlignment" Value="Center"/>
     <Setter Property="VerticalAlignment" Value="Center"/>
     <Setter Property="Visibility" Value="Collapsed"/>
-    <Setter Property="Height" Value="26"/>
-    <Setter Property="Width" Value="26"/>
-    <Setter Property="Data" Value="{StaticResource LockOpenIconData}"/>
+    <Setter Property="Height" Value="32"/>
+    <Setter Property="Width" Value="32"/>
+    <Setter Property="Stretch" Value="Uniform"/>
+    <Setter Property="Data" Value="{StaticResource LockIconData}"/>
   </Style>
 
-  <Style x:Key="OverBorder2Style" TargetType="Border">
-    <Setter Property="Height" Value="6"/>
-    <Setter Property="Width" Value="6"/>
-    <Setter Property="Margin" Value="0 6 0 0"/>
-    <Setter Property="CornerRadius" Value="3"/>
-    <Setter Property="Background" Value="{StaticResource IconFillBrush}"/>
-    <Setter Property="VerticalAlignment" Value="Center"/>
-    <Setter Property="Visibility" Value="Collapsed"/>
-    <Setter Property="HorizontalAlignment" Value="Center"/>
-  </Style>
-
-  <Style x:Key="OverlayBorderStyle" TargetType="Border">
-    <Setter Property="Background" Value="Black"/>
-    <Setter Property="Opacity" Value="0.4"/>
-  </Style>
-
-  <Style x:Key="NameTextBlockStyle" TargetType="TextBlock">
+  <Style x:Key="ChampNameStyle" TargetType="TextBlock">
     <Setter Property="TextWrapping" Value="Wrap"/>
     <Setter Property="Foreground" Value="{StaticResource TextBrush}"/>
-    <Setter Property="FontSize" Value="15"/>
-    <Setter Property="FontWeight" Value="SemiBold"/>
+    <Setter Property="FontSize" Value="14"/>
     <Setter Property="HorizontalAlignment" Value="Center"/>
     <Setter Property="TextAlignment" Value="Center"/>
     <Setter Property="Margin" Value="10 0 10 6"/>
-  </Style>
-  
-  <Style x:Key="BottomStackStyle" TargetType="TextBlock">
-    <Setter Property="VerticalAlignment" Value="Bottom"/>
-    <Setter Property="HorizontalAlignment" Value="Center"/>
-    <Setter Property="Margin" Value="0 0 0 6"/>
   </Style>
 
   <Style x:Key="PriceStackStyle" TargetType="StackPanel">
@@ -117,18 +98,18 @@
     <Setter Property="Margin" Value="0 0 6 0"/>
   </Style>
 
-  <Style x:Key="IconImageStyle" TargetType="Image">
+  <Style x:Key="CurrencyIconStyle" TargetType="Image">
     <Setter Property="Width" Value="15"/>
     <Setter Property="Height" Value="15"/>
     <Setter Property="VerticalAlignment" Value="Center"/>
   </Style>
 
-  <Style x:Key="BeIconImageStyle" TargetType="Image" BasedOn="{StaticResource IconImageStyle}">
+  <Style x:Key="BeIconStyle" TargetType="Image" BasedOn="{StaticResource CurrencyIconStyle}">
     <Setter Property="Width" Value="16"/>
     <Setter Property="Height" Value="16"/>
   </Style>
 
-  <Style x:Key="ValueTextBlockStyle" TargetType="TextBlock">
+  <Style x:Key="PriceValueStyle" TargetType="TextBlock">
     <Setter Property="Margin" Value="4 0 0 0"/>
     <Setter Property="FontSize" Value="13"/>
     <Setter Property="FontWeight" Value="Bold"/>
@@ -136,87 +117,77 @@
     <Setter Property="Foreground" Value="{StaticResource ValueBrush}"/>
   </Style>
 
+  <Style x:Key="BottomStackStyle" TargetType="StackPanel">
+    <Setter Property="VerticalAlignment" Value="Bottom"/>
+    <Setter Property="Margin" Value="10"/>
+  </Style>
+
+
   <Style TargetType="units:RiotStoreChampListBoxItem">
     <Setter Property="Template">
       <Setter.Value>
         <ControlTemplate TargetType="units:RiotStoreChampListBoxItem">
-          <Border x:Name="RootBorder" Style="{StaticResource BorderStyle}">
+          <Border x:Name="RootBorder" Style="{StaticResource ChampItemBorderStyle}">
             <VisualStateManager.VisualStateGroups>
               <VisualStateGroup x:Name="CommonStates">
                 <VisualState x:Name="Normal" />
                 <VisualState x:Name="PointerOver">
                   <VisualState.Setters>
-                    <Setter Target="RootBorder.BorderBrush" Value="{StaticResource OverBorderBrush}" />
-                    <Setter Target="OverlayBorder.Opacity" Value="0.3" />
-                    <Setter Target="OverBorder.Visibility" Value="Visible" />
-                    <Setter Target="OverBorder2.Visibility" Value="Visible" />
-                    <Setter Target="OverIcon.Visibility" Value="Visible" />
-                    <Setter Target="OverBorder.Visibility" Value="Visible" />
-                    <Setter Target="OverBorder.Opacity" Value="0.5" />
-                    <Setter Target="OverBorder2.Visibility" Value="Visible" />
-                    <Setter Target="OverBorder2.Opacity" Value="0.5" />
-                    <Setter Target="OverIcon.Visibility" Value="Visible" />
-                    <Setter Target="OverIcon.Opacity" Value="1" />
+                    <Setter Target="RootBorder.BorderBrush" Value="{StaticResource HighlightBorderBrush}" />
                   </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="Pressed">
                   <VisualState.Setters>
-                    <Setter Target="RootBorder.Background" Value="{StaticResource SelectedBackgroundBrush}" />
-                    <Setter Target="RootBorder.BorderBrush" Value="{StaticResource OverBorderBrush}" />
-                    <Setter Target="OverlayBorder.Opacity" Value="0.2" />
-                    <Setter Target="OverBorder.Visibility" Value="Visible" />
-                    <Setter Target="OverBorder.Opacity" Value="1" />
-                    <Setter Target="OverBorder2.Visibility" Value="Visible" />
-                    <Setter Target="OverBorder2.Opacity" Value="1" />
-                    <Setter Target="OverIcon.Visibility" Value="Visible" />
-                    <Setter Target="OverIcon.Opacity" Value="1" />
+                    <Setter Target="RootBorder.BorderBrush" Value="{StaticResource HighlightBorderBrush}" />
                   </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="Selected">
                   <VisualState.Setters>
-                    <Setter Target="RootBorder.Background" Value="{StaticResource SelectedBackgroundBrush}" />
-                    <Setter Target="RootBorder.BorderBrush" Value="{StaticResource OverBorderBrush}" />
-                    <Setter Target="RootBorder.BorderThickness" Value="2" />
-                    <Setter Target="OverlayBorder.Opacity" Value="0.1" />
-                    <Setter Target="OverBorder.Visibility" Value="Visible" />
-                    <Setter Target="OverBorder.Opacity" Value="0.7" />
-                    <Setter Target="OverBorder2.Visibility" Value="Visible" />
-                    <Setter Target="OverBorder2.Opacity" Value="0.7" />
-                    <Setter Target="OverIcon.Visibility" Value="Visible" />
-                    <Setter Target="OverIcon.Opacity" Value="1" />
+                    <Setter Target="RootBorder.BorderBrush" Value="{StaticResource HighlightBorderBrush}" />
+                    <Setter Target="RootBorder.BorderThickness" Value="1" />
+                    <Setter Target="BorderOverlay.Visibility" Value="Visible" />
+                    <Setter Target="LockIcon.Opacity" Value="1" />
                   </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="PointerOverSelected">
                   <VisualState.Setters>
-                    <Setter Target="RootBorder.Background" Value="{StaticResource SelectedBackgroundBrush}" />
-                    <Setter Target="RootBorder.BorderBrush" Value="{StaticResource OverBorderBrush}" />
-                    <Setter Target="OverlayBorder.Opacity" Value="0.2" />
-                    <Setter Target="OverBorder.Visibility" Value="Visible" />
-                    <Setter Target="OverBorder.Opacity" Value="1" />
-                    <Setter Target="OverBorder2.Visibility" Value="Visible" />
-                    <Setter Target="OverBorder2.Opacity" Value="1" />
-                    <Setter Target="OverIcon.Visibility" Value="Visible" />
-                    <Setter Target="OverIcon.Opacity" Value="1" />
+                    <Setter Target="RootBorder.BorderBrush" Value="{StaticResource HighlightBorderBrush}" />
+                    <Setter Target="RootBorder.BorderThickness" Value="1" />
+                    <Setter Target="BorderOverlay.Visibility" Value="Visible" />
+                    <Setter Target="LockIcon.Opacity" Value="1" />
+                  </VisualState.Setters>
+                </VisualState>
+              </VisualStateGroup>
+              <VisualStateGroup x:Name="LockStates">
+                <VisualState x:Name="Unlocked">
+                  <VisualState.Setters>
+                    <Setter Target="UnlockedOverlay.Background" Value="{StaticResource UnlockedBackgroundBrush}" />
+                    <Setter Target="LockIcon.Visibility" Value="Collapsed" />
+                  </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Locked">
+                  <VisualState.Setters>
+                    <Setter Target="UnlockedOverlay.Background" Value="{StaticResource LockedBackgroundBrush}" />
+                    <Setter Target="LockIcon.Visibility" Value="Visible" />
                   </VisualState.Setters>
                 </VisualState>
               </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
             <Grid>
-              <Image Style="{StaticResource ImageStyle}" Source="{Binding ImageUrl}"/>
-              <Border x:Name="OverlayBorder" Style="{StaticResource OverlayBorderStyle}"/>
-              <Border x:Name="OverBorder" Style="{StaticResource OverBorderStyle}"/>
-              <Path x:Name="OverIcon" Style="{StaticResource IconStyle}"/>
-              <Border x:Name="OverBorder2" Style="{StaticResource OverBorder2Style}"/>
+              <Image Style="{StaticResource ChampImageStyle}" Source="{Binding ImageUrl}"/>
+              <Border x:Name="BorderOverlay" Background="{StaticResource SelectedBackgroundBrush}"/>
+              <Border x:Name="UnlockedOverlay" Background="{StaticResource UnlockedBackgroundBrush}"/>
+              <Path x:Name="LockIcon" Style="{StaticResource LockIconStyle}"/>
               <StackPanel Style="{StaticResource BottomStackStyle}">
-                <TextBlock Style="{StaticResource NameTextBlockStyle}" Text="{Binding Name}"/>
+                <TextBlock Style="{StaticResource ChampNameStyle}" Text="{Binding Name}"/>
                 <StackPanel Style="{StaticResource PriceStackStyle}">
                   <StackPanel x:Name="RpPanel" Style="{StaticResource PriceColumnStyle}">
-                    <Image Style="{StaticResource IconImageStyle}" Source="{StaticResource RpIconSource}"/>
-                    <TextBlock Style="{StaticResource ValueTextBlockStyle}" Text="{Binding RP}"/>
+                    <Image Style="{StaticResource CurrencyIconStyle}" Source="{StaticResource RpIconImageSource}"/>
+                    <TextBlock Style="{StaticResource PriceValueStyle}" Text="{Binding RP}"/>
                   </StackPanel>
                   <StackPanel x:Name="BePanel" Style="{StaticResource PriceColumnStyle}">
-                    <Image Style="{StaticResource BeIconImageStyle}" Source="{StaticResource BeIconSource}"/>
-                    <TextBlock Style="{StaticResource ValueTextBlockStyle}" Text="{Binding BE}"/>
+                    <Image Style="{StaticResource BeIconStyle}" Source="{StaticResource BeIconImageSource}"/>
+                    <TextBlock Style="{StaticResource PriceValueStyle}" Text="{Binding BE}"/>
                   </StackPanel>
                 </StackPanel>
               </StackPanel>

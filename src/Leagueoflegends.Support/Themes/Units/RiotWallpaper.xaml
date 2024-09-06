@@ -3,46 +3,47 @@
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:cnvts="using:Leagueoflegends.Support.Local.Converters"
   xmlns:units="using:Leagueoflegends.Support.UI.Units">
-  
+
   <cnvts:MenuNameToWallpaperConverter x:Key="MenuNameToWallpaperConverter"/>
-  <LinearGradientBrush x:Key="TopFadeOutGradient" EndPoint="0.5,1" StartPoint="0.5,0">
+
+  <LinearGradientBrush x:Key="TopFadeOutBrush" EndPoint="0.5,1" StartPoint="0.5,0">
     <GradientStop Color="#DD000000"/>
     <GradientStop Color="#77000000" Offset="0.5"/>
     <GradientStop Color="#00000000" Offset="1"/>
   </LinearGradientBrush>
-  
-  <LinearGradientBrush x:Key="LeftFadeOutGradient" EndPoint="1,0.5" StartPoint="0,0.5">
+
+  <LinearGradientBrush x:Key="LeftFadeOutBrush" EndPoint="1,0.5" StartPoint="0,0.5">
     <GradientStop Color="#FF000000"/>
     <GradientStop Color="#CC000000" Offset="0.5"/>
     <GradientStop Color="#00000000" Offset="1"/>
   </LinearGradientBrush>
-  
-  <Style TargetType="Rectangle" x:Key="TopFadeOutOverlay">
-    <Setter Property="Fill" Value="{StaticResource TopFadeOutGradient}"/>
+
+  <Style TargetType="Rectangle" x:Key="TopFadeOutOverlayStyle">
+    <Setter Property="Fill" Value="{StaticResource TopFadeOutBrush}"/>
     <Setter Property="Height" Value="300"/>
     <Setter Property="VerticalAlignment" Value="Top"/>
   </Style>
-  
-  <Style TargetType="Rectangle" x:Key="StandardLeftFadeOutOverlay">
-    <Setter Property="Fill" Value="{StaticResource LeftFadeOutGradient}"/>
+
+  <Style TargetType="Rectangle" x:Key="LeftFadeOutOverlayStyle">
+    <Setter Property="Fill" Value="{StaticResource LeftFadeOutBrush}"/>
     <Setter Property="Width" Value="500"/>
     <Setter Property="HorizontalAlignment" Value="Left"/>
   </Style>
-  
-  <Style TargetType="Rectangle" x:Key="WideSidebarFadeOutOverlay">
-    <Setter Property="Fill" Value="{StaticResource LeftFadeOutGradient}"/>
+
+  <Style TargetType="Rectangle" x:Key="WideSidebarOverlayStyle">
+    <Setter Property="Fill" Value="{StaticResource LeftFadeOutBrush}"/>
     <Setter Property="Width" Value="1600"/>
     <Setter Property="HorizontalAlignment" Value="Left"/>
   </Style>
 
-  <Style TargetType="Rectangle" x:Key="WideSidebar2FadeOutOverlay">
-    <Setter Property="Fill" Value="{StaticResource LeftFadeOutGradient}"/>
+  <Style TargetType="Rectangle" x:Key="MediumSidebarOverlayStyle">
+    <Setter Property="Fill" Value="{StaticResource LeftFadeOutBrush}"/>
     <Setter Property="Width" Value="1200"/>
     <Setter Property="HorizontalAlignment" Value="Left"/>
   </Style>
 
-  <Style TargetType="Rectangle" x:Key="WideSidebar3FadeOutOverlay">
-    <Setter Property="Fill" Value="{StaticResource LeftFadeOutGradient}"/>
+  <Style TargetType="Rectangle" x:Key="NarrowSidebarOverlayStyle">
+    <Setter Property="Fill" Value="{StaticResource LeftFadeOutBrush}"/>
     <Setter Property="Width" Value="300"/>
     <Setter Property="Opacity" Value="0.95"/>
     <Setter Property="HorizontalAlignment" Value="Left"/>
@@ -55,24 +56,24 @@
         <ControlTemplate TargetType="units:RiotWallpaper">
           <Grid>
             <Image Source="{Binding Path=MenuName, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter={StaticResource MenuNameToWallpaperConverter}}" Stretch="UniformToFill"/>
-            <Rectangle Style="{StaticResource TopFadeOutOverlay}"/>
-            <Rectangle x:Name="LeftOverlay" Style="{StaticResource StandardLeftFadeOutOverlay}"/>
+            <Rectangle Style="{StaticResource TopFadeOutOverlayStyle}"/>
+            <Rectangle x:Name="LeftOverlay" Style="{StaticResource LeftFadeOutOverlayStyle}"/>
             <VisualStateManager.VisualStateGroups>
-              <VisualStateGroup x:Name="MenuStates">
+              <VisualStateGroup x:Name="MenuVisualStates">
                 <VisualState x:Name="DefaultState"/>
-                <VisualState x:Name="DarknessState">
+                <VisualState x:Name="ExpandedSidebarState">
                   <VisualState.Setters>
-                    <Setter Target="LeftOverlay.Style" Value="{StaticResource WideSidebarFadeOutOverlay}"/>
+                    <Setter Target="LeftOverlay.Style" Value="{StaticResource WideSidebarOverlayStyle}"/>
                   </VisualState.Setters>
                 </VisualState>
-                <VisualState x:Name="Darkness2State">
+                <VisualState x:Name="MediumSidebarState">
                   <VisualState.Setters>
-                    <Setter Target="LeftOverlay.Style" Value="{StaticResource WideSidebar2FadeOutOverlay}"/>
+                    <Setter Target="LeftOverlay.Style" Value="{StaticResource MediumSidebarOverlayStyle}"/>
                   </VisualState.Setters>
                 </VisualState>
-                <VisualState x:Name="Darkness3State">
+                <VisualState x:Name="NarrowSidebarState">
                   <VisualState.Setters>
-                    <Setter Target="LeftOverlay.Style" Value="{StaticResource WideSidebar3FadeOutOverlay}"/>
+                    <Setter Target="LeftOverlay.Style" Value="{StaticResource NarrowSidebarOverlayStyle}"/>
                   </VisualState.Setters>
                 </VisualState>
               </VisualStateGroup>

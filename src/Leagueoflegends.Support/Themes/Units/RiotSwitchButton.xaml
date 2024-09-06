@@ -3,8 +3,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:units="using:Leagueoflegends.Support.UI.Units">
 
-  <x:String x:Key="CheckGeometry">M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z</x:String>
-  <x:String x:Key="UseGeometry">M16,13C15.71,13 15.38,13 15.03,13.05C16.19,13.89 17,15 17,16.5V19H23V16.5C23,14.17 18.33,13 16,13M8,13C5.67,13 1,14.17 1,16.5V19H15V16.5C15,14.17 10.33,13 8,13M8,11A3,3 0 0,0 11,8A3,3 0 0,0 8,5A3,3 0 0,0 5,8A3,3 0 0,0 8,11M16,11A3,3 0 0,0 19,8A3,3 0 0,0 16,5A3,3 0 0,0 13,8A3,3 0 0,0 16,11Z</x:String>
+  <x:String x:Key="CheckIconData">M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z</x:String>
+  <x:String x:Key="UseIconData">M16,13C15.71,13 15.38,13 15.03,13.05C16.19,13.89 17,15 17,16.5V19H23V16.5C23,14.17 18.33,13 16,13M8,13C5.67,13 1,14.17 1,16.5V19H15V16.5C15,14.17 10.33,13 8,13M8,11A3,3 0 0,0 11,8A3,3 0 0,0 8,5A3,3 0 0,0 5,8A3,3 0 0,0 8,11M16,11A3,3 0 0,0 19,8A3,3 0 0,0 16,5A3,3 0 0,0 13,8A3,3 0 0,0 16,11Z</x:String>
   
   <LinearGradientBrush x:Key="ToggleBorderBrush" StartPoint="0.5,0" EndPoint="0.5,1">
     <GradientStop Color="#9F8449" Offset="0"/>
@@ -61,7 +61,7 @@
   </Style>
 
   <Style x:Key="CheckPathStyle" TargetType="Path">
-    <Setter Property="Data" Value="{StaticResource CheckGeometry}"/>
+    <Setter Property="Data" Value="{StaticResource CheckIconData}"/>
     <Setter Property="Width" Value="9"/>
     <Setter Property="Height" Value="9"/>
     <Setter Property="Fill" Value="#20432A"/>
@@ -71,7 +71,7 @@
   </Style>
 
   <Style x:Key="UsePathStyle" TargetType="Path">
-    <Setter Property="Data" Value="{StaticResource UseGeometry}"/>
+    <Setter Property="Data" Value="{StaticResource UseIconData}"/>
     <Setter Property="Fill" Value="#CDBE91"/>
     <Setter Property="Width" Value="15"/>
     <Setter Property="Height" Value="15"/>

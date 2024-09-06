@@ -20,6 +20,7 @@ public class StoreChampDataLoader : BaseResourceLoader<StoreChamp, List<StoreCha
             Image = item.GetValue<string>("image"),
             RP = item.GetValue<int>("rp"),
             BE = item.GetValue<int>("be"),
+            IsLocked = item.GetValue<bool>("isLocked"),
             ImageUrl = $"ms-appx:///Leagueoflegends.Support/Images/Stores/{item.GetValue<string>("image")}.png"
         });
     }

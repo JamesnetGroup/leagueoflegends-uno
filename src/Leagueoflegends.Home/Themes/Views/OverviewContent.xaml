@@ -4,6 +4,13 @@
   xmlns:units="using:Leagueoflegends.Support.UI.Units"
   xmlns:views="using:Leagueoflegends.Home.UI.Views">
 
+  <x:String x:Key="HeadlineDefaultImageSource">ms-appx:///Leagueoflegends.Support/Images/wallpaper-jinx.jpg</x:String>
+  <x:String x:Key="ATypeImageSource">ms-appx:///Leagueoflegends.Support/Images/wallpaper-maokai.jpg</x:String>
+  <x:String x:Key="BTypeImageSource">ms-appx:///Leagueoflegends.Support/Images/wallpaper-lux.jpg</x:String>
+  <x:String x:Key="CTypeImageSource">ms-appx:///Leagueoflegends.Support/Images/wallpaper-caitlyn.jpg</x:String>
+  <x:String x:Key="DTypeImageSource">ms-appx:///Leagueoflegends.Support/Images/wallpaper-thumb-1.png</x:String>
+  <x:String x:Key="ETypeImageSource">ms-appx:///Leagueoflegends.Support/Images/wallpaper-thumb-2.png</x:String>
+  
   <Style x:Key="RiotButtonStyle" TargetType="units:RiotButton">
     <Setter Property="FontWeight" Value="Bold"/>
     <Setter Property="BorderThickness" Value="2"/>
@@ -14,7 +21,7 @@
   <Style x:Key="RiotHeadlineNewsButtonStyle" TargetType="units:RiotNewsButton">
     <Setter Property="Width" Value="600"/>
     <Setter Property="Margin" Value="0 20 0 0"/>
-    <Setter Property="ImageSource" Value="ms-appx:///Leagueoflegends.Support/Images/wallpaper-jinx.jpg"/>
+    <Setter Property="ImageSource" Value="{StaticResource HeadlineDefaultImageSource}"/>
   </Style>
 
   <Style x:Key="RiotNewsButtonStyle" TargetType="units:RiotNewsButton">
@@ -93,27 +100,27 @@
               <units:RiotNewsButton Grid.Column="0"
                 Style="{StaticResource RiotNewsButtonStyle}"
                 Text="▶ K/DA x 1MILLION - I'LL SHOW YOU ↗"
-                ImageSource="ms-appx:///Leagueoflegends.Support/Images/wallpaper-maokai.jpg"/>
+                ImageSource="{StaticResource ATypeImageSource}"/>
 
               <units:RiotNewsButton Grid.Column="1"
                 Style="{StaticResource RiotNewsButtonStyle}"
                 Text="2024 Preseason Update ↗"
-                ImageSource="ms-appx:///Leagueoflegends.Support/Images/wallpaper-lux.jpg"/>
+                ImageSource="{StaticResource BTypeImageSource}"/>
 
               <units:RiotNewsButton Grid.Column="2"
                 Style="{StaticResource RiotNewsButtonStyle}"
                 Text="[Riot Store] Check out the new Jhin UNLOCKED Statue and more! ↗"
-                ImageSource="ms-appx:///Leagueoflegends.Support/Images/wallpaper-caitlyn.jpg"/>
+                ImageSource="{StaticResource CTypeImageSource}"/>
 
               <units:RiotNewsButton Grid.Column="3"
                 Style="{StaticResource RiotNewsButtonStyle}"
                 Text="Cosmic Sting Skarner: New Skin Spotlight"
-                ImageSource="ms-appx:///Leagueoflegends.Support/Images/wallpaper-thumb-1.png"/>
+                ImageSource="{StaticResource DTypeImageSource}"/>
 
               <units:RiotNewsButton Grid.Column="4"
                 Style="{StaticResource RiotNewsButtonStyle}"
                 Text="Dark Cosmic Lissandra: Ability Preview"
-                ImageSource="ms-appx:///Leagueoflegends.Support/Images/wallpaper-thumb-2.png"
+                ImageSource="{StaticResource ETypeImageSource}"
                 Margin="0, 0, 0, 0"/>
             </Grid>
           </Grid>

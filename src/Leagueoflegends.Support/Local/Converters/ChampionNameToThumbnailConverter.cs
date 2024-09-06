@@ -12,8 +12,6 @@ public class ChampionNameToThumbnailConverter : IValueConverter
         {
             return $"{BaseImagePath}{itemName}.png";
         }
-
-        // 아이템 이름이 없거나 null인 경우 기본 이미지 반환
         return $"{BaseImagePath}rocketbelt.png";
     }
 

@@ -3,6 +3,7 @@
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:cnvts="using:Leagueoflegends.Support.Local.Converters"
   xmlns:units="using:Leagueoflegends.Support.UI.Units">
+  
   <cnvts:ItemNameToImageConverter x:Key="ItemNameToImageConverter"/>
 
   <Style x:Key="ItemBorderStyle" TargetType="Border">

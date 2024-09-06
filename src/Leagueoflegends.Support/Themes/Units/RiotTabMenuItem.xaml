@@ -18,44 +18,44 @@
               <VisualStateGroup x:Name="CommonStates">
                 <VisualState x:Name="Normal">
                   <VisualState.Setters>
-                    <Setter Target="ContentPresenter.Foreground" Value="#99FABE0A" />
-                    <Setter Target="BorderElement.BorderBrush" Value="#6B6F73" />
-                    <Setter Target="BorderElement.BorderThickness" Value="0 0 0 1" />
+                    <Setter Target="ContentPresenter.Foreground" Value="#99FABE0A"/>
+                    <Setter Target="BorderElement.BorderBrush" Value="#6B6F73"/>
+                    <Setter Target="BorderElement.BorderThickness" Value="0 0 0 1"/>
                   </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="PointerOver">
                   <VisualState.Setters>
-                    <Setter Target="ContentPresenter.Foreground" Value="#F0E6D2" />
-                    <Setter Target="BorderElement.BorderBrush" Value="#6B6F73" />
-                    <Setter Target="BorderElement.BorderThickness" Value="0 0 0 1" />
+                    <Setter Target="ContentPresenter.Foreground" Value="#F0E6D2"/>
+                    <Setter Target="BorderElement.BorderBrush" Value="#6B6F73"/>
+                    <Setter Target="BorderElement.BorderThickness" Value="0 0 0 1"/>
                   </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="Pressed">
                   <VisualState.Setters>
-                    <Setter Target="ContentPresenter.Foreground" Value="#FABE0A" />
-                    <Setter Target="BorderElement.BorderBrush" Value="#6B6F73" />
-                    <Setter Target="BorderElement.BorderThickness" Value="0 0 0 1" />
+                    <Setter Target="ContentPresenter.Foreground" Value="#FABE0A"/>
+                    <Setter Target="BorderElement.BorderBrush" Value="#6B6F73"/>
+                    <Setter Target="BorderElement.BorderThickness" Value="0 0 0 1"/>
                   </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="Selected">
                   <VisualState.Setters>
-                    <Setter Target="ContentPresenter.Foreground" Value="#FFFFFF" />
-                    <Setter Target="BorderElement.BorderBrush" Value="#FABE0A" />
-                    <Setter Target="BorderElement.BorderThickness" Value="0 0 0 3" />
+                    <Setter Target="ContentPresenter.Foreground" Value="#FFFFFF"/>
+                    <Setter Target="BorderElement.BorderBrush" Value="#FABE0A"/>
+                    <Setter Target="BorderElement.BorderThickness" Value="0 0 0 3"/>
                   </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="SelectedUnfocused">
                   <VisualState.Setters>
-                    <Setter Target="ContentPresenter.Foreground" Value="#FFFFFF" />
-                    <Setter Target="BorderElement.BorderBrush" Value="#FABE0A" />
-                    <Setter Target="BorderElement.BorderThickness" Value="0 0 0 3" />
+                    <Setter Target="ContentPresenter.Foreground" Value="#FFFFFF"/>
+                    <Setter Target="BorderElement.BorderBrush" Value="#FABE0A"/>
+                    <Setter Target="BorderElement.BorderThickness" Value="0 0 0 3"/>
                   </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="PointerOverSelected">
                   <VisualState.Setters>
-                    <Setter Target="ContentPresenter.Foreground" Value="#FFFFFF" />
-                    <Setter Target="BorderElement.BorderBrush" Value="#FABE0A" />
-                    <Setter Target="BorderElement.BorderThickness" Value="0 0 0 3" />
+                    <Setter Target="ContentPresenter.Foreground" Value="#FFFFFF"/>
+                    <Setter Target="BorderElement.BorderBrush" Value="#FABE0A"/>
+                    <Setter Target="BorderElement.BorderThickness" Value="0 0 0 3"/>
                   </VisualState.Setters>
                 </VisualState>
               </VisualStateGroup>

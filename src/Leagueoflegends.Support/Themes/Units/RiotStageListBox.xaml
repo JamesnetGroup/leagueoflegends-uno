@@ -4,14 +4,18 @@
   xmlns:cnvts="using:Leagueoflegends.Support.Local.Converters"
   xmlns:units="using:Leagueoflegends.Support.UI.Units">
 
+  <Style x:Key="ScrollViewerStyle" TargetType="ScrollViewer">
+    <Setter Property="HorizontalScrollBarVisibility" Value="Auto"/>
+    <Setter Property="VerticalScrollBarVisibility" Value="Disabled"/>
+  </Style>
+
   <Style TargetType="units:RiotStageListBox">
     <Setter Property="Background" Value="Transparent"/>
     <Setter Property="Template">
       <Setter.Value>
         <ControlTemplate TargetType="units:RiotStageListBox">
           <Grid Background="{TemplateBinding Background}">
-            <ScrollViewer HorizontalScrollBarVisibility="Auto"
-                          VerticalScrollBarVisibility="Disabled">
+            <ScrollViewer Style="{StaticResource ScrollViewerStyle}">
               <ItemsPresenter/>
             </ScrollViewer>
           </Grid>

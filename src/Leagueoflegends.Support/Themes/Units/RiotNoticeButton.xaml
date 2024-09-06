@@ -3,7 +3,7 @@
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:units="using:Leagueoflegends.Support.UI.Units">
 
-  <x:String x:Key="NoticeGeometry">M10 3H14V14H10V3M10 21V17H14V21H10Z</x:String>
+  <x:String x:Key="NoticeIconData">M10 3H14V14H10V3M10 21V17H14V21H10Z</x:String>
   
   <LinearGradientBrush x:Key="InnerBackgroundBrush" EndPoint="0.5,1" StartPoint="0.5,0">
     <GradientStop Color="#19A0B2" Offset="0"/>
@@ -31,7 +31,7 @@
   </LinearGradientBrush>
 
   <Style x:Key="NoticePathStyle" TargetType="Path">
-    <Setter Property="Data" Value="{StaticResource NoticeGeometry}"/>
+    <Setter Property="Data" Value="{StaticResource NoticeIconData}"/>
     <Setter Property="Width" Value="16"/>
     <Setter Property="Height" Value="16"/>
     <Setter Property="Stretch" Value="Uniform"/>

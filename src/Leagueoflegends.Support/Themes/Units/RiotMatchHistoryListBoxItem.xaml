@@ -193,8 +193,8 @@
                 <StackPanel Style="{StaticResource DetailInfoStackPanelStyle}">
                   <TextBlock Text="{Binding MapType}" Style="{StaticResource BaseTextBlockStyle}"/>
                   <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="{Binding Duration}" Style="{StaticResource DurationTextBlockStyle}"/>
-                    <TextBlock Text="{Binding Date}" Style="{StaticResource DateTextBlockStyle}"/>
+                    <TextBlock Style="{StaticResource DurationTextBlockStyle}" Text="{Binding Duration}"/>
+                    <TextBlock Style="{StaticResource DateTextBlockStyle}" Text="{Binding Date}"/>
                   </StackPanel>
                 </StackPanel>
                 <units:RiotCircleButton IconData="Download"/>

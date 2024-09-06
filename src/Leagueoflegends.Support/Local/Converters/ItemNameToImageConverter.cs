@@ -42,11 +42,9 @@ public class ItemNameToImageConverter : IValueConverter
             {
                 return $"{BaseImagePath}{fileName}.png";
             }
-            // 매핑이 없는 경우 기본 이미지 반환
             return $"{BaseImagePath}rocketbelt.png";
         }
 
-        // 아이템 이름이 없거나 null인 경우 기본 이미지 반환
         return $"{BaseImagePath}rocketbelt.png";
     }
 

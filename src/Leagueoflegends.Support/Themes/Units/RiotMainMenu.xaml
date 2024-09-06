@@ -4,6 +4,8 @@
   xmlns:cnvts="using:Leagueoflegends.Support.Local.Converters"
   xmlns:units="using:Leagueoflegends.Support.UI.Units">
 
+  <x:String x:Key="MenuSelectionImageSource">ms-appx:///Leagueoflegends.Support/Images/menu-selection.png</x:String>
+  
   <LinearGradientBrush x:Key="CheckedBackground" EndPoint="0.5,1" StartPoint="0.5,0">
     <GradientStop Color="Transparent" Offset="0"/>
     <GradientStop Color="#008B6811" Offset="0.5"/>
@@ -14,7 +16,7 @@
   <Style x:Key="SelectImageStyle" TargetType="Image">
     <Setter Property="VerticalAlignment" Value="Top"/>
     <Setter Property="HorizontalAlignment" Value="Center"/>
-    <Setter Property="Source" Value="ms-appx:///Leagueoflegends.Support/Images/menu-selection.png"/>
+    <Setter Property="Source" Value="{StaticResource MenuSelectionImageSource}"/>
     <Setter Property="Visibility" Value="Collapsed"/>
     <Setter Property="Width" Value="28"/>
     <Setter Property="Height" Value="15"/>

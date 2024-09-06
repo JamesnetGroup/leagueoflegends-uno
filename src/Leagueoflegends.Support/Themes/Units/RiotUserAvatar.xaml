@@ -4,7 +4,7 @@
     xmlns:cnvts="using:Leagueoflegends.Support.Local.Converters"
     xmlns:units="using:Leagueoflegends.Support.UI.Units">
 
-  <x:String x:Key="IconLabelGeometry">M16.540789,9.5129013E-05 L16.540789,0.019199848 16.551642,0.0083463192 20.144328,4.9928575 16.551037,9.978035 16.54089,9.9678879 16.54089,9.9752855 3.6029096,9.9856553 3.6029112,9.9665513 3.5920568,9.9774055 0,4.9935226 3.5933933,0.0084471703 3.6035385,0.018592358 3.6035388,0.011195183 z</x:String>
+  <x:String x:Key="LabelIconData">M16.540789,9.5129013E-05 L16.540789,0.019199848 16.551642,0.0083463192 20.144328,4.9928575 16.551037,9.978035 16.54089,9.9678879 16.54089,9.9752855 3.6029096,9.9856553 3.6029112,9.9665513 3.5920568,9.9774055 0,4.9935226 3.5933933,0.0084471703 3.6035385,0.018592358 3.6035388,0.011195183 z</x:String>
   <x:String x:Key="DefaultProfileImageSource">ms-appx:///Leagueoflegends.Support/Images/profile-default.png</x:String>
   
   <LinearGradientBrush x:Key="ImageBorder" StartPoint="0.5, 0" EndPoint="0.5, 1">
@@ -33,7 +33,7 @@
   </LinearGradientBrush>
 
   <Style x:Key="IconLabelStyle" TargetType="Path">
-    <Setter Property="Data" Value="{StaticResource IconLabelGeometry}"/>
+    <Setter Property="Data" Value="{StaticResource LabelIconData}"/>
     <Setter Property="HorizontalAlignment" Value="Center"/>
     <Setter Property="VerticalAlignment" Value="Center"/>
     <Setter Property="Fill" Value="{StaticResource LabelGeometryFill}"/>

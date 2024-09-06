@@ -15,7 +15,7 @@ public class MatchResultToColorConverter : IValueConverter
                 case "defeat": return "#D31A45";
             }
         }
-        return new SolidColorBrush(Colors.Gray); // 기본 색상
+        return new SolidColorBrush(Colors.Gray); 
     }
 
     public object ConvertBack(object value, Type targetType, object parameter, string language)

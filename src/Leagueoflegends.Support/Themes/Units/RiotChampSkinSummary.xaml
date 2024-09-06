@@ -1,8 +1,15 @@
 ﻿<ResourceDictionary
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:units="using:Leagueoflegends.Support.UI.Units">
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:units="using:Leagueoflegends.Support.UI.Units">
 
+  <x:String x:Key="TranscendImageSource">ms-appx:///Leagueoflegends.Support/Images/skin_transcend.png</x:String>
+  <x:String x:Key="MythImageSource">ms-appx:///Leagueoflegends.Support/Images/skin_myth.png</x:String>
+  <x:String x:Key="LegendImageSource">ms-appx:///Leagueoflegends.Support/Images/skin_legend.png</x:String>
+  <x:String x:Key="EpicImageSource">ms-appx:///Leagueoflegends.Support/Images/skin_epic.png</x:String>
+  <x:String x:Key="LimitImageSource">ms-appx:///Leagueoflegends.Support/Images/skin_limit.png</x:String>
+  <x:String x:Key="ChromaImageSource">ms-appx:///Leagueoflegends.Support/Images/skin_chroma.png</x:String>
+  
   <LinearGradientBrush x:Key="LeftBorderBrush" StartPoint="0.5,0" EndPoint="0.5,1">
     <GradientStop Color="#775927" Offset="0.0" />
     <GradientStop Color="#463714" Offset="1.0" />
@@ -61,37 +68,37 @@
 
   <Style TargetType="units:RiotSkinTierButton" x:Key="TranscendentTierStyle">
     <Setter Property="Grid.Column" Value="0"/>
-    <Setter Property="ImageSource" Value="ms-appx:///Leagueoflegends.Support/Images/skin_transcend.png"/>
+    <Setter Property="ImageSource" Value="{StaticResource TranscendImageSource}"/>
     <Setter Property="ToolTipValue" Value="Transcendent Skin"/>
   </Style>
-
+  
   <Style TargetType="units:RiotSkinTierButton" x:Key="MythicTierStyle">
     <Setter Property="Grid.Column" Value="1"/>
-    <Setter Property="ImageSource" Value="ms-appx:///Leagueoflegends.Support/Images/skin_myth.png"/>
+    <Setter Property="ImageSource" Value="{StaticResource MythImageSource}"/>
     <Setter Property="ToolTipValue" Value="Mythic Skin"/>
   </Style>
 
   <Style TargetType="units:RiotSkinTierButton" x:Key="LegendaryTierStyle">
     <Setter Property="Grid.Column" Value="2"/>
-    <Setter Property="ImageSource" Value="ms-appx:///Leagueoflegends.Support/Images/skin_legend.png"/>
+    <Setter Property="ImageSource" Value="{StaticResource LegendImageSource}"/>
     <Setter Property="ToolTipValue" Value="Legendary Skin"/>
   </Style>
 
   <Style TargetType="units:RiotSkinTierButton" x:Key="EpicTierStyle">
     <Setter Property="Grid.Column" Value="3"/>
-    <Setter Property="ImageSource" Value="ms-appx:///Leagueoflegends.Support/Images/skin_epic.png"/>
+    <Setter Property="ImageSource" Value="{StaticResource EpicImageSource}"/>
     <Setter Property="ToolTipValue" Value="Legendary Skin"/>
   </Style>
 
   <Style TargetType="units:RiotSkinTierButton" x:Key="LimitedEditionStyle">
     <Setter Property="Grid.Column" Value="0"/>
-    <Setter Property="ImageSource" Value="ms-appx:///Leagueoflegends.Support/Images/skin_limit.png"/>
+    <Setter Property="ImageSource" Value="{StaticResource LimitImageSource}"/>
     <Setter Property="ToolTipValue" Value="Limited Time Skin"/>
   </Style>
 
   <Style TargetType="units:RiotSkinTierButton" x:Key="ChromaStyle">
     <Setter Property="Grid.Column" Value="1"/>
-    <Setter Property="ImageSource" Value="ms-appx:///Leagueoflegends.Support/Images/skin_chroma.png"/>
+    <Setter Property="ImageSource" Value="{StaticResource ChromaImageSource}"/>
     <Setter Property="ToolTipValue" Value="Chroma"/>
   </Style>
 

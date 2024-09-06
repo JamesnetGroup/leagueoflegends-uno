@@ -56,7 +56,11 @@
               <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Border x:Name="BorderBrush" Style="{StaticResource MainBorderStyle}">
-              <Image x:Name="Image" Style="{StaticResource ImageStyle}" Source="{TemplateBinding ImageSource}" Height="{TemplateBinding ImageHeight}"/>
+              <Image
+                x:Name="Image"
+                Style="{StaticResource ImageStyle}"
+                Source="{TemplateBinding ImageSource}"
+                Height="{TemplateBinding ImageHeight}"/>
             </Border>
             <TextBlock Style="{StaticResource TextStyle}" Text="{TemplateBinding Text}"/>
           </Grid>

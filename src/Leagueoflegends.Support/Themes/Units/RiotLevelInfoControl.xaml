@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:units="using:Leagueoflegends.Support.UI.Units">
 
   <Style x:Key="DescriptionBorderStyle" TargetType="Border">
@@ -37,12 +37,12 @@
         <ControlTemplate TargetType="units:RiotLevelInfoControl">
           <Border Style="{StaticResource DescriptionBorderStyle}">
             <StackPanel>
-              <TextBlock Text="{TemplateBinding Title}" Style="{StaticResource TitleTextBlockStyle}"/>
+              <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="{TemplateBinding Title}" />
               <TextBlock Style="{StaticResource LevelTextBlockStyle}">
                   <Run Text="{TemplateBinding Level}"/>
                   <Run Text="Level"/>
               </TextBlock>
-              <TextBlock Text="{TemplateBinding Description}" Style="{StaticResource DescriptionTextBlockStyle}"/>
+              <TextBlock Style="{StaticResource DescriptionTextBlockStyle}" Text="{TemplateBinding Description}"/>
             </StackPanel>
           </Border>
         </ControlTemplate>

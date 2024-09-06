@@ -3,6 +3,8 @@
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:units="using:Leagueoflegends.Support.UI.Units">
 
+  <x:String x:Key="LevelPolygonData">0,9 9.5,0 28.5,0 38,9 28.5,18 9.5,18 0,9</x:String>
+  
   <LinearGradientBrush x:Key="ImageBorderBrush" StartPoint="0.5,0" EndPoint="0.5,1">
     <GradientStop Color="#88D9838F" Offset="0"/>
     <GradientStop Color="#88BE5F71" Offset="0.5"/>
@@ -160,8 +162,8 @@
               <Border Style="{StaticResource SeparatorStyle}"/>
 
               <Grid Style="{StaticResource LevelGridStyle}">
-                <Polygon x:Name="LevelBorder" Style="{StaticResource LevelBorderStyle}" Points="0,9 9.5,0 28.5,0 38,9 28.5,18 9.5,18 0,9"/>
-                <Polygon x:Name="LevelInnerBorder" Style="{StaticResource LevelInnerBorderStyle}" Points="0,9 9.5,0 28.5,0 38,9 28.5,18 9.5,18 0,9"/>
+                <Polygon x:Name="LevelBorder" Style="{StaticResource LevelBorderStyle}" Points="{StaticResource LevelPolygonData}"/>
+                <Polygon x:Name="LevelInnerBorder" Style="{StaticResource LevelInnerBorderStyle}" Points="{StaticResource LevelPolygonData}"/>
                 <TextBlock Style="{StaticResource LevelTextStyle}" Text="{Binding Level}"/>
               </Grid>
             </Grid>

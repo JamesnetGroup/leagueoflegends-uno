@@ -3,6 +3,8 @@
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:units="using:Leagueoflegends.Support.UI.Units">
 
+  <x:String x:Key="StarImageSource">ms-appx:///Leagueoflegends.Support/Images/Pieces/star-piece.png</x:String>
+  
   <Style x:Key="StarButtonBackgroundStyle" TargetType="Border">
     <Setter Property="Height" Value="22"/>
     <Setter Property="Background" Value="#AA000000"/>
@@ -12,7 +14,7 @@
 
   <Style x:Key="StarImageStyle" TargetType="Image">
     <Setter Property="VerticalAlignment" Value="Center"/>
-    <Setter Property="Source" Value="ms-appx:///Leagueoflegends.Support/Images/Pieces/star-piece.png"/>
+    <Setter Property="Source" Value="{StaticResource StarImageSource}"/>
     <Setter Property="Width" Value="10"/>
     <Setter Property="Margin" Value="10 0 0 1"/>
     <Setter Property="RenderTransform">

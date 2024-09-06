@@ -4,6 +4,9 @@
   xmlns:cnvts="using:Leagueoflegends.Support.Local.Converters"
   xmlns:units="using:Leagueoflegends.Support.UI.Units">
 
+  <x:String x:Key="ArrowIconData">M 0,0 L 103,0 L 118,14 L 103,28 L 0,28 C 10,14 0,0 0,0 Z</x:String>
+  <x:String x:Key="LogoImageSource">ms-appx:///Leagueoflegends.Support/Images/logo.png</x:String>
+  
   <cnvts:BoolToPlayStopConverter x:Key="BoolToPlayStopConverter"/>
 
   <LinearGradientBrush x:Key="ArrowStroke" StartPoint="0.5,0" EndPoint="0.5,1">
@@ -39,7 +42,7 @@
 
   <Style x:Key="Emblem" TargetType="Image">
     <Setter Property="HorizontalAlignment" Value="Left"/>
-    <Setter Property="Source" Value="ms-appx:///Leagueoflegends.Support/Images/logo.png"/>
+    <Setter Property="Source" Value="{StaticResource LogoImageSource}"/>
     <Setter Property="Height" Value="38"/>
   </Style>
 
@@ -47,7 +50,7 @@
     <Setter Property="Fill" Value="#1E2328"/>
     <Setter Property="Stroke" Value="{StaticResource ArrowStroke}"/>
     <Setter Property="StrokeThickness" Value="2"/>
-    <Setter Property="Data" Value="M 0,0 L 103,0 L 118,14 L 103,28 L 0,28 C 10,14 0,0 0,0 Z"/>
+    <Setter Property="Data" Value="{StaticResource ArrowIconData}"/>
     <Setter Property="Margin" Value="40,5,4,-5"/>
   </Style>
 

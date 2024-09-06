@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:units="using:Leagueoflegends.Support.UI.Units">
 
-  <x:String x:Key="ScrollBarThumbColor">#CDBE91</x:String>
+  <x:String x:Key="ScrollBarThumbBrush">#CDBE91</x:String>
 
   <Style x:Key="ScrollContentPresenterStyle" TargetType="ScrollContentPresenter">
     <Setter Property="Grid.RowSpan" Value="2"/>
@@ -11,7 +11,7 @@
   </Style>
 
   <Style x:Key="ScrollBarThumbStyle" TargetType="Thumb">
-    <Setter Property="Background" Value="{StaticResource ScrollBarThumbColor}"/>
+    <Setter Property="Background" Value="{StaticResource ScrollBarThumbBrush}"/>
   </Style>
 
   <Style x:Key="ScrollBarBorderStyle" TargetType="Border">
@@ -42,11 +42,13 @@
   </ControlTemplate>
 
   <Style x:Key="VerticalScrollBarStyle" TargetType="ScrollBar">
+    <Setter Property="Grid.Column" Value="1"/>
     <Setter Property="Orientation" Value="Vertical"/>
     <Setter Property="Template" Value="{StaticResource ScrollBarTemplate}"/>
   </Style>
 
   <Style x:Key="HorizontalScrollBarStyle" TargetType="ScrollBar">
+    <Setter Property="Grid.Row" Value="1"/>
     <Setter Property="Orientation" Value="Horizontal"/>
     <Setter Property="Template" Value="{StaticResource ScrollBarTemplate}"/>
   </Style>
@@ -80,7 +82,6 @@
                 Margin="{TemplateBinding Padding}" />
               <ScrollBar
                 x:Name="VerticalScrollBar"
-                Grid.Column="1"
                 Style="{StaticResource VerticalScrollBarStyle}"
                 Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"
                 Value="{TemplateBinding VerticalOffset}"
@@ -88,7 +89,6 @@
                 Maximum="{TemplateBinding ScrollableHeight}"/>
               <ScrollBar
                 x:Name="HorizontalScrollBar"
-                Grid.Row="1"
                 Style="{StaticResource HorizontalScrollBarStyle}"
                 Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"
                 Value="{TemplateBinding HorizontalOffset}"

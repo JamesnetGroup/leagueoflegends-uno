@@ -3,23 +3,23 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:units="using:Leagueoflegends.Support.UI.Units">
 
-  <x:String x:Key="EmptyDiamondPathData">M12 2C11.5 2 11 2.19 10.59 2.59L2.59 10.59C1.8 11.37 1.8 12.63 2.59 13.41L10.59 21.41C11.37 22.2 12.63 22.2 13.41 21.41L21.41 13.41C22.2 12.63 22.2 11.37 21.41 10.59L13.41 2.59C13 2.19 12.5 2 12 2M12 4L20 12L12 20L4 12Z</x:String>
-  <x:String x:Key="FilledDiamondPathData">M12 2C11.5 2 11 2.19 10.59 2.59L2.59 10.59C1.8 11.37 1.8 12.63 2.59 13.41L10.59 21.41C11.37 22.2 12.63 22.2 13.41 21.41L21.41 13.41C22.2 12.63 22.2 11.37 21.41 10.59L13.41 2.59C13 2.19 12.5 2 12 2Z</x:String>
+  <x:String x:Key="EmptyDiamondIconData">M12 2C11.5 2 11 2.19 10.59 2.59L2.59 10.59C1.8 11.37 1.8 12.63 2.59 13.41L10.59 21.41C11.37 22.2 12.63 22.2 13.41 21.41L21.41 13.41C22.2 12.63 22.2 11.37 21.41 10.59L13.41 2.59C13 2.19 12.5 2 12 2M12 4L20 12L12 20L4 12Z</x:String>
+  <x:String x:Key="FilledDiamondIconData">M12 2C11.5 2 11 2.19 10.59 2.59L2.59 10.59C1.8 11.37 1.8 12.63 2.59 13.41L10.59 21.41C11.37 22.2 12.63 22.2 13.41 21.41L21.41 13.41C22.2 12.63 22.2 11.37 21.41 10.59L13.41 2.59C13 2.19 12.5 2 12 2Z</x:String>
 
-  <SolidColorBrush x:Key="DefaultForegroundColor" Color="#CDBE91"/>
-  <SolidColorBrush x:Key="HoverForegroundColor" Color="#F0E6D2"/>
-  <SolidColorBrush x:Key="DefaultIconFillColor" Color="#BC7F49"/>
-  <SolidColorBrush x:Key="DisabledIconFillColor" Color="#4D4D4D"/>
-  <SolidColorBrush x:Key="HoverBackgroundColor" Color="#228B6811"/>
+  <SolidColorBrush x:Key="DefaultForegroundBrush" Color="#CDBE91"/>
+  <SolidColorBrush x:Key="HoverForegroundBrush" Color="#F0E6D2"/>
+  <SolidColorBrush x:Key="DefaultIconFillBrush" Color="#BC7F49"/>
+  <SolidColorBrush x:Key="DisabledIconFillBrush" Color="#4D4D4D"/>
+  <SolidColorBrush x:Key="HoverBackgroundBrush" Color="#228B6811"/>
 
   <Style x:Key="IconPathStyle" TargetType="Path">
     <Setter Property="Width" Value="14"/>
     <Setter Property="Height" Value="14"/>
-    <Setter Property="Fill" Value="{StaticResource DefaultIconFillColor}"/>
+    <Setter Property="Fill" Value="{StaticResource DefaultIconFillBrush}"/>
     <Setter Property="HorizontalAlignment" Value="Center"/>
     <Setter Property="VerticalAlignment" Value="Center"/>
     <Setter Property="Stretch" Value="Uniform"/>
-    <Setter Property="Data" Value="{StaticResource EmptyDiamondPathData}"/>
+    <Setter Property="Data" Value="{StaticResource EmptyDiamondIconData}"/>
   </Style>
 
   <Style x:Key="ContentTextBlockStyle" TargetType="TextBlock">
@@ -29,7 +29,7 @@
   </Style>
 
   <Style TargetType="units:RiotRadioButton">
-    <Setter Property="Foreground" Value="{StaticResource DefaultForegroundColor}"/>
+    <Setter Property="Foreground" Value="{StaticResource DefaultForegroundBrush}"/>
     <Setter Property="Background" Value="Transparent"/>
     <Setter Property="BorderBrush" Value="Transparent"/>
     <Setter Property="Padding" Value="0 4 6 4"/>
@@ -45,30 +45,30 @@
                 <VisualState x:Name="Normal"/>
                 <VisualState x:Name="PointerOver">
                   <VisualState.Setters>
-                    <Setter Target="IconPath.Fill" Value="{StaticResource HoverForegroundColor}"/>
-                    <Setter Target="ContentTextBlock.Foreground" Value="{StaticResource HoverForegroundColor}"/>
-                    <Setter Target="RootGrid.Background" Value="{StaticResource HoverBackgroundColor}"/>
+                    <Setter Target="IconPath.Fill" Value="{StaticResource HoverForegroundBrush}"/>
+                    <Setter Target="ContentTextBlock.Foreground" Value="{StaticResource HoverForegroundBrush}"/>
+                    <Setter Target="RootGrid.Background" Value="{StaticResource HoverBackgroundBrush}"/>
                   </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="Pressed">
                   <VisualState.Setters>
-                    <Setter Target="IconPath.Fill" Value="{StaticResource HoverForegroundColor}"/>
-                    <Setter Target="ContentTextBlock.Foreground" Value="{StaticResource HoverForegroundColor}"/>
+                    <Setter Target="IconPath.Fill" Value="{StaticResource HoverForegroundBrush}"/>
+                    <Setter Target="ContentTextBlock.Foreground" Value="{StaticResource HoverForegroundBrush}"/>
                   </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="Disabled">
                   <VisualState.Setters>
-                    <Setter Target="IconPath.Fill" Value="{ThemeResource DisabledIconFillColor}"/>
-                    <Setter Target="ContentTextBlock.Foreground" Value="{ThemeResource DisabledIconFillColor}"/>
+                    <Setter Target="IconPath.Fill" Value="{ThemeResource DisabledIconFillBrush}"/>
+                    <Setter Target="ContentTextBlock.Foreground" Value="{ThemeResource DisabledIconFillBrush}"/>
                   </VisualState.Setters>
                 </VisualState>
               </VisualStateGroup>
               <VisualStateGroup x:Name="CheckStates">
                 <VisualState x:Name="Checked">
                   <VisualState.Setters>
-                    <Setter Target="IconPath.Data" Value="{StaticResource FilledDiamondPathData}"/>
-                    <Setter Target="IconPath.Fill" Value="{StaticResource HoverForegroundColor}"/>
-                    <Setter Target="ContentTextBlock.Foreground" Value="{StaticResource HoverForegroundColor}"/>
+                    <Setter Target="IconPath.Data" Value="{StaticResource FilledDiamondIconData}"/>
+                    <Setter Target="IconPath.Fill" Value="{StaticResource HoverForegroundBrush}"/>
+                    <Setter Target="ContentTextBlock.Foreground" Value="{StaticResource HoverForegroundBrush}"/>
                   </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="Unchecked"/>

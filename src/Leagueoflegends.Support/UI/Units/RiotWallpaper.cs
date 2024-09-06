@@ -2,11 +2,7 @@ namespace Leagueoflegends.Support.UI.Units;
 
 public class RiotWallpaper : Control
 {
-    public static readonly DependencyProperty MenuNameProperty = DependencyProperty.Register(
-        "MenuName",
-        typeof(string),
-        typeof(RiotWallpaper),
-        new PropertyMetadata(null, OnMenuNameChanged));
+    public static readonly DependencyProperty MenuNameProperty = DependencyProperty.Register("MenuName", typeof(string), typeof(RiotWallpaper), new PropertyMetadata(null, OnMenuNameChanged));
 
     public string MenuName
     {
@@ -31,11 +27,11 @@ public class RiotWallpaper : Control
     {
         switch (MenuName)
         {
-            case "COLLECTION": VisualStateManager.GoToState(this, "DarknessState", false); break;
-            case "SHOP": VisualStateManager.GoToState(this, "DarknessState", false); break;
-            case "PROFILE": VisualStateManager.GoToState(this, "DarknessState", false); break;
-            case "CLASH": VisualStateManager.GoToState(this, "Darkness2State", false); break;
-            case "TFT": VisualStateManager.GoToState(this, "Darkness3State", false); break;
+            case "COLLECTION": VisualStateManager.GoToState(this, "ExpandedSidebarState", false); break;
+            case "SHOP": VisualStateManager.GoToState(this, "ExpandedSidebarState", false); break;
+            case "PROFILE": VisualStateManager.GoToState(this, "ExpandedSidebarState", false); break;
+            case "CLASH": VisualStateManager.GoToState(this, "MediumSidebarState", false); break;
+            case "TFT": VisualStateManager.GoToState(this, "NarrowSidebarState", false); break;
             default: VisualStateManager.GoToState(this, "DefaultState", false); break;
         }
     }
