@@ -40,6 +40,7 @@
     <None Remove="Datas\Schedules.yml" />
     <None Remove="Datas\Skins.yml" />
     <None Remove="Datas\Spells.yml" />
+    <None Remove="Datas\StoreChamps.yml" />
     <None Remove="Datas\SubMenus.yml" />
     <None Remove="Datas\TeamFights.yml" />
     <None Remove="Images\blue-essence.png" />
@@ -52,6 +53,8 @@
     <None Remove="Images\Concepts\wizard.PNG" />
     <None Remove="Images\Items\berserkersgreaves.png" />
     <None Remove="Images\Items\voidstaff.png" />
+    <None Remove="Images\Pieces\blue-essence.png" />
+    <None Remove="Images\Pieces\rp.png" />
     <None Remove="Images\Pieces\star-piece.png" />
     <None Remove="Images\portrait_aatrox.jpg" />
     <None Remove="Images\portrait_ahri.jpg" />
@@ -1521,6 +1524,98 @@
     <None Remove="Images\spell_mark.png" />
     <None Remove="Images\spell_smite.png" />
     <None Remove="Images\spell_teleport.png" />
+    <None Remove="Images\Stores\Ahri - Copy.png" />
+    <None Remove="Images\Stores\Akshan - Copy.png" />
+    <None Remove="Images\Stores\Amumu - Copy.png" />
+    <None Remove="Images\Stores\Anivia - Copy.png" />
+    <None Remove="Images\Stores\Annie - Copy.png" />
+    <None Remove="Images\Stores\Ashe - Copy.png" />
+    <None Remove="Images\Stores\AurelionSol - Copy.png" />
+    <None Remove="Images\Stores\Blitzcrank - Copy.png" />
+    <None Remove="Images\Stores\Brand - Copy.png" />
+    <None Remove="Images\Stores\champ_aphelios.png" />
+    <None Remove="Images\Stores\champ_Azir.png" />
+    <None Remove="Images\Stores\champ_bard.png" />
+    <None Remove="Images\Stores\champ_galio.png" />
+    <None Remove="Images\Stores\champ_gnar.png" />
+    <None Remove="Images\Stores\champ_Irelia.png" />
+    <None Remove="Images\Stores\champ_Jinx.png" />
+    <None Remove="Images\Stores\champ_lucian.png" />
+    <None Remove="Images\Stores\champ_lux.png" />
+    <None Remove="Images\Stores\champ_malphite.png" />
+    <None Remove="Images\Stores\champ_missfortune.png" />
+    <None Remove="Images\Stores\champ_neeko.png" />
+    <None Remove="Images\Stores\champ_nidalee.png" />
+    <None Remove="Images\Stores\champ_seraphine.png" />
+    <None Remove="Images\Stores\champ_syndra.png" />
+    <None Remove="Images\Stores\champ_twistedfate.png" />
+    <None Remove="Images\Stores\champ_varus.png" />
+    <None Remove="Images\Stores\champ_XinZhao.png" />
+    <None Remove="Images\Stores\champ_yasuo.png" />
+    <None Remove="Images\Stores\champ_yone.png" />
+    <None Remove="Images\Stores\champ_zed.png" />
+    <None Remove="Images\Stores\Chogath - Copy.png" />
+    <None Remove="Images\Stores\Corki - Copy.png" />
+    <None Remove="Images\Stores\DrMundo - Copy.png" />
+    <None Remove="Images\Stores\Ezreal - Copy.png" />
+    <None Remove="Images\Stores\FiddleSticks - Copy.png" />
+    <None Remove="Images\Stores\Fiora - Copy.png" />
+    <None Remove="Images\Stores\Gangplank - Copy.png" />
+    <None Remove="Images\Stores\Garen - Copy.png" />
+    <None Remove="Images\Stores\Gwen - Copy.png" />
+    <None Remove="Images\Stores\Heimerdinger - Copy.png" />
+    <None Remove="Images\Stores\JarvanIV - Copy.png" />
+    <None Remove="Images\Stores\Jhin - Copy.png" />
+    <None Remove="Images\Stores\Kaisa - Copy.png" />
+    <None Remove="Images\Stores\Karma - Copy.png" />
+    <None Remove="Images\Stores\Kassadin - Copy.png" />
+    <None Remove="Images\Stores\Katarina - Copy.png" />
+    <None Remove="Images\Stores\Kayle - Copy.png" />
+    <None Remove="Images\Stores\Leblanc - Copy.png" />
+    <None Remove="Images\Stores\Leona - Copy.png" />
+    <None Remove="Images\Stores\Lillia - Copy.png" />
+    <None Remove="Images\Stores\Lulu - Copy.png" />
+    <None Remove="Images\Stores\Malzahar - Copy.png" />
+    <None Remove="Images\Stores\MasterYi - Copy.png" />
+    <None Remove="Images\Stores\MonkeyKing - Copy.png" />
+    <None Remove="Images\Stores\Nami - Copy.png" />
+    <None Remove="Images\Stores\Nasus - Copy.png" />
+    <None Remove="Images\Stores\Nunu - Copy.png" />
+    <None Remove="Images\Stores\Olaf - Copy.png" />
+    <None Remove="Images\Stores\Poppy - Copy.png" />
+    <None Remove="Images\Stores\Pyke - Copy.png" />
+    <None Remove="Images\Stores\Quinn - Copy.png" />
+    <None Remove="Images\Stores\Rammus - Copy.png" />
+    <None Remove="Images\Stores\Rell - Copy.png" />
+    <None Remove="Images\Stores\Renekton - Copy.png" />
+    <None Remove="Images\Stores\Rengar - Copy.png" />
+    <None Remove="Images\Stores\Rumble - Copy.png" />
+    <None Remove="Images\Stores\Ryze - Copy.png" />
+    <None Remove="Images\Stores\Samira - Copy.png" />
+    <None Remove="Images\Stores\Sejuani - Copy.png" />
+    <None Remove="Images\Stores\Senna - Copy.png" />
+    <None Remove="Images\Stores\Shyvana - Copy.png" />
+    <None Remove="Images\Stores\Sivir - Copy.png" />
+    <None Remove="Images\Stores\Skarner - Copy.png" />
+    <None Remove="Images\Stores\Soraka - Copy.png" />
+    <None Remove="Images\Stores\Talon - Copy.png" />
+    <None Remove="Images\Stores\Taric - Copy.png" />
+    <None Remove="Images\Stores\Teemo - Copy.png" />
+    <None Remove="Images\Stores\Thresh - Copy.png" />
+    <None Remove="Images\Stores\Tryndamere - Copy.png" />
+    <None Remove="Images\Stores\Twitch - Copy.png" />
+    <None Remove="Images\Stores\Vayne - Copy.png" />
+    <None Remove="Images\Stores\Velkoz - Copy.png" />
+    <None Remove="Images\Stores\Vi - Copy.png" />
+    <None Remove="Images\Stores\Viego - Copy.png" />
+    <None Remove="Images\Stores\Vladimir - Copy.png" />
+    <None Remove="Images\Stores\Volibear - Copy.png" />
+    <None Remove="Images\Stores\Xerath - Copy.png" />
+    <None Remove="Images\Stores\Yuumi - Copy.png" />
+    <None Remove="Images\Stores\Ziggs - Copy.png" />
+    <None Remove="Images\Stores\Zilean - Copy.png" />
+    <None Remove="Images\Stores\Zoe - Copy.png" />
+    <None Remove="Images\Stores\Zyra - Copy.png" />
     <None Remove="Images\thumb-1.png" />
     <None Remove="Images\thumb-10.png" />
     <None Remove="Images\thumb-11.png" />
@@ -1602,7 +1697,7 @@
     <None Remove="Themes\Units\RiotChampSkinSummary.xaml" />
     <None Remove="Themes\Units\RiotChampSummary.xaml" />
     <None Remove="Themes\Units\RiotCheckBox.xaml" />
-    <None Remove="Themes\Units\RiotCircleIconButton.xaml" />
+    <None Remove="Themes\Units\RiotCircleButton.xaml" />
     <None Remove="Themes\Units\RiotClashEmblem.xaml" />
     <None Remove="Themes\Units\RiotClashTierButton.xaml" />
     <None Remove="Themes\Units\RiotComboBox.xaml" />
@@ -1643,6 +1738,8 @@
     <None Remove="Themes\Units\RiotStageListBoxItem.xaml" />
     <None Remove="Themes\Units\RiotStarButton.xaml" />
     <None Remove="Themes\Units\RiotStatusIndicator.xaml" />
+    <None Remove="Themes\Units\RiotStoreChampListBox.xaml" />
+    <None Remove="Themes\Units\RiotStoreChampListBoxItem.xaml" />
     <None Remove="Themes\Units\RiotStoreChampSummary.xaml" />
     <None Remove="Themes\Units\RiotSwitchButton.xaml" />
     <None Remove="Themes\Units\RiotTabMenu.xaml" />
@@ -1690,6 +1787,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Datas\StoreChamps.yml" />
     <EmbeddedResource Include="Datas\FilterSortOptions.yml" />
     <EmbeddedResource Include="Datas\TeamFights.yml" />
     <EmbeddedResource Include="Datas\Schedules.yml" />
@@ -1754,7 +1852,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\Units\RiotCircleIconButton.xaml">
+    <Page Include="Themes\Units\RiotCircleButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1914,6 +2012,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Units\RiotStoreChampListBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotStoreChampListBoxItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Units\RiotStoreChampSummary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -2004,6 +2110,8 @@
     <Content Include="Images\Concepts\tanker.png" />
     <Content Include="Images\Concepts\warrior.png" />
     <Content Include="Images\Concepts\wizard.png" />
+    <Content Include="Images\Pieces\blue-essence.png" />
+    <Content Include="Images\Pieces\rp.png" />
     <Content Include="Images\Pieces\star-piece.png" />
     <Content Include="Images\Positions\bottom.png" />
     <Content Include="Images\Positions\jungle.png" />
@@ -2012,6 +2120,27 @@
     <Content Include="Images\Positions\top.png" />
     <Content Include="Images\profile-default.png" />
     <Content Include="Images\rp.png" />
+    <Content Include="Images\Stores\champ_aphelios.png" />
+    <Content Include="Images\Stores\champ_azir.png" />
+    <Content Include="Images\Stores\champ_bard.png" />
+    <Content Include="Images\Stores\champ_galio.png" />
+    <Content Include="Images\Stores\champ_gnar.png" />
+    <Content Include="Images\Stores\champ_irelia.png" />
+    <Content Include="Images\Stores\champ_Jinx.png" />
+    <Content Include="Images\Stores\champ_lucian.png" />
+    <Content Include="Images\Stores\champ_lux.png" />
+    <Content Include="Images\Stores\champ_malphite.png" />
+    <Content Include="Images\Stores\champ_missfortune.png" />
+    <Content Include="Images\Stores\champ_neeko.png" />
+    <Content Include="Images\Stores\champ_nidalee.png" />
+    <Content Include="Images\Stores\champ_seraphine.png" />
+    <Content Include="Images\Stores\champ_syndra.png" />
+    <Content Include="Images\Stores\champ_twistedfate.png" />
+    <Content Include="Images\Stores\champ_varus.png" />
+    <Content Include="Images\Stores\champ_xinzhao.png" />
+    <Content Include="Images\Stores\champ_yasuo.png" />
+    <Content Include="Images\Stores\champ_yone.png" />
+    <Content Include="Images\Stores\champ_zed.png" />
     <Content Include="Images\wallpaper-ezreal.jpg" />
     <Content Include="Images\wallpaper-kindred.jpg" />
     <Content Include="Images\wallpaper-leesin.png" />
@@ -2170,10 +2299,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Themes\Units\RiotCircleIconButton.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Units\RiotChampionAvatar.xaml" />
   </ItemGroup>
 
@@ -2287,5 +2412,17 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Units\RiotRadioButton.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotStoreChampListBoxItem.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotStoreChampListBox.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotCircleButton.xaml" />
   </ItemGroup>
 </Project>

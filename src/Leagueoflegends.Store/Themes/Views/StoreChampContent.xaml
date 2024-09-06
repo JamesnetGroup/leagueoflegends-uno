@@ -1,0 +1,35 @@
+﻿<ResourceDictionary
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:units="using:Leagueoflegends.Support.UI.Units"
+  xmlns:views="using:Leagueoflegends.Store.UI.Views">
+
+  <Style TargetType="views:StoreChampContent">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="views:StoreChampContent">
+          <Grid>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+              <units:RiotStoreChampSummary Margin="20 60 0 0"/>
+
+            <Grid Grid.Column="1">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+              </Grid.RowDefinitions>
+              <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="30">
+                <units:RiotButton Content="PURCHASE RP" Width="100"/>
+                <units:RiotCircleButton IconData="Gift" Margin="20 0 0 0"/>
+                <units:RiotCircleButton IconData="User" Margin="20 0 0 0"/>
+              </StackPanel>
+              <units:RiotStoreChampListBox Grid.Row="1" ItemsSource="{Binding Champions}" Margin="20 0 20 0"/>
+            </Grid>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+</ResourceDictionary>

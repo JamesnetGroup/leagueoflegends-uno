@@ -40,7 +40,6 @@
               <StackPanel Orientation="Horizontal" Grid.Column="4">
                 <based:RiotMainIconMenu Command="{Binding SelectMenuCommand}" GroupName="MainMenu" CommandParameter="PROFILE" MenuIcon="Profile"/>
                 <based:RiotMainIconMenu Command="{Binding SelectMenuCommand}" GroupName="MainMenu" CommandParameter="COLLECTION" MenuIcon="Collection"/>
-                <based:RiotMainIconMenu Command="{Binding SelectMenuCommand}" GroupName="MainMenu" CommandParameter="LOOT" MenuIcon="Loot"/>
                 <based:RiotMainIconMenu Command="{Binding SelectMenuCommand}" GroupName="MainMenu" CommandParameter="SHOP" MenuIcon="Shop"/>
                 <based:RiotMainIconMenu Command="{Binding SelectMenuCommand}" GroupName="MainMenu" CommandParameter="STORE" MenuIcon="Store"/>
               </StackPanel>

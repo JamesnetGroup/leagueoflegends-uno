@@ -197,7 +197,7 @@
                     <TextBlock Text="{Binding Date}" Style="{StaticResource DateTextBlockStyle}"/>
                   </StackPanel>
                 </StackPanel>
-                <units:RiotCircleIconButton/>
+                <units:RiotCircleButton IconData="Download"/>
               </StackPanel>
             </Border>
             <Border x:Name="LeftBorder" Style="{StaticResource LeftBorderStyle}"/>

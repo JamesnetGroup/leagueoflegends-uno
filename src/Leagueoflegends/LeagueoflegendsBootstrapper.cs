@@ -26,6 +26,7 @@ using Leagueoflegends.Clash.Local.ViewModels;
 using Leagueoflegends.Clash.Local.Datas;
 using Leagueoflegends.Tft.Local.Datas;
 using Leagueoflegends.Store.UI.Views;
+using Leagueoflegends.Store.Local.Datas;
 namespace Leagueoflegends;
 
 public class LeagueOfLegendsBootstrapper : AppBootstrapper
@@ -43,7 +44,7 @@ public class LeagueOfLegendsBootstrapper : AppBootstrapper
         ViewModelMapper.Register<TftContent, TftContentViewModel>();
         ViewModelMapper.Register<HistoryContent, HistoryContentViewModel>();
         ViewModelMapper.Register<HubContent, HubContentViewModel>();
-        ViewModelMapper.Register<StoreChampionsContent, StoreChampionsContentViewModel>();
+        ViewModelMapper.Register<StoreChampContent, StoreChampContentViewModel>();
     }
 
     protected override void RegisterDependencies()
@@ -61,6 +62,7 @@ public class LeagueOfLegendsBootstrapper : AppBootstrapper
         Container.RegisterSingleton<IRecentDataLoader, RecentDataLoader>();
         Container.RegisterSingleton<IScheduleDataLoader, ScheduleDataLoader>();
         Container.RegisterSingleton<ITeamFightsDataLoader, TeamFightsDataLoader>();
+        Container.RegisterSingleton<IStoreChampDataLoader, StoreChampDataLoader>();
 
         Container.RegisterSingleton<IView, MainContent>();
         Container.RegisterSingleton<IView, SubMenuContent>();
@@ -74,7 +76,7 @@ public class LeagueOfLegendsBootstrapper : AppBootstrapper
         Container.RegisterSingleton<IView, SkinsContent>("CollectionSkinsContent");
         Container.RegisterSingleton<IView, SpellsContent>("CollectionSpellsContent");
         Container.RegisterSingleton<IView, HistoryContent>("ProfileMatchHistoryContent");
-        Container.RegisterSingleton<IView, StoreChampionsContent>("StoreChampionsContent");
+        Container.RegisterSingleton<IView, StoreChampContent>("StoreChampionsContent");
 
         IView mainContent = Container.Resolve<MainContent>();
         IView subNavContent = Container.Resolve<SubMenuContent>();
