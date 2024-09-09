@@ -11,13 +11,14 @@ public class LayerManager : ILayerManager
 
     public void Register(string layerName, ILayer layer)
     {
+        Console.WriteLine($"LayerManager.Register called with layerName: {layerName}");
+
         if (!_layers.ContainsKey(layerName))
         {
             _layers[layerName] = layer;
             _layerViews[layerName] = new List<IView>();
             if (_layerViewMappings.TryGetValue(layerName, out var view))
             {
-                Add(layerName, view);
                 Show(layerName, view);
             }
         }

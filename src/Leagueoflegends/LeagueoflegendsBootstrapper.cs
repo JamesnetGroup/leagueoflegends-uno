@@ -67,6 +67,7 @@ public class LeagueOfLegendsBootstrapper : AppBootstrapper
 
         Container.RegisterSingleton<IView, MainContent>();
         Container.RegisterSingleton<IView, SubMenuContent>();
+        Container.RegisterSingleton<IView, OptionMenuContent>();
         Container.RegisterSingleton<IView, SocialContent>();
 
         Container.RegisterSingleton<IView, OptionContent>("OptionContent");
@@ -81,11 +82,13 @@ public class LeagueOfLegendsBootstrapper : AppBootstrapper
         Container.RegisterSingleton<IView, StoreChampContent>("StoreChampionsContent");
 
         IView mainContent = Container.Resolve<MainContent>();
-        IView subNavContent = Container.Resolve<SubMenuContent>();
+        IView subMenuContent = Container.Resolve<SubMenuContent>();
+        IView optionMenuContent = Container.Resolve<OptionMenuContent>();
         IView socialContent = Container.Resolve<SocialContent>();
 
         Layer.Mapping("MainLayer", mainContent);
-        Layer.Mapping("SubNavLayer", subNavContent);
+        Layer.Mapping("SubMenuLayer", subMenuContent);
+        Layer.Mapping("OptionMenuLayer", optionMenuContent);
         Layer.Mapping("SocialLayer", socialContent);
     }
 

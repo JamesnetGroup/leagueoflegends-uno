@@ -1,0 +1,73 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Leagueoflegends.Support.UI.Units">
+
+  <Style x:Key="MenuBorderStyle" TargetType="Border">
+    <Setter Property="Background" Value="Transparent"/>
+  </Style>
+
+  <Style x:Key="IndicatorBorderStyle" TargetType="Border">
+    <Setter Property="BorderBrush" Value="#BB9138"/>
+    <Setter Property="BorderThickness" Value="3,0,0,0"/>
+    <Setter Property="Visibility" Value="Collapsed"/>
+  </Style>
+
+  <Style x:Key="MenuTextStyle" TargetType="TextBlock">
+    <Setter Property="Foreground" Value="#CDBE91"/>
+    <Setter Property="FontFamily" Value="Friz Quadrata Std"/>
+    <Setter Property="Margin" Value="10,0,0,0"/>
+  </Style>
+
+  <Style TargetType="local:RiotOptionMenuButton">
+    <Setter Property="Background" Value="Transparent"/>
+    <Setter Property="Padding" Value="5,7,6,7"/>
+    <Setter Property="FontSize" Value="12"/>
+    <Setter Property="FontWeight" Value="Bold"/>
+    <Setter Property="GroupName" Value="SETTINGS"/>
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="local:RiotOptionMenuButton">
+          <Grid>
+            <VisualStateManager.VisualStateGroups>
+              <VisualStateGroup x:Name="CommonStates">
+                <VisualState x:Name="Normal"/>
+                <VisualState x:Name="PointerOver">
+                  <VisualState.Setters>
+                    <Setter Target="text.Foreground" Value="#DBD3C2"/>
+                    <Setter Target="menu.Background" Value="#1E2328"/>
+                  </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Pressed">
+                  <VisualState.Setters>
+                    <Setter Target="text.Foreground" Value="#FFFFFF"/>
+                    <Setter Target="menu.Background" Value="#1E2328"/>
+                  </VisualState.Setters>
+                </VisualState>
+              </VisualStateGroup>
+              <VisualStateGroup x:Name="CheckStates">
+                <VisualState x:Name="Checked">
+                  <VisualState.Setters>
+                    <Setter Target="text.Foreground" Value="#DBD3C2"/>
+                    <Setter Target="text.Margin" Value="14,0,0,0"/>
+                    <Setter Target="border.Visibility" Value="Visible"/>
+                  </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Unchecked"/>
+              </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Border x:Name="menu" Style="{StaticResource MenuBorderStyle}">
+              <Grid>
+                <Border x:Name="border" Style="{StaticResource IndicatorBorderStyle}"/>
+                <TextBlock x:Name="text"
+                  Text="{TemplateBinding Content}" 
+                  Padding="{TemplateBinding Padding}"
+                  Style="{StaticResource MenuTextStyle}"/>
+              </Grid>
+            </Border>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+</ResourceDictionary>

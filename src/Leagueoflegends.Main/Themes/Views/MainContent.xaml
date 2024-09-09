@@ -102,7 +102,7 @@
     <Setter Property="Margin" Value="0 0 0 0"/>
   </Style>
 
-  <Style x:Key="SubNavLayerStyle" TargetType="james:UnoLayer">
+  <Style x:Key="SubMenuLayerStyle" TargetType="james:UnoLayer">
     <Setter Property="Grid.Column" Value="0"/>
     <Setter Property="Margin" Value="20 0 0 0"/>
     <Setter Property="HorizontalAlignment" Value="Left"/>
@@ -180,7 +180,7 @@
                 <ColumnDefinition Width="Auto"/>
               </Grid.ColumnDefinitions>
               <james:UnoLayer Style="{StaticResource ContentLayerStyle}" LayerName="ContentLayer"/>
-              <james:UnoLayer Style="{StaticResource SubNavLayerStyle}" LayerName="SubNavLayer"/>
+              <james:UnoLayer Style="{StaticResource SubMenuLayerStyle}" LayerName="SubMenuLayer"/>
               <james:UnoLayer Style="{StaticResource SocialLayerStyle}" LayerName="SocialLayer"/>
             </Grid>
             <james:UnoLayer Grid.RowSpan="4" LayerName="OverlayLayer"/>

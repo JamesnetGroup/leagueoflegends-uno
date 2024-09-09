@@ -9,6 +9,11 @@
     <GradientStop Color="#C8AA6E" Offset="0"/>
     <GradientStop Color="#795c28" Offset="1"/>
   </LinearGradientBrush>
+
+  <Style x:Key="OptionMenuLayerStyle" TargetType="james:UnoLayer">
+    <Setter Property="Grid.Row" Value="1"/>
+    <Setter Property="Grid.Column" Value="0"/>
+  </Style>
   
   <Style TargetType="views:OptionContent">
     <Setter Property="Template">
@@ -21,12 +26,37 @@
               Height="500"
               BorderBrush="{StaticResource RiotBorderBrush}"
               BorderThickness="1">
-              <based:RiotButton
-                Command="{Binding CloseCommand}"
-                Margin="10"
-                Content="Complete"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Bottom"/>
+              <Grid>
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="*"/>
+                  <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="Auto"/>
+                  <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <based:RiotButton
+                  Grid.Column="1"
+                  Command="{Binding CloseCommand}"
+                  Margin="20"
+                  Content="Restore Defaults"
+                  HorizontalAlignment="Right"
+                  VerticalAlignment="Top"/>
+                
+                <james:UnoLayer Style="{StaticResource OptionMenuLayerStyle}" LayerName="OptionMenuLayer"/>
+                <based:RiotButton
+                  Grid.Row="2"
+                  Grid.ColumnSpan="2"
+                  Command="{Binding CloseCommand}"
+                  Margin="10"
+                  Content="Complete"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Bottom"/>
+              </Grid>
+
+              
             </Border>
           </Grid>
         </ControlTemplate>

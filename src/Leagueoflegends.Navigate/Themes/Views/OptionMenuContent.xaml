@@ -1,0 +1,45 @@
+﻿<ResourceDictionary
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:units="using:Leagueoflegends.Support.UI.Units"
+  xmlns:views="using:Leagueoflegends.Navigate.UI.Views">
+
+  <Style x:Key="CategoryTextStyle" TargetType="TextBlock">
+    <Setter Property="Foreground" Value="#A09B8C"/>
+    <Setter Property="Text" Value="CLIENT"/>
+    <Setter Property="FontSize" Value="12"/>
+    <Setter Property="Margin" Value="20 10 0 10"/>
+  </Style>
+
+
+  <Style TargetType="views:OptionMenuContent">
+    <Setter Property="VerticalAlignment" Value="Top"/>
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="views:OptionMenuContent">
+          <StackPanel>
+            <TextBlock Style="{StaticResource CategoryTextStyle}" Text="CLIENT"/>
+            <units:RiotOptionMenuButton Content="GENERAL"/>
+            <units:RiotOptionMenuButton Content="NOTIFICATION"/>
+            <units:RiotOptionMenuButton Content="CHAT/FRIENDS"/>
+            <units:RiotOptionMenuButton Content="SOUND"/>
+            <units:RiotOptionMenuButton Content="VOICE"/>
+            <units:RiotOptionMenuButton Content="BLOCK LIST"/>
+            <TextBlock Style="{StaticResource CategoryTextStyle}" Text="IN-GAME"/>
+            <units:RiotOptionMenuButton Content="HOT KEYS"/>
+            <units:RiotOptionMenuButton Content="SOUND"/>
+            <units:RiotOptionMenuButton Content="INTERFACE"/>
+            <units:RiotOptionMenuButton Content="GAME"/>
+            <units:RiotOptionMenuButton Content="REPLAYS"/>
+            <TextBlock Style="{StaticResource CategoryTextStyle}" Text="ABOUT"/>
+            <units:RiotOptionMenuButton Content="VERIFICATION"/>
+            <units:RiotOptionMenuButton Content="PRIVACY NOTICE"/>
+            <units:RiotOptionMenuButton Content="TOU"/>
+            <units:RiotOptionMenuButton Content="THIRD-PARTY LICENSES"/>
+            <units:RiotOptionMenuButton Content="VERSION"/>
+          </StackPanel>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+</ResourceDictionary>

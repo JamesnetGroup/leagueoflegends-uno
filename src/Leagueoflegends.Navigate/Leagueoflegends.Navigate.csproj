@@ -34,6 +34,7 @@
 
   <ItemGroup>
     <None Remove="Themes\Generic.xaml" />
+    <None Remove="Themes\Views\OptionMenuContent.xaml" />
     <None Remove="Themes\Views\SubMenuContent.xaml" />
   </ItemGroup>
 
@@ -51,6 +52,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Views\OptionMenuContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Views\SubMenuContent.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -58,5 +63,9 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Views\SubMenuContent.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Views\OptionMenuContent.xaml" />
   </ItemGroup>
 </Project>

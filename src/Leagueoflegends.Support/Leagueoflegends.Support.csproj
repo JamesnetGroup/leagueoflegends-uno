@@ -1719,6 +1719,7 @@
     <None Remove="Themes\Units\RiotMatchHistoryListBoxItem.xaml" />
     <None Remove="Themes\Units\RiotNewsButton.xaml" />
     <None Remove="Themes\Units\RiotNoticeButton.xaml" />
+    <None Remove="Themes\Units\RiotOptionMenuButton.xaml" />
     <None Remove="Themes\Units\RiotPlayedChampListBox.xaml" />
     <None Remove="Themes\Units\RiotPlayedChampListBoxItem.xaml" />
     <None Remove="Themes\Units\RiotPositionButton.xaml" />
@@ -1937,6 +1938,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Units\RiotNoticeButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotOptionMenuButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -2424,5 +2429,9 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Units\RiotCircleButton.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotOptionMenuButton.xaml" />
   </ItemGroup>
 </Project>

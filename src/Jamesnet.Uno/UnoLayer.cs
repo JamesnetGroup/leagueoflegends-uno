@@ -7,6 +7,8 @@ public class UnoLayer : ContentControl, ILayer
     public static readonly DependencyProperty LayerNameProperty =
         DependencyProperty.Register(nameof(LayerName), typeof(string), typeof(UnoLayer), new PropertyMetadata(null, OnLayerNameChanged));
 
+    private bool _isRegistered = false;
+
     public string LayerName
     {
         get => (string)GetValue(LayerNameProperty);
@@ -26,10 +28,16 @@ public class UnoLayer : ContentControl, ILayer
 
     private void RegisterToLayerManager()
     {
-        if (!string.IsNullOrEmpty(LayerName))
+        if (string.IsNullOrEmpty(LayerName) || _isRegistered)
         {
-            var layerManager = ContainerProvider.GetContainer().Resolve<ILayerManager>();
-            layerManager.Register   (LayerName, this);
+            return;
+        }
+
+        var layerManager = ContainerProvider.GetContainer().Resolve<ILayerManager>();
+        if (layerManager != null)
+        {
+            layerManager.Register(LayerName, this);
+            _isRegistered = true;
         }
     }
 
@@ -37,6 +45,7 @@ public class UnoLayer : ContentControl, ILayer
     {
         if (d is UnoLayer layer)
         {
+            layer._isRegistered = false;  // Reset registration status when LayerName changes
             layer.RegisterToLayerManager();
         }
     }
