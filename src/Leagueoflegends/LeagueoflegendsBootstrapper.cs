@@ -34,6 +34,7 @@ public class LeagueOfLegendsBootstrapper : AppBootstrapper
     protected override void RegisterViewModels()
     {
         ViewModelMapper.Register<MainContent, MainContentViewModel>();
+        ViewModelMapper.Register<OptionContent, OptionContentViewModel>();
         ViewModelMapper.Register<SocialContent, SocialContentViewModel>();
         ViewModelMapper.Register<SubMenuContent, SubMenuContentViewModel>();
 
@@ -49,10 +50,10 @@ public class LeagueOfLegendsBootstrapper : AppBootstrapper
 
     protected override void RegisterDependencies()
     {
-        Container.RegisterSingleton<ISubMenuNavigator, SubMenuNavigator>();
+        Container.RegisterSingleton<IMenuManager, MenuManager>();
 
         Container.RegisterSingleton<IFriendDataLoader, FriendDataLoader>();
-        Container.RegisterSingleton<ISubMenuDataLoader, SubMenuDataLoader>();
+        Container.RegisterSingleton<IMenuDataLoader, MenuDataLoader>();
         Container.RegisterSingleton<IChampStatsDataLoader, ChampStatsDataLoader>();
         Container.RegisterSingleton<IFilterDataLoader, FilterDataLoader>();
         Container.RegisterSingleton<ISkinsDataLoader, SkinsDataLoader>();
@@ -68,6 +69,7 @@ public class LeagueOfLegendsBootstrapper : AppBootstrapper
         Container.RegisterSingleton<IView, SubMenuContent>();
         Container.RegisterSingleton<IView, SocialContent>();
 
+        Container.RegisterSingleton<IView, OptionContent>("OptionContent");
         Container.RegisterSingleton<IView, TftContent>("TftContent");
         Container.RegisterSingleton<IView, ShopContent>("ShopContent");
         Container.RegisterSingleton<IView, OverviewContent>("HomeOverviewContent");

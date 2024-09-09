@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 namespace Jamesnet.Core;
 
 public class LayerManager : ILayerManager
@@ -12,7 +15,6 @@ public class LayerManager : ILayerManager
         {
             _layers[layerName] = layer;
             _layerViews[layerName] = new List<IView>();
-
             if (_layerViewMappings.TryGetValue(layerName, out var view))
             {
                 Add(layerName, view);
@@ -34,7 +36,7 @@ public class LayerManager : ILayerManager
             return;
         }
 
-        if (!_layerViews.TryGetValue(layerName, out var views) || !views.Contains(view))
+        if (!_layerViews[layerName].Contains(view))
         {
             Add(layerName, view);
         }
@@ -42,16 +44,21 @@ public class LayerManager : ILayerManager
         layer.Content = view;
     }
 
-
     public void Add(string layerName, IView view)
     {
-        if (!_layerViews.TryGetValue(layerName, out var views))
+        if (!_layers.ContainsKey(layerName))
         {
             throw new InvalidOperationException($"Layer not registered: {layerName}");
         }
-        if (!views.Contains(view))
+
+        if (!_layerViews.ContainsKey(layerName))
         {
-            views.Add(view);
+            _layerViews[layerName] = new List<IView>();
+        }
+
+        if (!_layerViews[layerName].Contains(view))
+        {
+            _layerViews[layerName].Add(view);
         }
     }
 

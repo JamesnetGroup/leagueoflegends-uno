@@ -6,7 +6,7 @@
     <!-- Ensures the .xr.xml files are generated in a proper layout folder -->
     <GenerateLibraryLayout>true</GenerateLibraryLayout>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>disable</Nullable>
+    <Nullable>enable</Nullable>
 
     <!--
       UnoFeatures let's you quickly add and manage implicit package references based on the features you want to use.
@@ -34,23 +34,11 @@
 
   <ItemGroup>
     <None Remove="Themes\Generic.xaml" />
-    <None Remove="Themes\Views\MainContent.xaml" />
-    <None Remove="Themes\Views\OptionContent.xaml" />
+    <None Remove="Themes\Views\StoreChampContent.xaml" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Jamesnet.Uno\Jamesnet.Uno.csproj" />
-    <ProjectReference Include="..\Leagueoflegends.Support\Leagueoflegends.Support.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Themes\Views\MainContent.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Page Update="Themes\Views\MainContent.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <UpToDateCheckInput Remove="Themes\Views\StoreChampContent.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -58,17 +46,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Page Include="Themes\Generic.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Themes\Views\OptionContent.xaml">
+    <Page Update="Themes\Views\StoreChampContent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Themes\Views\OptionContent.xaml" />
+    <Page Update="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 </Project>

@@ -23,8 +23,19 @@
     <Setter Property="Opacity" Value="0"/>
   </Style>
 
+  <Style x:Key="OuterEllipseStyle" TargetType="Ellipse">
+    <Setter Property="Stroke" Value="{StaticResource DefaultAvatarBorderBrush}"/>
+    <Setter Property="StrokeThickness" Value="2"/>
+    <Setter Property="Fill" Value="Transparent"/>
+  </Style>
+
+  <Style x:Key="InnerEllipseStyle" TargetType="Ellipse">
+    <Setter Property="Margin" Value="3"/>
+    <Setter Property="Stroke" Value="#000000"/>
+    <Setter Property="StrokeThickness" Value="1"/>
+  </Style>
+
   <Style x:Key="CircleFaceStyle" TargetType="Control">
-    <Setter Property="BorderBrush" Value="{StaticResource DefaultAvatarBorderBrush}"/>
     <Setter Property="Width" Value="36"/>
     <Setter Property="Height" Value="36"/>
     <Setter Property="Margin" Value="0 0 2 0"/>
@@ -32,8 +43,8 @@
       <Setter.Value>
         <ControlTemplate TargetType="Control">
           <Grid>
-            <Ellipse Stroke="{TemplateBinding BorderBrush}" StrokeThickness="2" Fill="Transparent"/>
-            <Ellipse Margin="3" Stroke="#000000" StrokeThickness="1">
+            <Ellipse Style="{StaticResource OuterEllipseStyle}"/>
+            <Ellipse Style="{StaticResource InnerEllipseStyle}">
               <Ellipse.Fill>
                 <ImageBrush ImageSource="{Binding Seq, Converter={StaticResource UserToThumbnailConverter}}" Stretch="UniformToFill"/>
               </Ellipse.Fill>
@@ -80,10 +91,20 @@
                     <Setter Target="Avatar.BorderBrush" Value="{StaticResource HoverAvatarBorderBrush}"/>
                   </VisualState.Setters>
                 </VisualState>
+                <VisualState x:Name="Pressed">
+                  <VisualState.Setters>
+                    <Setter Target="OverlayRectangle.Opacity" Value="1"/>
+                    <Setter Target="OverlayRectangle.Fill" Value="#33000000"/>
+                    <Setter Target="NameText.Foreground" Value="#FFFFFF"/>
+                    <Setter Target="StatusText.Foreground" Value="#CCCCCC"/>
+                    <Setter Target="Avatar.BorderBrush" Value="{StaticResource HoverAvatarBorderBrush}"/>
+                    <Setter Target="ContentGrid.Margin" Value="11,6,9,4"/>
+                  </VisualState.Setters>
+                </VisualState>
               </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
             <Rectangle x:Name="OverlayRectangle" Style="{StaticResource OverlayStyle}"/>
-            <Grid Style="{StaticResource ContentGridStyle}">
+            <Grid x:Name="ContentGrid" Style="{StaticResource ContentGridStyle}">
               <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>

@@ -1,6 +1,6 @@
 namespace Leagueoflegends.Support.Local.Models;
 
-public enum WindowControlType
+public enum SmallIconTyle
 {
     Help,
     Minimize,

@@ -7,11 +7,11 @@ namespace Leagueoflegends.Collection.Local.ViewModels;
 
 public class SpellsContentViewModel : ViewModelBase
 {
-    private readonly ISpellsDataLoader _spellsDataLoader;
-    private ObservableCollection<Spell> _spells;
+    private readonly ISpellsDataLoader _spellsData;
+    private List<Spell> _spells;
     private Spell _selectedSpell;
 
-    public ObservableCollection<Spell> Spells
+    public List<Spell> Spells
     {
         get => _spells;
         set => SetProperty(ref _spells, value);
@@ -23,16 +23,16 @@ public class SpellsContentViewModel : ViewModelBase
         set => SetProperty(ref _selectedSpell, value);
     }
 
-    public SpellsContentViewModel(ISpellsDataLoader spellsDataLoader)
+    public SpellsContentViewModel(ISpellsDataLoader spellsData)
     {
-        _spellsDataLoader = spellsDataLoader;
+        _spellsData = spellsData;
         LoadSpells();
     }
 
     private void LoadSpells()
     {
-        List<Spell> spellsList = _spellsDataLoader.LoadSpells();
-        Spells = new ObservableCollection<Spell>(spellsList);
+        List<Spell> spellsList = _spellsData.LoadSpells();
+        Spells = spellsList;
         if (Spells.Any())
         {
             SelectedSpell = Spells.First();

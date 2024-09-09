@@ -2,7 +2,7 @@ using Jamesnet.Core;
 
 namespace Leagueoflegends.Support.Local.Models;
 
-public class SubMenuItem : ViewModelBase
+public class MenuModel : ViewModelBase
 {
     private bool _isSelected;
 

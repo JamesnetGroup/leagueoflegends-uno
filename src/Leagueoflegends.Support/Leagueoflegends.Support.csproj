@@ -35,13 +35,13 @@
   <ItemGroup>
     <None Remove="Datas\FilterSortOptions.yml" />
     <None Remove="Datas\MatchHistories.yml" />
+    <None Remove="Datas\Menus.yml" />
     <None Remove="Datas\PersonalChampStats.yml" />
     <None Remove="Datas\PlayChamps.yml" />
     <None Remove="Datas\Schedules.yml" />
     <None Remove="Datas\Skins.yml" />
     <None Remove="Datas\Spells.yml" />
     <None Remove="Datas\StoreChamps.yml" />
-    <None Remove="Datas\SubMenus.yml" />
     <None Remove="Datas\TeamFights.yml" />
     <None Remove="Images\blue-essence.png" />
     <None Remove="Images\clash.jpg" />
@@ -1796,7 +1796,7 @@
     <EmbeddedResource Include="Datas\Skins.yml" />
     <EmbeddedResource Include="Datas\Spells.yml" />
     <EmbeddedResource Include="Datas\PersonalChampStats.yml" />
-    <EmbeddedResource Include="Datas\SubMenus.yml" />
+    <EmbeddedResource Include="Datas\Menus.yml" />
     <EmbeddedResource Include="Images\logo.png" />
     <EmbeddedResource Include="Images\menu-selection.png" />
     <EmbeddedResource Include="Images\rp.png" />

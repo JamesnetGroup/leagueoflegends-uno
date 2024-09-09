@@ -2,7 +2,7 @@
 
 namespace Leagueoflegends.Support.Local.Datas;
 
-public interface ISubMenuDataLoader
+public interface IMenuDataLoader
 {
-    List<SubMenuItem> LoadMenuItems();
+    List<MenuModel> LoadMenuItems();
 }

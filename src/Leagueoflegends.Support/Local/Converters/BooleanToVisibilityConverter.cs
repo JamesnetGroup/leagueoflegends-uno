@@ -5,11 +5,11 @@ public class BooleanToVisibilityConverter : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, string language)
     {
-        return (value is bool && (bool)value) ? Visibility.Visible : Visibility.Collapsed;
+        return value is bool isVisible && isVisible ? Visibility.Visible : (object)Visibility.Collapsed;
     }
 
     public object ConvertBack(object value, Type targetType, object parameter, string language)
     {
-        return value is Visibility && (Visibility)value == Visibility.Visible;
+        throw new NotImplementedException();
     }
 }

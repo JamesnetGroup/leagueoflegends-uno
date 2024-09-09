@@ -61,6 +61,7 @@
     <Setter Property="Background" Value="#1E2328"/>
     <Setter Property="BorderBrush" Value="{StaticResource RiotButtonBorderBrush}"/>
     <Setter Property="BorderThickness" Value="1"/>
+    <Setter Property="Padding" Value="10 0 10 0"/>
     <Setter Property="Template">
       <Setter.Value>
         <ControlTemplate TargetType="units:RiotButton">

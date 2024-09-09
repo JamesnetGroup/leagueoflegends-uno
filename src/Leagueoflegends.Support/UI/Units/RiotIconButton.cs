@@ -4,11 +4,11 @@ namespace Leagueoflegends.Support.UI.Units;
 
 public sealed class RiotIconButton : Button
 {
-    public static readonly DependencyProperty ControlTypeProperty = DependencyProperty.Register(nameof(ControlType), typeof(WindowControlType), typeof(RiotIconButton), new PropertyMetadata(WindowControlType.Help, OnControlTypeChanged));
+    public static readonly DependencyProperty ControlTypeProperty = DependencyProperty.Register(nameof(IconType), typeof(SmallIconTyle), typeof(RiotIconButton), new PropertyMetadata(SmallIconTyle.Help, OnControlTypeChanged));
 
-    public WindowControlType ControlType
+    public SmallIconTyle IconType
     {
-        get => (WindowControlType)GetValue(ControlTypeProperty);
+        get => (SmallIconTyle)GetValue(ControlTypeProperty);
         set => SetValue(ControlTypeProperty, value);
     }
 
@@ -33,6 +33,6 @@ public sealed class RiotIconButton : Button
 
     private void UpdateVisualState()
     {
-        VisualStateManager.GoToState(this, ControlType.ToString(), false);
+        VisualStateManager.GoToState(this, IconType.ToString(), false);
     }
 }

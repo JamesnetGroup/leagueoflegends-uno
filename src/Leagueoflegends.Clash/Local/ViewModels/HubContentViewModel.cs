@@ -7,20 +7,20 @@ namespace Leagueoflegends.Clash.Local.ViewModels;
 
 public class HubContentViewModel : ViewModelBase
 {
-    private readonly ISubMenuNavigator _subMenu;
+    private readonly IMenuManager _menu;
     private readonly IScheduleDataLoader _scheduleData;
 
-    private SubMenuItem _currentTabMenu;
-    private List<SubMenuItem> _tabMenus;
+    private MenuModel _currentTabMenu;
+    private List<MenuModel> _tabMenus;
     private List<Schedule> _schedules;
 
-    public SubMenuItem CurrentTabMenu
+    public MenuModel CurrentTabMenu
     {
         get => _currentTabMenu;
         set => SetProperty(ref _currentTabMenu, value);
     }
 
-    public List<SubMenuItem> TabMenus
+    public List<MenuModel> TabMenus
     {
         get => _tabMenus;
         set => SetProperty(ref _tabMenus, value);
@@ -32,16 +32,16 @@ public class HubContentViewModel : ViewModelBase
         set => SetProperty(ref _schedules, value);
     }
 
-    public HubContentViewModel(ISubMenuNavigator subMenu, IScheduleDataLoader scheduleData)
+    public HubContentViewModel(IMenuManager subMenu, IScheduleDataLoader scheduleData)
     {
-        _subMenu = subMenu;
+        _menu = subMenu;
         _scheduleData = scheduleData;
         LoadSchedules();
     }
 
     private void LoadSchedules()
     {
-        TabMenus = _subMenu.GetSubMenuItems("HUB");
+        TabMenus = _menu.GetMenus("HUB");
         CurrentTabMenu = TabMenus.FirstOrDefault();
         Schedules = _scheduleData.LoadSchedules();
     }

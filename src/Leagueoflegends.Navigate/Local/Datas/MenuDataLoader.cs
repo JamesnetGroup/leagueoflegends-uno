@@ -4,16 +4,16 @@ using Leagueoflegends.Support.Local.Models;
 
 namespace Leagueoflegends.Navigate.Local.Datas;
 
-public class SubMenuDataLoader : BaseResourceLoader<SubMenuItem, List<SubMenuItem>>, ISubMenuDataLoader
+public class MenuDataLoader : BaseResourceLoader<MenuModel, List<MenuModel>>, IMenuDataLoader
 {
     protected override string AssemblyName => "Leagueoflegends.Support";
-    protected override string ResourcePath => "Leagueoflegends.Support.Datas.SubMenus.yml";
+    protected override string ResourcePath => "Leagueoflegends.Support.Datas.Menus.yml";
 
-    public List<SubMenuItem> LoadMenuItems() => LoadAndOrganize();
+    public List<MenuModel> LoadMenuItems() => LoadAndOrganize();
 
-    protected override IEnumerable<SubMenuItem> ConvertToItems(YamlData rawData)
+    protected override IEnumerable<MenuModel> ConvertToItems(YamlData rawData)
     {
-        return rawData.Select(item => new SubMenuItem
+        return rawData.Select(item => new MenuModel
         {
             Seq = item.GetValue<int>("seq"),
             Name = item.GetValue<string>("name"),
@@ -22,7 +22,7 @@ public class SubMenuDataLoader : BaseResourceLoader<SubMenuItem, List<SubMenuIte
         });
     }
 
-    protected override List<SubMenuItem> OrganizeItems(IEnumerable<SubMenuItem> menuItems)
+    protected override List<MenuModel> OrganizeItems(IEnumerable<MenuModel> menuItems)
     {
         return menuItems.Where(x=>x.IsUsed).OrderBy(m => m.Seq).ToList();
     }
