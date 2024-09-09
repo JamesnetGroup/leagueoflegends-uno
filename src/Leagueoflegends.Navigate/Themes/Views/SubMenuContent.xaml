@@ -9,9 +9,7 @@
     <Setter Property="Template">
       <Setter.Value>
         <ControlTemplate TargetType="views:SubMenuContent">
-          <units:RiotHorizMenuListBox ItemsSource="{Binding SubMenuItems}"
-                                      SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
-                                      SelectionMode="Single"/>
+          <units:RiotHorizMenuListBox ItemsSource="{Binding SubMenuItems}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}"/>
         </ControlTemplate>
       </Setter.Value>
     </Setter>

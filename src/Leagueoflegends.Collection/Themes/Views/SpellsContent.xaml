@@ -31,13 +31,11 @@
                   Text="{Binding SelectedSpell.DisplayName}" 
                   FontSize="25" 
                   FontWeight="Bold" 
-                  FontFamily="Friz Quadrata Std"
                   Foreground="#F0E6D2"/>
                 <TextBlock
                   Text="{Binding SelectedSpell.Level, Converter={StaticResource SummonerLevelConverter}}" 
                   FontSize="14" 
                   FontWeight="Bold" 
-                  FontFamily="Friz Quadrata Std"
                   Margin="0 1 0 0"/>
                 <TextBlock
                   Text="{Binding SelectedSpell.TypesString}" 

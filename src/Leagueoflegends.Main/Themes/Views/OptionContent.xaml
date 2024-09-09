@@ -22,30 +22,6 @@
     <Setter Property="HorizontalAlignment" Value="Left"/>
   </Style>
 
-  <Style x:Key="DetailButtonStyle" TargetType="Button">
-    <Setter Property="Foreground" Value="#0596AA" />
-    <Setter Property="Margin" Value="0,10,0,15" />
-    <Setter Property="Template">
-      <Setter.Value>
-        <ControlTemplate TargetType="Button">
-          <Border Background="Transparent" BorderBrush="Transparent">
-            <VisualStateManager.VisualStateGroups>
-              <VisualStateGroup x:Name="CommonStates">
-                <VisualState x:Name="Normal"/>
-                <VisualState x:Name="PointerOver">
-                  <VisualState.Setters>
-                    <Setter Target="ContentPresenter.Foreground" Value="#CDFAFA"/>
-                  </VisualState.Setters>
-                </VisualState>
-              </VisualStateGroup>
-            </VisualStateManager.VisualStateGroups>
-            <TextBlock Text="{TemplateBinding Content}"/>
-          </Border>
-        </ControlTemplate>
-      </Setter.Value>
-    </Setter>
-  </Style>
-
   <Style x:Key="MainGridStyle" TargetType="Grid">
     <Setter Property="Background" Value="#AA000000"/>
   </Style>
@@ -106,38 +82,6 @@
     <Setter Property="VerticalAlignment" Value="Top"/>
   </Style>
 
-  <Style x:Key="ContentStackPanelStyle" TargetType="StackPanel">
-    <Setter Property="Grid.Row" Value="1"/>
-    <Setter Property="Grid.Column" Value="1"/>
-    <Setter Property="Margin" Value="30,20,0,0"/>
-  </Style>
-
-  <Style x:Key="RulesTextStyle" TargetType="TextBlock">
-    <Setter Property="FontSize" Value="12"/>
-    <Setter Property="Foreground" Value="#A09B8C"/>
-  </Style>
-
-  <Style x:Key="WindowSizeTextStyle" TargetType="TextBlock">
-    <Setter Property="Margin" Value="0,20,0,10"/>
-    <Setter Property="FontSize" Value="12"/>
-    <Setter Property="Foreground" Value="#A09B8C"/>
-  </Style>
-
-  <Style x:Key="ComboBoxStyle" TargetType="based:RiotComboBox">
-    <Setter Property="Width" Value="120"/>
-    <Setter Property="HorizontalAlignment" Value="Left"/>
-  </Style>
-
-  <Style x:Key="TroubleshootingTextStyle" TargetType="TextBlock">
-    <Setter Property="Margin" Value="0,30,0,10"/>
-    <Setter Property="FontSize" Value="12"/>
-    <Setter Property="Foreground" Value="#A09B8C"/>
-  </Style>
-
-  <Style x:Key="RepairButtonStyle" TargetType="based:RiotButton">
-    <Setter Property="HorizontalAlignment" Value="Left"/>
-  </Style>
-
   <Style x:Key="CompleteButtonStyle" TargetType="based:RiotButton">
     <Setter Property="Grid.Row" Value="2"/>
     <Setter Property="Grid.ColumnSpan" Value="2"/>
@@ -145,6 +89,12 @@
     <Setter Property="Content" Value="Complete"/>
     <Setter Property="HorizontalAlignment" Value="Center"/>
     <Setter Property="VerticalAlignment" Value="Bottom"/>
+  </Style>
+
+  <Style x:Key="OptionContentLayerStyle" TargetType="james:UnoLayer">
+    <Setter Property="Grid.Row" Value="1"/>
+    <Setter Property="Grid.Column" Value="1"/>
+    <Setter Property="Margin" Value="30,20,0,0"/>
   </Style>
 
   <Style TargetType="views:OptionContent">
@@ -185,18 +135,7 @@
 
                 <james:UnoLayer Style="{StaticResource OptionMenuLayerStyle}" LayerName="OptionMenuLayer"/>
 
-                <StackPanel Style="{StaticResource ContentStackPanelStyle}">
-                  <TextBlock Style="{StaticResource RulesTextStyle}" Text="League of Legends Code of Conduct"/>
-                  <Button Style="{StaticResource DetailButtonStyle}" Content="View Details ↗"/>
-                  <based:RiotCheckBox Content="Enable Low Spec Mode" />
-                  <based:RiotCheckBox Content="Close client during game" />
-                  <based:RiotCheckBox Content="Automatically send crash reports" />
-                  <based:RiotCheckBox Content="Enable beginner tooltips and help" />
-                  <TextBlock Style="{StaticResource WindowSizeTextStyle}" Text="Window Size"/>
-                  <based:RiotComboBox Style="{StaticResource ComboBoxStyle}"/>
-                  <TextBlock Style="{StaticResource TroubleshootingTextStyle}" Text="Troubleshooting"/>
-                  <based:RiotButton Style="{StaticResource RepairButtonStyle}" Content="Start Full Repair"/>
-                </StackPanel>
+                <james:UnoLayer Style="{StaticResource OptionContentLayerStyle}" LayerName="OptionContentLayer"/>
 
                 <based:RiotButton Style="{StaticResource CompleteButtonStyle}" Command="{Binding CloseCommand}" Content="Complete"/>
               </Grid>

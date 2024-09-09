@@ -80,16 +80,19 @@ public class LeagueOfLegendsBootstrapper : AppBootstrapper
         Container.RegisterSingleton<IView, SpellsContent>("CollectionSpellsContent");
         Container.RegisterSingleton<IView, HistoryContent>("ProfileMatchHistoryContent");
         Container.RegisterSingleton<IView, StoreChampContent>("StoreChampionsContent");
+        Container.RegisterSingleton<IView, GeneralContent>("GeneralContent");
 
         IView mainContent = Container.Resolve<MainContent>();
+        IView socialContent = Container.Resolve<SocialContent>();
         IView subMenuContent = Container.Resolve<SubMenuContent>();
         IView optionMenuContent = Container.Resolve<OptionMenuContent>();
-        IView socialContent = Container.Resolve<SocialContent>();
+        IView generalContent = Container.Resolve<GeneralContent>("GeneralContent");
 
         Layer.Mapping("MainLayer", mainContent);
+        Layer.Mapping("SocialLayer", socialContent);
         Layer.Mapping("SubMenuLayer", subMenuContent);
         Layer.Mapping("OptionMenuLayer", optionMenuContent);
-        Layer.Mapping("SocialLayer", socialContent);
+        Layer.Mapping("OptionContentLayer", generalContent);
     }
 
     protected override void OnStartup()

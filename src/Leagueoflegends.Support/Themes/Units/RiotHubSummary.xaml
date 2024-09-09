@@ -26,7 +26,6 @@
   <Style x:Key="SubHeaderTextBlockStyle" TargetType="TextBlock">
     <Setter Property="Foreground" Value="#5B5A56"/>
     <Setter Property="FontSize" Value="20"/>
-    <Setter Property="FontFamily" Value="Friz Quadrata Std"/>
     <Setter Property="FontWeight" Value="Bold"/>
     <Setter Property="HorizontalAlignment" Value="Center"/>
   </Style>

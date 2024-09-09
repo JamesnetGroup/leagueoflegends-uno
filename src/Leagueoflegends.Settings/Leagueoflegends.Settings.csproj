@@ -1,4 +1,4 @@
-<Project Sdk="Uno.Sdk">
+﻿<Project Sdk="Uno.Sdk">
   <PropertyGroup>
     <TargetFrameworks>net8.0-desktop</TargetFrameworks>
     <UnoSingleProject>true</UnoSingleProject>
@@ -34,11 +34,7 @@
 
   <ItemGroup>
     <None Remove="Themes\Generic.xaml" />
-    <None Remove="Themes\Views\StoreChampContent.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Themes\Views\StoreChampContent.xaml" />
+    <None Remove="Themes\Views\GeneralContent.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -46,15 +42,23 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Page Update="Themes\Views\StoreChampContent.xaml">
+    <Page Update="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Views\GeneralContent.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="Themes\Views\GeneralContent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
 
   <ItemGroup>
-    <Page Update="Themes\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <ProjectReference Include="..\Leagueoflegends.Support\Leagueoflegends.Support.csproj" />
   </ItemGroup>
 </Project>

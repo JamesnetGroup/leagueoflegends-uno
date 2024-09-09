@@ -49,14 +49,12 @@
                 Foreground="#A09B8C"
                 FontSize="12.5"
                 Text="JUNE 21 - JULY 12"
-                FontFamily="Friz Quadrata Std"
                 FontWeight="Bold"
                 Margin="0,0,0,10"/>
 
               <TextBlock 
                 Foreground="#F0E6D2"
                 FontSize="40"
-                FontFamily="Friz Quadrata Std"
                 Text="PRIME GAMING -&#x0a;LOL"
                 FontWeight="Bold"/>
 

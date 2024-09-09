@@ -8,7 +8,7 @@
     <Setter Property="Foreground" Value="#A09B8C"/>
     <Setter Property="Text" Value="CLIENT"/>
     <Setter Property="FontSize" Value="12"/>
-    <Setter Property="Margin" Value="30 20 0 10"/>
+    <Setter Property="Margin" Value="24 20 0 10"/>
   </Style>
 
   <Style TargetType="views:OptionMenuContent">
