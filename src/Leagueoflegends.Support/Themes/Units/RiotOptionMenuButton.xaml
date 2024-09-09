@@ -21,7 +21,7 @@
 
   <Style TargetType="local:RiotOptionMenuButton">
     <Setter Property="Background" Value="Transparent"/>
-    <Setter Property="Padding" Value="5,7,6,7"/>
+    <Setter Property="Padding" Value="20,7,6,7"/>
     <Setter Property="FontSize" Value="12"/>
     <Setter Property="FontWeight" Value="Bold"/>
     <Setter Property="GroupName" Value="SETTINGS"/>
