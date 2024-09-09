@@ -52,8 +52,8 @@
 
   <Style x:Key="MainBorderStyle" TargetType="Border">
     <Setter Property="Background" Value="#FF010A13"/>
-    <Setter Property="Width" Value="600"/>
-    <Setter Property="Height" Value="700"/>
+    <Setter Property="Width" Value="550"/>
+    <Setter Property="Height" Value="600"/>
     <Setter Property="BorderBrush" Value="{StaticResource RiotBorderBrush}"/>
     <Setter Property="BorderThickness" Value="1"/>
   </Style>
