@@ -10,28 +10,23 @@
     <GradientStop Color="#795c28" Offset="1"/>
   </LinearGradientBrush>
 
-  <Style x:Key="OptionMenuLayerStyle" TargetType="james:UnoLayer">
-    <Setter Property="Grid.Row" Value="1"/>
-    <Setter Property="Grid.Column" Value="0"/>
-  </Style>
-
-  <Style x:Key="HeaderStyle" TargetType="TextBlock">
-    <Setter Property="FontWeight" Value="Bold"/>
-    <Setter Property="FontSize" Value="17"/>
-    <Setter Property="VerticalAlignment" Value="Center"/>
-    <Setter Property="HorizontalAlignment" Value="Left"/>
-  </Style>
-
   <Style x:Key="MainGridStyle" TargetType="Grid">
     <Setter Property="Background" Value="#AA000000"/>
   </Style>
 
-  <Style x:Key="MainBorderStyle" TargetType="Border">
-    <Setter Property="Background" Value="#FF010A13"/>
+  <Style x:Key="ContentGridStyle" TargetType="Grid">
     <Setter Property="Width" Value="550"/>
     <Setter Property="Height" Value="600"/>
+  </Style>
+
+  <Style x:Key="MainBorderStyle" TargetType="Border">
+    <Setter Property="Background" Value="#010A13"/>
     <Setter Property="BorderBrush" Value="{StaticResource RiotBorderBrush}"/>
     <Setter Property="BorderThickness" Value="1"/>
+  </Style>
+
+  <Style x:Key="ContentGridInnerStyle" TargetType="Grid">
+    <Setter Property="Margin" Value="1"/>
   </Style>
 
   <Style x:Key="TopBorderStyle" TargetType="Border">
@@ -60,6 +55,13 @@
     <Setter Property="Margin" Value="10 0 0 0"/>
   </Style>
 
+  <Style x:Key="HeaderStyle" TargetType="TextBlock">
+    <Setter Property="FontWeight" Value="Bold"/>
+    <Setter Property="FontSize" Value="17"/>
+    <Setter Property="VerticalAlignment" Value="Center"/>
+    <Setter Property="HorizontalAlignment" Value="Left"/>
+  </Style>
+
   <Style x:Key="ClientTextStyle" TargetType="TextBlock">
     <Setter Property="Foreground" Value="#A09B8C"/>
     <Setter Property="Style" Value="{StaticResource HeaderStyle}"/>
@@ -82,13 +84,9 @@
     <Setter Property="VerticalAlignment" Value="Top"/>
   </Style>
 
-  <Style x:Key="CompleteButtonStyle" TargetType="based:RiotButton">
-    <Setter Property="Grid.Row" Value="2"/>
-    <Setter Property="Grid.ColumnSpan" Value="2"/>
-    <Setter Property="Margin" Value="0 20 0 -1"/>
-    <Setter Property="Content" Value="Complete"/>
-    <Setter Property="HorizontalAlignment" Value="Center"/>
-    <Setter Property="VerticalAlignment" Value="Bottom"/>
+  <Style x:Key="OptionMenuLayerStyle" TargetType="james:UnoLayer">
+    <Setter Property="Grid.Row" Value="1"/>
+    <Setter Property="Grid.Column" Value="0"/>
   </Style>
 
   <Style x:Key="OptionContentLayerStyle" TargetType="james:UnoLayer">
@@ -97,49 +95,60 @@
     <Setter Property="Margin" Value="30,20,0,0"/>
   </Style>
 
+  <Style x:Key="ButtonBackgroundStyle" TargetType="Border">
+    <Setter Property="Width" Value="129"/>
+    <Setter Property="Height" Value="10"/>
+    <Setter Property="BorderThickness" Value="1 0 1 0"/>
+    <Setter Property="HorizontalAlignment" Value="Center"/>
+    <Setter Property="VerticalAlignment" Value="Bottom"/>
+    <Setter Property="Background" Value="#010A13"/>
+    <Setter Property="BorderBrush" Value="{StaticResource RiotBorderBrush}"/>
+  </Style>
+
+  <Style x:Key="DoneButtonStyle" TargetType="based:RiotButton">
+    <Setter Property="Content" Value="Done"/>
+    <Setter Property="Width" Value="121"/>
+    <Setter Property="HorizontalAlignment" Value="Center"/>
+    <Setter Property="VerticalAlignment" Value="Bottom"/>
+  </Style>
+
   <Style TargetType="views:OptionContent">
     <Setter Property="Template">
       <Setter.Value>
         <ControlTemplate TargetType="views:OptionContent">
           <Grid Style="{StaticResource MainGridStyle}">
-            <Border Style="{StaticResource MainBorderStyle}">
-              <Grid>
-                <Grid.RowDefinitions>
-                  <RowDefinition Height="Auto"/>
-                  <RowDefinition Height="*"/>
-                  <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                  <ColumnDefinition Width="Auto"/>
-                  <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
+            <Grid Style="{StaticResource ContentGridStyle}">
+              <Border Style="{StaticResource MainBorderStyle}">
+                <Grid Style="{StaticResource ContentGridInnerStyle}">
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                  </Grid.RowDefinitions>
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                  </Grid.ColumnDefinitions>
 
-                <Border Style="{StaticResource TopBorderStyle}"/>
-                <Border Style="{StaticResource LeftBorderStyle}"/>
-                <Border Style="{StaticResource BottomBorderStyle}"/>
-                <StackPanel Style="{StaticResource HeaderStackPanelStyle}">
-                  <TextBlock Style="{StaticResource ClientTextStyle}"/>
-                  <TextBlock Style="{StaticResource GeneralTextStyle}"/>
-                </StackPanel>
+                  <Border Style="{StaticResource TopBorderStyle}"/>
+                  <Border Style="{StaticResource LeftBorderStyle}"/>
+                  <Border Style="{StaticResource BottomBorderStyle}"/>
 
-                <based:RiotButton Style="{StaticResource RestoreDefaultsButtonStyle}"/>
+                  <StackPanel Style="{StaticResource HeaderStackPanelStyle}">
+                    <TextBlock Style="{StaticResource ClientTextStyle}"/>
+                    <TextBlock Style="{StaticResource GeneralTextStyle}"/>
+                  </StackPanel>
 
-                <james:UnoLayer Style="{StaticResource OptionMenuLayerStyle}" LayerName="OptionMenuLayer"/>
+                  <based:RiotButton Style="{StaticResource RestoreDefaultsButtonStyle}"/>
 
-                <StackPanel Style="{StaticResource HeaderStackPanelStyle}">
-                  <TextBlock Style="{StaticResource ClientTextStyle}" Text="CLIENT /"/>
-                  <TextBlock Style="{StaticResource GeneralTextStyle}" Text="GENERAL"/>
-                </StackPanel>
+                  <james:UnoLayer Style="{StaticResource OptionMenuLayerStyle}" LayerName="OptionMenuLayer"/>
+                  <james:UnoLayer Style="{StaticResource OptionContentLayerStyle}" LayerName="OptionContentLayer"/>
+                </Grid>
+              </Border>
 
-                <based:RiotButton Style="{StaticResource RestoreDefaultsButtonStyle}" Content="Restore Defaults"/>
-
-                <james:UnoLayer Style="{StaticResource OptionMenuLayerStyle}" LayerName="OptionMenuLayer"/>
-
-                <james:UnoLayer Style="{StaticResource OptionContentLayerStyle}" LayerName="OptionContentLayer"/>
-
-                <based:RiotButton Style="{StaticResource CompleteButtonStyle}" Command="{Binding CloseCommand}" Content="Complete"/>
-              </Grid>
-            </Border>
+              <Border Style="{StaticResource ButtonBackgroundStyle}"/>
+              <based:RiotButton Style="{StaticResource DoneButtonStyle}" Command="{Binding CloseCommand}"/>
+            </Grid>
           </Grid>
         </ControlTemplate>
       </Setter.Value>
