@@ -16,7 +16,7 @@
 
   <Style x:Key="ContentGridStyle" TargetType="Grid">
     <Setter Property="Width" Value="550"/>
-    <Setter Property="Height" Value="600"/>
+    <Setter Property="Height" Value="580"/>
   </Style>
 
   <Style x:Key="MainBorderStyle" TargetType="Border">
