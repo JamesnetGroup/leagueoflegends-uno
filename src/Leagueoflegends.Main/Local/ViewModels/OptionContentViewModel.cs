@@ -21,6 +21,6 @@ public class OptionContentViewModel
 
     private void Close()
     {
-        _menu.Close("OptionContent");
+        _menu.CloseOverlay("OptionContent");
     }
 }

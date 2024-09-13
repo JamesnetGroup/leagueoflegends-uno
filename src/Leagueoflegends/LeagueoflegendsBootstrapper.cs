@@ -37,6 +37,7 @@ public class LeagueOfLegendsBootstrapper : AppBootstrapper
         ViewModelMapper.Register<OptionContent, OptionContentViewModel>();
         ViewModelMapper.Register<SocialContent, SocialContentViewModel>();
         ViewModelMapper.Register<SubMenuContent, SubMenuContentViewModel>();
+        ViewModelMapper.Register<OptionMenuContent, OptionMenuContentViewModel>();
 
         ViewModelMapper.Register<OverviewContent, OverviewContentViewModel>();
         ViewModelMapper.Register<ChampionsContent, ChampionsContentViewModel>();
@@ -86,13 +87,11 @@ public class LeagueOfLegendsBootstrapper : AppBootstrapper
         IView socialContent = Container.Resolve<SocialContent>();
         IView subMenuContent = Container.Resolve<SubMenuContent>();
         IView optionMenuContent = Container.Resolve<OptionMenuContent>();
-        IView generalContent = Container.Resolve<GeneralContent>("GeneralContent");
 
         Layer.Mapping("MainLayer", mainContent);
         Layer.Mapping("SocialLayer", socialContent);
         Layer.Mapping("SubMenuLayer", subMenuContent);
         Layer.Mapping("OptionMenuLayer", optionMenuContent);
-        Layer.Mapping("OptionContentLayer", generalContent);
     }
 
     protected override void OnStartup()

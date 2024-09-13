@@ -18,23 +18,23 @@
         <ControlTemplate TargetType="views:OptionMenuContent">
           <StackPanel>
             <TextBlock Style="{StaticResource CategoryTextStyle}" Text="CLIENT"/>
-            <units:RiotOptionMenuButton Content="GENERAL" IsChecked="True"/>
-            <units:RiotOptionMenuButton Content="NOTIFICATION"/>
-            <units:RiotOptionMenuButton Content="CHAT/FRIENDS"/>
-            <units:RiotOptionMenuButton Content="SOUND"/>
-            <units:RiotOptionMenuButton Content="VOICE"/>
-            <units:RiotOptionMenuButton Content="BLOCK LIST"/>
+            <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="General" Content="GENERAL" IsChecked="True"/>
+            <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="Notification" Content="NOTIFICATION"/>
+            <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="GENERAL" Content="CHAT/FRIENDS"/>
+            <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="GENERAL" Content="SOUND"/>
+            <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="GENERAL" Content="VOICE"/>
+            <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="GENERAL" Content="BLOCK LIST"/>
             <TextBlock Style="{StaticResource CategoryTextStyle}" Text="IN-GAME"/>
-            <units:RiotOptionMenuButton Content="HOT KEYS"/>
-            <units:RiotOptionMenuButton Content="SOUND"/>
-            <units:RiotOptionMenuButton Content="INTERFACE"/>
-            <units:RiotOptionMenuButton Content="GAME"/>
-            <units:RiotOptionMenuButton Content="REPLAYS"/>
+            <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="GENERAL" Content="HOT KEYS"/>
+            <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="GENERAL" Content="SOUND"/>
+            <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="GENERAL" Content="INTERFACE"/>
+            <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="GENERAL" Content="GAME"/>
+            <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="GENERAL" Content="REPLAYS"/>
             <TextBlock Style="{StaticResource CategoryTextStyle}" Text="ABOUT"/>
-            <units:RiotOptionMenuButton Content="VERIFICATION"/>
-            <units:RiotOptionMenuButton Content="PRIVACY NOTICE"/>
-            <units:RiotOptionMenuButton Content="TOU"/>
-            <units:RiotOptionMenuButton Content="VERSION"/>
+            <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="GENERAL" Content="VERIFICATION"/>
+            <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="GENERAL" Content="PRIVACY NOTICE"/>
+            <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="GENERAL" Content="TOU"/>
+            <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="GENERAL" Content="VERSION"/>
           </StackPanel>
         </ControlTemplate>
       </Setter.Value>

@@ -5,10 +5,10 @@ namespace Leagueoflegends.Support.Local.Services;
 public interface IMenuManager
 {
     event Action<List<MenuModel>> NavigationChanged;
-    void Settings(string subMenuItem);
-    void Navigate(string mainMenu);
-    void Navigate(MenuModel subMenuItem);
-    List<MenuModel> GetMenus(string mainMenu);
-    void Open(string contentName);
-    void Close(string contentName);
+    void NavigateToOption(string subMenuItem);
+    void NavigateToMenu(string mainMenu);
+    void NavigateToMenu(MenuModel subMenuItem);
+    List<MenuModel> GetMenuByCategory(string mainMenu);
+    void OpenOverlay(string contentName);
+    void CloseOverlay(string contentName);
 }

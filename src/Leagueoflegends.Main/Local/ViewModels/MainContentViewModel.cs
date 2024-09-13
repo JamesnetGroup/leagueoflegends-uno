@@ -26,13 +26,13 @@ public class MainContentViewModel : ViewModelBase, IViewLoadable
 
     private void OpenSettings()
     {
-        _menu.Open("OptionContent");
+        _menu.OpenOverlay("OptionContent");
     }
 
     private void SelectMenu(string menuName)
     {
         CurrentMenu = menuName;
-        _menu.Navigate(menuName);
+        _menu.NavigateToMenu(menuName);
     }
 
     public void Loaded()

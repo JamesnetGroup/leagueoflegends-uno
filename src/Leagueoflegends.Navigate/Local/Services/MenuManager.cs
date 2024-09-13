@@ -22,7 +22,18 @@ public class MenuManager : IMenuManager
         _allMenuItems = _dataLoader.LoadMenuItems();
     }
 
-    public List<MenuModel> GetMenus(string mainMenu)
+    public void OpenOverlay(string contentName)
+    {
+        _container.TryResolve<IView>(contentName, out var view);
+        _layerManager.Show("OverlayLayer", view);
+    }
+
+    public void CloseOverlay(string contentName)
+    {
+        _layerManager.Hide("OverlayLayer");
+    }
+
+    public List<MenuModel> GetMenuByCategory(string mainMenu)
     {
         return _allMenuItems
             .Where(item => item.Category == mainMenu)
@@ -32,22 +43,22 @@ public class MenuManager : IMenuManager
             .ToList();
     }
 
-    public void Settings(string contentName)
+    public void NavigateToOption(string contentName)
     {
         contentName = $"{contentName}Content";
 
         _container.TryResolve<IView>(contentName, out var view);
-        _layerManager.Show("SettingsLayer", view);
+        _layerManager.Show("OptionContentLayer", view);
     }
 
-    public void Navigate(string mainMenu)
+    public void NavigateToMenu(string mainMenu)
     {
         _currentMainMenu = mainMenu;
-        var subMenuItems = GetMenus(mainMenu);
+        var subMenuItems = GetMenuByCategory(mainMenu);
         NavigationChanged?.Invoke(subMenuItems);
     }
 
-    public void Navigate(MenuModel subMenuItem)
+    public void NavigateToMenu(MenuModel subMenuItem)
     {
         if (subMenuItem != null)
         {
@@ -76,16 +87,5 @@ public class MenuManager : IMenuManager
 
         _container.TryResolve<IView>(contentName, out var view);
         _layerManager.Show("ContentLayer", view);
-    }
-
-    public void Open(string contentName)
-    {
-        _container.TryResolve<IView>(contentName, out var view);
-        _layerManager.Show("OverlayLayer", view);
-    }
-
-    public void Close(string contentName)
-    {
-        _layerManager.Hide("OverlayLayer");
     }
 }

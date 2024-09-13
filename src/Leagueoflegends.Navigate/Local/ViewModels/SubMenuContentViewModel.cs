@@ -29,7 +29,7 @@ public class SubMenuContentViewModel : ViewModelBase
 
     private void OnSelectedItemChanged()
     {
-        _menu.Navigate(_selectedItem);
+        _menu.NavigateToMenu(_selectedItem);
     }
 
     private void OnNavigationChanged(List<MenuModel> subMenuItems)

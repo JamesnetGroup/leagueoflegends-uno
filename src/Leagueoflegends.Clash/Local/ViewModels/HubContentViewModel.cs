@@ -41,7 +41,7 @@ public class HubContentViewModel : ViewModelBase
 
     private void LoadSchedules()
     {
-        TabMenus = _menu.GetMenus("HUB");
+        TabMenus = _menu.GetMenuByCategory("HUB");
         CurrentTabMenu = TabMenus.FirstOrDefault();
         Schedules = _scheduleData.LoadSchedules();
     }
