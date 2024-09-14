@@ -20,7 +20,7 @@
             <TextBlock Style="{StaticResource CategoryTextStyle}" Text="CLIENT"/>
             <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="General" Content="GENERAL" IsChecked="True"/>
             <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="Notice" Content="NOTIFICATION"/>
-            <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="GENERAL" Content="CHAT/FRIENDS"/>
+            <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="Chat" Content="CHAT/FRIENDS"/>
             <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="GENERAL" Content="SOUND"/>
             <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="GENERAL" Content="VOICE"/>
             <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="GENERAL" Content="BLOCK LIST"/>

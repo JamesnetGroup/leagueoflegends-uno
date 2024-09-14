@@ -83,6 +83,7 @@ public class LeagueOfLegendsBootstrapper : AppBootstrapper
         Container.RegisterSingleton<IView, StoreChampContent>("StoreChampionsContent");
         Container.RegisterSingleton<IView, GeneralContent>("GeneralContent");
         Container.RegisterSingleton<IView, NoticeContent>("NoticeContent");
+        Container.RegisterSingleton<IView, ChatContent>("ChatContent");
 
         IView mainContent = Container.Resolve<MainContent>();
         IView socialContent = Container.Resolve<SocialContent>();

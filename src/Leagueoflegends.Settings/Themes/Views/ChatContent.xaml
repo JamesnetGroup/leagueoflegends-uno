@@ -1,0 +1,21 @@
+﻿<ResourceDictionary
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:units="using:Leagueoflegends.Support.UI.Units"
+  xmlns:views="using:Leagueoflegends.Store.UI.Views">
+
+  <Style TargetType="views:ChatContent">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="views:ChatContent">
+          <StackPanel>
+            <units:RiotCheckBox Content="Use profanity filter" />
+            <units:RiotCheckBox Content="Display warning message when clicking links in chat window" />
+            <units:RiotCheckBox Content="Show [More] menu" />
+            <units:RiotCheckBox Content="Display notifications for new friend requests" />
+          </StackPanel>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+</ResourceDictionary>
