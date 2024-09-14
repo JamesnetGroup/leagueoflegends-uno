@@ -1,4 +1,4 @@
-﻿<Project Sdk="Uno.Sdk">
+<Project Sdk="Uno.Sdk">
   <PropertyGroup>
     <TargetFrameworks>net8.0-desktop</TargetFrameworks>
     <UnoSingleProject>true</UnoSingleProject>
@@ -6,7 +6,7 @@
     <!-- Ensures the .xr.xml files are generated in a proper layout folder -->
     <GenerateLibraryLayout>true</GenerateLibraryLayout>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
 
     <!--
       UnoFeatures let's you quickly add and manage implicit package references based on the features you want to use.
@@ -37,6 +37,7 @@
     <None Remove="Themes\Views\ChatContent.xaml" />
     <None Remove="Themes\Views\GeneralContent.xaml" />
     <None Remove="Themes\Views\NoticeContent.xaml" />
+    <None Remove="Themes\Views\SoundContent.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -66,6 +67,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Views\SoundContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
   <ItemGroup>
@@ -85,5 +90,9 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Views\ChatContent.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Views\SoundContent.xaml" />
   </ItemGroup>
 </Project>

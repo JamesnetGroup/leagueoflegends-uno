@@ -15,30 +15,6 @@
     <Setter Property="Foreground" Value="#A09B8C"/>
   </Style>
 
-  <Style x:Key="DetailButtonStyle" TargetType="Button">
-    <Setter Property="Foreground" Value="#0596AA" />
-    <Setter Property="Margin" Value="0,10,0,15" />
-    <Setter Property="Template">
-      <Setter.Value>
-        <ControlTemplate TargetType="Button">
-          <Border Background="Transparent" BorderBrush="Transparent">
-            <VisualStateManager.VisualStateGroups>
-              <VisualStateGroup x:Name="CommonStates">
-                <VisualState x:Name="Normal"/>
-                <VisualState x:Name="PointerOver">
-                  <VisualState.Setters>
-                    <Setter Target="ContentPresenter.Foreground" Value="#CDFAFA"/>
-                  </VisualState.Setters>
-                </VisualState>
-              </VisualStateGroup>
-            </VisualStateManager.VisualStateGroups>
-            <TextBlock Text="{TemplateBinding Content}"/>
-          </Border>
-        </ControlTemplate>
-      </Setter.Value>
-    </Setter>
-  </Style>
-
   <Style x:Key="ComboBoxStyle" TargetType="units:RiotComboBox">
     <Setter Property="Width" Value="120"/>
     <Setter Property="HorizontalAlignment" Value="Left"/>
@@ -53,6 +29,10 @@
   <Style x:Key="RepairButtonStyle" TargetType="units:RiotButton">
     <Setter Property="HorizontalAlignment" Value="Left"/>
   </Style>
+
+  <Style x:Key="CheckStyle" TargetType="units:RiotCheckBox">
+    <Setter Property="Margin" Value="0 4 0 4"/>
+  </Style>
   
   <Style TargetType="views:GeneralContent">
     <Setter Property="Template">
@@ -60,13 +40,13 @@
         <ControlTemplate TargetType="views:GeneralContent">
           <StackPanel>
             <TextBlock Style="{StaticResource RulesTextStyle}" Text="League of Legends Code of Conduct"/>
-            <Button Style="{StaticResource DetailButtonStyle}" Content="View Details ↗"/>
-            <units:RiotCheckBox Content="Enable Low Spec Mode" />
-            <units:RiotCheckBox Content="Close client during game" />
-            <units:RiotCheckBox Content="Automatically send crash reports" />
-            <units:RiotCheckBox Content="Enable beginner tooltips and help" />
+            <units:RiotLinkButton Content="View Details ↗"/>
+            <units:RiotCheckBox Style="{StaticResource CheckStyle}" Content="Enable Low Spec Mode" />
+            <units:RiotCheckBox Style="{StaticResource CheckStyle}" Content="Close client during game" />
+            <units:RiotCheckBox Style="{StaticResource CheckStyle}" Content="Automatically send crash reports" />
+            <units:RiotCheckBox Style="{StaticResource CheckStyle}" Content="Enable beginner tooltips and help" />
             <TextBlock Style="{StaticResource WindowSizeTextStyle}" Text="Window Size"/>
-            <units:RiotComboBox Style="{StaticResource ComboBoxStyle}"/>
+            <units:RiotComboBox Style="{StaticResource ComboBoxStyle}" ItemsSource="{Binding WindowSizes}" SelectedItem="{Binding CurrentWindowSize}"/>
             <TextBlock Style="{StaticResource TroubleshootingTextStyle}" Text="Troubleshooting"/>
             <units:RiotButton Style="{StaticResource RepairButtonStyle}" Content="Start Full Repair"/>
           </StackPanel>

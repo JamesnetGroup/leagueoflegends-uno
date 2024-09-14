@@ -1,0 +1,29 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:units="using:Leagueoflegends.Support.UI.Units">
+
+  <Style TargetType="units:RiotLinkButton">
+    <Setter Property="Foreground" Value="#0596AA" />
+    <Setter Property="Margin" Value="0,10,0,15" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="units:RiotLinkButton">
+          <Border Background="Transparent" BorderBrush="Transparent">
+            <VisualStateManager.VisualStateGroups>
+              <VisualStateGroup x:Name="CommonStates">
+                <VisualState x:Name="Normal"/>
+                <VisualState x:Name="PointerOver">
+                  <VisualState.Setters>
+                    <Setter Target="ContentPresenter.Foreground" Value="#CDFAFA"/>
+                  </VisualState.Setters>
+                </VisualState>
+              </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <TextBlock Text="{TemplateBinding Content}"/>
+          </Border>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+</ResourceDictionary>

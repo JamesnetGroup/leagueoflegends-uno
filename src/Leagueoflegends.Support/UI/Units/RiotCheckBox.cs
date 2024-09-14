@@ -7,3 +7,10 @@ public class RiotCheckBox : CheckBox
         DefaultStyleKey = typeof(RiotCheckBox);
     }
 }
+
+public class RiotVerticalStackPanel : ItemsControl
+{
+    public RiotVerticalStackPanel()
+    {
+    }
+}

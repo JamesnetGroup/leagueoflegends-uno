@@ -4,15 +4,19 @@
   xmlns:units="using:Leagueoflegends.Support.UI.Units"
   xmlns:views="using:Leagueoflegends.Store.UI.Views">
 
+  <Style x:Key="CheckStyle" TargetType="units:RiotCheckBox">
+    <Setter Property="Margin" Value="0 4 0 4"/>
+  </Style>
+
   <Style TargetType="views:ChatContent">
     <Setter Property="Template">
       <Setter.Value>
         <ControlTemplate TargetType="views:ChatContent">
           <StackPanel>
-            <units:RiotCheckBox Content="Use profanity filter" />
-            <units:RiotCheckBox Content="Display warning message when clicking links in chat window" />
-            <units:RiotCheckBox Content="Show [More] menu" />
-            <units:RiotCheckBox Content="Display notifications for new friend requests" />
+            <units:RiotCheckBox Style="{StaticResource CheckStyle}" Content="Use profanity filter" />
+            <units:RiotCheckBox Style="{StaticResource CheckStyle}" Content="Show warning on chat link clicks" />
+            <units:RiotCheckBox Style="{StaticResource CheckStyle}" Content="Show [More] menu" />
+            <units:RiotCheckBox Style="{StaticResource CheckStyle}" Content="Display notifications for new friend requests" />
           </StackPanel>
         </ControlTemplate>
       </Setter.Value>

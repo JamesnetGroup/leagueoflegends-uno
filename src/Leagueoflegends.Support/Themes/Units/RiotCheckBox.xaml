@@ -18,8 +18,8 @@
   </Style>
 
   <Style x:Key="MainBorderStyle" TargetType="Border">
-    <Setter Property="Width" Value="18"/>
-    <Setter Property="Height" Value="18"/>
+    <Setter Property="Width" Value="15"/>
+    <Setter Property="Height" Value="15"/>
     <Setter Property="Background" Value="Transparent"/>
     <Setter Property="BorderBrush" Value="#705427"/>
     <Setter Property="BorderThickness" Value="1"/>
@@ -33,8 +33,8 @@
     <Setter Property="HorizontalAlignment" Value="Center"/>
     <Setter Property="VerticalAlignment" Value="Center"/>
     <Setter Property="Stretch" Value="Uniform"/>
-    <Setter Property="Width" Value="10"/>
-    <Setter Property="Height" Value="10"/>
+    <Setter Property="Width" Value="9"/>
+    <Setter Property="Height" Value="9"/>
     <Setter Property="Visibility" Value="Collapsed"/>
   </Style>
 
@@ -81,7 +81,7 @@
             <Border x:Name="BorderElement" Style="{StaticResource MainBorderStyle}">
               <Path x:Name="IconElement" Style="{StaticResource CheckPathStyle}"/>
             </Border>
-            <ContentPresenter Style="{StaticResource ContentStyle}" Content="{TemplateBinding Content}"/>
+            <ContentPresenter x:Name="ContentPresenter" Style="{StaticResource ContentStyle}" Content="{TemplateBinding Content}"/>
           </Grid>
         </ControlTemplate>
       </Setter.Value>

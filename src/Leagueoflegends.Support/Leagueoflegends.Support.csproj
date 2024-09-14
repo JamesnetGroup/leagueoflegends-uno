@@ -1713,6 +1713,7 @@
     <None Remove="Themes\Units\RiotItemBadge.xaml" />
     <None Remove="Themes\Units\RiotLevelControl.xaml" />
     <None Remove="Themes\Units\RiotLevelInfoControl.xaml" />
+    <None Remove="Themes\Units\RiotLinkButton.xaml" />
     <None Remove="Themes\Units\RiotMainIconMenu.xaml" />
     <None Remove="Themes\Units\RiotMainMenu.xaml" />
     <None Remove="Themes\Units\RiotMatchHistoryListBox.xaml" />
@@ -1732,6 +1733,7 @@
     <None Remove="Themes\Units\RIotScheduleListBox.xaml" />
     <None Remove="Themes\Units\RiotScrollViewer.xaml" />
     <None Remove="Themes\Units\RiotSkinTierButton.xaml" />
+    <None Remove="Themes\Units\RiotSlider.xaml" />
     <None Remove="Themes\Units\RIotSpellBadge.xaml" />
     <None Remove="Themes\Units\RiotSpellListBox.xaml" />
     <None Remove="Themes\Units\RiotSpellListBoxItem.xaml" />
@@ -1913,6 +1915,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Units\RiotLinkButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Units\RiotMainIconMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1994,6 +2000,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Units\RiotSkinTierButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotSlider.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -2433,5 +2443,13 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Units\RiotOptionMenuButton.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotLinkButton.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotSlider.xaml" />
   </ItemGroup>
 </Project>

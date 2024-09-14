@@ -3,14 +3,18 @@
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:units="using:Leagueoflegends.Support.UI.Units"
   xmlns:views="using:Leagueoflegends.Store.UI.Views">
+
+  <Style x:Key="CheckStyle" TargetType="units:RiotCheckBox">
+    <Setter Property="Margin" Value="0 4 0 4"/>
+  </Style>
   
   <Style TargetType="views:NoticeContent">
     <Setter Property="Template">
       <Setter.Value>
         <ControlTemplate TargetType="views:NoticeContent">
           <StackPanel>
-            <units:RiotCheckBox Content="e-Sports regular recording" />
-            <units:RiotCheckBox Content="Maximum effort for friend's wedding" />
+            <units:RiotCheckBox Style="{StaticResource CheckStyle}" Content="e-Sports regular recording" />
+            <units:RiotCheckBox Style="{StaticResource CheckStyle}" Content="Maximum effort for friend's wedding" />
           </StackPanel>
         </ControlTemplate>
       </Setter.Value>
