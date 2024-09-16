@@ -13,6 +13,7 @@ public class MenuManager : IMenuManager
     private string _currentMainMenu;
 
     public event Action<List<MenuModel>> NavigationChanged;
+    public event Action<string> OptionMenuChanged;
 
     public MenuManager(IMenuDataLoader dataLoader, ILayerManager layerManager, IContainer container)
     {
@@ -45,10 +46,12 @@ public class MenuManager : IMenuManager
 
     public void NavigateToOption(string contentName)
     {
-        contentName = $"{contentName}Content";
+        string name = $"{contentName}Content";
 
-        _container.TryResolve<IView>(contentName, out var view);
+        _container.TryResolve<IView>(name, out var view);
         _layerManager.Show("OptionContentLayer", view);
+
+        OptionMenuChanged?.Invoke(contentName);
     }
 
     public void NavigateToMenu(string mainMenu)

@@ -27,14 +27,6 @@
             <TextBlock Style="{StaticResource CategoryTextStyle}" Text="IN-GAME"/>
             <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="HotKey" Content="HOT KEYS"/>
             <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="Volume" Content="VOLUME"/>
-            <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="GENERAL" Content="INTERFACE"/>
-            <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="GENERAL" Content="GAME"/>
-            <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="GENERAL" Content="REPLAYS"/>
-            <TextBlock Style="{StaticResource CategoryTextStyle}" Text="ABOUT"/>
-            <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="GENERAL" Content="VERIFICATION"/>
-            <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="GENERAL" Content="PRIVACY NOTICE"/>
-            <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="GENERAL" Content="TOU"/>
-            <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="GENERAL" Content="VERSION"/>
           </StackPanel>
         </ControlTemplate>
       </Setter.Value>

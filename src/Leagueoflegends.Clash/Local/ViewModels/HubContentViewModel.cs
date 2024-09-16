@@ -17,7 +17,12 @@ public class HubContentViewModel : ViewModelBase
     public MenuModel CurrentTabMenu
     {
         get => _currentTabMenu;
-        set => SetProperty(ref _currentTabMenu, value);
+        set => SetProperty(ref _currentTabMenu, value, CurrentTabMenuChanged);
+    }
+
+    private void CurrentTabMenuChanged()
+    {
+        Console.WriteLine($"RiotTabMenu Changed: {CurrentTabMenu?.Name}");
     }
 
     public List<MenuModel> TabMenus

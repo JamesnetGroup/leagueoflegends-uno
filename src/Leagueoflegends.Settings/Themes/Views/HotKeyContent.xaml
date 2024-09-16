@@ -4,7 +4,6 @@
     xmlns:units="using:Leagueoflegends.Support.UI.Units"
     xmlns:views="using:Leagueoflegends.Store.UI.Views">
 
-  <!-- TextBlock Styles -->
   <Style x:Key="MainHeaderTextStyle" TargetType="TextBlock">
     <Setter Property="FontSize" Value="12"/>
     <Setter Property="Foreground" Value="#F0E6D2"/>
@@ -43,25 +42,21 @@
   </Style>
 
   <Style TargetType="views:HotKeyContent">
-    <Setter Property="Margin" Value="0 0 20 0"/>
+    <Setter Property="Margin" Value="0 0 30 0"/>
     <Setter Property="Template">
       <Setter.Value>
         <ControlTemplate TargetType="views:HotKeyContent">
           <StackPanel Style="{StaticResource MainStackPanelStyle}">
-
             <TextBlock Style="{StaticResource MainHeaderTextStyle}" Text="MAIN HOTKEYS" />
-
             <StackPanel Style="{StaticResource HorizontalStackPanelStyle}">
               <units:RiotButton Content="Quick Cast All" Margin="0 0 10 0"/>
               <units:RiotButton Content="Normal Cast All" Margin="0 0 10 0"/>
             </StackPanel>
-
             <Grid>
               <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
               </Grid.ColumnDefinitions>
-
               <StackPanel Grid.Column="0">
                 <TextBlock Style="{StaticResource SubHeaderTextStyle}" Text="SKILLS" />
                 <StackPanel Orientation="Horizontal">
@@ -71,7 +66,6 @@
                   <units:RiotKeyButton Style="{StaticResource KeyButtonStyle}" Content="D"/>
                 </StackPanel>
               </StackPanel>
-
               <StackPanel Grid.Column="1" HorizontalAlignment="RIGHT">
                 <TextBlock Style="{StaticResource SubHeaderTextStyle}" Text="SUMMONER SPELLS" />
                 <StackPanel Orientation="Horizontal">
@@ -80,13 +74,11 @@
                 </StackPanel>
               </StackPanel>
             </Grid>
-
             <Grid>
               <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
               </Grid.ColumnDefinitions>
-
               <StackPanel Grid.Column="0">
                 <TextBlock Style="{StaticResource SubHeaderTextStyle}" Text="ITEMS" />
                 <StackPanel Orientation="Horizontal">
@@ -98,18 +90,14 @@
                   <units:RiotKeyButton Style="{StaticResource KeyButtonStyle}" Content="L"/>
                 </StackPanel>
               </StackPanel>
-
               <StackPanel Grid.Column="1" HorizontalAlignment="Right">
                 <TextBlock Style="{StaticResource SubHeaderTextStyle}" Text="Trinkets" />
                 <units:RiotKeyButton Style="{StaticResource KeyButtonStyle}" Content="M"/>
               </StackPanel>
             </Grid>
-
-            <!-- Quick Cast Settings -->
             <TextBlock Style="{StaticResource SubHeaderTextStyle}" Text="QUICK CAST RANGE INDICATOR" />
             <units:RiotCheckBox Style="{StaticResource CheckBoxStyle}" Content="Replace 'Quick Cast' with 'Quick Cast with Range Indicator'"/>
             <units:RiotCheckBox Style="{StaticResource CheckBoxStyle}" Content="Quick Cast when releasing another key first"/>
-
           </StackPanel>
         </ControlTemplate>
       </Setter.Value>

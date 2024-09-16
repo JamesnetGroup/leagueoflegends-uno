@@ -1720,6 +1720,7 @@
     <None Remove="Themes\Units\RiotMainMenu.xaml" />
     <None Remove="Themes\Units\RiotMatchHistoryListBox.xaml" />
     <None Remove="Themes\Units\RiotMatchHistoryListBoxItem.xaml" />
+    <None Remove="Themes\Units\RiotMuteSwitch.xaml" />
     <None Remove="Themes\Units\RiotNewsButton.xaml" />
     <None Remove="Themes\Units\RiotNoticeButton.xaml" />
     <None Remove="Themes\Units\RiotOptionMenuButton.xaml" />
@@ -1946,6 +1947,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Units\RiotMatchHistoryListBoxItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotMuteSwitch.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -2469,5 +2474,9 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Units\RiotDiamondRadioButton.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotMuteSwitch.xaml" />
   </ItemGroup>
 </Project>

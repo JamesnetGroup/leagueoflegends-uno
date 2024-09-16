@@ -89,6 +89,7 @@ public class LeagueOfLegendsBootstrapper : AppBootstrapper
         Container.RegisterSingleton<IView, SoundContent>("SoundContent");
         Container.RegisterSingleton<IView, VoiceContent>("VoiceContent");
         Container.RegisterSingleton<IView, HotKeyContent>("HotKeyContent");
+        Container.RegisterSingleton<IView, VolumeContent>("VolumeContent");
 
         IView mainContent = Container.Resolve<MainContent>();
         IView socialContent = Container.Resolve<SocialContent>();

@@ -14,6 +14,7 @@
     <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotTftNewsButton.xaml"/>
     <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotNewsButton.xaml"/>
     <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotSwitchButton.xaml"/>
+    <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotMuteSwitch.xaml"/>
     <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotCheckBox.xaml"/>
     <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotSkinTierButton.xaml"/>
     <ResourceDictionary Source="ms-appx:///Leagueoflegends.Support/Themes/Units/RiotCircleButton.xaml"/>

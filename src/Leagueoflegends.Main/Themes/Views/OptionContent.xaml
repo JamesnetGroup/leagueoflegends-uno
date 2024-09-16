@@ -66,14 +66,12 @@
     <Setter Property="Foreground" Value="#A09B8C"/>
     <Setter Property="Style" Value="{StaticResource HeaderStyle}"/>
     <Setter Property="Margin" Value="8 0 0 0"/>
-    <Setter Property="Text" Value="CLIENT /"/>
   </Style>
 
   <Style x:Key="GeneralTextStyle" TargetType="TextBlock">
     <Setter Property="Foreground" Value="#F0E6D2"/>
     <Setter Property="Style" Value="{StaticResource HeaderStyle}"/>
     <Setter Property="Margin" Value="5 0 0 0"/>
-    <Setter Property="Text" Value="GENERAL"/>
   </Style>
 
   <Style x:Key="RestoreDefaultsButtonStyle" TargetType="based:RiotButton">
@@ -135,8 +133,13 @@
                   <Border Style="{StaticResource BottomBorderStyle}"/>
 
                   <StackPanel Style="{StaticResource HeaderStackPanelStyle}">
-                    <TextBlock Style="{StaticResource ClientTextStyle}"/>
-                    <TextBlock Style="{StaticResource GeneralTextStyle}"/>
+                    <TextBlock Style="{StaticResource ClientTextStyle}">
+                      <Run Text="{Binding Category}"/>
+                      <Run Text="/"/>
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource GeneralTextStyle}">
+                      <Run Text="{Binding MenuName}"/>
+                    </TextBlock>
                   </StackPanel>
 
                   <based:RiotButton Style="{StaticResource RestoreDefaultsButtonStyle}"/>

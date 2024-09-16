@@ -40,6 +40,7 @@
     <None Remove="Themes\Views\NoticeContent.xaml" />
     <None Remove="Themes\Views\SoundContent.xaml" />
     <None Remove="Themes\Views\VoiceContent.xaml" />
+    <None Remove="Themes\Views\VolumeContent.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -81,6 +82,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Views\VolumeContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
   <ItemGroup>
@@ -112,5 +117,9 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Views\HotKeyContent.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Views\VolumeContent.xaml" />
   </ItemGroup>
 </Project>

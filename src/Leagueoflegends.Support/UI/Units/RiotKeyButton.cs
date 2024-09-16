@@ -35,8 +35,6 @@ public class RiotKeyButton : Button
 
     private void UpdateVisualState()
     {
-        string stateName = IconType.ToString();
-        Console.WriteLine("State: " + stateName);
-        VisualStateManager.GoToState(this, stateName, false);
+        VisualStateManager.GoToState(this, IconType.ToString(), false);
     }
 }
