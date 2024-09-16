@@ -4,10 +4,10 @@
   xmlns:units="using:Leagueoflegends.Support.UI.Units"
   xmlns:views="using:Leagueoflegends.Home.UI.Views">
 
-  <x:String x:Key="HeadlineDefaultImageSource">ms-appx:///Leagueoflegends.Support/Images/wallpaper-jinx.jpg</x:String>
+  <x:String x:Key="HeadlineDefaultImageSource">ms-appx:///Leagueoflegends.Support/Images/wallpaper-caitlyn.jpg</x:String>
   <x:String x:Key="ATypeImageSource">ms-appx:///Leagueoflegends.Support/Images/wallpaper-maokai.jpg</x:String>
-  <x:String x:Key="BTypeImageSource">ms-appx:///Leagueoflegends.Support/Images/wallpaper-lux.jpg</x:String>
-  <x:String x:Key="CTypeImageSource">ms-appx:///Leagueoflegends.Support/Images/wallpaper-caitlyn.jpg</x:String>
+  <x:String x:Key="BTypeImageSource">ms-appx:///Leagueoflegends.Support/Images/wallpaper-leesin.png</x:String>
+  <x:String x:Key="CTypeImageSource">ms-appx:///Leagueoflegends.Support/Images/wallpaper-ezreal.jpg</x:String>
   <x:String x:Key="DTypeImageSource">ms-appx:///Leagueoflegends.Support/Images/wallpaper-thumb-1.png</x:String>
   <x:String x:Key="ETypeImageSource">ms-appx:///Leagueoflegends.Support/Images/wallpaper-thumb-2.png</x:String>
   

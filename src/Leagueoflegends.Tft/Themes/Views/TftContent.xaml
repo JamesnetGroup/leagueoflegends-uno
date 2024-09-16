@@ -171,7 +171,7 @@
                     ImageSource="ms-appx:///Leagueoflegends.Support/Images/wallpaper-fiora.jpg"/>
                   <units:RiotTftNewsButton Grid.Column="1"
                     Style="{StaticResource RiotNewsButtonStyle}"
-                    Text="Wallpaper Jinx"
+                    Text="Wallpaper Leesin"
                     ImageSource="ms-appx:///Leagueoflegends.Support/Images/wallpaper-lux.jpg"/>
                   <units:RiotTftNewsButton Grid.Column="2" 
                     Style="{StaticResource RiotNewsButtonStyle}"
