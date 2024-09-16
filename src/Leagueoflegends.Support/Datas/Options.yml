@@ -98,3 +98,20 @@
   category: WindowSize
   isSelected: false
   seq: 5
+
+- name: MacBook Pro Microphone (Built-in)
+  category: AudioInput
+  isSelected: true
+  seq: 1
+- name: BenQ RD280U Monitor (USB Audio Device)
+  category: AudioInput
+  isSelected: false
+  seq: 2
+- name: HomePod (AirPlay Audio Input)
+  category: AudioInput
+  isSelected: false
+  seq: 3
+- name: AirPods Max (Bluetooth Hands-Free Audio)
+  category: AudioInput
+  isSelected: false
+  seq: 4

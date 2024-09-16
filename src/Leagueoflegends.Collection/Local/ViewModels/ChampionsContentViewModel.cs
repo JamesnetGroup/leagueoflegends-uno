@@ -20,29 +20,29 @@ public class ChampionsContentViewModel : ViewModelBase
         set => SetProperty(ref _achieve, value);
     }
 
-    private List<FilterOption> _filterOptions;
-    public List<FilterOption> FilterOptions
+    private List<Option> _filterOptions;
+    public List<Option> FilterOptions
     {
         get => _filterOptions;
         set => SetProperty(ref _filterOptions, value);
     }
 
-    private FilterOption _selectedFilterOption;
-    public FilterOption SelectedFilterOption
+    private Option _selectedFilterOption;
+    public Option SelectedFilterOption
     {
         get => _selectedFilterOption;
         set => SetProperty(ref _selectedFilterOption, value);
     }
 
-    private List<FilterOption> _sortOptions;
-    public List<FilterOption> SortOptions
+    private List<Option> _sortOptions;
+    public List<Option> SortOptions
     {
         get => _sortOptions;
         set => SetProperty(ref _sortOptions, value);
     }
 
-    private FilterOption _selectedSortOption;
-    public FilterOption SelectedSortOption
+    private Option _selectedSortOption;
+    public Option SelectedSortOption
     {
         get => _selectedSortOption;
         set => SetProperty(ref _selectedSortOption, value);
@@ -56,12 +56,12 @@ public class ChampionsContentViewModel : ViewModelBase
     }
 
     private readonly IChampStatsDataLoader _champData;
-    private readonly IFilterDataLoader _filterData;
+    private readonly IOptionDataLoader _optionData;
 
-    public ChampionsContentViewModel(IChampStatsDataLoader champData, IFilterDataLoader filterData)
+    public ChampionsContentViewModel(IChampStatsDataLoader champData, IOptionDataLoader optionData)
     {
         _champData = champData;
-        _filterData = filterData;
+        _optionData = optionData;
         InitializeViewModel();
     }
 
@@ -75,8 +75,8 @@ public class ChampionsContentViewModel : ViewModelBase
 
     private void LoadFilterAndSortOptions()
     {
-        FilterOptions = _filterData.GetByCategory("FilterOptions");
-        SortOptions = _filterData.GetByCategory("SortOptions");
+        FilterOptions = _optionData.GetByCategory("FilterOptions");
+        SortOptions = _optionData.GetByCategory("SortOptions");
 
         SelectedFilterOption = FilterOptions.FirstOrDefault();
         SelectedSortOption = SortOptions.FirstOrDefault();

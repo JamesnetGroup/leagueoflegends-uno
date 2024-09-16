@@ -6,14 +6,14 @@ namespace Leagueoflegends.Collection.Local.ViewModels;
 
 public class StoreChampContentViewModel : ViewModelBase
 {
-    private readonly IFilterDataLoader _filterData;
+    private readonly IOptionDataLoader _optionData;
     private readonly IStoreChampDataLoader _storeChampData;
     private bool _isChampionsSelected;
     private bool _isEternalsSelected;
     private bool _isBundlesSelected;
-    private FilterOption _currentChamp;
-    private FilterOption _currentEternal;
-    private FilterOption _currentBundle;
+    private Option _currentChamp;
+    private Option _currentEternal;
+    private Option _currentBundle;
 
     public bool IsChampionsSelected
     {
@@ -33,32 +33,32 @@ public class StoreChampContentViewModel : ViewModelBase
         set => SetProperty(ref _isBundlesSelected, value);
     }
 
-    public FilterOption CurrentChamp
+    public Option CurrentChamp
     {
         get => _currentChamp;
         set => SetProperty(ref _currentChamp, value);
     }
 
-    public FilterOption CurrentEternal
+    public Option CurrentEternal
     {
         get => _currentEternal;
         set => SetProperty(ref _currentEternal, value);
     }
 
-    public FilterOption CurrentBundle
+    public Option CurrentBundle
     {
         get => _currentBundle;
         set => SetProperty(ref _currentBundle, value);
     }
 
-    public List<FilterOption> ChampOptions { get; set; }
-    public List<FilterOption> EternalOptions { get; set; }
-    public List<FilterOption> BundleOptions { get; set; }
+    public List<Option> ChampOptions { get; set; }
+    public List<Option> EternalOptions { get; set; }
+    public List<Option> BundleOptions { get; set; }
     public List<StoreChamp> Champions { get; set; }
 
-    public StoreChampContentViewModel(IFilterDataLoader filterData, IStoreChampDataLoader storeChampData)
+    public StoreChampContentViewModel(IOptionDataLoader optionData, IStoreChampDataLoader storeChampData)
     {
-        _filterData = filterData;
+        _optionData = optionData;
         _storeChampData = storeChampData;
         IsChampionsSelected = true;
 
@@ -68,9 +68,9 @@ public class StoreChampContentViewModel : ViewModelBase
 
     private void LoadFilters()
     {
-        ChampOptions = _filterData.GetByCategory("ItemSortOptions");
-        EternalOptions = _filterData.GetByCategory("ItemSortOptions");
-        BundleOptions = _filterData.GetByCategory("ItemSortOptions");
+        ChampOptions = _optionData.GetByCategory("ItemSortOptions");
+        EternalOptions = _optionData.GetByCategory("ItemSortOptions");
+        BundleOptions = _optionData.GetByCategory("ItemSortOptions");
 
         CurrentChamp = ChampOptions.FirstOrDefault();
         CurrentEternal = EternalOptions.FirstOrDefault();

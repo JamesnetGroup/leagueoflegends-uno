@@ -12,6 +12,7 @@
   </Style>
 
   <Style TargetType="views:OptionMenuContent">
+    <Setter Property="MinWidth" Value="150"/>
     <Setter Property="VerticalAlignment" Value="Top"/>
     <Setter Property="Template">
       <Setter.Value>
@@ -22,11 +23,10 @@
             <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="Notice" Content="NOTIFICATION"/>
             <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="Chat" Content="CHAT/FRIENDS"/>
             <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="Sound" Content="SOUND"/>
-            <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="GENERAL" Content="VOICE"/>
-            <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="GENERAL" Content="BLOCK LIST"/>
+            <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="Voice" Content="VOICE"/>
             <TextBlock Style="{StaticResource CategoryTextStyle}" Text="IN-GAME"/>
-            <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="GENERAL" Content="HOT KEYS"/>
-            <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="GENERAL" Content="SOUND"/>
+            <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="HotKey" Content="HOT KEYS"/>
+            <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="Volume" Content="VOLUME"/>
             <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="GENERAL" Content="INTERFACE"/>
             <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="GENERAL" Content="GAME"/>
             <units:RiotOptionMenuButton Command="{Binding MenuCommand}" CommandParameter="GENERAL" Content="REPLAYS"/>

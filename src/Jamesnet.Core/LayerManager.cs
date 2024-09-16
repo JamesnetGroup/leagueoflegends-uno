@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace Jamesnet.Core;
 
 public class LayerManager : ILayerManager

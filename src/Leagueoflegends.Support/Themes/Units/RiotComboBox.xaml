@@ -106,16 +106,7 @@
               BorderBrush="{TemplateBinding BorderBrush}"
               BorderThickness="{TemplateBinding BorderThickness}">
               <Grid ColumnDefinitions="*, Auto">
-                <ContentPresenter
-                  x:Name="ContentPresenter"
-                  Style="{StaticResource ContentStyle}"
-                  Content="{TemplateBinding SelectedItem}"
-                  ContentTemplate="{TemplateBinding ItemTemplate}"/>
-                <TextBlock
-                  x:Name="PlaceholderTextBlock"
-                  Style="{StaticResource PlaceHolderStyle}"
-                  Visibility="{Binding SelectedItem, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource NullToVisibleConverter}}"
-                  Text="{TemplateBinding PlaceholderText}"/>
+                <ContentPresenter x:Name="ContentPresenter" Style="{StaticResource ContentStyle}" ContentTemplate="{TemplateBinding ItemTemplate}"/>
                 <Path x:Name="DropDownIcon" Style="{StaticResource DropDownPathStyle}"/>
               </Grid>
             </Border>

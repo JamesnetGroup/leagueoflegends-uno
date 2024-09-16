@@ -1,4 +1,4 @@
-<Project Sdk="Uno.Sdk">
+﻿<Project Sdk="Uno.Sdk">
   <PropertyGroup>
     <TargetFrameworks>net8.0-desktop</TargetFrameworks>
     <UnoSingleProject>true</UnoSingleProject>
@@ -36,8 +36,10 @@
     <None Remove="Themes\Generic.xaml" />
     <None Remove="Themes\Views\ChatContent.xaml" />
     <None Remove="Themes\Views\GeneralContent.xaml" />
+    <None Remove="Themes\Views\HotKeyContent.xaml" />
     <None Remove="Themes\Views\NoticeContent.xaml" />
     <None Remove="Themes\Views\SoundContent.xaml" />
+    <None Remove="Themes\Views\VoiceContent.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -63,11 +65,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Views\HotKeyContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Views\NoticeContent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Views\SoundContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Views\VoiceContent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -94,5 +104,13 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Views\SoundContent.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Views\VoiceContent.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Views\HotKeyContent.xaml" />
   </ItemGroup>
 </Project>

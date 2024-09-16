@@ -4,11 +4,11 @@ namespace Leagueoflegends.Support.UI.Units;
 
 public sealed class RiotWindowControlButton : Button
 {
-    public static readonly DependencyProperty ControlTypeProperty = DependencyProperty.Register(nameof(IconType), typeof(SmallIconTyle), typeof(RiotWindowControlButton), new PropertyMetadata(SmallIconTyle.Help, OnControlTypeChanged));
+    public static readonly DependencyProperty ControlTypeProperty = DependencyProperty.Register(nameof(IconType), typeof(SmallIconType), typeof(RiotWindowControlButton), new PropertyMetadata(SmallIconType.Help, OnControlTypeChanged));
 
-    public SmallIconTyle IconType
+    public SmallIconType IconType
     {
-        get => (SmallIconTyle)GetValue(ControlTypeProperty);
+        get => (SmallIconType)GetValue(ControlTypeProperty);
         set => SetValue(ControlTypeProperty, value);
     }
 

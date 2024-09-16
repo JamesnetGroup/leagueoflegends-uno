@@ -33,9 +33,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Datas\FilterSortOptions.yml" />
     <None Remove="Datas\MatchHistories.yml" />
     <None Remove="Datas\Menus.yml" />
+    <None Remove="Datas\Options.yml" />
     <None Remove="Datas\PersonalChampStats.yml" />
     <None Remove="Datas\PlayChamps.yml" />
     <None Remove="Datas\Schedules.yml" />
@@ -1701,6 +1701,7 @@
     <None Remove="Themes\Units\RiotClashEmblem.xaml" />
     <None Remove="Themes\Units\RiotClashTierButton.xaml" />
     <None Remove="Themes\Units\RiotComboBox.xaml" />
+    <None Remove="Themes\Units\RiotDiamondRadioButton.xaml" />
     <None Remove="Themes\Units\RiotFoldableIcon.xaml" />
     <None Remove="Themes\Units\RiotFriendGroupItem.xaml" />
     <None Remove="Themes\Units\RiotFriendItemControl.xaml" />
@@ -1711,6 +1712,7 @@
     <None Remove="Themes\Units\RiotHubSummary.xaml" />
     <None Remove="Themes\Units\RiotIconButton.xaml" />
     <None Remove="Themes\Units\RiotItemBadge.xaml" />
+    <None Remove="Themes\Units\RiotKeyButton.xaml" />
     <None Remove="Themes\Units\RiotLevelControl.xaml" />
     <None Remove="Themes\Units\RiotLevelInfoControl.xaml" />
     <None Remove="Themes\Units\RiotLinkButton.xaml" />
@@ -1791,7 +1793,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Datas\StoreChamps.yml" />
-    <EmbeddedResource Include="Datas\FilterSortOptions.yml" />
+    <EmbeddedResource Include="Datas\Options.yml" />
     <EmbeddedResource Include="Datas\TeamFights.yml" />
     <EmbeddedResource Include="Datas\Schedules.yml" />
     <EmbeddedResource Include="Datas\PlayChamps.yml" />
@@ -1871,6 +1873,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Units\RiotDiamondRadioButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Units\RiotFoldableIcon.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1904,6 +1910,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Units\RiotItemBadge.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Units\RiotKeyButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -2451,5 +2461,13 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Themes\Units\RiotSlider.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotKeyButton.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\Units\RiotDiamondRadioButton.xaml" />
   </ItemGroup>
 </Project>

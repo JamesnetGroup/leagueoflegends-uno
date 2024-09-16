@@ -7,14 +7,14 @@ namespace Leagueoflegends.Collection.Local.ViewModels;
 public class SkinsContentViewModel : ViewModelBase
 {
     private readonly ISkinsDataLoader _skinsData;
-    private readonly IFilterDataLoader _filterData;
+    private readonly IOptionDataLoader _optionData;
 
     private int _ownedSkinsCount;
-    private FilterOption _selectedFilterOption;
-    private FilterOption _selectedSortOption;
+    private Option _selectedFilterOption;
+    private Option _selectedSortOption;
     private List<SkinGroup> _champions;
-    private List<FilterOption> _filterOptions;
-    private List<FilterOption> _sortOptions;
+    private List<Option> _filterOptions;
+    private List<Option> _sortOptions;
 
     public int OwnedSkinsCount
     {
@@ -22,24 +22,24 @@ public class SkinsContentViewModel : ViewModelBase
         set => SetProperty(ref _ownedSkinsCount, value);
     }
 
-    public List<FilterOption> FilterOptions
+    public List<Option> FilterOptions
     {
         get => _filterOptions;
         set => SetProperty(ref _filterOptions, value);
     }
 
-    public FilterOption SelectedFilterOption
+    public Option SelectedFilterOption
     {
         get => _selectedFilterOption;
         set => SetProperty(ref _selectedFilterOption, value);
     }
-    public List<FilterOption> SortOptions
+    public List<Option> SortOptions
     {
         get => _sortOptions;
         set => SetProperty(ref _sortOptions, value);
     }
 
-    public FilterOption SelectedSortOption
+    public Option SelectedSortOption
     {
         get => _selectedSortOption;
         set => SetProperty(ref _selectedSortOption, value);
@@ -51,10 +51,10 @@ public class SkinsContentViewModel : ViewModelBase
         set => SetProperty(ref _champions, value);
     }
 
-    public SkinsContentViewModel(ISkinsDataLoader skinsData, IFilterDataLoader filterData)
+    public SkinsContentViewModel(ISkinsDataLoader skinsData, IOptionDataLoader optionData)
     {
         _skinsData = skinsData;
-        _filterData = filterData;
+        _optionData = optionData;
         InitializeViewModel();
     }
 
@@ -68,8 +68,8 @@ public class SkinsContentViewModel : ViewModelBase
 
     private void LoadFilterAndSortOptions()
     {
-        FilterOptions = _filterData.GetByCategory("ChampionFilter");
-        SortOptions = _filterData.GetByCategory("ChampionSort");
+        FilterOptions = _optionData.GetByCategory("ChampionFilter");
+        SortOptions = _optionData.GetByCategory("ChampionSort");
 
         SelectedFilterOption = FilterOptions.FirstOrDefault();
         SelectedSortOption = SortOptions.FirstOrDefault();

@@ -16,7 +16,7 @@
   </Style>
 
   <Style x:Key="ComboBoxStyle" TargetType="units:RiotComboBox">
-    <Setter Property="Width" Value="120"/>
+    <Setter Property="Width" Value="140"/>
     <Setter Property="HorizontalAlignment" Value="Left"/>
   </Style>
 
@@ -27,6 +27,7 @@
   </Style>
 
   <Style x:Key="RepairButtonStyle" TargetType="units:RiotButton">
+    <Setter Property="Width" Value="140"/>
     <Setter Property="HorizontalAlignment" Value="Left"/>
   </Style>
 

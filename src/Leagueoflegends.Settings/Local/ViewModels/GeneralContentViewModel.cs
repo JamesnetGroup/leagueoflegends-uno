@@ -6,30 +6,30 @@ namespace Leagueoflegends.Collection.Local.ViewModels;
 
 public class GeneralContentViewModel : ViewModelBase, IViewLoadable
 {
-    private readonly IFilterDataLoader _filterData;
-    private FilterOption _currentWindowSize;
-    private List<FilterOption> _windowSizes;
+    private readonly IOptionDataLoader _optionData;
+    private Option _currentWindowSize;
+    private List<Option> _windowSizes;
 
-    public FilterOption CurrentWindowSize
+    public Option CurrentWindowSize
     {
         get => _currentWindowSize;
         set => SetProperty(ref _currentWindowSize, value);
     }
 
-    public List<FilterOption> WindowSizes
+    public List<Option> WindowSizes
     { 
         get => _windowSizes;
         set => SetProperty(ref _windowSizes, value);
     }
 
-    public GeneralContentViewModel(IFilterDataLoader filterData)
+    public GeneralContentViewModel(IOptionDataLoader optionData)
     {
-        _filterData = filterData;
+        _optionData = optionData;
     }
 
     public void Loaded()
     {
-        WindowSizes = _filterData.GetByCategory("WindowSize");
+        WindowSizes = _optionData.GetByCategory("WindowSize");
         CurrentWindowSize= WindowSizes.FirstOrDefault();
     }
 }

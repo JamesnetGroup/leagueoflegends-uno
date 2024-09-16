@@ -4,21 +4,21 @@ using Leagueoflegends.Support.Local.Models;
 
 namespace Leagueoflegends.Collection.Local.Datas;
 
-public class FilterDataLoader : BaseResourceLoader<FilterOption, List<FilterOption>>, IFilterDataLoader
+public class OptionDataLoader : BaseResourceLoader<Option, List<Option>>, IOptionDataLoader
 {
     protected override string AssemblyName => "Leagueoflegends.Support";
-    protected override string ResourcePath => "Leagueoflegends.Support.Datas.FilterSortOptions.yml";
+    protected override string ResourcePath => "Leagueoflegends.Support.Datas.Options.yml";
 
-    public List<FilterOption> LoadOptions() => LoadAndOrganize();
+    public List<Option> LoadOptions() => LoadAndOrganize();
 
-    public List<FilterOption> GetByCategory(string category)
+    public List<Option> GetByCategory(string category)
     {
         return LoadOptions().Where(x => x.Category == category).ToList();
     }
 
-    protected override IEnumerable<FilterOption> ConvertToItems(YamlData rawData)
+    protected override IEnumerable<Option> ConvertToItems(YamlData rawData)
     {
-        return rawData.Select(item => new FilterOption
+        return rawData.Select(item => new Option
         {
             Category = item.GetValue<string>("category"),
             Name = item.GetValue<string>("name"),
@@ -26,7 +26,7 @@ public class FilterDataLoader : BaseResourceLoader<FilterOption, List<FilterOpti
         });
     }
 
-    protected override List<FilterOption> OrganizeItems(IEnumerable<FilterOption> options)
+    protected override List<Option> OrganizeItems(IEnumerable<Option> options)
     {
         return options.ToList();
     }

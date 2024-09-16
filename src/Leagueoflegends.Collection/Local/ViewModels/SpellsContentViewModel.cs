@@ -1,7 +1,6 @@
 using Jamesnet.Core;
 using Leagueoflegends.Support.Local.Datas;
 using Leagueoflegends.Support.Local.Models;
-using System.Collections.ObjectModel;
 
 namespace Leagueoflegends.Collection.Local.ViewModels;
 

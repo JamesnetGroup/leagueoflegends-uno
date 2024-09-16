@@ -1,6 +1,6 @@
 namespace Leagueoflegends.Support.Local.Models;
 
-public enum SmallIconTyle
+public enum SmallIconType
 {
     Help,
     Minimize,
@@ -10,5 +10,7 @@ public enum SmallIconTyle
     AddFolder,
     AddFriends,
     Magnify,
-    Option
+    Option,
+    Mic,
+    Lightning
 }

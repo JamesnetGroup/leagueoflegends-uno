@@ -48,6 +48,7 @@ public class LeagueOfLegendsBootstrapper : AppBootstrapper
         ViewModelMapper.Register<HubContent, HubContentViewModel>();
         ViewModelMapper.Register<StoreChampContent, StoreChampContentViewModel>();
         ViewModelMapper.Register<GeneralContent, GeneralContentViewModel>();
+        ViewModelMapper.Register<VoiceContent, VoiceContentViewModel>();
     }
 
     protected override void RegisterDependencies()
@@ -57,7 +58,7 @@ public class LeagueOfLegendsBootstrapper : AppBootstrapper
         Container.RegisterSingleton<IFriendDataLoader, FriendDataLoader>();
         Container.RegisterSingleton<IMenuDataLoader, MenuDataLoader>();
         Container.RegisterSingleton<IChampStatsDataLoader, ChampStatsDataLoader>();
-        Container.RegisterSingleton<IFilterDataLoader, FilterDataLoader>();
+        Container.RegisterSingleton<IOptionDataLoader, OptionDataLoader>();
         Container.RegisterSingleton<ISkinsDataLoader, SkinsDataLoader>();
         Container.RegisterSingleton<ISpellsDataLoader, SpellsDataLoader>();
         Container.RegisterSingleton<IMatchHistoryDataLoader, MatchHistoryDataLoader>();
@@ -86,6 +87,8 @@ public class LeagueOfLegendsBootstrapper : AppBootstrapper
         Container.RegisterSingleton<IView, NoticeContent>("NoticeContent");
         Container.RegisterSingleton<IView, ChatContent>("ChatContent");
         Container.RegisterSingleton<IView, SoundContent>("SoundContent");
+        Container.RegisterSingleton<IView, VoiceContent>("VoiceContent");
+        Container.RegisterSingleton<IView, HotKeyContent>("HotKeyContent");
 
         IView mainContent = Container.Resolve<MainContent>();
         IView socialContent = Container.Resolve<SocialContent>();
