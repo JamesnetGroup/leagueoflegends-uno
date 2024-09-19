@@ -10,6 +10,12 @@ Uno 플랫폼을 활용한 리그 오브 레전드 클라이언트의 고품질 
 [![Forks](https://img.shields.io/github/forks/jamesnetgroup/leagueoflegends-uno.svg)](https://github.com/jamesnetgroup/leagueoflegends-uno/network/members)
 [![Issues](https://img.shields.io/github/issues/jamesnetgroup/leagueoflegends-uno.svg)](https://github.com/jamesnetgroup/leagueoflegends-uno/issues)
 
+#### 리그 오브 레전드 XAML 기반 시리즈:  
+[리그 오브 레전드 클라이언트 (WPF)](https://github.com/jamesnetgroup/leagueoflegends-wpf)  
+[리그 오브 레전드 클라이언트 (Uno-Platform)](https://github.com/jamesnetgroup/leagueoflegends-uno)
+
+> 여러분이 WPF 개발자라면, XAML 기반의 WPF 기술이 크로스플랫폼 개발로 얼마나 자연스럽게 전환되는지 확인할 수 있습니다.
+
 ## 프로젝트 소개
 
 저희는 2008년부터 WPF 기술을 연구하고 경험을 쌓아왔습니다. 그동안 Xamarin, MAUI, Uno-Platform, AvaloniaUI, OpenSilver 등 다양한 크로스 플랫폼 기술이 발전해 왔고, 이를 통해 WPF에서 축적한 기술을 Uno-Platform으로 확장할 수 있게 되었습니다.
