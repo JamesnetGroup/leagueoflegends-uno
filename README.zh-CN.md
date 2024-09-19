@@ -10,6 +10,12 @@
 [![Forks](https://img.shields.io/github/forks/jamesnetgroup/leagueoflegends-uno.svg)](https://github.com/jamesnetgroup/leagueoflegends-uno/network/members)
 [![Issues](https://img.shields.io/github/issues/jamesnetgroup/leagueoflegends-uno.svg)](https://github.com/jamesnetgroup/leagueoflegends-uno/issues)
 
+#### 英雄联盟 XAML 系列:  
+[英雄联盟客户端 (WPF)](https://github.com/jamesnetgroup/leagueoflegends-wpf)  
+[英雄联盟客户端 (Uno-Platform)](https://github.com/jamesnetgroup/leagueoflegends-uno)
+
+> 如果您是 WPF 开发人员，您将看到基于 XAML 的 WPF 技术如何自然地过渡到跨平台开发。
+
 ## 项目概述
 
 我们自 2008 年以来一直在研究和积累 WPF 技术经验。多年来，Xamarin、MAUI、Uno-Platform、AvaloniaUI 和 OpenSilver 等各种跨平台技术不断发展，使我们能够将在 WPF 中积累的技能扩展到 Uno-Platform。
