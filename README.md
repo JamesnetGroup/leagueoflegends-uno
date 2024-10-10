@@ -11,8 +11,11 @@ This is a high-quality recreation project of the League of Legends client using 
 [![Issues](https://img.shields.io/github/issues/jamesnetgroup/leagueoflegends-uno.svg)](https://github.com/jamesnetgroup/leagueoflegends-uno/issues)
 
 #### League of Legends XAML-Based Series:  
+#### League of Legends XAML-Based Series:
 [League of Legends Client (WPF)](https://github.com/jamesnetgroup/leagueoflegends-wpf)  
-[League of Legends Client (Uno-Platform)](https://github.com/jamesnetgroup/leagueoflegends-uno)
+[League of Legends Client (Uno-Platform)](https://github.com/jamesnetgroup/leagueoflegends-uno)  
+[League of Legends Client (WinUI 3)](https://github.com/jamesnetgroup/leagueoflegends-winui3)
+
 
 > If you are a WPF developer, you will see how naturally XAML-based WPF skills transition into cross-platform development.
 
