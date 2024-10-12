@@ -17,10 +17,13 @@ This is a high-quality recreation project of the League of Legends client using 
     <img src="https://jamesnetdev.blob.core.windows.net/articleimages/77eaa9cd-865b-430d-89c6-0e10ead0abd5.png" width="5%"/>
 </div>
 
+<br/>
+
 [League of Legends Client (WPF)](https://github.com/jamesnetgroup/leagueoflegends-wpf)  
 [League of Legends Client (Uno-Platform)](https://github.com/jamesnetgroup/leagueoflegends-uno)  
 [League of Legends Client (WinUI 3)](https://github.com/jamesnetgroup/leagueoflegends-winui3)
 
+<br/>
 
 > If you are a WPF developer, you will see how naturally XAML-based WPF skills transition into cross-platform development.
 
