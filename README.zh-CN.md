@@ -21,6 +21,8 @@
 
 [英雄联盟客户端 (WPF)](https://github.com/jamesnetgroup/leagueoflegends-wpf)  
 [英雄联盟客户端 (Uno-Platform)](https://github.com/jamesnetgroup/leagueoflegends-uno)  
+[英雄联盟客户端 (OpenSilver)](https://github.com/jamesnetgroup/leagueoflegends-opensilver)  
+[英雄联盟客户端 (UWP)](https://github.com/jamesnetgroup/leagueoflegends-opensilver)  
 [英雄联盟客户端 (WinUI 3)](https://github.com/jamesnetgroup/leagueoflegends-winui3)
 
 > 如果您是 WPF 开发人员，您将看到基于 XAML 的 WPF 技术如何自然地过渡到跨平台开发。
